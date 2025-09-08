@@ -118,7 +118,7 @@ Once running:
 
 ## 📄 License
 
-[MIT License](../LICENSE)
+[MIT License](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE)
 
 ---
 

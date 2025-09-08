@@ -96,5 +96,5 @@ Plugins communicate through 6 standardized [service bridges](https://github.com/
 
 ## Have Questions?
 
-Post them in the developer forum at [community.braindrive.ai](community.braindrive.ai) We're here to help build the future of user-owned AI together. 
+Post them in the developer forum at [community.braindrive.ai](https://community.braindrive.ai) We're here to help build the future of user-owned AI together. 
 

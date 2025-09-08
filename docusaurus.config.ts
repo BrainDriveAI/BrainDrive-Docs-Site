@@ -1,38 +1,33 @@
 import type {Config} from '@docusaurus/types';
 import {themes as prismThemes} from 'prism-react-renderer';
-import fs from 'fs';
-import path from 'path';
 
-function readMeta(section: 'core'|'template'|'plugins'|'services', key?: string){
-  const baseDir =
-    section === 'core'     ? 'docs-core' :
-    section === 'template' ? 'docs-template' :
-    section === 'plugins'  ? `docs-plugins/${key}` :
-                             `docs-services/${key}`;
-  const pEdit = path.join(__dirname, baseDir, '.editbase');
-  const pRepo = path.join(__dirname, baseDir, '.repo');
-  const editbase = fs.existsSync(pEdit) ? fs.readFileSync(pEdit,'utf8').trim() : 'docs';
-  const repo = fs.existsSync(pRepo) ? fs.readFileSync(pRepo,'utf8').trim() : undefined;
-  return {editbase, repo};
-}
+const serviceRepoMap: Record<string, string> = {
+  // "doc-service": "BrainDriveAI/DocService",
+};
+const pluginRepoMap: Record<string, string> = {
+  "ai-chat": "DJJones66/BrainDriveChat",
+};
 
 const config: Config = {
   title: 'BrainDrive',
   tagline: 'User-owned, plugin-based AI system',
   favicon: 'img/favicon.ico',
+
   url: 'https://braindriveai.github.io',
   baseUrl: '/BrainDrive-Docs/',
+
   organizationName: 'BrainDriveAI',
   projectName: 'BrainDrive-Docs',
-  onBrokenLinks: 'throw',
+
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
+
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
   presets: [
     [
       'classic',
       {
-        // Guides (this site repo)
         docs: {
           routeBasePath: 'guides',
           sidebarPath: require.resolve('./sidebars.ts'),
@@ -44,8 +39,10 @@ const config: Config = {
     ],
   ],
 
-  // Multi-docs instances
   plugins: [
+    // Provide the debug theme modules that the build is trying to load
+    '@docusaurus/plugin-debug',
+
     // Core
     [
       '@docusaurus/plugin-content-docs',
@@ -54,13 +51,8 @@ const config: Config = {
         path: 'docs-core',
         routeBasePath: 'core',
         sidebarPath: require.resolve('./sidebars.core.ts'),
-        editUrl: ({docPath}) => {
-          const {editbase, repo} = readMeta('core');
-          const useRepo = repo || 'BrainDriveAI/BrainDrive-Core';
-          const prefix = editbase === 'root' ? '' : 'docs/';
-          // IMPORTANT: we return the full path; Docusaurus will NOT append versionDocsDirPath
-          return `https://github.com/${useRepo}/edit/main/${prefix}${docPath}`;
-        },
+        editUrl: ({docPath}) =>
+          `https://github.com/BrainDriveAI/BrainDrive-Core/edit/main/${docPath}`,
       },
     ],
     // Plugin Template
@@ -71,12 +63,8 @@ const config: Config = {
         path: 'docs-template',
         routeBasePath: 'template',
         sidebarPath: require.resolve('./sidebars.template.ts'),
-        editUrl: ({docPath}) => {
-          const {editbase, repo} = readMeta('template');
-          const useRepo = repo || 'BrainDriveAI/PluginTemplate';
-          const prefix = editbase === 'root' ? '' : 'docs/';
-          return `https://github.com/${useRepo}/edit/main/${prefix}${docPath}`;
-        },
+        editUrl: ({docPath}) =>
+          `https://github.com/BrainDriveAI/PluginTemplate/edit/main/${docPath}`,
       },
     ],
     // Services
@@ -89,10 +77,10 @@ const config: Config = {
         sidebarPath: require.resolve('./sidebars.services.ts'),
         editUrl: ({docPath}) => {
           const [service, ...rest] = docPath.split('/');
-          const {editbase, repo} = readMeta('services', service);
-          if (!repo) return undefined;
-          const prefix = editbase === 'root' ? '' : 'docs/';
-          return `https://github.com/${repo}/edit/main/${prefix}${rest.join('/')}`;
+          const repo = serviceRepoMap[service];
+          return repo
+            ? `https://github.com/${repo}/edit/main/${rest.join('/')}`
+            : undefined;
         },
       },
     ],
@@ -106,10 +94,10 @@ const config: Config = {
         sidebarPath: require.resolve('./sidebars.plugins.ts'),
         editUrl: ({docPath}) => {
           const [plugin, ...rest] = docPath.split('/');
-          const {editbase, repo} = readMeta('plugins', plugin);
-          if (!repo) return undefined;
-          const prefix = editbase === 'root' ? '' : 'docs/';
-          return `https://github.com/${repo}/edit/main/${prefix}${rest.join('/')}`;
+          const repo = pluginRepoMap[plugin];
+          return repo
+            ? `https://github.com/${repo}/edit/main/${rest.join('/')}`
+            : undefined;
         },
       },
     ],

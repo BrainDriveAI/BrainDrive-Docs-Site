@@ -119,4 +119,4 @@ We welcome & appreciate contributions. See [Contributing Guidelines](CONTRIBUTIN
 
 ## License
 
-Licensed under the [MIT License](LICENSE). Your AI. Your Rules.
+Licensed under the [MIT License](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE). Your AI. Your Rules.

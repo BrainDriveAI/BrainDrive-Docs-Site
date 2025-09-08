@@ -176,7 +176,7 @@ Each module in the `module_data` array is a dictionary containing the following 
   - Additional properties: `min`, `max`, `step`
 - **`boolean`**: Checkbox or toggle
 - **`select`**: Dropdown selection
-  - Required property: `options` (array of {label, value} objects)
+  - Required property: `options` (array of  objects)
 - **`textarea`**: Multi-line text input
   - Additional properties: `rows`, `maxLength`
 - **`color`**: Color picker
@@ -531,8 +531,8 @@ All other fields are optional, but recommended for better user experience:
 ## Related Documentation
 
 - [Plugin Data Field Reference](./Plugin-Data-Field-Reference.md)
-- [Plugin Template Development Guide](../PluginBuild/PluginTemplate/DEVELOPMENT.md)
-- [BrainDrive Service Integration Guide](./Service-Integration-Guide.md) *(coming soon)*
+- [Plugin Template Development Guide](https://github.com/BrainDriveAI/PluginTemplate/blob/main/PluginBuild/PluginTemplate/DEVELOPMENT.md)
+- [BrainDrive Service Integration Guide](https://github.com/BrainDriveAI/PluginTemplate/blob/main/Service-Integration-Guide.md) *(coming soon)*
 
 ---
 

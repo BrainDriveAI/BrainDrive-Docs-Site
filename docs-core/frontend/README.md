@@ -132,4 +132,4 @@ See the [Backend README](../backend/README.md) for instructions on setting up an
 
 ## License
 
-Licensed under the [MIT License](LICENSE). Your AI. Your Rules.
+Licensed under the [MIT License](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE). Your AI. Your Rules.
