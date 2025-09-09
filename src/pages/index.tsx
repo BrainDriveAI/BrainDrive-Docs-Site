@@ -57,6 +57,38 @@ function QuickLinks() {
   );
 }
 
+function PopularDocs() {
+  const docs = [
+    {label: 'Install', desc: 'macOS, Windows, Linux setup', to: '/core/INSTALL'},
+    {label: 'Roadmap', desc: 'What’s planned and in progress', to: '/core/ROADMAP'},
+    {label: 'Contributing', desc: 'How to help and guidelines', to: '/core/CONTRIBUTING'},
+  ];
+  return (
+    <div className="container margin-vert--lg">
+      <Heading as="h2">Popular Docs</Heading>
+      <div className="row">
+        {docs.map((d) => (
+          <div key={d.label} className="col col--4 margin-bottom--lg">
+            <div className="card">
+              <div className="card__header">
+                <Heading as="h3">{d.label}</Heading>
+              </div>
+              <div className="card__body">
+                <p>{d.desc}</p>
+              </div>
+              <div className="card__footer">
+                <Link className="button button--primary" to={d.to}>
+                  Open
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -82,6 +114,7 @@ export default function Home(): ReactNode {
       <main>
         <HomepageFeatures />
         <QuickLinks />
+        <PopularDocs />
       </main>
     </Layout>
   );
