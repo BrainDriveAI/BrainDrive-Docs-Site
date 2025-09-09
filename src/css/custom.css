@@ -20,6 +20,13 @@
 /* Make the homepage hero (behind the CTA button) steel blue without changing global primary */
 .hero--primary {
   --ifm-hero-background-color: #325D87;
+  --ifm-hero-text-color: #ffffff;
+}
+
+/* Ensure hero title/subtitle render white over steel blue */
+.hero--primary .hero__title,
+.hero--primary .hero__subtitle {
+  color: #ffffff;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -36,4 +43,5 @@
 
 [data-theme='dark'] .hero--primary {
   --ifm-hero-background-color: #325D87;
+  --ifm-hero-text-color: #ffffff;
 }
