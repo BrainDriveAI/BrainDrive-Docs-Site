@@ -20,7 +20,6 @@ function CTAButtons() {
 
 function QuickLinks() {
   const links = [
-    {label: 'Guides', desc: 'How to use and build', to: '/guides/intro'},
     {label: 'Core', desc: 'Architecture, install, roadmap', to: '/core/intro'},
     {label: 'Plugins', desc: 'Build and integrate plugins', to: '/plugins/intro'},
     {label: 'Services', desc: 'Bridge-based integrations', to: '/services/intro'},

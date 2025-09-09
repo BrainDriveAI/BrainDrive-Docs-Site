@@ -28,11 +28,8 @@ const config: Config = {
     [
       'classic',
       {
-        docs: {
-          routeBasePath: 'guides',
-          sidebarPath: require.resolve('./sidebars.ts'),
-          editUrl: 'https://github.com/BrainDriveAI/BrainDrive-Docs/edit/main/',
-        },
+        // Temporarily disable generic Guides until we have BrainDrive-focused content
+        docs: false,
         blog: false,
         theme: { customCss: require.resolve('./src/css/custom.css') },
       },
@@ -108,7 +105,6 @@ const config: Config = {
     navbar: {
       title: 'BrainDrive',
       items: [
-        { to: '/guides/intro', label: 'Guides', position: 'left' },
         { to: '/core/intro', label: 'Core', position: 'left' },
         { to: '/plugins/intro', label: 'Plugins', position: 'left' },
         { to: '/services/intro', label: 'Services', position: 'left' },
