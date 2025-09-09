@@ -11,14 +11,8 @@ import styles from './index.module.css';
 function CTAButtons() {
   return (
     <div className={styles.buttons}>
-      <Link className="button button--secondary button--lg" to="/core/INSTALL">
-        Install BrainDrive
-      </Link>
       <Link className="button button--secondary button--lg" to="/core/PLUGIN_DEVELOPER_QUICKSTART">
-        Plugin Quickstart
-      </Link>
-      <Link className="button button--secondary button--lg" to="/guides/intro">
-        Guides
+        Plugin Dev QuickStart
       </Link>
     </div>
   );

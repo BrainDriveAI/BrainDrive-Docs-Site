@@ -41,7 +41,7 @@ const config: Config = {
 
   plugins: [
     // Provide the debug theme modules that the build is trying to load
-    '@docusaurus/plugin-debug',
+    ['@docusaurus/plugin-debug', { id: 'debug-extra' }],
 
     // Core
     [
