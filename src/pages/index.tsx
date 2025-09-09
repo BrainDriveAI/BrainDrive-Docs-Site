@@ -112,9 +112,9 @@ export default function Home(): ReactNode {
       description="BrainDrive documentation for core, plugins, and services">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
         <QuickLinks />
         <PopularDocs />
+        <HomepageFeatures />
       </main>
     </Layout>
   );
