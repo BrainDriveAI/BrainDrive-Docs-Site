@@ -22,8 +22,8 @@ function QuickLinks() {
   const links = [
     {label: 'Core', desc: 'Architecture, install, roadmap', to: '/core/intro'},
     {label: 'Plugins', desc: 'Build and integrate plugins', to: '/plugins/intro'},
+    {label: 'PluginTemplate', desc: 'Jumpstart development', to: '/template/intro'},
     {label: 'Services', desc: 'Bridge-based integrations', to: '/services/intro'},
-    {label: 'Plugin Template', desc: 'Jumpstart development', to: '/template/intro'},
     {label: 'GitHub', desc: 'Source & issues', href: 'https://github.com/BrainDriveAI'},
   ];
   return (
