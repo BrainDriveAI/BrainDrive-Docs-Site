@@ -25,6 +25,7 @@ function QuickLinks() {
     {label: 'PluginTemplate', desc: 'Jumpstart development', to: '/template/intro'},
     {label: 'Services', desc: 'Bridge-based integrations', to: '/services/intro'},
     {label: 'GitHub', desc: 'Source & issues', href: 'https://github.com/BrainDriveAI'},
+    {label: 'Community', desc: 'Discussions & Support', href: 'https://community.braindrive.ai'},
   ];
   return (
     <div className="container margin-vert--lg">
