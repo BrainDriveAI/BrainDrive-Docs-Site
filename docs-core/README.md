@@ -1,4 +1,4 @@
-![BrainDrive Logo](https://github.com/BrainDriveAI/BrainDrive/blob/main/images/Logo-Light-Mode.png)
+![BrainDrive Logo](./images/Logo-Light-Mode.png)
 
 BrainDrive is the open source ChatGPT alternative you fully own and control. Use, customize, and monetize your BrainDrive however you want. No Big Tech overlords. Just your AI. Your rules.
 
@@ -16,15 +16,15 @@ BrainDrive is the open source ChatGPT alternative you fully own and control. Use
 
 A chat interface for running local and API based AI models:
 
-![Chat Interface](https://github.com/BrainDriveAI/BrainDrive/blob/main/images/BrainDrive%20Chat%20Interface.png)
+![BrainDrive Chat interface](./images/braindrive-chat-interface.png)
 
 A plugin manager to easily search existing, and add new plugins to your BrainDrive:
 
-![Plugin Manager](https://github.com/BrainDriveAI/BrainDrive/blob/main/images/Plugin%20Manager%20Screenshot.png)
+![Plugin Manager](./images/plugin-manager-screenshot.png)
 
 A page builder to create custom interfaces using your own and other publicly available plugins:
 
-![Page Builder](https://github.com/BrainDriveAI/BrainDrive/blob/main/images/Page%20Builder%20Screenshot.png)
+![Page Builder](./images/page-builder-screenshot.png)
 
 A [full set of developer resources](https://github.com/BrainDriveAI/BrainDrive/blob/main/DOCUMENTATION_INDEX.md), code examples, and tutorials that make it easy to build on BrainDrive.
 

@@ -11,14 +11,8 @@ import styles from './index.module.css';
 function CTAButtons() {
   return (
     <div className={styles.buttons}>
-      <Link className="button button--secondary button--lg" to="/core/INSTALL">
-        Install BrainDrive
-      </Link>
       <Link className="button button--secondary button--lg" to="/core/PLUGIN_DEVELOPER_QUICKSTART">
-        Plugin Quickstart
-      </Link>
-      <Link className="button button--secondary button--lg" to="/guides/intro">
-        Guides
+        Plugin Dev QuickStart
       </Link>
     </div>
   );
@@ -26,7 +20,6 @@ function CTAButtons() {
 
 function QuickLinks() {
   const links = [
-    {label: 'Guides', desc: 'How to use and build', to: '/guides/intro'},
     {label: 'Core', desc: 'Architecture, install, roadmap', to: '/core/intro'},
     {label: 'Plugins', desc: 'Build and integrate plugins', to: '/plugins/intro'},
     {label: 'Services', desc: 'Bridge-based integrations', to: '/services/intro'},
@@ -64,6 +57,38 @@ function QuickLinks() {
   );
 }
 
+function PopularDocs() {
+  const docs = [
+    {label: 'Install', desc: 'macOS, Windows, Linux setup', to: '/core/INSTALL'},
+    {label: 'Roadmap', desc: 'What’s planned and in progress', to: '/core/ROADMAP'},
+    {label: 'Contributing', desc: 'How to help and guidelines', to: '/core/CONTRIBUTING'},
+  ];
+  return (
+    <div className="container margin-vert--lg">
+      <Heading as="h2">Popular Docs</Heading>
+      <div className="row">
+        {docs.map((d) => (
+          <div key={d.label} className="col col--4 margin-bottom--lg">
+            <div className="card">
+              <div className="card__header">
+                <Heading as="h3">{d.label}</Heading>
+              </div>
+              <div className="card__body">
+                <p>{d.desc}</p>
+              </div>
+              <div className="card__footer">
+                <Link className="button button--primary" to={d.to}>
+                  Open
+                </Link>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   return (
@@ -89,6 +114,7 @@ export default function Home(): ReactNode {
       <main>
         <HomepageFeatures />
         <QuickLinks />
+        <PopularDocs />
       </main>
     </Layout>
   );
