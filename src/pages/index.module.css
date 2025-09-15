@@ -21,3 +21,26 @@
   align-items: center;
   justify-content: center;
 }
+
+:global(.button).blueButton {
+  background-color: #2563eb;
+  border-color: #2563eb;
+  color: #fff;
+}
+
+:global(.button).blueButton:hover,
+:global(.button).blueButton:focus {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+  color: #fff;
+}
+
+:global(.button).blueButton:active {
+  background-color: #1e40af;
+  border-color: #1e40af;
+}
+
+:global(.button).blueButton:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+  color: #fff;
+}

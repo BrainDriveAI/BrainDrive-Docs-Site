@@ -105,7 +105,7 @@ const config: Config = {
     navbar: {
       title: 'BrainDrive',
       items: [
-        { to: '/core/intro', label: 'Core', position: 'left' },
+        { to: '/core/', label: 'Core', position: 'left' },
         { to: '/plugins/intro', label: 'Plugins', position: 'left' },
         { to: '/services/intro', label: 'Services', position: 'left' },
         { to: '/template/intro', label: 'Plugin Template', position: 'left' },

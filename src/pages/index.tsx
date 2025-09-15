@@ -11,7 +11,9 @@ import styles from './index.module.css';
 function CTAButtons() {
   return (
     <div className={styles.buttons}>
-      <Link className="button button--secondary button--lg" to="/core/PLUGIN_DEVELOPER_QUICKSTART">
+      <Link
+        className={clsx('button button--primary button--lg', styles.blueButton)}
+        to="/core/PLUGIN_DEVELOPER_QUICKSTART">
         Plugin Dev QuickStart
       </Link>
     </div>
@@ -20,7 +22,7 @@ function CTAButtons() {
 
 function QuickLinks() {
   const links = [
-    {label: 'Core', desc: 'Architecture, install, roadmap', to: '/core/intro'},
+    {label: 'Core', desc: 'Architecture, install, roadmap', to: '/core/'},
     {label: 'Plugins', desc: 'Build and integrate plugins', to: '/plugins/intro'},
     {label: 'PluginTemplate', desc: 'Jumpstart development', to: '/template/intro'},
     {label: 'Services', desc: 'Bridge-based integrations', to: '/services/intro'},
@@ -41,11 +43,11 @@ function QuickLinks() {
               </div>
               <div className="card__footer">
                 {l.to ? (
-                  <Link className="button button--primary" to={l.to}>
+                  <Link className={clsx('button button--primary', styles.blueButton)} to={l.to}>
                     Open
                   </Link>
                 ) : (
-                  <Link className="button button--primary" href={l.href!}>
+                  <Link className={clsx('button button--primary', styles.blueButton)} href={l.href!}>
                     Open
                   </Link>
                 )}
@@ -78,7 +80,7 @@ function PopularDocs() {
                 <p>{d.desc}</p>
               </div>
               <div className="card__footer">
-                <Link className="button button--primary" to={d.to}>
+                <Link className={clsx('button button--primary', styles.blueButton)} to={d.to}>
                   Open
                 </Link>
               </div>
