@@ -22,7 +22,7 @@ function CTAButtons() {
 
 function QuickLinks() {
   const links = [
-    {label: 'Core', desc: 'Architecture, install, roadmap', to: '/core/'},
+    {label: 'Core', desc: 'Front & back-end runtime + plugin host', to: '/core/'},
     {label: 'Plugins', desc: 'Build and integrate plugins', to: '/plugins/intro'},
     {label: 'PluginTemplate', desc: 'Jumpstart development', to: '/template/intro'},
     {label: 'Services', desc: 'Bridge-based integrations', to: '/services/intro'},
