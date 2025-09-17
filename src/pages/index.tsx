@@ -24,8 +24,8 @@ function QuickLinks() {
   const links = [
     {label: 'Core', desc: 'Front & back-end runtime + plugin host', to: '/core/'},
     {label: 'Plugins', desc: 'React + TypeScript modules add features to Core', to: '/plugins/intro'},
-    {label: 'PluginTemplate', desc: 'Boilerplate + lifecycle installer/updater for rapid dev', to: '/template/intro'},
     {label: 'Service Bridges', desc: 'Decoupled Core <-> Plugin communication', to: '/services/intro'},
+    {label: 'PluginTemplate', desc: 'Boilerplate + lifecycle installer/updater for rapid dev', to: '/template/intro'},
     {label: 'GitHub', desc: 'Source & issues', href: 'https://github.com/BrainDriveAI'},
     {label: 'Community', desc: 'Discussions & Support', href: 'https://community.braindrive.ai'},
   ];
