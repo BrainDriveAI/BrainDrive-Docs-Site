@@ -92,9 +92,14 @@ const config: Config = {
         editUrl: ({docPath}) => {
           const [plugin, ...rest] = docPath.split('/');
           const repo = pluginRepoMap[plugin];
-          return repo
-            ? `https://github.com/${repo}/edit/main/${rest.join('/')}`
-            : undefined;
+          if (repo) {
+            const pluginPath = rest.join('/');
+            return `https://github.com/${repo}/edit/main/${pluginPath}`;
+          }
+
+          // Fallback to editing the doc within the BrainDrive-Docs repository when
+          // no dedicated plugin repository is registered.
+          return `https://github.com/BrainDriveAI/BrainDrive-Docs/edit/main/docs-plugins/${docPath}`;
         },
       },
     ],
