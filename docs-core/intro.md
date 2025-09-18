@@ -57,5 +57,4 @@ We’re excited to see what you create with BrainDrive!
 
 ---
 
-**Related:** Backend README in the BrainDrive‑Core repository: <https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/backend/README.md>
-
+**Related:** Backend README in the BrainDrive-Core repository: [Backend README](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/backend/README.md)
