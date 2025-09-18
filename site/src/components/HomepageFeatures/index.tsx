@@ -17,7 +17,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Local‑first by design: your data stays with you while BrainDrive
-        orchestrates AI workflows securely. <Link to="/core/intro">Learn more</Link>.
+        orchestrates AI workflows securely. <Link to="/core/">Learn more</Link>.
       </>
     ),
   },
@@ -28,7 +28,7 @@ const FeatureList: FeatureItem[] = [
       <>
         Plugins communicate through standardized bridges (Events, Theme,
         Settings, Page Context, Plugin State, API) for clean, decoupled
-        integrations. <Link to="/core/SERVICE_BRIDGE_EXAMPLES">See examples</Link>.
+        integrations. <Link to="/services/intro">See examples</Link>.
       </>
     ),
   },
