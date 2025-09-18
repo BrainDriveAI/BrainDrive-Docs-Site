@@ -1,8 +1,8 @@
 ---
-title: Introduction to BrainDrive Plugins
+title: BrainDrive Plugins Overview
 ---
 
-# Introduction to BrainDrive Plugins
+# BrainDrive Plugins Intro
 
 BrainDrive’s power comes from its plugin ecosystem. The core system delivers a solid foundation—frontend, backend, and baseline UI—but plugins let you extend, customize, and monetize your AI on your own terms. Each plugin lives in its own repository and can be added to your installation dynamically; there’s no need to fork or modify the core.
 
