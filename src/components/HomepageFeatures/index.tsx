@@ -12,35 +12,24 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Own Your Data',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    title: 'Own',
+    Svg: require('@site/static/img/home-own.svg').default,
     description: (
-      <>
-        Local‑first by design: your data stays with you while BrainDrive
-        orchestrates AI workflows securely. <Link to="/core/">Learn more</Link>.
-      </>
+      <>MIT Licensed &amp; Self-Hosted</>
     ),
   },
   {
-    title: 'Service Bridges',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Modify',
+    Svg: require('@site/static/img/home-modify.svg').default,
     description: (
-      <>
-        Plugins communicate through standardized bridges (Events, Theme,
-        Settings, Page Context, Plugin State, API) for clean, decoupled
-        integrations. <Link to="/services/intro">See examples</Link>.
-      </>
+      <>Modular &amp; Easy to Customize</>
     ),
   },
   {
-    title: 'Developer Velocity',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    title: 'Monetize',
+    Svg: require('@site/static/img/home-monetize.svg').default,
     description: (
-      <>
-        Ship fast with the <Link to="/template/intro">Plugin Template</Link> and
-        <Link to="/core/PLUGIN_DEVELOPER_QUICKSTART"> Quickstart</Link>—React frontend,
-        FastAPI backend, and clear docs.
-      </>
+      <>On Your Terms, not Big Tech&apos;s</>
     ),
   },
 ];
@@ -63,6 +52,11 @@ export default function HomepageFeatures(): ReactNode {
   return (
     <section className={styles.features}>
       <div className="container">
+        <Heading
+          as="h2"
+          className={clsx('text--center margin-bottom--lg', styles.sectionHeading)}>
+          Your AI. Your Rules.
+        </Heading>
         <div className="row">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />

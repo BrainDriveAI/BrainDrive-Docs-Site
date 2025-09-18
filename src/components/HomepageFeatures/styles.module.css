@@ -9,3 +9,13 @@
   height: 200px;
   width: 200px;
 }
+
+.sectionHeading {
+  font-size: calc(var(--ifm-h2-font-size, 2rem) * 1.5);
+}
+
+@media (max-width: 768px) {
+  .sectionHeading {
+    font-size: calc(var(--ifm-h2-font-size, 2rem) * 1.2);
+  }
+}
