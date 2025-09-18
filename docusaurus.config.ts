@@ -75,9 +75,13 @@ const config: Config = {
         editUrl: ({docPath}) => {
           const [service, ...rest] = docPath.split('/');
           const repo = serviceRepoMap[service];
-          return repo
-            ? `https://github.com/${repo}/edit/main/${rest.join('/')}`
-            : undefined;
+          if (repo) {
+            const servicePath = rest.join('/');
+            return `https://github.com/${repo}/edit/main/${servicePath}`;
+          }
+
+          // Fallback lets contributors edit docs that live inside BrainDrive-Docs.
+          return `https://github.com/BrainDriveAI/BrainDrive-Docs/edit/main/docs-services/${docPath}`;
         },
       },
     ],
