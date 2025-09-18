@@ -107,8 +107,8 @@ const config: Config = {
       items: [
         { to: '/core/', label: 'Core', position: 'left' },
         { to: '/plugins/intro', label: 'Plugins', position: 'left' },
-        { to: '/services/intro', label: 'Services', position: 'left' },
-        { to: '/template/intro', label: 'Plugin Template', position: 'left' },
+        { to: '/services/intro', label: 'Service Bridges', position: 'left' },
+        { to: '/template/intro', label: 'PluginTemplate', position: 'left' },
         { href: 'https://github.com/BrainDriveAI', label: 'GitHub', position: 'right' },
       ],
     },
