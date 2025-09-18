@@ -49,7 +49,7 @@ const config: Config = {
         routeBasePath: 'core',
         sidebarPath: require.resolve('./sidebars.core.ts'),
         editUrl: ({docPath}) =>
-          `https://github.com/BrainDriveAI/BrainDrive-Core/edit/main/${docPath}`,
+          `https://github.com/BrainDriveAI/BrainDrive-Docs/blob/main/docs-core/${docPath}`,
       },
     ],
     // Plugin Template
