@@ -10,7 +10,7 @@ const pluginRepoMap: Record<string, string> = {
 
 const config: Config = {
   title: 'BrainDrive',
-  tagline: 'The User-Owned, Modular AI System',
+  tagline: 'The MIT Licensed, Modular AI System',
   favicon: 'img/favicon.ico',
 
   url: 'https://braindriveai.github.io',
@@ -122,7 +122,12 @@ const config: Config = {
         { href: 'https://github.com/BrainDriveAI', label: 'GitHub', position: 'right' },
       ],
     },
-    prism: { theme: prismThemes.github, darkTheme: prismThemes.dracula },
+    colorMode: {
+      defaultMode: 'dark',
+      disableSwitch: true,
+      respectPrefersColorScheme: false,
+    },
+    prism: { theme: prismThemes.dracula, darkTheme: prismThemes.dracula },
   },
 };
 

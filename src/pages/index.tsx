@@ -28,7 +28,7 @@ function CTAButtons() {
 function QuickLinks() {
   const links = [
     {label: 'Core', desc: 'Front & back-end runtime', to: '/core/'},
-    {label: 'Plugins', desc: 'React + TypeScript modules extend Core', to: '/plugins/intro'},
+    {label: 'Plugins', desc: 'Add functionality to Core', to: '/plugins/intro'},
     {label: 'Service Bridges', desc: 'Decoupled Core <-> Plugin communication', to: '/services/intro'},
     {label: 'PluginTemplate', desc: 'Boilerplate + lifecycle installer/updater', to: '/template/intro'},
     {label: 'GitHub', desc: 'Source & issues', href: 'https://github.com/BrainDriveAI'},
@@ -39,7 +39,7 @@ function QuickLinks() {
       <div className="row">
         {links.map((l) => (
           <div key={l.label} className="col col--4 margin-bottom--lg">
-            <div className="card">
+            <div className={clsx('card', styles.quickCard)}>
               <div className="card__header">
                 <Heading as="h3">{l.label}</Heading>
               </div>
