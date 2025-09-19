@@ -1,7 +1,7 @@
 ---
 id: OWNER_USER_GUIDE
 title: BrainDrive Owner’s User Guide
-sidebar_label: BrainDrive User Guide
+sidebar_label: Use
 ---
 
 # BrainDrive Owner’s User Guide

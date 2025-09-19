@@ -20,6 +20,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1rem;
 }
 
 :global(.button).blueButton {
@@ -43,4 +44,27 @@
 :global(.button).blueButton:focus-visible {
   box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
   color: #fff;
+}
+
+:global(.button).secondaryButton {
+  background-color: transparent;
+  border-color: #2563eb;
+  color: #2563eb;
+}
+
+:global(.button).secondaryButton:hover,
+:global(.button).secondaryButton:focus {
+  background-color: rgba(37, 99, 235, 0.1);
+  border-color: #1d4ed8;
+  color: #1d4ed8;
+}
+
+:global(.button).secondaryButton:active {
+  background-color: rgba(37, 99, 235, 0.2);
+  border-color: #1e40af;
+  color: #1e40af;
+}
+
+:global(.button).secondaryButton:focus-visible {
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
 }
