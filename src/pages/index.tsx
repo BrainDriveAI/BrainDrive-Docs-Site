@@ -12,12 +12,12 @@ function CTAButtons() {
   return (
     <div className={styles.buttons}>
       <Link
-        className={clsx('button button--secondary button--lg', styles.secondaryButton)}
+        className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
         to="/core/">
         System Overview
       </Link>
       <Link
-        className={clsx('button button--primary button--lg', styles.blueButton)}
+        className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
         to="/core/PLUGIN_DEVELOPER_QUICKSTART">
         Plugin Dev QuickStart
       </Link>

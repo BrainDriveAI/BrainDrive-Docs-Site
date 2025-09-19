@@ -46,25 +46,25 @@
   color: #fff;
 }
 
-:global(.button).secondaryButton {
+:global(.button).heroOutlineButton {
   background-color: transparent;
-  border-color: #2563eb;
-  color: #2563eb;
+  border-color: rgba(255, 255, 255, 0.85);
+  color: #ffffff;
 }
 
-:global(.button).secondaryButton:hover,
-:global(.button).secondaryButton:focus {
-  background-color: rgba(37, 99, 235, 0.1);
-  border-color: #1d4ed8;
-  color: #1d4ed8;
+:global(.button).heroOutlineButton:hover,
+:global(.button).heroOutlineButton:focus {
+  background-color: rgba(255, 255, 255, 0.18);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
-:global(.button).secondaryButton:active {
-  background-color: rgba(37, 99, 235, 0.2);
-  border-color: #1e40af;
-  color: #1e40af;
+:global(.button).heroOutlineButton:active {
+  background-color: rgba(255, 255, 255, 0.28);
+  border-color: #ffffff;
+  color: #ffffff;
 }
 
-:global(.button).secondaryButton:focus-visible {
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+:global(.button).heroOutlineButton:focus-visible {
+  box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
 }
