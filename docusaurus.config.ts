@@ -118,6 +118,7 @@ const config: Config = {
         { to: '/plugins/intro', label: 'Plugins', position: 'left' },
         { to: '/services/intro', label: 'Service Bridges', position: 'left' },
         { to: '/template/intro', label: 'PluginTemplate', position: 'left' },
+        { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Dev Quickstart', position: 'left' },
         { href: 'https://github.com/BrainDriveAI', label: 'GitHub', position: 'right' },
       ],
     },
