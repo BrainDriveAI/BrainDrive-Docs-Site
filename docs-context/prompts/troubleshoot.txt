@@ -1,0 +1,16 @@
+# Troubleshooting Prompt
+
+Inputs:
+- Symptom: user‑visible error or unexpected behavior.
+- Environment: OS, BrainDrive version, hardware.
+- Logs: relevant error messages.
+- Root Causes: list of possible causes.
+- Fixes: recommended actions.
+
+Instructions:
+1. Title the page as “Troubleshooting: [symptom]”.
+2. Include frontmatter with `doc_type` set to `troubleshooting`.
+3. Summarize the symptom clearly.
+4. List each root cause with a brief explanation.
+5. For each cause, provide steps to diagnose and fix it.
+6. Suggest contacting support or linking to community resources if unresolved.

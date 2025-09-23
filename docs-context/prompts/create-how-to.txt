@@ -1,0 +1,16 @@
+# Create How‑to Guide Prompt
+
+Inputs:
+- Task: what the user is trying to accomplish.
+- Audience: builder, owner or admin.
+- Prerequisites: hardware, software and version requirements.
+- Success Criteria: how to know if the task was completed.
+
+Instructions:
+1. Write a clear title and description summarizing the task.
+2. Include the standard frontmatter with appropriate values.
+3. Summarize the goal in one or two sentences.
+4. List prerequisites.
+5. Provide ordered steps.
+6. Describe the expected result.
+7. Suggest next steps or related guides.

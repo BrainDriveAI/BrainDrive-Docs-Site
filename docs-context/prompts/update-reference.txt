@@ -1,0 +1,15 @@
+# Update Reference Prompt
+
+Inputs:
+- Diff: summary of changed lines or API signatures.
+- Version: new version number.
+- Affected APIs: list of functions, classes or CLI flags.
+- Examples to update: snippets impacted by the changes.
+
+Instructions:
+1. Locate the existing reference page using `owners.yml` and `manifest.json`.
+2. Update the frontmatter version and last_verified fields.
+3. Apply changes to the relevant sections: parameters, returns and examples.
+4. If new APIs are added, append sections for them.
+5. Ensure examples compile and reflect current behavior.
+6. Do not modify sections marked as “never‑override”.

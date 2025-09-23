@@ -1,0 +1,13 @@
+{
+  "sources": [
+    {"name": "Core README", "url": "https://github.com/BrainDriveAI/BrainDrive-Core/README.md", "type": "reference"},
+    {"name": "Docs Site", "url": "https://braindriveai.github.io/BrainDrive-Docs/", "type": "site"},
+    {"name": "Documentation Plan", "path": "Documentation Plan.md", "type": "concept"},
+    {"name": "System PDF", "path": "BrainDrive – Self-Hosted AI Platform (Full Context).pdf", "type": "spec"}
+  ],
+  "rules": {
+    "reference-first": ["README.md", "API.md"],
+    "docusaurus-mirrors": "docs/ site",
+    "never-override": ["security.md"]
+  }
+}

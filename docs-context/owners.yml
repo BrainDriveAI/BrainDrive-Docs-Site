@@ -1,0 +1,8 @@
+# Owners
+
+core: "@core-team"
+plugins: "@plugins-team"
+bridges: "@bridges-team"
+studio: "@studio-team"
+marketplace: "@marketplace-team"
+docs-context: "@docs-team"

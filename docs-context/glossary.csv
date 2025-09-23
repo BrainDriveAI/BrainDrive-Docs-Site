@@ -1,0 +1,6 @@
+Term,Definition,Canonical Spelling
+BrainDrive,"The core project comprising modular AI software and hardware for autonomy.",BrainDrive
+Plugin,"A modular extension that adds features or hardware support.",plugin
+Bridge,"A component that connects BrainDrive to external systems or sensors.",bridge
+Studio,"The graphical interface for configuring and monitoring BrainDrive.",Studio
+Marketplace,"The ecosystem for sharing and discovering plugins and assets.",Marketplace
