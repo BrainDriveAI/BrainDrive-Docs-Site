@@ -1,0 +1,20 @@
+owners:
+  # Code (repos, packages, build scripts)
+  core: "@DJJones66"        # Core runtime, APIs, CLI, packaging
+  plugins: "@DJJones66"     # Plugin template + example plugins
+  bridges: "@DJJones66"     # Service bridges (API, Events, Theme, Settings, PageContext, PluginState)
+  scripts: "@DJJones66"     # Build/packaging scripts
+
+  # Documentation (Docusaurus, in-repo docs, brand, policy, forum docs)
+  docs: "@davewaring"       # Docusaurus site, in-repo docs, release notes
+  brand: "@davewaring"      # Vision, mission, brand guidelines, messaging
+  community: "@davewaring"  # Forum, FAQ mirroring into docs
+  policy: "@davewaring"     # License/Security/Governance, update-policy
+
+defaults:
+  fallback_owner: "@davewaring"
+  reviewers: ["@davewaring", "@DJJones66"]
+
+slas:
+  verify_days: 90           # Pages older than 90 days get flagged in Docs Sweep
+  pr_review_days: 3         # Target business days to review docs/code PRs
