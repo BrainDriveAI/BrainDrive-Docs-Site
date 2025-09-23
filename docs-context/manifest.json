@@ -1,13 +1,269 @@
 {
-  "sources": [
-    {"name": "Core README", "url": "https://github.com/BrainDriveAI/BrainDrive-Core/README.md", "type": "reference"},
-    {"name": "Docs Site", "url": "https://braindriveai.github.io/BrainDrive-Docs/", "type": "site"},
-    {"name": "Documentation Plan", "path": "Documentation Plan.md", "type": "concept"},
-    {"name": "System PDF", "path": "BrainDrive – Self-Hosted AI Platform (Full Context).pdf", "type": "spec"}
+  "legend": {
+    "type": [
+      "repo",
+      "site",
+      "spec",
+      "pdf",
+      "design",
+      "doc",
+      "dataset",
+      "policy",
+      "community",
+      "external"
+    ],
+    "authority_order": "1 = highest authority (tie-breaker)"
+  },
+  "sections": [
+    {
+      "id": "A",
+      "name": "Code & API",
+      "description": "source of truth for behavior",
+      "authority_order": 1,
+      "items": [
+        {
+          "name": "BrainDrive Core (README & API)",
+          "type": "repo",
+          "url": "https://github.com/BrainDriveAI/BrainDrive-Core",
+          "scope": "core runtime, endpoints, CLI flags, install",
+          "source_of_truth": "repo",
+          "owner": "@DJJones66",
+          "update_cadence": "per release",
+          "authority_order": 1,
+          "tags": ["core", "api", "install"]
+        },
+        {
+          "name": "Plugin Template",
+          "type": "repo",
+          "url": "https://github.com/BrainDriveAI/PluginTemplate",
+          "scope": "boilerplate, lifecycle, installer/updater",
+          "source_of_truth": "repo",
+          "owner": "@DJJones66",
+          "authority_order": 1,
+          "tags": ["plugins", "template"]
+        },
+        {
+          "name": "Service Bridge Examples (Index)",
+          "type": "doc",
+          "url": "https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/SERVICE_BRIDGE_EXAMPLES.md",
+          "scope": "links to API/Events/Theme/Settings/PageContext/PluginState example repos",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 2,
+          "tags": ["bridges", "examples"],
+          "notes": "Examples illustrate usage patterns; if anything conflicts with Core bridge contracts, Core wins."
+        },
+        {
+          "name": "Build & Scripts",
+          "type": "repo",
+          "url": "https://github.com/DJJones66/BrainDriveScripts",
+          "scope": "packaging/build (e.g., `build_archive.py`)",
+          "source_of_truth": "repo",
+          "owner": "@DJJones66",
+          "authority_order": 2,
+          "tags": ["tooling"]
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Product Docs",
+      "description": "concepts/how-tos/training",
+      "authority_order": 3,
+      "items": [
+        {
+          "name": "Docs Site (Docusaurus)",
+          "type": "site",
+          "url": "https://braindriveai.github.io/BrainDrive-Docs/",
+          "scope": "concepts, how-tos, upgrade guides, What's New",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 3,
+          "update_cadence": "weekly",
+          "tags": ["docs", "training"]
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "name": "Strategy, Audience & Brand",
+      "description": "in this folder",
+      "authority_order": 4,
+      "items": [
+        {
+          "name": "vision.md",
+          "type": "doc",
+          "path": "/docs-context/vision.md",
+          "scope": "what BrainDrive is, who it's for",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4
+        },
+        {
+          "name": "audience.md",
+          "type": "doc",
+          "path": "/docs-context/audience.md",
+          "scope": "segments, reading level, persona anchor",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "notes": "Persona anchor: #persona-adam-carter"
+        },
+        {
+          "name": "style-guide.md",
+          "type": "doc",
+          "path": "/docs-context/style-guide.md",
+          "scope": "tone/voice, formatting, code style",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4
+        },
+        {
+          "name": "doc-types.md",
+          "type": "doc",
+          "path": "/docs-context/doc-types.md",
+          "scope": "when to use Reference | Guide | How-to | Concept",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4
+        },
+        {
+          "name": "glossary.csv",
+          "type": "dataset",
+          "path": "/docs-context/glossary.csv",
+          "scope": "term, definition, canonical spelling",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "name": "Specs & Design",
+      "authority_order": 2,
+      "items": [
+        {
+          "name": "System / Architecture PDF(s)",
+          "type": "pdf",
+          "path": "/docs-context/braindrive-system.pdf",
+          "scope": "high-level architecture, interfaces, flows",
+          "source_of_truth": "spec",
+          "owner": "@davewaring",
+          "authority_order": 2,
+          "tags": ["architecture", "spec"]
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "name": "Authoring Templates & Prompts",
+      "description": "in this folder",
+      "authority_order": 4,
+      "items": [
+        {
+          "name": "templates/",
+          "type": "doc",
+          "path": "/docs-context/templates/",
+          "scope": "how-to.md, concept.md, reference.md, troubleshooting.md, release-notes.md",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4
+        },
+        {
+          "name": "prompts/",
+          "type": "doc",
+          "path": "/docs-context/prompts/",
+          "scope": "system + job prompts (create-how-to, update-reference, troubleshoot)",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4
+        }
+      ]
+    },
+    {
+      "id": "F",
+      "name": "Process & Change Signals",
+      "description": "in this folder",
+      "authority_order": 2,
+      "items": [
+        {
+          "name": "update-policy.md",
+          "type": "policy",
+          "path": "/docs-context/update-policy.md",
+          "scope": "triggers, SLAs, review flow",
+          "source_of_truth": "policy",
+          "owner": "@davewaring",
+          "authority_order": 2
+        },
+        {
+          "name": "manifest.json",
+          "type": "doc",
+          "path": "/docs-context/manifest.json",
+          "scope": "machine-readable sources + rules",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 2
+        }
+      ]
+    },
+    {
+      "id": "G",
+      "name": "Community & Support",
+      "authority_order": 5,
+      "items": [
+        {
+          "name": "Forum",
+          "type": "community",
+          "url": "https://community.braindrive.ai",
+          "scope": "FAQs, canonical answers to mirror into docs",
+          "owner": "@davewaring",
+          "authority_order": 5
+        }
+      ]
+    },
+    {
+      "id": "H",
+      "name": "Legal & Policy",
+      "authority_order": 2,
+      "items": [
+        {
+          "name": "License / Security / Governance",
+          "type": "policy",
+          "paths": ["/LICENSE", "/SECURITY.md", "/GOVERNANCE.md"],
+          "scope": "license (MIT), security contact/process, decision-making",
+          "source_of_truth": "policy",
+          "owner": "@davewaring",
+          "authority_order": 2
+        }
+      ]
+    }
   ],
-  "rules": {
-    "reference-first": ["README.md", "API.md"],
-    "docusaurus-mirrors": "docs/ site",
-    "never-override": ["security.md"]
-  }
+  "authority_tie_breaker": [
+    {
+      "order": 1,
+      "description": "Code & API contracts (repos)",
+      "owners": ["@DJJones66"]
+    },
+    {
+      "order": 2,
+      "description": "Specs/Policy (PDFs, LICENSE/SECURITY/GOVERNANCE)",
+      "owners": ["@DJJones66", "@davewaring"]
+    },
+    {
+      "order": 3,
+      "description": "Product docs (Docusaurus concepts/how-tos)",
+      "owners": ["@davewaring"]
+    },
+    {
+      "order": 4,
+      "description": "Strategy/Audience/Brand + Templates/Prompts",
+      "owners": ["@davewaring"]
+    },
+    {
+      "order": 5,
+      "description": "Community",
+      "owners": ["@davewaring"]
+    }
+  ]
 }
