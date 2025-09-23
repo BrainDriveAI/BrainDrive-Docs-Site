@@ -144,9 +144,9 @@
       "authority_order": 2,
       "items": [
         {
-          "name": "System / Architecture PDF(s)",
-          "type": "pdf",
-          "path": "/docs-context/braindrive-system.pdf",
+          "name": "System / Architecture Overview",
+          "type": "doc",
+          "path": "/docs-context/BrainDrive-System.md",
           "scope": "high-level architecture, interfaces, flows",
           "source_of_truth": "spec",
           "owner": "@davewaring",

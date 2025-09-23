@@ -111,9 +111,9 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
 
 ## D) Specs & Design (authority 2)
 
-- **System / Architecture PDF(s)**
-  - type: pdf
-  - path: /docs-context/braindrive-system.pdf
+- **System / Architecture Overview**
+  - type: doc
+  - path: /docs-context/BrainDrive-System.md
   - scope: high-level architecture, interfaces, flows
   - source_of_truth: spec
   - owner: @davewaring
