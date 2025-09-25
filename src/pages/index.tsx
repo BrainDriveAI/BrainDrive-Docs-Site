@@ -11,17 +11,66 @@ import styles from './index.module.css';
 function CTAButtons() {
   return (
     <div className={styles.buttons}>
-      <Link
-        className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
-        to="/core/">
-        System Overview
-      </Link>
-      <Link
-        className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
-        to="/core/PLUGIN_DEVELOPER_QUICKSTART">
-        Plugin Dev QuickStart
-      </Link>
+      <div className={styles.heroButtonWrap}>
+        <Link
+          className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
+          to="/core/OWNER_USER_GUIDE">
+          Owner's Manual
+        </Link>
+      </div>
     </div>
+  );
+}
+
+function GetStarted(): ReactNode {
+  const steps = [
+    {
+      title: 'Install BrainDrive-Core',
+      desc: 'Set up the core locally in minutes.',
+      to: '/core/INSTALL',
+      cta: 'Install Guide',
+    },
+    {
+      title: 'Use Existing Plugins',
+      desc: 'Explore and enable plugins from the ecosystem.',
+      to: '/plugins/intro',
+      cta: 'Browse Plugins',
+    },
+    {
+      title: 'Build Your Own Plugins',
+      desc: 'Start developing plugins with the quickstart.',
+      to: '/core/PLUGIN_DEVELOPER_QUICKSTART',
+      cta: 'Developer Quickstart',
+    },
+  ];
+  return (
+    <section className={styles.getStartedSection}>
+      <div className="container">
+        <Heading as="h2" className={styles.getStartedTitle}>
+          Get Started in 3 Steps
+        </Heading>
+        <div className="row">
+          {steps.map((s, i) => (
+            <div key={s.title} className="col col--4 margin-bottom--lg">
+              <div className={clsx('card', styles.quickCard, styles.getStartedCard)}>
+                <div className={styles.stepNumberTop} aria-hidden="true">
+                  <span className={styles.stepNumber}>{i + 1}</span>
+                </div>
+                <div className="card__header">
+                  <Heading as="h3">{s.title}</Heading>
+                </div>
+                {/* Removed descriptive sentence under the title */}
+                <div className={clsx('card__footer', styles.centerFooter)}>
+                  <Link className={clsx('button button--primary', styles.blueButton, styles.stepButton)} to={s.to}>
+                    {s.cta}
+                  </Link>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 
@@ -88,6 +137,12 @@ export default function Home(): ReactNode {
       description="BrainDrive documentation for core, plugins, and services">
       <HomepageHeader />
       <main>
+        <GetStarted />
+        <div className="container">
+          <Heading as="h2" className={styles.sectionTitle}>
+            Explore the BrainDrive Ecosystem
+          </Heading>
+        </div>
         <QuickLinks />
         <HomepageFeatures />
       </main>

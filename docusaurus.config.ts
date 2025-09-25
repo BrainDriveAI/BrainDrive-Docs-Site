@@ -10,7 +10,7 @@ const pluginRepoMap: Record<string, string> = {
 
 const config: Config = {
   title: 'BrainDrive',
-  tagline: 'The MIT Licensed, Modular AI System',
+  tagline: 'The Self‑Hosted, Modular AI System You Own',
   favicon: 'img/favicon.ico',
 
   url: 'https://braindriveai.github.io',
