@@ -47,7 +47,7 @@ function GetStarted(): ReactNode {
     <section className={styles.getStartedSection}>
       <div className="container">
         <Heading as="h2" className={styles.getStartedTitle}>
-          Get Started in 3 Steps
+          Get Started
         </Heading>
         <div className="row">
           {steps.map((s, i) => (
