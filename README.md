@@ -78,4 +78,4 @@ Production builds are created via `npm run build` and deployed from the generate
 
 ## Support
 
-If you spot issues or need access to the synced repositories, reach out in the BrainDrive engineering Slack or open an issue in this repository.
+If you spot issues or need access to the synced repositories, reach out in the support forum at community.braindrive.ai or open an issue in this repository.
