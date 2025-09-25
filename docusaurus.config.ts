@@ -114,12 +114,28 @@ const config: Config = {
     navbar: {
       title: 'BrainDrive',
       items: [
-        { to: '/core/', label: 'Core', position: 'left' },
+        { to: '/core/OWNER_USER_GUIDE', label: 'System Overview', position: 'left' },
+        { to: '/core/INSTALL', label: 'Install', position: 'left' },
         { to: '/plugins/intro', label: 'Plugins', position: 'left' },
-        { to: '/services/intro', label: 'Service Bridges', position: 'left' },
-        { to: '/template/intro', label: 'PluginTemplate', position: 'left' },
-        { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Dev Quickstart', position: 'left' },
-        { href: 'https://github.com/BrainDriveAI', label: 'GitHub', position: 'right' },
+        {
+          label: 'Plugin Development',
+          position: 'left',
+          items: [
+            { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Dev Quickstart' },
+            { to: '/template/intro', label: 'Plugin Template' },
+            { to: '/services/intro', label: 'Service Bridges' },
+          ],
+        },
+        {
+          label: 'Resources',
+          position: 'left',
+          items: [
+            { to: '/core/ROADMAP', label: 'Roadmap' },
+            { to: '/core/CONTRIBUTING', label: 'Contribute' },
+            { href: 'https://community.braindrive.ai', label: 'Community' },
+            { href: 'https://github.com/BrainDriveAI', label: 'GitHub' },
+          ],
+        },
       ],
     },
     colorMode: {
