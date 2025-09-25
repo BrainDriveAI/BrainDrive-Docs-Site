@@ -114,13 +114,13 @@ const config: Config = {
     navbar: {
       title: 'BrainDrive',
       items: [
-        { to: '/core/OWNER_USER_GUIDE', label: 'System Overview', position: 'left' },
+        { to: '/core/OWNER_USER_GUIDE', label: "Owner's Manual", position: 'left' },
         { to: '/core/INSTALL', label: 'Install', position: 'left' },
-        { to: '/plugins/intro', label: 'Plugins', position: 'left' },
         {
           label: 'Plugin Development',
           position: 'left',
           items: [
+            { to: '/plugins/intro', label: 'Plugins Overview' },
             { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Dev Quickstart' },
             { to: '/template/intro', label: 'Plugin Template' },
             { to: '/services/intro', label: 'Service Bridges' },
