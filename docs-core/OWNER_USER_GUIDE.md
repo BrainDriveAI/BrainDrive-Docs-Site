@@ -1,46 +1,30 @@
 ---
 id: OWNER_USER_GUIDE
-title: BrainDrive Owner’s User Guide
+title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-# BrainDrive Owner’s User Guide
+# BrainDrive Owner’s Manual
 
-## 1) Welcome
+BrainDrive is the open-source ChatGPT alternative you fully own and control. It's self-hosted, MIT-licensed, and built on four core pillars:
 
-### What is BrainDrive?
-BrainDrive is your personal, self-hosted AI system—open-source (MIT-licensed), modular, and built so you fully own the software, the data, and the value you create. In short: **Your AI. Your Rules.**
+- **Ownership** — You own your system, data, and the value you create
+- **Freedom** — No vendor lock-ins, completely customizable and portable
+- **Empowerment** — Simple setup with docs designed to help you succeed
+- **Sustainability** — A lean core with a thriving plugin ecosystem
 
-BrainDrive gives you a private ChatGPT-style experience that runs under your control, with a plugin system that lets you add capabilities or build your own. You can run it locally for maximum privacy or connect to API-based models if you prefer—your choice.
+Think **WordPress but for AI**: install BrainDrive Core, then add plugins to quickly ship AI-powered features.
 
-### Who is it for?
-BrainDrive serves three groups that often overlap:
-- **Owners** who want full control over their AI and data.  
-- **Builders** who like to customize and extend with plugins.  
-- **Entrepreneurs** who want to package and monetize AI solutions.
+[Screenshot placeholder: BrainDrive main interface showing chat, plugin manager, and page builder]
 
-Two example profiles:
-- **Adam Carter (Builder/Entrepreneur):** tech-savvy, values decentralization, wants to build & sell tools on his own terms.  
-- **Katie Carter (Creator/Owner):** a solo creator scaling content and community with an AI that learns her voice—without ceding control to Big Tech.
 
-### What you’ll accomplish with this guide
-- Understand what BrainDrive includes out of the box  
-- Set up your first AI model (local or API)  
-- Create a custom page with components that match your workflow  
-- Install and manage plugins safely and confidently
+### BrainDrive is Built For:
 
-> BrainDrive is built on four pillars: **Ownership, Freedom, Empowerment, Sustainability.** Keep these in mind as you shape your system.
+- **BrainDrive Owners** — People who want complete control over their AI and data
+- **BrainDrive Builders** — Developers and tinkerers extending functionality through plugins
+- **BrainDrive Entrepreneurs** — Individuals monetizing AI-powered tools and services
 
----
-
-## 2) What you get with BrainDrive
-
-### The five components (high level)
-1) **BrainDrive Core** — the owner-controlled foundation (auth, chat, storage).  
-2) **BrainDrive Studio** — visual page builder; compose your workspace from components.  
-3) **BrainDrive Community** — learn, share, and get help.  
-4) **BrainDrive Marketplace** — discover and exchange plugins, templates, and services.  
-5) **BrainDrive LLC** — the first business node (optional hosting/support), not a gatekeeper.
+### As a BrainDrive Owner You Get
 
 ### Out-of-the-box experience
 - Web chat interface (private conversations, history, tags)  
