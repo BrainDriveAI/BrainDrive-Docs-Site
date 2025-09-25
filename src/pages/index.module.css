@@ -4,7 +4,7 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  padding: 3rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -21,6 +21,11 @@
   align-items: center;
   justify-content: center;
   gap: 1rem;
+}
+@media screen and (max-width: 996px) {
+  .buttons {
+    flex-wrap: wrap;
+  }
 }
 
 :global(.button).blueButton {
@@ -69,6 +74,19 @@
   box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.35);
 }
 
+/* Make hero CTA buttons consistent width using wrapper */
+.heroButtonWrap {
+  width: 260px;
+}
+.heroButtonWrap :global(.button) {
+  width: 100%;
+}
+@media screen and (max-width: 996px) {
+  .heroButtonWrap {
+    width: 100%;
+  }
+}
+
 .quickCard {
   background: rgba(15, 23, 42, 0.9);
   border: 1px solid rgba(148, 163, 184, 0.18);
@@ -82,4 +100,100 @@
   transform: translateY(-4px);
   border-color: rgba(96, 165, 250, 0.4);
   box-shadow: 0 20px 40px rgba(15, 23, 42, 0.45);
+}
+
+/* Get Started section */
+.getStartedSection {
+  padding: 2rem 0 0;
+}
+
+.getStartedTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+@media screen and (min-width: 996px) {
+  .getStartedTitle {
+    font-size: 2.25rem;
+  }
+}
+
+/* Center and unify Get Started buttons */
+.centerFooter {
+  display: flex;
+  justify-content: center;
+}
+
+:global(.button).stepButton {
+  width: 220px;
+  max-width: 100%;
+}
+@media screen and (max-width: 996px) {
+  :global(.button).stepButton {
+    width: 100%;
+  }
+}
+
+/* Center text in Get Started cards only */
+.getStartedCard :global(.card__header),
+.getStartedCard :global(.card__body) {
+  text-align: center;
+}
+
+.getStartedCard :global(.card__header h3) {
+  margin: 0;
+}
+
+/* Tighter spacing now that body text is removed */
+.getStartedCard :global(.card__header) {
+  padding-bottom: 0.25rem;
+}
+
+.getStartedCard :global(.card__footer) {
+  padding-top: 0.75rem;
+}
+
+/* Centered step number at top */
+.stepNumberTop {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.stepNumber {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border-radius: 9999px;
+  border: 1px solid rgba(148, 163, 184, 0.25); /* softer */
+  background: rgba(148, 163, 184, 0.06);
+  color: #e5e7eb; /* slate-200 */
+  font-weight: 700;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Smaller section title for follow-up sections */
+.sectionTitle {
+  text-align: center;
+  margin: 1rem 0 0.25rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 996px) {
+  .sectionTitle {
+    font-size: 1.5rem;
+  }
+}
+
+/* Increase vertical gap between cards on small screens */
+@media screen and (max-width: 996px) {
+  .getStartedSection :global(.col) {
+    margin-bottom: 1.25rem;
+  }
 }
