@@ -34,7 +34,7 @@ function GetStarted(): ReactNode {
       title: 'Use Existing Plugins',
       desc: 'Explore and enable plugins from the ecosystem.',
       to: '/plugins/intro',
-      cta: 'Browse Plugins',
+      cta: 'Plugins Overview',
     },
     {
       title: 'Build Your Own Plugins',
