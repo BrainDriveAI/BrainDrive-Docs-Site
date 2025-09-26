@@ -34,13 +34,13 @@ function GetStarted(): ReactNode {
       title: 'Use Existing Plugins',
       desc: 'Explore and enable plugins from the ecosystem.',
       to: '/plugins/intro',
-      cta: 'Plugins Overview',
+      cta: 'Use Plugins',
     },
     {
       title: 'Build Your Own Plugins',
       desc: 'Start developing plugins with the quickstart.',
       to: '/core/PLUGIN_DEVELOPER_QUICKSTART',
-      cta: 'Developer Quickstart',
+      cta: 'Start Building',
     },
   ];
   return (
