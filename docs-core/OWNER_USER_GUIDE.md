@@ -38,13 +38,14 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 
 *\[Screenshot placeholder: System architecture diagram showing frontend, backend, and plugin ecosystem\]*
 
-### **Five Key Areas**
+### **Six Key Areas**
 
 1. **Chat Interface** — ChatGPT-style conversations with your choice of models  
 2. **Plugin Manager** — Browse, install, update, and remove plugins via GitHub URLs  
-3. **Page Builder** — Drag-and-drop visual editor for custom interfaces  
-4. **Settings System** — Configure AI providers, themes, and preferences  
-5. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
+3. **Page Builder** — Drag-and-drop visual editor for custom interfaces
+4. **Personas** - Create and switch between different roles and personalities for your AI
+5. **Settings System** — Configure AI providers, themes, and preferences 
+6. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
 
 *\[Screenshot placeholder: Plugin Manager interface showing available plugins\]*
 
