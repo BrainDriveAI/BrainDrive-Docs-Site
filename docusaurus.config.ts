@@ -116,16 +116,8 @@ const config: Config = {
       items: [
         { to: '/core/OWNER_USER_GUIDE', label: "Owner's Manual", position: 'left' },
         { to: '/core/INSTALL', label: 'Install', position: 'left' },
-        {
-          label: 'Plugin Development',
-          position: 'left',
-          items: [
-            { to: '/plugins/intro', label: 'Plugins Overview' },
-            { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Dev Quickstart' },
-            { to: '/template/intro', label: 'Plugin Template' },
-            { to: '/services/intro', label: 'Service Bridges' },
-          ],
-        },
+        { to: '/plugins/intro', label: 'Use Plugins', position: 'left' },
+        { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Build Plugins', position: 'left' },
         {
           label: 'Resources',
           position: 'left',
