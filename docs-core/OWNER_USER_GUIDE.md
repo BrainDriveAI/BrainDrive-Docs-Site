@@ -110,15 +110,7 @@ To use OpenRouter models in your BrainDrive:
 ### Option C: Build Your Own Model Serving Plugin for the provider of your choice. 
 
 * Use the BrainDrive Ollama plugin as a template for building another local model serving plugin for the provider of your choice. 
-* Use the BrainDrive OpenRouter plugin as a template for building another API model serving plugin for the provider of your choice.
-
-### Switching Between Models
-
-BrainDrive makes it easy to:
-
-* Switch default models system-wide  
-* Set different models per page/component  
-* Compare responses from multiple models  
+* Use the BrainDrive OpenRouter plugin as a template for building another API model serving plugin for the provider of your choice. 
 
 ## Building Your First Custom Page
 
