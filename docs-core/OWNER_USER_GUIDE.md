@@ -22,14 +22,6 @@ Out of the box, BrainDrive provides:
 
 You run it locally or on any cloud server — there’s no Big Tech lock‑in. Use it as your personal AI or as a foundation for products/services you offer to others.
 
-Example use cases include:
-
-* Custom AI chatbots with specialized knowledge or personalities
-* AI‑powered productivity tools that integrate with your data/workflows
-* Data analysis dashboards or intelligent reports
-* Custom UIs wrapping local or API‑based models
-* Multi‑plugin workflows where several components work together
-
 ### Your BrainDrive is composed of a Core System and a Plugin Ecosystem.
 
 #### Core System (BrainDrive‑Core repository)
@@ -47,18 +39,18 @@ Provides the primary UI (chat, page builder, etc.) and backend services (user ma
 * Plugins communicate with the core through well‑defined Service Bridges.
 * Decoupled design allows customizing/extending BrainDrive without modifying core; update core/plugins independently.
 
-## **Quick Start Installation**
+## Quick Start Installation**
 
 **Note**: A one-click installer is planned for v1.0. For now, follow these developer-friendly setup steps.
 
-### **Prerequisites**
+### Prerequisites**
 
 * **Conda** (Anaconda/Miniconda) for Python environment management  
 * **Git** to clone repositories  
 * **Node.js** 16+ with npm  
 * Two terminals (one for backend, one for frontend)
 
-### **Installation Steps**
+### Installation Steps**
 
 1. **Create Python Environment**
 
@@ -82,7 +74,7 @@ npm run dev
 
 4. **Access BrainDrive** Open `http://localhost:5173` in your browser. The frontend connects to the backend at `localhost:8005`.
 
-## **Setting Up Your First AI Model**
+## Setting Up Your First AI Model
 
 BrainDrive supports both local and API-based AI providers, giving you complete flexibility over your AI experience.
 
@@ -120,7 +112,7 @@ To use OpenRouter models in your BrainDrive:
 * Use the BrainDrive Ollama plugin as a template for building another local model serving plugin for the provider of your choice. 
 * Use the BrainDrive OpenRouter plugin as a template for building another API model serving plugin for the provider of your choice.
 
-### **Switching Between Models**
+### Switching Between Models
 
 BrainDrive makes it easy to:
 
@@ -128,11 +120,11 @@ BrainDrive makes it easy to:
 * Set different models per page/component  
 * Compare responses from multiple models  
 
-## **Building Your First Custom Page**
+## Building Your First Custom Page
 
 The **Page Builder** is where BrainDrive's modularity shines. Create task-specific workspaces that match your workflow.
 
-### **Creating a Research Page**
+### Creating a Research Page
 
 1. **Navigate to Studio** → New Page  
 2. **Name your page** (e.g., "Research Workspace")  
@@ -145,14 +137,14 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 
 *\[Screenshot placeholder: Page Builder with research workspace layout\]*
 
-### **Page Management**
+### Page Management
 
 * **Export/Import** layouts as JSON for backup or sharing  
 * **Responsive Design** — pages adapt to desktop, tablet, and mobile  
 * **Real-Time Preview** — see changes immediately  
 * **Version Control** — layouts are saved automatically
 
-### **Page Ideas for Different Workflows**
+### Page Ideas for Different Workflows
 
 * **Writing Studio**: Chat \+ grammar tools \+ research components  
 * **Data Analysis**: Multiple model chat \+ visualization components  
@@ -161,11 +153,11 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 
 ---
 
-## **Installing and Managing Plugins**
+## Installing and Managing Plugins
 
 BrainDrive's plugin system is designed for safety and simplicity. All plugins are **user-scoped**, meaning each user controls their own plugin versions independently.
 
-### **Installing Plugins**
+### Installing Plugins
 
 *\[Screenshot placeholder: Plugin Manager install dialog with GitHub URL field\]*
 
@@ -174,18 +166,18 @@ BrainDrive's plugin system is designed for safety and simplicity. All plugins ar
 3. **Install**: Plugin Manager → Install Plugin → Paste URL → Confirm  
 4. **Use Components**: New components appear immediately in the Page Builder
 
-### **Plugin Management**
+### Plugin Management
 
 **Enable/Disable**: Turn plugins on/off without uninstalling **Update**: Get latest features when plugin authors release updates **Uninstall**: Completely remove plugin files and data
 
-### **Plugin Safety**
+### Plugin Safety
 
 * **Hot-swap**: Install/uninstall without restarting BrainDrive  
 * **Error Boundaries**: Plugin failures won't crash your system  
 * **Plugin Repair**: Fix broken plugins with one click  
 * **Isolated State**: Each plugin manages its own data
 
-### **Recommended Starter Plugins**
+### Recommended Starter Plugins
 
 Install these to experience BrainDrive's extensibility:
 
@@ -196,9 +188,9 @@ Install these to experience BrainDrive's extensibility:
 
 ---
 
-## **Essential Settings and Configuration**
+## Essential Settings and Configuration
 
-### **Profile and Preferences**
+### Profile and Preferences
 
 *\[Screenshot placeholder: Settings panel showing profile and theme options\]*
 
@@ -207,14 +199,14 @@ Install these to experience BrainDrive's extensibility:
 * **Default Language**: For AI interactions  
 * **Conversation Settings**: History retention, auto-save frequency
 
-### **AI Provider Configuration**
+### AI Provider Configuration
 
 * **Default Model**: System-wide AI model preference  
 * **API Keys**: Secure storage for external AI services  
 * **Model Parameters**: Temperature, max tokens, system prompts  
 * **Usage Tracking**: Monitor API costs and usage
 
-### **Performance and Storage**
+### Performance and Storage
 
 * **Database Settings**: SQLite location and backup frequency  
 * **Plugin Storage**: How plugins store their data  
@@ -223,30 +215,30 @@ Install these to experience BrainDrive's extensibility:
 
 ---
 
-## **Daily Use Best Practices**
+## Daily Use Best Practices
 
-### **Effective Prompting**
+### Effective Prompting
 
 * **Be Specific**: Clear goals get better results  
 * **Break Down Complex Tasks**: Use step-by-step instructions  
 * **Use Context**: Reference previous conversations when relevant  
 * **Experiment**: Try different models for different tasks
 
-### **Organization Strategies**
+### Organization Strategies
 
 * **Name Conversations**: Use descriptive titles for easy finding  
 * **Tag by Project**: Organize conversations with consistent tags  
 * **Archive Old Threads**: Keep your workspace clean  
 * **Export Important Results**: Save key insights outside the system
 
-### **Workflow Optimization**
+### Workflow Optimization
 
 * **Create Dedicated Pages**: One page per major task or project  
 * **Use Multiple Models**: Compare responses across providers  
 * **Leverage Plugins**: Extend functionality instead of working around limitations  
 * **Regular Backups**: Export page layouts and critical conversations
 
-### **Performance Tips**
+### Performance Tips
 
 * **Local vs API**: Choose based on privacy needs and performance requirements  
 * **Component Placement**: Organize page layouts for efficient workflows  
@@ -255,9 +247,9 @@ Install these to experience BrainDrive's extensibility:
 
 ---
 
-## **Backup and Data Management**
+## Backup and Data Management
 
-### **What to Back Up**
+### What to Back Up
 
 **Essential Data**:
 
@@ -269,7 +261,7 @@ Install these to experience BrainDrive's extensibility:
 
 **Database Backup**: The SQLite database contains all your data. Back up the entire `backend/` directory regularly.
 
-### **Export Options**
+### Export Options
 
 *\[Screenshot placeholder: Export dialog showing various backup options\]*
 
@@ -278,7 +270,7 @@ Install these to experience BrainDrive's extensibility:
 * **Settings**: Export configuration for easy restoration  
 * **Plugin Data**: Each plugin manages its own backup options
 
-### **Migration Planning**
+### Migration Planning
 
 BrainDrive is designed to be portable:
 
@@ -289,7 +281,7 @@ BrainDrive is designed to be portable:
 
 ---
 
-## **Troubleshooting Common Issues**
+## Troubleshooting Common Issues
 
 ### **Installation Problems**
 
