@@ -26,40 +26,39 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 - **BrainDrive Builders** — Those who want to build on their own foundation, instead of Big Tech's.
 - **BrainDrive Entrepreneurs** — Those who want to keep the value they create, instead of giving it away to Big Tech.
 
-### BrainDrive-Core is the free and open foundation of your AI system. It provides:
+### BrainDrive-Core is the foundation of your AI system. It provides:
 
 1. **Chat Interface** — ChatGPT-style conversations with your choice of models  
-2. **Plugin Manager** — Browse, install, update, and remove plugins via GitHub URLs  
-3. **Page Builder** — Drag-and-drop visual editor for custom interfaces
-4. **Personas** - Create and switch between different roles and personalities for your AI
-5. **Settings System** — Configure AI providers, themes, and preferences 
-6. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
+2. **Plugin Manager** — Browse, install, update, and remove plugins via GitHub URLs
+  ![BrainDrive Plugin Manager Screenshot](/static/img/screenshots/plugin-manager.png)
+4. **Page Builder** — Drag-and-drop visual editor for custom interfaces
+  ![BrainDrive Page Builder Screenshot](/static/img/screenshots/Page-Builder.png)
+6. **Personas** - Create and switch between different roles and personalities for your AI
+7. **Settings System** — Configure AI providers, themes, and preferences 
+8. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
 
-7. 
-
-*\[Screenshot placeholder: Plugin Manager interface showing available plugins\]*
+### BrainDrive-Core Repo is built with:
 
 * **Frontend**: React \+ TypeScript web application with Material-UI  
-* **Backend**: Python FastAPI server with SQLite database  
-* **Built-in Features**: Chat interface, Plugin Manager, Page Builder, user authentication
+* **Backend**: Python FastAPI server with SQLite database
 
-*\[Screenshot placeholder: System architecture diagram showing frontend, backend, and plugin ecosystem\]*
+BrainDrive's decoupled archectecture enables:
 
----
+Each plugin to exist as its own repository (release on your Github)
+1-Click Install via Plugin Manager or manual build
+Full Module Federation architecture
 
 ## **Core Concepts for Daily Use**
 
 ### **Pages and Page Builder**
 
-**Pages** are custom workspaces you design in **BrainDrive Studio**. Create specialized pages for different tasks:
+**Pages** are custom workspaces you design in **BrainDrive Page Builder**. Create specialized pages for different tasks:
 
 * Writing workspace with chat \+ notes components  
 * Research dashboard with multiple AI models  
 * Client work page with specific prompts and tools
 
 The **Page Builder** uses a drag-and-drop interface powered by React Grid Layout, making it easy to arrange components exactly how you want them.
-
-*\[Screenshot placeholder: Page Builder showing drag-and-drop component placement\]*
 
 ### **Plugins and Components**
 
