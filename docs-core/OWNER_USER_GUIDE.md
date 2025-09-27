@@ -20,25 +20,11 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 
 ### BrainDrive is Built For:
 
-- **BrainDrive Owners** — People who want complete control over their AI and data
+- **BrainDrive Owners** — Those who want to be an AI system owner, instead of a Big Tech user.
 - **BrainDrive Builders** — Developers and tinkerers extending functionality through plugins
 - **BrainDrive Entrepreneurs** — Individuals monetizing AI-powered tools and services
 
-### As a BrainDrive Owner You Get
-
-## **What You Get Out of the Box**
-
-### **Core System Components**
-
-**BrainDrive-Core** provides your foundation:
-
-* **Frontend**: React \+ TypeScript web application with Material-UI  
-* **Backend**: Python FastAPI server with SQLite database  
-* **Built-in Features**: Chat interface, Plugin Manager, Page Builder, user authentication
-
-*\[Screenshot placeholder: System architecture diagram showing frontend, backend, and plugin ecosystem\]*
-
-### **Six Key Areas**
+### BrainDrive-Core is the foundation of your AI system and provides:
 
 1. **Chat Interface** — ChatGPT-style conversations with your choice of models  
 2. **Plugin Manager** — Browse, install, update, and remove plugins via GitHub URLs  
@@ -48,6 +34,12 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 6. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
 
 *\[Screenshot placeholder: Plugin Manager interface showing available plugins\]*
+
+* **Frontend**: React \+ TypeScript web application with Material-UI  
+* **Backend**: Python FastAPI server with SQLite database  
+* **Built-in Features**: Chat interface, Plugin Manager, Page Builder, user authentication
+
+*\[Screenshot placeholder: System architecture diagram showing frontend, backend, and plugin ecosystem\]*
 
 ---
 
