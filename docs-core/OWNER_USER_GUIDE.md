@@ -4,25 +4,31 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-BrainDrive is an MIT licensed, self-hosted ChatGPT alternative that you fully own and control. 
+BrainDrive is your open-source ChatGPT alternative.
 
-Your BrainDrive is highly modular and customizable: extend functionality through existing plugins and build your own. 
+It's self-hosted, and easy to customize via a modular, plugin based artchetecture. 
 
 Think **WordPress but for AI**: install BrainDrive-Core, then add or develop plugins to quickly ship new AI‑powered features.
 
-Out of the box, BrainDrive provides:
+Every BrainDrive owner receives:
 
-* A web‑based Chat interface for interacting with AI models
+1. A web‑based Chat interface for interacting with AI models
+
 ![BrainDrive chat interface with plugin manager and page builder panes](/static/img/screenshots/AI-Chat-Interface.png)
-* A built‑in Plugin Manager to install/manage extensions
+
+2. A built‑in Plugin Manager to install/manage extensions
+
  ![BrainDrive Plugin Manager Screenshot](/static/img/screenshots/plugin-manager.png)
-* A Page Builder for creating custom UIs without code
+
+3. A Page Builder for creating custom UIs without code
+
   ![BrainDrive Page Builder Screenshot](/static/img/screenshots/Page-Builder.png)
-* Example plugins, tutorials, and developer resources
+  
+ 4. Example plugins, tutorials, and developer resources
 
-You run it locally or on any cloud server — there’s no Big Tech lock‑in. Use it as your personal AI or as a foundation for products/services you offer to others.
+Host your BrainDrive locally on your computer, or on the cloud host of your choice. No Big-Tech lockin. 
 
-### Your BrainDrive is composed of a Core System and a Plugin Ecosystem.
+### Your BrainDrive is developed using a Core System + Plugin Based Ecosystem.
 
 #### Core System (BrainDrive‑Core repository)
 
