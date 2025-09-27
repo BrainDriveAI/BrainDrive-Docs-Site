@@ -17,7 +17,7 @@ It's self-hosted, MIT-licensed, and built on four core pillars:
 
 Think **WordPress but for AI**: install BrainDrive Core, then add plugins to quickly ship AI-powered features.
 
-![BrainDrive chat interface with plugin manager and page builder panes](/img/screenshots/AI-Chat-Interface.png)
+![BrainDrive chat interface with plugin manager and page builder panes](/static/img/screenshots/AI-Chat-Interface.png)
 
 
 ### BrainDrive is Built For:
