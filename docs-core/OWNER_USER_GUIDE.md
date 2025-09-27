@@ -86,7 +86,7 @@ npm run dev
 
 BrainDrive supports both local and API-based AI providers, giving you complete flexibility over your AI experience.
 
-### **Option A: Local Models (Maximum Privacy)**
+### **Option A: Local Models via BrainDrive's Ollama Plugin
 
 For complete privacy, run models locally using Ollama or similar providers. BrainDrive comes with an Ollama Plugin as a default, which you can chose to use or easily delete from your BrainDrive. 
 
@@ -101,16 +101,22 @@ To use the Ollama Plugin to run local AI models:
 
 ![chatting with an Ollama model in BrainDrive](/static/img/screenshots/choosing-a-model.png)
 
-### **Option B: API-Based Models (Convenience & Performance)**
+### **Option B: API-Based Models via BrainDrive's OpenRouter Plugin:
 
-For speed and convenience, connect to API providers:
+For those that want the speed and power of hosted models, BrainDrive's OpenRouter plugin offers the ability to serve hundreds of modles via their API. The OpenRouter plugin comes with your BrainDrive by default, and can be easily removed for those that do not want it. 
 
-1. **Get API Keys** from your preferred provider (OpenAI, Anthropic, etc.)  
-2. **Add in Settings → AI Providers**  
+To use OpenRouter models in your BrainDrive:
+
+1. **Signup at OpenRouter.com**
+2. **Generate an OpenRouter API Key**
+![OpenRouter API key generation](/static/img/screenshots/openrouter-api-keys-page.png)
+4. **Add in Settings → AI Providers**  
    * Enter your API key  
    * Select model and parameters  
    * Set usage limits if desired  
-3. **Test Connection** in the chat interface
+5. **Test Connection** in the chat interface
+
+### **Option C: Build Your Own Model Serving Plugin for the provider of your choice. 
 
 ### **Switching Between Models**
 
