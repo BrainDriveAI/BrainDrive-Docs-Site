@@ -4,38 +4,37 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-# BrainDrive Owner’s Manual
+BrainDrive is an open‑source alternative to ChatGPT that you fully own and control. 
 
-BrainDrive is the open-source ChatGPT alternative you fully own and control. 
+BrainDrive is highly modular and customizable: extend functionality through plugins and even monetize your custom AI solutions. 
 
-It's self-hosted, MIT-licensed, and built on four core pillars:
+Think **WordPress but for AI**: install the BrainDrive core, then add or develop plugins to quickly ship new AI‑powered features.
 
-1. **Ownership** — You own your system, data, and the value you create
-2. **Freedom** — No vendor lock-ins, completely customizable and portable
-3. **Empowerment** — Simple setup with docs designed to help you succeed
-4. **Sustainability** — A lean core with a thriving plugin ecosystem
+Out of the box, BrainDrive provides:
 
-Think **WordPress but for AI**: install BrainDrive Core, then add plugins to quickly ship AI-powered features.
-
+* A web‑based Chat interface for interacting with AI models
 ![BrainDrive chat interface with plugin manager and page builder panes](/static/img/screenshots/AI-Chat-Interface.png)
+* A built‑in Plugin Manager to install/manage extensions
+ ![BrainDrive Plugin Manager Screenshot](/static/img/screenshots/plugin-manager.png)
+* A Page Builder for creating custom UIs without code
+  ![BrainDrive Page Builder Screenshot](/static/img/screenshots/Page-Builder.png)
+* Example plugins, tutorials, and developer resources
 
+You run it locally or on any cloud server — there’s no Big Tech lock‑in. Use it as your personal AI or as a foundation for products/services.
+
+Example use cases include:
+
+* Custom AI chatbots with specialized knowledge or personalities
+* AI‑powered productivity tools that integrate with your data/workflows
+* Data analysis dashboards or intelligent reports
+* Custom UIs wrapping local or API‑based models
+* Multi‑plugin workflows where several components work together
 
 ### BrainDrive is Built For:
 
 - **BrainDrive Owners** — Those who want to be an AI system owner, instead of a Big Tech user.
 - **BrainDrive Builders** — Those who want to build on their own foundation, instead of Big Tech's.
 - **BrainDrive Entrepreneurs** — Those who want to keep the value they create, instead of giving it away to Big Tech.
-
-### BrainDrive-Core is the foundation of your AI system. It provides:
-
-1. **Chat Interface** — ChatGPT-style conversations with your choice of models  
-2. **Plugin Manager** — Browse, install, update, and remove plugins via GitHub URLs
-  ![BrainDrive Plugin Manager Screenshot](/static/img/screenshots/plugin-manager.png)
-4. **Page Builder** — Drag-and-drop visual editor for custom interfaces
-  ![BrainDrive Page Builder Screenshot](/static/img/screenshots/Page-Builder.png)
-6. **Personas** - Create and switch between different roles and personalities for your AI
-7. **Settings System** — Configure AI providers, themes, and preferences 
-8. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
 
 ### Your BrainDrive is composed of a Core System and a Plugin Ecosystem.
 
