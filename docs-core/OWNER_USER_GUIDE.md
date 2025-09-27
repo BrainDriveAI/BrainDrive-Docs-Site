@@ -4,8 +4,6 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-import useBaseUrl from '@docusaurus/useBaseUrl';
-
 # BrainDrive Owner’s Manual
 
 BrainDrive is the open-source ChatGPT alternative you fully own and control. It's self-hosted, MIT-licensed, and built on four core pillars:
@@ -17,11 +15,7 @@ BrainDrive is the open-source ChatGPT alternative you fully own and control. It'
 
 Think **WordPress but for AI**: install BrainDrive Core, then add plugins to quickly ship AI-powered features.
 
-<img
-  src={useBaseUrl('/img/screenshots/AI-Chat-Interface.png')}
-  alt="BrainDrive chat interface with plugin manager and page builder panes"
-  style={{borderRadius: '12px', width: '100%', maxWidth: '960px'}}
-/>
+![BrainDrive main interface showing chat, plugin manager, and page builder](/img/screenshots/AI-Chat-Interface.png)
 
 
 ### BrainDrive is Built For:
