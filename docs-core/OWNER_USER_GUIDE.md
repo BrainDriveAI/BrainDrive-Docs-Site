@@ -91,8 +91,9 @@ BrainDrive supports both local and API-based AI providers, giving you complete f
 For complete privacy, run models locally using Ollama or similar providers:
 
 1. **Install Ollama** (if using local models)
-3. **Configure in Settings → AI Providers** 
+3. **Got to BrainDrive Settings & Install Your Preferred Model(s)** 
 
+![BrainDrive Ollama Settings Page](/static/img/screenshots/ollama-settings-screebshot.png)
 
    * Install your prefered modle(s)
    * Choose your preferred model  
