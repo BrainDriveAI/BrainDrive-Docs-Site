@@ -10,10 +10,10 @@ BrainDrive is the open-source ChatGPT alternative you fully own and control.
 
 It's self-hosted, MIT-licensed, and built on four core pillars:
 
-- **Ownership** — You own your system, data, and the value you create
-- **Freedom** — No vendor lock-ins, completely customizable and portable
-- **Empowerment** — Simple setup with docs designed to help you succeed
-- **Sustainability** — A lean core with a thriving plugin ecosystem
+1. **Ownership** — You own your system, data, and the value you create
+2. **Freedom** — No vendor lock-ins, completely customizable and portable
+3. **Empowerment** — Simple setup with docs designed to help you succeed
+4. **Sustainability** — A lean core with a thriving plugin ecosystem
 
 Think **WordPress but for AI**: install BrainDrive Core, then add plugins to quickly ship AI-powered features.
 
@@ -26,7 +26,7 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 - **BrainDrive Builders** — Those who want to build on their own foundation, instead of Big Tech's.
 - **BrainDrive Entrepreneurs** — Those who want to keep the value they create, instead of giving it away to Big Tech.
 
-### BrainDrive-Core is the foundation of your AI system and provides:
+### BrainDrive-Core is the free and open foundation of your AI system. It provides:
 
 1. **Chat Interface** — ChatGPT-style conversations with your choice of models  
 2. **Plugin Manager** — Browse, install, update, and remove plugins via GitHub URLs  
@@ -34,6 +34,8 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 4. **Personas** - Create and switch between different roles and personalities for your AI
 5. **Settings System** — Configure AI providers, themes, and preferences 
 6. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
+
+7. 
 
 *\[Screenshot placeholder: Plugin Manager interface showing available plugins\]*
 
