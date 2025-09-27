@@ -80,7 +80,7 @@ BrainDrive supports both local and API-based AI providers, giving you complete f
 
 ### Option A: Local Models via BrainDrive's Ollama Plugin
 
-For complete privacy, run models locally using Ollama or similar providers. BrainDrive comes with an Ollama Plugin as a default, which you can chose to use or easily delete from your BrainDrive. 
+For complete privacy, run models locally using Ollama or similar providers. BrainDrive comes with an Ollama Plugin as a default, which you can choose to use or easily delete from your BrainDrive. 
 
 To use the Ollama Plugin to run local AI models:
 
