@@ -39,18 +39,18 @@ Provides the primary UI (chat, page builder, etc.) and backend services (user ma
 * Plugins communicate with the core through well‑defined Service Bridges.
 * Decoupled design allows customizing/extending BrainDrive without modifying core; update core/plugins independently.
 
-## Quick Start Installation**
+## Quick Start Installation
 
 **Note**: A one-click installer is planned for v1.0. For now, follow these developer-friendly setup steps.
 
-### Prerequisites**
+### Prerequisites
 
 * **Conda** (Anaconda/Miniconda) for Python environment management  
 * **Git** to clone repositories  
 * **Node.js** 16+ with npm  
 * Two terminals (one for backend, one for frontend)
 
-### Installation Steps**
+### Installation Steps
 
 1. **Create Python Environment**
 
