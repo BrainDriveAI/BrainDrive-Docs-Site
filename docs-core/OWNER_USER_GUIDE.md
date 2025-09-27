@@ -4,7 +4,12 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-BrainDrive is your open-source ChatGPT alternative.
+BrainDrive is your open-source ChatGPT alternative built on the 4 pillars of:
+
+Ownership — You own your system, data, and the value you create
+Freedom — No vendor lock-ins, completely customizable and portable
+Empowerment — Simple setup with docs designed to help you succeed
+Sustainability — A lean core with a thriving plugin ecosystem
 
 It's self-hosted, and easy to customize via a modular, plugin based artchetecture. 
 
