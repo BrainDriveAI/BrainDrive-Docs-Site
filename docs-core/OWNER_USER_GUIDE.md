@@ -8,7 +8,7 @@ BrainDrive is an MIT licensed, self-hosted ChatGPT alternative that you fully ow
 
 Your BrainDrive is highly modular and customizable: extend functionality through existing plugins and build your own. 
 
-Think **WordPress but for AI**: install the BrainDrive core, then add or develop plugins to quickly ship new AI‑powered features.
+Think **WordPress but for AI**: install BrainDrive-Core, then add or develop plugins to quickly ship new AI‑powered features.
 
 Out of the box, BrainDrive provides:
 
