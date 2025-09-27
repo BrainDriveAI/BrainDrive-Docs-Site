@@ -37,16 +37,21 @@ Think **WordPress but for AI**: install BrainDrive Core, then add plugins to qui
 7. **Settings System** — Configure AI providers, themes, and preferences 
 8. **Plugin Ecosystem** — Extend your BrainDrive with existing plugins, or build your own.
 
-### BrainDrive-Core Repo is built with:
+### Your BrainDrive is composed of a Core System and a Plugin Ecosystem.
 
-* **Frontend**: React \+ TypeScript web application with Material-UI  
-* **Backend**: Python FastAPI server with SQLite database
+## Core System (BrainDrive‑Core repository)
 
-BrainDrive's decoupled archectecture enables:
+* **Frontend:** React + TypeScript web application
+* **Backend:** Python FastAPI server with a SQLite database (default)
+* Provides the primary UI (chat, page builder, etc.) and backend services (user management, plugin APIs, conversation storage, etc.)
 
-Each plugin to exist as its own repository (release on your Github)
-1-Click Install via Plugin Manager or manual build
-Full Module Federation architecture
+## Plugin Ecosystem
+
+* Each plugin is a separate module (its own repository) that can be added dynamically.
+* Uses Webpack Module Federation to load frontend plugins at runtime.
+* A standardized Lifecycle Manager (Python) to integrate backend/installation logic.
+* Plugins communicate with the core through well‑defined Service Bridges.
+* Decoupled design allows customizing/extending BrainDrive without modifying core; update core/plugins independently.
 
 ## **Core Concepts for Daily Use**
 
