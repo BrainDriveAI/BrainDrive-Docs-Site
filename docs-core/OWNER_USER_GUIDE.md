@@ -4,9 +4,9 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-BrainDrive is an open‑source alternative to ChatGPT that you fully own and control. 
+BrainDrive is an MIT liscensed, self-hosted ChatGPT alternative that you fully own and control. 
 
-BrainDrive is highly modular and customizable: extend functionality through plugins and even monetize your custom AI solutions. 
+Your BrainDrive is highly modular and customizable: extend functionality through existing plugins and build your own. 
 
 Think **WordPress but for AI**: install the BrainDrive core, then add or develop plugins to quickly ship new AI‑powered features.
 
@@ -20,7 +20,7 @@ Out of the box, BrainDrive provides:
   ![BrainDrive Page Builder Screenshot](/static/img/screenshots/Page-Builder.png)
 * Example plugins, tutorials, and developer resources
 
-You run it locally or on any cloud server — there’s no Big Tech lock‑in. Use it as your personal AI or as a foundation for products/services.
+You run it locally or on any cloud server — there’s no Big Tech lock‑in. Use it as your personal AI or as a foundation for products/services you offer to others.
 
 Example use cases include:
 
@@ -34,9 +34,10 @@ Example use cases include:
 
 #### Core System (BrainDrive‑Core repository)
 
+Provides the primary UI (chat, page builder, etc.) and backend services (user management, plugin APIs, conversation storage, etc.)
+
 * **Frontend:** React + TypeScript web application
 * **Backend:** Python FastAPI server with a SQLite database (default)
-* Provides the primary UI (chat, page builder, etc.) and backend services (user management, plugin APIs, conversation storage, etc.)
 
 #### Plugin Ecosystem (Seperate repositories)
 
@@ -81,13 +82,6 @@ npm run dev
 
 4. **Access BrainDrive** Open `http://localhost:5173` in your browser. The frontend connects to the backend at `localhost:8005`.
 
-### **First Run**
-
-1. Create your admin account  
-2. Choose your default theme (light/dark)  
-3. Test the chat interface  
-4. Explore the Plugin Manager
-
 ## **Setting Up Your First AI Model**
 
 BrainDrive supports both local and API-based AI providers, giving you complete flexibility over your AI experience.
@@ -96,12 +90,14 @@ BrainDrive supports both local and API-based AI providers, giving you complete f
 
 For complete privacy, run models locally using Ollama or similar providers:
 
-1. **Install Ollama** (if using local models)  
-2. **Configure in Settings → AI Providers**  
-   * Select your local provider  
+1. **Install Ollama** (if using local models)
+3. **Configure in Settings → AI Providers** 
+
+
+   * Install your prefered modle(s)
    * Choose your preferred model  
    * Test the connection  
-3. **Chat Locally** — All conversations stay on your machine
+4. **Chat Locally** — All conversations stay on your machine
 
 *\[Screenshot placeholder: AI Providers settings showing local model configuration\]*
 
