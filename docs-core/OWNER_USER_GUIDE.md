@@ -88,19 +88,18 @@ BrainDrive supports both local and API-based AI providers, giving you complete f
 
 ### **Option A: Local Models (Maximum Privacy)**
 
-For complete privacy, run models locally using Ollama or similar providers:
+For complete privacy, run models locally using Ollama or similar providers. BrainDrive comes with an Ollama Plugin as a default, which you can chose to use or easily delete from your BrainDrive. 
 
-1. **Install Ollama** (if using local models)
-3. **Got to BrainDrive Settings & Install Your Preferred Model(s)** 
+To use the Ollama Plugin to run local AI models:
+
+1. **Install Ollama** from Ollama.com
+3. **Go to BrainDrive Settings & Install Your Preferred Model(s)** 
 
 ![BrainDrive Ollama Settings Page](/static/img/screenshots/ollama-settings-screebshot.png)
 
-   * Install your prefered modle(s)
-   * Choose your preferred model  
-   * Test the connection  
 4. **Chat Locally** — All conversations stay on your machine
 
-*\[Screenshot placeholder: AI Providers settings showing local model configuration\]*
+[chatting with an Ollama model in BrainDrive](/static/img/screenshots/choosing-a-model.png)
 
 ### **Option B: API-Based Models (Convenience & Performance)**
 
