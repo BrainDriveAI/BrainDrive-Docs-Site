@@ -30,21 +30,15 @@ Example use cases include:
 * Custom UIs wrapping local or API‑based models
 * Multi‑plugin workflows where several components work together
 
-### BrainDrive is Built For:
-
-- **BrainDrive Owners** — Those who want to be an AI system owner, instead of a Big Tech user.
-- **BrainDrive Builders** — Those who want to build on their own foundation, instead of Big Tech's.
-- **BrainDrive Entrepreneurs** — Those who want to keep the value they create, instead of giving it away to Big Tech.
-
 ### Your BrainDrive is composed of a Core System and a Plugin Ecosystem.
 
-## Core System (BrainDrive‑Core repository)
+#### Core System (BrainDrive‑Core repository)
 
 * **Frontend:** React + TypeScript web application
 * **Backend:** Python FastAPI server with a SQLite database (default)
 * Provides the primary UI (chat, page builder, etc.) and backend services (user management, plugin APIs, conversation storage, etc.)
 
-## Plugin Ecosystem
+#### Plugin Ecosystem
 
 * Each plugin is a separate module (its own repository) that can be added dynamically.
 * Uses Webpack Module Federation to load frontend plugins at runtime.
