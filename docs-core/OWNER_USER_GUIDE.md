@@ -99,7 +99,7 @@ To use the Ollama Plugin to run local AI models:
 
 4. **Chat Locally** — All conversations stay on your machine
 
-[chatting with an Ollama model in BrainDrive](/static/img/screenshots/choosing-a-model.png)
+![chatting with an Ollama model in BrainDrive](/static/img/screenshots/choosing-a-model.png)
 
 ### **Option B: API-Based Models (Convenience & Performance)**
 
