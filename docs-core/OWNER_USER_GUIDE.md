@@ -4,7 +4,7 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-BrainDrive is an MIT liscensed, self-hosted ChatGPT alternative that you fully own and control. 
+BrainDrive is an MIT licensed, self-hosted ChatGPT alternative that you fully own and control. 
 
 Your BrainDrive is highly modular and customizable: extend functionality through existing plugins and build your own. 
 
