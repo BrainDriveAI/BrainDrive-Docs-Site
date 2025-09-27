@@ -38,48 +38,13 @@ Example use cases include:
 * **Backend:** Python FastAPI server with a SQLite database (default)
 * Provides the primary UI (chat, page builder, etc.) and backend services (user management, plugin APIs, conversation storage, etc.)
 
-#### Plugin Ecosystem
+#### Plugin Ecosystem (Seperate repositories)
 
 * Each plugin is a separate module (its own repository) that can be added dynamically.
 * Uses Webpack Module Federation to load frontend plugins at runtime.
 * A standardized Lifecycle Manager (Python) to integrate backend/installation logic.
 * Plugins communicate with the core through well‑defined Service Bridges.
 * Decoupled design allows customizing/extending BrainDrive without modifying core; update core/plugins independently.
-
-## **Core Concepts for Daily Use**
-
-### **Pages and Page Builder**
-
-**Pages** are custom workspaces you design in **BrainDrive Page Builder**. Create specialized pages for different tasks:
-
-* Writing workspace with chat \+ notes components  
-* Research dashboard with multiple AI models  
-* Client work page with specific prompts and tools
-
-The **Page Builder** uses a drag-and-drop interface powered by React Grid Layout, making it easy to arrange components exactly how you want them.
-
-### **Plugins and Components**
-
-**Plugins** extend BrainDrive's capabilities. Each plugin can provide:
-
-* Frontend **Components** (chat widgets, visualizations, forms)  
-* Backend **Lifecycle Managers** (installation, data management)  
-* **Service Bridge** integrations (API calls, events, settings)
-
-**Components** are the building blocks you place on pages. Configure each instance through the Properties Panel.
-
-### **Service Bridges**
-
-BrainDrive uses six **Service Bridges** to ensure plugins work seamlessly without breaking when the core system updates:
-
-* **API Bridge** — Backend API calls  
-* **Event Bridge** — Cross-plugin communication  
-* **Theme Bridge** — Light/dark theme support  
-* **Settings Bridge** — User preferences  
-* **Page Context Bridge** — Current page information  
-* **Plugin State Bridge** — Persistent data storage
-
----
 
 ## **Quick Start Installation**
 
@@ -118,14 +83,10 @@ npm run dev
 
 ### **First Run**
 
-*\[Screenshot placeholder: First-time setup screen with welcome message\]*
-
 1. Create your admin account  
 2. Choose your default theme (light/dark)  
 3. Test the chat interface  
 4. Explore the Plugin Manager
-
----
 
 ## **Setting Up Your First AI Model**
 
