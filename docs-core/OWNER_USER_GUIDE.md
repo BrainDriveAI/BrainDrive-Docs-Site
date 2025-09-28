@@ -148,12 +148,9 @@ BrainDrive's plugin system is designed for safety and simplicity. All plugins ar
 
 Personas allow you to easily customize the behavior of the AI models you use in your BrainDrive. 
 
-Personas can be easily used across any AI chat, and allow you to control the system prompt, temperature, top P and more. 
+Personas can be easily used across any AI chat, and allow you to control the system prompt, temperature, top P, and more. 
 
-
-
-
----
+![BrainDrive Personas](/static/img/screenshots/personas.png)
 
 ## Essential Settings and Configuration
 
