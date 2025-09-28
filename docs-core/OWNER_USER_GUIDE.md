@@ -11,7 +11,7 @@ The 4 pillars of BrainDrive:
 1. **Ownership** — You control your AI system, data, and created value
 2. **Freedom** — Fully customizable and portable, with no Big Tech restrictions
 3. **Empowerment** — Simple to use and build on, with supportive community
-4. **Sustainability** — Lean core with a thriving plugin ecosystem and sustainable revenue model
+4. **Sustainability** — Value flows to the people creating it, not some distant shareholder
 
 Think **WordPress but for AI**: Install BrainDrive-Core, then add or develop plugins to rapidly deploy AI-powered features.
 
@@ -152,94 +152,25 @@ Personas can be easily used across any AI chat, and allow you to control the sys
 
 ![BrainDrive Personas](/static/img/screenshots/personas.png)
 
+## Building on BrainDrive
 
+BrainDrive's decoupled modular archetecture is designed so that you can make your AI system whatever you want it to be.
 
----
+**With BrainDrive Plugins:**
 
-## Backup and Data Management
+* Anyone can **build** AI applications without reinventing core infrastructure
+* Creators **own** their work instead of being locked into Big Tech platforms
+* Innovation happens at the edges through **community-driven** plugins
+* **Value flows to builders** rather than platform monopolies
 
-### What to Back Up
+**BrainDrive Plugins are like the building blocks of a LEGO set:**
 
-**Essential Data**:
+* **Use** existing blocks (install community plugins)
+* **Create** new blocks (build your own plugins)
+* **Combine** blocks (multiple plugins working together)
+* **Share blocks** (distribute through marketplace or independently)
 
-* Page layouts (export as JSON)  
-* Important conversations (export function)  
-* Plugin configurations  
-* AI provider settings  
-* Custom prompts and templates
-
-**Database Backup**: The SQLite database contains all your data. Back up the entire `backend/` directory regularly.
-
-### Export Options
-
-*\[Screenshot placeholder: Export dialog showing various backup options\]*
-
-* **Individual Conversations**: Export specific threads as text or JSON  
-* **Page Layouts**: Save custom interfaces for sharing or backup  
-* **Settings**: Export configuration for easy restoration  
-* **Plugin Data**: Each plugin manages its own backup options
-
-### Migration Planning
-
-BrainDrive is designed to be portable:
-
-* **Database Migration**: Move your SQLite database to new installations  
-* **Plugin Portability**: Reinstall plugins from the same GitHub URLs  
-* **Configuration Transfer**: Settings exports work across installations  
-* **No Vendor Lock-in**: All data remains in open, accessible formats
-
----
-
-## Troubleshooting Common Issues
-
-### **Installation Problems**
-
-**Port Conflicts**:
-
-\# Backend won't start \- port 8005 in use  
-\# Edit backend/.env to change port, restart server  
-APP\_PORT=8006
-
-**Module Not Found**:
-
-\# Ensure conda environment is activated  
-conda activate BrainDriveDev  
-pip install \--upgrade pip  
-pip install \-r requirements.txt
-
-### **Runtime Issues**
-
-**Frontend Not Updating**:
-
-* Disable browser cache in developer tools  
-* Ensure both backend and frontend servers are running  
-* Check browser console for error messages
-
-**Plugin Installation Fails**:
-
-* Verify GitHub URL is correct and accessible  
-* Check that the repository has releases/builds  
-* Review backend logs for detailed error messages
-
-**Database Errors**:
-
-* Verify `.env` database settings  
-* Ensure app has write permissions to database directory  
-* Check available disk space
-
-### **Performance Issues**
-
-**Slow Response Times**:
-
-* Check available system resources (RAM, CPU)  
-* Consider switching from local to API models  
-* Reduce conversation history length in settings
-
-**Page Load Issues**:
-
-* Clear plugin cache in settings  
-* Disable problematic plugins to isolate issues  
-* Restart both backend and frontend servers
+Ready to get started building? Be up and running in minutes with BrainDrive's [Plugin Developer Quickstart Guide](https://braindriveai.github.io/BrainDrive-Docs/core/PLUGIN_DEVELOPER_QUICKSTART).
 
 ---
 
@@ -250,11 +181,12 @@ pip install \-r requirements.txt
 **Primary Resources**:
 
 * **Community Forum**: [community.braindrive.ai](https://community.braindrive.ai/) — Questions, help, ideas, weekly updates  
+* **Guides**: [Github.come/BrainDriveAI](Github.come/BrainDriveAI) for full documentation and tutorials
+* **Documentation** Each repo has full technical references in the root directory.
 * **GitHub Issues**: Report bugs and request features  
-* **Documentation**: Complete guides and API references  
-* **Plugin Community**: Share and discover new plugins
+* **Plugin Marketplace**: Share and discover new plugins
 
-### **Contributing to the Ecosystem**
+### **Help drive the user-owned AI movement**
 
 **As a BrainDrive Owner**:
 
@@ -263,23 +195,26 @@ pip install \-r requirements.txt
 * Help new owners in the community forum  
 * Write guides for your specific use cases
 
-**Growing into a Builder**:
+**As a BrainDrive Builder**:
 
-* Start with the Plugin Template  
+* Start with the Plugin Template
 * Follow the Plugin Developer Quickstart  
 * Contribute to existing plugins  
 * Create plugins for your own needs
+* Share your creations in the marketplace
 
-**Becoming an Entrepreneur**:
+**As a BrainDrive Entrepreneur**:
 
 * Package your plugins for others  
 * Offer custom BrainDrive implementations  
 * Provide hosting and support services  
-* Build businesses around the BrainDrive ecosystem
+* Build businesses around your BrainDrive and the wider ecosystem
 
 ### **Brand Guidelines**
 
-You're free to build on BrainDrive and monetize your work:
+You're free to build on BrainDrive and monetize your work. 
+
+Just don't pretend to be BrainDrive.
 
 **Acceptable**:
 
@@ -293,17 +228,16 @@ You're free to build on BrainDrive and monetize your work:
 * ❌ "Official BrainDrive Hosting" (unless you're officially affiliated)  
 * ❌ Using BrainDrive logos without permission
 
----
-
 ## **Understanding BrainDrive's Mission**
 
-### **Why Personal AI Ownership Matters**
+### **Why User-Owned AI Matters**
 
-The choice between corporate AI and personal AI defines our future:
+Who owns the AI systems we use will define our future:
 
-**Corporate AI** \= Data extraction, lock-ins, shifting terms, constrained capabilities **Personal AI** \= Privacy, freedom, ownership of value, unlimited customization
+* **Big Tech AI** \= Data extraction, lock-ins, shifting terms, constrained capabilities 
+* **User-Owned AI** \= Privacy, freedom, ownership of value, unlimited customization
 
-BrainDrive exists to make personal AI ownership practical for everyone.
+This is why our mission is to make it easy to build, control, and benefit from **your own** AI system. 
 
 ### **The Four Pillars in Practice**
 
@@ -316,7 +250,7 @@ BrainDrive exists to make personal AI ownership practical for everyone.
 
 BrainDrive aims for a world where:
 
-* Everyone owns their AI system instead of being a user of Big Tech AI  
+* Everyone is an owner, instead of a user of Big Tech AI.
 * Innovation happens at the edges through owners and builders  
 * Value flows to creators and communities, not monopolistic platforms  
 * Open ecosystems outcompete walled gardens on speed, trust, and capability
@@ -331,49 +265,7 @@ BrainDrive aims for a world where:
 2. **Install Core Plugins**: Add essential functionality for your workflow  
 3. **Create Your First Custom Page**: Build a workspace that matches your needs  
 4. **Join the Community**: Connect with other owners and builders  
-5. **Plan Your Backups**: Establish regular backup routines
-
-### **Growing Your Skills**
-
-**Week 1-2**: Master basic usage patterns
-
-* Chat effectively with different AI models  
-* Create and organize multiple pages  
-* Install and configure plugins
-
-**Month 1**: Advanced customization
-
-* Build complex multi-component pages  
-* Experiment with local vs API models  
-* Optimize performance for your use cases
-
-**Month 2+**: Community engagement
-
-* Share your best practices and workflows  
-* Help new owners get started  
-* Consider building your first plugin
-
-### **Expanding Your BrainDrive**
-
-**Technical Growth**:
-
-* Learn plugin development basics  
-* Contribute to existing plugins  
-* Set up production deployments
-
-**Business Applications**:
-
-* Package solutions for clients  
-* Offer BrainDrive consulting services  
-* Build products on the BrainDrive platform
-
-**Community Leadership**:
-
-* Mentor new owners  
-* Write documentation and guides  
-* Participate in project governance
-
----
+5. **Start building**: The only limit is your imagination.
 
 ## **Conclusion**
 
