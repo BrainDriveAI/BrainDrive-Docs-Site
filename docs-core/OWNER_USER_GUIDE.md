@@ -75,7 +75,7 @@ To use the Ollama Plugin to run local AI models:
 
 ### Option B: API-Based Models via BrainDrive's OpenRouter Plugin:
 
-For those that want the speed and power of hosted models, BrainDrive's OpenRouter plugin offers the ability to serve hundreds of models via their API. The OpenRouter plugin comes with your BrainDrive by default, and can be easily removed for those that do not want it. 
+BrainDrive's OpenRouter plugin offers the ability to serve hundreds of models via their API. The OpenRouter plugin comes with your BrainDrive by default, and can be easily removed for those that do not want it. 
 
 To use OpenRouter models in your BrainDrive:
 
