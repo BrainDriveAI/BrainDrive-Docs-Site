@@ -4,16 +4,16 @@ title: BrainDrive Owner’s Manual
 sidebar_label: Use
 ---
 
-BrainDrive is your open-source ChatGPT alternative built on the 4 pillars of:
+BrainDrive is your open-source, self-hosted ChatGPT alternative that's easy to customize and build on.
 
-Ownership — You own your system, data, and the value you create
-Freedom — No vendor lock-ins, completely customizable and portable
-Empowerment — Simple setup with docs designed to help you succeed
-Sustainability — A lean core with a thriving plugin ecosystem
+The 4 pillars of BrainDrive:
 
-It's self-hosted, and easy to customize via a modular, plugin based artchetecture. 
+1. Ownership — You control your AI system, data, and created value
+2. Freedom — Fully customizable and portable, with no Big Tech restrictions
+3. Empowerment — Simple to use and build on, with supportive community
+4. Sustainability — Lean core with a thriving plugin ecosystem and sustainable revenue model
 
-Think **WordPress but for AI**: install BrainDrive-Core, then add or develop plugins to quickly ship new AI‑powered features.
+Think WordPress for AI: Install BrainDrive-Core, then add or develop plugins to rapidly deploy AI-powered features.
 
 Every BrainDrive owner receives:
 
@@ -33,7 +33,7 @@ Every BrainDrive owner receives:
 
 Host your BrainDrive locally on your computer, or on the cloud host of your choice. No Big-Tech lockin. 
 
-### Your BrainDrive is developed using a Core System + Plugin Based Ecosystem.
+### Your BrainDrive has a modular, plugin based architecture comprised of:
 
 #### Core System (BrainDrive‑Core repository)
 
