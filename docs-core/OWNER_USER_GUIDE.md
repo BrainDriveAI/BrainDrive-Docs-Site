@@ -119,6 +119,8 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 * **Client Work**: Custom prompts \+ project tracking \+ billing tools  
 * **Learning**: Chat \+ note-taking \+ progress tracking components
 
+Our goal is for the only limit to be your imagination. 
+
 ## Installing and Managing Plugins
 
 BrainDrive's plugin system is designed for safety and simplicity. All plugins are **user-scoped**, meaning each user controls their own plugin versions independently.
@@ -140,19 +142,16 @@ BrainDrive's plugin system is designed for safety and simplicity. All plugins ar
 
 * **Hot-swap**: Install/uninstall without restarting BrainDrive  
 * **Error Boundaries**: Plugin failures won't crash your system  
-* **Plugin Repair**: Fix broken plugins with one click  
 * **Isolated State**: Each plugin manages its own data
 
-### Recommended Starter Plugins
-
-Install these to experience BrainDrive's extensibility:
-
-* **Plugin Template** — Learn plugin development basics  
-* **Ollama Integration** — Connect to local models  
-* **Enhanced Chat** — Advanced conversation features  
-* **Data Visualizer** — Charts and graphs from AI responses
-
 ## Adding Persona's 
+
+Personas allow you to easily customize the behavior of the AI models you use in your BrainDrive. 
+
+Personas can be easily used across any AI chat, and allow you to control the system prompt, temperature, top P and more. 
+
+
+
 
 ---
 
