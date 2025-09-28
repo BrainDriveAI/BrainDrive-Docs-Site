@@ -257,9 +257,7 @@ BrainDrive aims for a world where:
 
 ---
 
-## **Next Steps and Advanced Usage**
-
-### **Immediate Next Steps**
+## **Next Steps**
 
 1. **Complete Setup**: Ensure BrainDrive runs smoothly on your system  
 2. **Install Core Plugins**: Add essential functionality for your workflow  
@@ -269,17 +267,9 @@ BrainDrive aims for a world where:
 
 ## **Conclusion**
 
-BrainDrive gives you complete control over your AI experience — no corporate gatekeepers, no data extraction, no artificial limitations. You own the system, the data, and the value you create.
+As a BrainDrive owner you have complete control over your AI experience. No corporate gatekeepers, no data extraction, no artificial limitations. You own the system, the data, and the value you create.
 
-**Your journey starts now**:
-
-* Own your AI infrastructure  
-* Control your data and workflows  
-* Benefit from the value you create  
-* Build the tools you need  
-* Share your success with the community
-
-Welcome to the future of personal AI ownership.
+Thank you for joing us on the journey towards the future of user-owned AI.
 
 **Your AI. Your Rules.**
 
