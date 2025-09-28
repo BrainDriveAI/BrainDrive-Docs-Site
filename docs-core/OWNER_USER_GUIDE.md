@@ -33,9 +33,9 @@ Every BrainDrive owner receives:
 
 Host your BrainDrive locally on your computer, or on the cloud host of your choice. No Big-Tech lockin. 
 
-### Your BrainDrive has a modular, plugin based architecture comprised of:
+## Your BrainDrive has a modular, plugin based architecture comprised of:
 
-#### Core System (BrainDrive‑Core repository)
+### Core System (BrainDrive‑Core repository)
 
 Provides the primary UI (chat, page builder, etc.) and backend services (user management, plugin APIs, conversation storage, etc.)
 
@@ -172,8 +172,6 @@ BrainDrive's decoupled modular archetecture is designed so that you can make you
 
 Ready to get started building? Be up and running in minutes with BrainDrive's [Plugin Developer Quickstart Guide](https://braindriveai.github.io/BrainDrive-Docs/core/PLUGIN_DEVELOPER_QUICKSTART).
 
----
-
 ## **Community and Ecosystem**
 
 ### **Getting Help and Support**
@@ -254,8 +252,6 @@ BrainDrive aims for a world where:
 * Innovation happens at the edges through owners and builders  
 * Value flows to creators and communities, not monopolistic platforms  
 * Open ecosystems outcompete walled gardens on speed, trust, and capability
-
----
 
 ## **Next Steps**
 
