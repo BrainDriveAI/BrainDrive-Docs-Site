@@ -220,7 +220,7 @@ Just don't pretend to be BrainDrive.
 
 * ✅ "NeuronWorks — Built on BrainDrive"  
 * ✅ "Custom AI Solutions powered by BrainDrive"  
-* ✅ Your own branding with attribution
+* ✅ Your own branding
 
 **Not Acceptable**:
 
@@ -272,10 +272,4 @@ As a BrainDrive owner you have complete control over your AI experience. No corp
 Thank you for joing us on the journey towards the future of user-owned AI.
 
 **Your AI. Your Rules.**
-
----
-
-*This guide covers BrainDrive v0.6.x+. For the latest updates and features, visit the [documentation site](https://braindriveai.github.io/BrainDrive-Docs/) and [community forum](https://community.braindrive.ai/).*
-
-**Questions?** The BrainDrive community is here to help. Join us at [community.braindrive.ai](https://community.braindrive.ai/) to connect with other owners, builders, and entrepreneurs.
 
