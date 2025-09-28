@@ -119,20 +119,18 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 * **Client Work**: Custom prompts \+ project tracking \+ billing tools  
 * **Learning**: Chat \+ note-taking \+ progress tracking components
 
----
-
 ## Installing and Managing Plugins
 
 BrainDrive's plugin system is designed for safety and simplicity. All plugins are **user-scoped**, meaning each user controls their own plugin versions independently.
 
 ### Installing Plugins
 
-*\[Screenshot placeholder: Plugin Manager install dialog with GitHub URL field\]*
-
 1. **Find a Plugin**: Browse community recommendations or GitHub  
 2. **Get the URL**: Copy the plugin's GitHub repository URL  
 3. **Install**: Plugin Manager → Install Plugin → Paste URL → Confirm  
 4. **Use Components**: New components appear immediately in the Page Builder
+
+![installing a plugin in BrainDrive](/static/img/screenshots/installing-plugin.png)
 
 ### Plugin Management
 
