@@ -104,17 +104,14 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 ### Creating Your First Page
 
 1. **Navigate to Page Builder → New Page
-
-
 3. **Name your page** (e.g., "Research Workspace")  
 4. **Add Components**:  
-   * Drag a **Chat** component and configure with research prompts  
-   * Add a **Notes** component for capturing insights  
-   * Include any plugin components you've installed  
+   * Drag a **Chat** component 
 5. **Arrange and Resize** components to fit your workflow  
-6. **Save** your layout
+6. **Publish Your ** your layout
 
-*\[Screenshot placeholder: Page Builder with research workspace layout\]*
+![Building a page in BrainDrive](!static/img/screenshots/building-a-page.png)
+
 
 ### Page Management
 
