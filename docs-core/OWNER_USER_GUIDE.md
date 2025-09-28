@@ -52,38 +52,7 @@ Provides the primary UI (chat, page builder, etc.) and backend services (user ma
 
 ## Quick Start Installation
 
-**Note**: A one-click installer is planned for v1.0. For now, follow these developer-friendly setup steps.
-
-### Prerequisites
-
-* **Conda** (Anaconda/Miniconda) for Python environment management  
-* **Git** to clone repositories  
-* **Node.js** 16+ with npm  
-* Two terminals (one for backend, one for frontend)
-
-### Installation Steps
-
-1. **Create Python Environment**
-
-conda create \-n BrainDriveDev \-c conda-forge python=3.11 nodejs git \-y  
-conda activate BrainDriveDev
-
-2. **Clone and Setup Backend**
-
-git clone https://github.com/BrainDriveAI/BrainDrive-Core.git  
-cd BrainDrive-Core/backend  
-pip install \-r requirements.txt  
-cp .env-dev .env  \# Edit as needed  
-uvicorn main:app \--host localhost \--port 8005
-
-3. **Setup Frontend** (in new terminal)
-
-cd BrainDrive-Core/frontend  
-npm install  
-cp .env.example .env  \# Remove auto-login before production  
-npm run dev
-
-4. **Access BrainDrive** Open `http://localhost:5173` in your browser. The frontend connects to the backend at `localhost:8005`.
+**Note**: A one-click installer is planned for v1.0. For now, follow the developer-friendly [install guide here](https://braindriveai.github.io/BrainDrive-Docs/core/INSTALL).
 
 ## Setting Up Your First AI Model
 
@@ -96,11 +65,11 @@ For complete privacy, run models locally using Ollama or similar providers. Brai
 To use the Ollama Plugin to run local AI models:
 
 1. Install Ollama from Ollama.com
-3. Go to BrainDrive Settings & Install Your Preferred Model(s)
+3. Go to BrainDrive Settings & Install Your Preferred Model(s):
 
 ![BrainDrive Ollama Settings Page](/static/img/screenshots/ollama-settings-screebshot.png)
 
-4. Chat Locally — All conversations stay on your machine
+4. Chat Locally — All conversations stay on your machine:
 
 ![chatting with an Ollama model in BrainDrive](/static/img/screenshots/choosing-a-model.png)
 
