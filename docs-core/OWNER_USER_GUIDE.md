@@ -161,6 +161,8 @@ Install these to experience BrainDrive's extensibility:
 * **Enhanced Chat** — Advanced conversation features  
 * **Data Visualizer** — Charts and graphs from AI responses
 
+## Adding Persona's 
+
 ---
 
 ## Essential Settings and Configuration
