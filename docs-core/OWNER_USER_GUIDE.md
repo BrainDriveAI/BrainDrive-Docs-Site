@@ -110,7 +110,7 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 5. **Arrange and Resize** components to fit your workflow  
 6. **Publish Your ** your layout
 
-![Building a page in BrainDrive](!static/img/screenshots/building-a-page.png)
+![Building a page in BrainDrive](/static/img/screenshots/building-a-page.png)
 
 
 ### Page Management
