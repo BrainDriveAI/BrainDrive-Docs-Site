@@ -15,7 +15,7 @@ The 4 pillars of BrainDrive:
 
 Think **WordPress but for AI**: Install BrainDrive-Core, then add or develop plugins to rapidly deploy AI-powered features.
 
-Every BrainDrive owner receives:
+## Every BrainDrive owner receives:
 
 1. A web‑based Chat interface for interacting with AI models
 
