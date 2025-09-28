@@ -99,16 +99,20 @@ See [plugin developer quickstart guide here](https://braindriveai.github.io/Brai
 
 The **Page Builder** is where BrainDrive's modularity shines. Create task-specific workspaces that match your workflow.
 
-### Creating a Research Page
+**Note** Currently we are focused on building out topic specific chat interfaces. In the coming months we will be building out connections to other systems and agents that can be built on top of this foundation. 
 
-1. **Navigate to Studio** → New Page  
-2. **Name your page** (e.g., "Research Workspace")  
-3. **Add Components**:  
+### Creating Your First Page
+
+1. **Navigate to Page Builder → New Page
+
+
+3. **Name your page** (e.g., "Research Workspace")  
+4. **Add Components**:  
    * Drag a **Chat** component and configure with research prompts  
    * Add a **Notes** component for capturing insights  
    * Include any plugin components you've installed  
-4. **Arrange and Resize** components to fit your workflow  
-5. **Save** your layout
+5. **Arrange and Resize** components to fit your workflow  
+6. **Save** your layout
 
 *\[Screenshot placeholder: Page Builder with research workspace layout\]*
 
