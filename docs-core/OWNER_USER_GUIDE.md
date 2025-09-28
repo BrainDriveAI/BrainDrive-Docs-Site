@@ -112,15 +112,7 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 
 ![Building a page in BrainDrive](/static/img/screenshots/building-a-page.png)
 
-
-### Page Management
-
-* **Export/Import** layouts as JSON for backup or sharing  
-* **Responsive Design** — pages adapt to desktop, tablet, and mobile  
-* **Real-Time Preview** — see changes immediately  
-* **Version Control** — layouts are saved automatically
-
-### Page Ideas for Different Workflows
+### Future Page Ideas for Different Workflows
 
 * **Writing Studio**: Chat \+ grammar tools \+ research components  
 * **Data Analysis**: Multiple model chat \+ visualization components  
