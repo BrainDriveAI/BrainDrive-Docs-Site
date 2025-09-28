@@ -99,7 +99,7 @@ See [plugin developer quickstart guide here](https://braindriveai.github.io/Brai
 
 The **Page Builder** is where BrainDrive's modularity shines. Create task-specific workspaces that match your workflow.
 
-**Note** Currently we are focused on building out topic specific chat interfaces. In the coming months we will be building out connections to other systems and agents that can be built on top of this foundation. 
+**Note:** We're currently focused on building out topic specific chat interfaces. In the coming months we'll be working with the community to build out connections to other systems and agents. 
 
 ### Creating Your First Page
 
