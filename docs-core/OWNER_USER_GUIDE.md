@@ -152,62 +152,7 @@ Personas can be easily used across any AI chat, and allow you to control the sys
 
 ![BrainDrive Personas](/static/img/screenshots/personas.png)
 
-## Essential Settings and Configuration
 
-### Profile and Preferences
-
-*\[Screenshot placeholder: Settings panel showing profile and theme options\]*
-
-* **Display Name**: How you appear in the system  
-* **Theme**: Light/dark mode (affects all plugins)  
-* **Default Language**: For AI interactions  
-* **Conversation Settings**: History retention, auto-save frequency
-
-### AI Provider Configuration
-
-* **Default Model**: System-wide AI model preference  
-* **API Keys**: Secure storage for external AI services  
-* **Model Parameters**: Temperature, max tokens, system prompts  
-* **Usage Tracking**: Monitor API costs and usage
-
-### Performance and Storage
-
-* **Database Settings**: SQLite location and backup frequency  
-* **Plugin Storage**: How plugins store their data  
-* **Cache Management**: Clear cached responses and temporary files  
-* **Export Options**: Backup conversations and configurations
-
----
-
-## Daily Use Best Practices
-
-### Effective Prompting
-
-* **Be Specific**: Clear goals get better results  
-* **Break Down Complex Tasks**: Use step-by-step instructions  
-* **Use Context**: Reference previous conversations when relevant  
-* **Experiment**: Try different models for different tasks
-
-### Organization Strategies
-
-* **Name Conversations**: Use descriptive titles for easy finding  
-* **Tag by Project**: Organize conversations with consistent tags  
-* **Archive Old Threads**: Keep your workspace clean  
-* **Export Important Results**: Save key insights outside the system
-
-### Workflow Optimization
-
-* **Create Dedicated Pages**: One page per major task or project  
-* **Use Multiple Models**: Compare responses across providers  
-* **Leverage Plugins**: Extend functionality instead of working around limitations  
-* **Regular Backups**: Export page layouts and critical conversations
-
-### Performance Tips
-
-* **Local vs API**: Choose based on privacy needs and performance requirements  
-* **Component Placement**: Organize page layouts for efficient workflows  
-* **Plugin Updates**: Keep plugins current for best performance and features  
-* **Resource Monitoring**: Watch system resources if running large local models
 
 ---
 
