@@ -136,7 +136,8 @@ BrainDrive's plugin system is designed for safety and simplicity. All plugins ar
 
 ### Plugin Management
 
-**Enable/Disable**: Turn plugins on/off without uninstalling **Update**: Get latest features when plugin authors release updates **Uninstall**: Completely remove plugin files and data
+* **Enable/Disable**: Turn plugins on/off without uninstalling 
+* **Update**: Get latest features when plugin authors release updates **Uninstall**: Completely remove plugin files and data
 
 ### Plugin Safety
 
