@@ -179,7 +179,7 @@ Ready to get started building? Be up and running in minutes with BrainDrive's [P
 **Primary Resources**:
 
 * **Community Forum**: [community.braindrive.ai](https://community.braindrive.ai/) — Questions, help, ideas, weekly updates  
-* **Guides**: [github.com/BrainDriveAI](https://github.com/BrainDriveAI) for full documentation and tutorials
+* **Guides**: [BrainDrive Docs Site](https://braindriveai.github.io/BrainDrive-Docs/) for full documentation and tutorials
 * **Documentation** Each repo has full technical references in the root directory.
 * **GitHub Issues**: Report bugs and request features  
 * **Plugin Marketplace**: Share and discover new plugins
