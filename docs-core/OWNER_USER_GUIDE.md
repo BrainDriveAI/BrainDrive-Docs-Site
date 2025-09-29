@@ -119,7 +119,7 @@ The **Page Builder** is where BrainDrive's modularity shines. Create task-specif
 * **Client Work**: Custom prompts \+ project tracking \+ billing tools  
 * **Learning**: Chat \+ note-taking \+ progress tracking components
 
-Our goal is for the only limit to what you can build is your imagination. 
+Our vision is for there to be no limit to what you can build on your BrainDrive. 
 
 ## Installing and Managing Plugins
 
