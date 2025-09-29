@@ -266,7 +266,7 @@ BrainDrive aims for a world where:
 
 As a BrainDrive owner you have complete control over your AI experience. No corporate gatekeepers, no data extraction, no artificial limitations. You own the system, the data, and the value you create.
 
-Thank you for joing us on the journey towards the future of user-owned AI.
+Thank you for joining us on the journey towards the future of user-owned AI.
 
 **Your AI. Your Rules.**
 
