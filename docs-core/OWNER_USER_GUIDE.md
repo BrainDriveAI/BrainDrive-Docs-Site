@@ -8,7 +8,7 @@ BrainDrive is your open-source, self-hosted ChatGPT alternative that's easy to u
 
 The 4 pillars of BrainDrive:
 
-1. **Ownership** — You control your AI system, data, and created value
+1. **Ownership** — You own your AI system, data, and created value
 2. **Freedom** — Fully customizable and portable, with no Big Tech restrictions
 3. **Empowerment** — Simple to use and build on, with supportive community
 4. **Sustainability** — Value flows to the people creating it, not some distant shareholder
