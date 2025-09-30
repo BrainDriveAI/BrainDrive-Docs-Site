@@ -4,9 +4,11 @@ Freedom from Big Tech's extractive AI platforms no longer requires building your
 
 BrainDrive-Core provides your AI system's foundation. Plugins provide the freedom.
 
+![plugin manager sidebar highlight](../static/img/screenshots/plugin-manager-sidebar-highlight.png)
+
 ## The 4 Pillars of BrainDrive
 
-BrainDrive's plugin based archetecture rests of these 4 pillars:
+BrainDrive's plugin based archetecture rests on these 4 pillars:
 
 1. **Ownership:** You own your BrainDrive, and any plugins you create.  
 2. **Freedom:** Use and/or build any plugin you want in your BrainDrive. Deploy locally or on the cloud of your choice.  
@@ -67,10 +69,10 @@ All BrainDrive default plugins are MIT licensed and easy to remove. Don't like a
 
 The strength of BrainDrive is not BrainDrive-Core. It's what it enables:
 
-**Ownership** over your AI system. You're a BrainDrive owner, not a user.  
-**Freedom** to do whatever you want with your BrainDrive.  
-**Power** to easily customize and build whatever you want.  
-**Sustainability** through community-driven development where value flows to creators, not Big Tech.
+* **Ownership** over your AI system. You're a BrainDrive owner, not a user.  
+* **Freedom** to do whatever you want with your BrainDrive.  
+* **Power** to easily customize and build whatever you want.  
+* **Sustainability** through community-driven development where value flows to creators, not Big Tech.
 
 ### Why This Matters
 
@@ -122,6 +124,7 @@ Each example plugin demonstrates best practices for integrating with BrainDrive'
 Ready to build something new? Whether you're solving your own problem or building for the community, BrainDrive makes plugin development straightforward.
 
 **Get Started:**
+
 1. Review the Plugin Template and Service Bridge Examples above
 2. Follow the [Plugin Developer Quickstart](link) guide
 3. Build, test, and deploy your plugin
@@ -145,8 +148,6 @@ We're developing an open, community-driven plugin marketplace for easier discove
 As the BrainDrive community expands, so does the plugin ecosystem. Today's community plugins become tomorrow's essential tools. By building and sharing, you're helping create a thriving alternative to Big Tech AI platforms.
 
 Your contributions matter. Every plugin you create strengthens the user-owned AI movement.
-
----
 
 ## Conclusion
 
