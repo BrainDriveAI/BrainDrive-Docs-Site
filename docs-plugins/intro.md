@@ -6,10 +6,12 @@ BrainDrive-Core provides your AI system's foundation. Plugins provide the freedo
 
 ## The 4 Pillars of BrainDrive
 
-**Ownership:** You own your BrainDrive, and any plugins you create.  
-**Freedom:** Use and/or build any plugin you want in your BrainDrive. Deploy locally or on the cloud of your choice.  
-**Empowerment:** Your BrainDrive is designed to help you realize your vision, not someone else's.  
-**Sustainability:** Your BrainDrive's lean core + plugin driven ecosystem ensures value flows to those that create it, instead of distant shareholders.
+BrainDrive's plugin based archetecture rests of these 4 pillars:
+
+1. **Ownership:** You own your BrainDrive, and any plugins you create.  
+2. **Freedom:** Use and/or build any plugin you want in your BrainDrive. Deploy locally or on the cloud of your choice.  
+3. **Empowerment:** Your BrainDrive is designed to help you realize your vision, not someone else's.  
+4. **Sustainability:** Your BrainDrive's lean core + plugin driven ecosystem ensures value flows to those that create it, instead of distant shareholders.
 
 ## Your BrainDrive's Plugin Based Architecture empowers you to:
 
@@ -19,8 +21,6 @@ BrainDrive-Core provides your AI system's foundation. Plugins provide the freedo
 * **Create Agents & Workflows:** Build automations that use your data and intelligence to act on your behalf.
 
 All under your ownership and control.
-
-**BrainDrive Plugins are like LEGO blocks:** Use existing blocks (install community plugins), create new blocks (build your own), combine blocks (multiple plugins working together), and share blocks (distribute through marketplace or independently). This design saves you from rebuilding the basics, letting you focus on tailoring your AI while staying free from Big Tech restrictions.
 
 ## BrainDrive 1 Click Plugin Install
 
