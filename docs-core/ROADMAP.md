@@ -273,7 +273,7 @@ Most importantly: thousands of people are building, controlling, and benefiting 
 * Are excited about BrainDrive’s mission and to build the future of user-owned AI  
 * See the potential in what we're creating, even if it's rough around the edges
 
-**Sound like you?** Check out our [Contributor Guide](https://claude.ai/chat/ca5a9aa1-7aaa-4d91-a19d-715e7042332e#) to see where we need help most.
+**Sound like you?** Check out our [Contributor Guide](https://braindriveai.github.io/BrainDrive-Docs/core/CONTRIBUTING) to learn how to get started building with us today.
 
 **Stay Connected:**
 
