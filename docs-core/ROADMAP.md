@@ -13,7 +13,8 @@ If this resonates, we’d love to build with you. Whether that be by working tog
 
 * Review our 5 Phase roadmap below.
 * View BrainDrive’s [developer documentation](https://braindriveai.github.io/BrainDrive-Docs/).  
-* See tasks on BrainDrive’s [public github project](https://github.com/orgs/BrainDriveAI/projects/1).   
+* See open tasks on BrainDrive’s [public github project](https://github.com/orgs/BrainDriveAI/projects/1).
+* [Contribute](https://braindriveai.github.io/BrainDrive-Docs/core/CONTRIBUTING) by working on open tasks and/or building plugins for yourself and others. 
 * Participate in BrainDrive [Dev updates and prioritization discussions](https://community.braindrive.ai/t/braindrive-development-progress-updates/92/33).   
 * Join [the BrainDrive community](https://community.braindrive.ai/) for more discussions and weekly email updates. 
 
