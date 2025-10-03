@@ -22,9 +22,7 @@ If this resonates, we’d love to build with you. Whether that be by working tog
 
 ## Phase 0: License Selection - MIT
 
-**Goal**
-
-Choose the best license for BrainDrive.
+**Goal**: Choose the best license for BrainDrive.
 
 **Spoiler Alert**
 
