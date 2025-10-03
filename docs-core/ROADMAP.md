@@ -143,7 +143,7 @@ Currently focused on Phases 1 & 2.
 **Future Community Calls to Action:**
 
 * **Create training content** (tutorials, videos, blog posts)  
-* **Design and build plugins** that push the boundaries, share your 
+* **Design and build plugins** that push the boundaries, share your learnings
 
 ### **Phase 4: V1.0 Release** 
 
