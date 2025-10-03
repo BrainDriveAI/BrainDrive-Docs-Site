@@ -11,8 +11,9 @@ An AI system built on the following 4 pillars:
 
 If this resonates, we’d love to build with you. Whether that be by working together on BrainDrive, or as part of the wider user-owned AI movement: 
 
-* View BrainDrive’s [developer documentation](https://braindriveai.github.io/BrainDrive-Docs/)  
-* See tasks on BrainDrive’s [public github project](https://github.com/orgs/BrainDriveAI/projects/1)   
+* Review our 5 Phase roadmap below.
+* View BrainDrive’s [developer documentation](https://braindriveai.github.io/BrainDrive-Docs/).  
+* See tasks on BrainDrive’s [public github project](https://github.com/orgs/BrainDriveAI/projects/1).   
 * Participate in BrainDrive [Dev updates and prioritization discussions](https://community.braindrive.ai/t/braindrive-development-progress-updates/92/33).   
 * Join [the BrainDrive community](https://community.braindrive.ai/) for more discussions and weekly email updates. 
 
@@ -24,7 +25,7 @@ If this resonates, we’d love to build with you. Whether that be by working tog
 
 **Why This Matters:**
 
-Your first local, BrainDrive powered chat means you own the foundation of your AI system:
+Your first local, BrainDrive powered chat means you **own** the foundation of your AI system:
 
 1. **Interface** = BrainDrive-Core + AI Chat Plugin  
 2. **Intelligence** = Open source AI model  
@@ -60,7 +61,7 @@ Almost complete.
 
 **Why This Matters:**
 
-Phase 2 is about the freedom to build on a platform that you own and control, instead of Big Tech. Persona-based chat experiences are the most accessible way to start building on your BrainDrive. 
+Phase 2 is about the **freedom** to build on a platform that you own and control, instead of Big Tech. Persona-based chat experiences are the most accessible way to start building on your BrainDrive. 
 
 **Key Deliverables:**
 
@@ -149,7 +150,10 @@ Currently focused on Phases 1 & 2.
 
 **Why This Matters:**
 
-Our vision is for BrainDrive to be a superior, user-owned alternative to Big Tech AI systems not just for developers, but for everyone. 
+Our vision is for BrainDrive to be a superior, user-owned alternative to Big Tech AI systems not just for developers, but for everyone.
+
+That's why this phase is about **empowering** anyone to become a Braindrive owner, regardless of technical ability. 
+
 
 **Key Deliverables:**
 
@@ -178,7 +182,7 @@ Currently focused on Phases 1 & 2
 
 The open architecture we've built in Phases 1-4 is designed for this moment: when the community's collective creativity and diverse needs drive the platform forward faster than any centralized effort could.
 
-This is where user-owned AI proves its superiority. Not through a single company's vision, but through thousands of builders creating solutions for their specific needs and sharing them with others.
+This is where user-owned AI proves its superiority and **sustainability**. Not through a single company's vision, but through thousands of builders creating solutions for their specific needs and sharing them with others.
 
 **Key Focus Areas:**
 
@@ -277,8 +281,8 @@ Most importantly: thousands of people are building, controlling, and benefiting 
 
 **Stay Connected:**
 
-* Join the BrainDrive Community  
-* Follow the BrainDrive-Core github  
-* Participate in the weekly Dev call livestream
+* **Join** the [BrainDrive Community](https://community.braindrive.ai/) 
+* **Watch** the [BrainDrive-Core GitHub](https://github.com/BrainDriveAI/BrainDrive-Core) 
+* **Participate** in the weekly [BrainDrive Dev call livestream](https://community.braindrive.ai/t/braindrive-development-progress-updates/92/33)
 
 **Your AI. Your Rules.**
