@@ -153,7 +153,7 @@ Currently focused on Phases 1 & 2.
 
 Our vision is for BrainDrive to be a superior, user-owned alternative to Big Tech AI systems not just for developers, but for everyone.
 
-That's why this phase is about **empowering** anyone to become a Braindrive owner, regardless of technical ability. 
+That's why this phase is about **empowering** anyone to become a Braindrive Owner, regardless of technical ability. 
 
 
 **Key Deliverables:**
