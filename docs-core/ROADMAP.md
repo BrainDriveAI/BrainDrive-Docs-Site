@@ -75,7 +75,7 @@ Phase 2 is about the **freedom** to build on a platform that you own and control
   * Deploy from any GitHub repository (no platform lock-in)  
   * Fork and customize for different models and behaviors  
 * **Chat with Documents (RAG System)** – Our second community plugin, featuring:  
-  * Open-source local RAG and document processing options  
+  * Open-source local RAG and document processing
   * Modular design for easy integration with AI chat  
   * Demonstrates the plugin development workflow with connections to external services.   
 * **Community Plugin listing** procedures and discoverability.  
