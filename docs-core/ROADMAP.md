@@ -20,7 +20,46 @@ If this resonates, we’d love to build with you. Whether that be by working tog
 
 ## **Roadmap Phases**
 
-### **Phase 1: Foundation - *Current Focus***
+## Phase 0: License Selection - MIT
+
+**Goal**
+
+Choose the best license for BrainDrive.
+
+**Spoiler Alert**
+
+The 4 pillars of BrainDrive make the MIT license the obvious choice:
+
+1. **Ownership:** Once you install BrainDrive, it's yours forever.
+2. **Freedom:** MIT is the most permissive major open source license.
+3. **Empowerment:** Build on your BrainDrive without legal uncertainty.
+4. **Sustainability:** Value flows to those who create it via services & the plugin layer.
+
+**Why This Matters**
+
+The way to create a superior alternative to Big Tech AI systems, is to do something they never will. Create a completely open alternative to their closed systems.
+
+Why build on a Big Tech owned foundation, when you can build on your own instead?
+
+**Key Deliverable**
+
+BrainDrive-Core and all default plugins released under MIT License with clear LICENSE files in every repository.
+
+**Acceptance Criteria**
+
+* MIT License file present in BrainDrive-Core and all official repositories
+* Clear licensing documentation for contributors
+* Contributor License Agreement (CLA) or Developer Certificate of Origin (DCO) process established to ensure all contributions can remain MIT-licensed
+
+**Where We're At**
+
+**Complete.** BrainDrive-Core and all Default Plugins are MIT-licensed.
+
+**Community Call to Action**
+
+Use and build with confidence. Your BrainDrive. Your Rules.
+
+## **Phase 1: Foundation - *Current Focus***
 
 **Goal:** Developers can easily install BrainDrive-Core on Linux, Windows, and Mac and have a clean first “tell me a joke” chat with a local AI model. 
 
@@ -56,7 +95,7 @@ Almost complete.
 * **Provide [Feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104)**  
 * **Join the [BrainDrive Community](http://community.braindrive.ai)** 
 
-### **Phase 2: Developer Beta Release**
+## **Phase 2: Developer Beta Release**
 
 **Goal:** Developers can easily build chat-based, role-playing experiences on their BrainDrive.
 
@@ -104,7 +143,7 @@ Where We’re At:
 
 We're focused on personal assistant experiences across diverse use cases. Think: research assistant, writing coach, domain expert consultants etc.
 
-### **Phase 3: Developer Release**
+## **Phase 3: Developer Release**
 
 **Goal:** Core system and all default plugins should have clean code, refined UX, comprehensive documentation, and be functionally bug-free.
 
@@ -145,7 +184,7 @@ Currently focused on Phases 1 & 2.
 * **Create training content** (tutorials, videos, blog posts)  
 * **Design and build plugins** that push the boundaries, share your learnings
 
-### **Phase 4: V1.0 Release** 
+## **Phase 4: V1.0 Release** 
 
 **Goal:** Make BrainDrive accessible to non-developers.
 
@@ -175,7 +214,7 @@ Currently focused on Phases 1 & 2
 * **Contribute to UX improvements** that reduce friction  
 * **Test with non-technical users** and report accessibility issues
 
-### **Phase 5: Community Acceleration**
+## **Phase 5: Community Acceleration**
 
 **Goal:** BrainDrive becomes community-driven, accelerating development and innovation beyond what any central team could achieve.
 
