@@ -52,7 +52,7 @@ Provides the primary UI (chat, page builder, etc.) and backend services (user ma
 
 ## Quick Start Installation
 
-**Note**: A one-click installer is planned for v1.0. For now, follow the developer-friendly [install guide here](https://braindriveai.github.io/BrainDrive-Docs/core/INSTALL).
+**Note**: A one-click installer is planned for v1.0. For now, follow the developer-friendly [install guide here](https://docs.braindrive.ai/core/INSTALL/).
 
 ## Setting Up Your First AI Model
 
@@ -93,7 +93,7 @@ To use OpenRouter models in your BrainDrive:
 * Use the BrainDrive OpenRouter plugin as a template for building another API model serving plugin for the provider of your choice.
 * Keep your plugin private or share with the BrainDrive community via the plugin marketplace.
 
-See [plugin developer quickstart guide here](https://braindriveai.github.io/BrainDrive-Docs/core/PLUGIN_DEVELOPER_QUICKSTART).
+See [plugin developer quickstart guide here](https://docs.braindrive.ai/core/PLUGIN_DEVELOPER_QUICKSTART/).
 
 ## Building Your First Custom Page
 
@@ -171,7 +171,7 @@ BrainDrive's decoupled modular archetecture is designed so that you can make you
 * **Combine** blocks (multiple plugins working together)
 * **Share blocks** (distribute through marketplace or independently)
 
-Ready to get started building? Be up and running in minutes with BrainDrive's [Plugin Developer Quickstart Guide](https://braindriveai.github.io/BrainDrive-Docs/core/PLUGIN_DEVELOPER_QUICKSTART).
+Ready to get started building? Be up and running in minutes with BrainDrive's [Plugin Developer Quickstart Guide](https://docs.braindrive.ai/core/PLUGIN_DEVELOPER_QUICKSTART/).
 
 ## **Community and Ecosystem**
 
@@ -180,7 +180,7 @@ Ready to get started building? Be up and running in minutes with BrainDrive's [P
 **Primary Resources**:
 
 * **Community Forum**: [community.braindrive.ai](https://community.braindrive.ai/) — Questions, help, ideas, weekly updates  
-* **Guides**: [BrainDrive Docs Site](https://braindriveai.github.io/BrainDrive-Docs/) for full documentation and tutorials
+* **Guides**: [BrainDrive Docs Site](https://docs.braindrive.ai) for full documentation and tutorials
 * **Documentation** Each repo has full technical references in the root directory.
 * **GitHub Issues**: Report bugs and request features  
 * **Plugin Marketplace**: Share and discover new plugins
