@@ -22,14 +22,60 @@ The result? Service bridges are designed to **save you 90% of typical developmen
 
 In React components, bridges are available through `this.props.services`. Backend lifecycle code can import the same service interfaces.
 
-| Service Bridge | Purpose | Example Usage | Working Demo |
-|----------------|---------|---------------|--------------|
-| **🔗 API Bridge** | Call backend REST endpoints—including your own plugin's routes—without setting up an HTTP client manually | `await services.api.get('/my_plugin/endpoint')` | [`ServiceExample_API`](https://github.com/DJJones66/ServiceExample_API) |
-| **⚡ Event Bridge** | Send and listen for cross-plugin events to coordinate state or actions | `services.event.emit('eventName', data)` | [`ServiceExample_Events`](https://github.com/DJJones66/ServiceExample_Events) |
-| **🎨 Theme Bridge** | Access the current theme (light or dark) and subscribe to changes so components adapt their styles | `const theme = services.theme.getCurrentTheme()` | [`ServiceExample_Theme`](https://github.com/DJJones66/ServiceExample_Theme) |
-| **⚙️ Settings Bridge** | Read or update user preferences and plugin settings, with support for system and user-level scopes | `services.settings.getSetting('myKey')` | [`ServiceExample_Settings`](https://github.com/DJJones66/ServiceExample_Settings) |
-| **📍 PageContext Bridge** | Retrieve the current page or route information—page IDs, paths, parameters—for context-aware plugins | `services.pageContext.getContext()` | [`ServiceExample_PageContext`](https://github.com/DJJones66/ServiceExample_PageContext) |
-| **💾 PluginState Bridge** | Store and retrieve persistent key-value data scoped to your plugin, perfect for lightweight caching | `await services.pluginState.save(data)` | [`ServiceExample_PluginState`](https://github.com/DJJones66/ServiceExample_PluginState) |
+<table className="service-bridges-table">
+  <colgroup>
+    <col />
+    <col />
+    <col />
+    <col />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Service Bridge</th>
+      <th>Purpose</th>
+      <th>Example Usage</th>
+      <th>Working Demo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>🔗 API Bridge</strong></td>
+      <td>Call backend REST endpoints—including your own plugin's routes—without setting up an HTTP client manually.</td>
+      <td><code>await services.api.get('/my_plugin/endpoint')</code></td>
+      <td><a href="https://github.com/DJJones66/ServiceExample_API">ServiceExample_API</a></td>
+    </tr>
+    <tr>
+      <td><strong>⚡ Event Bridge</strong></td>
+      <td>Send and listen for cross-plugin events to coordinate state or actions.</td>
+      <td><code>services.event.emit('eventName', data)</code></td>
+      <td><a href="https://github.com/DJJones66/ServiceExample_Events">ServiceExample_Events</a></td>
+    </tr>
+    <tr>
+      <td><strong>🎨 Theme Bridge</strong></td>
+      <td>Access the current theme (light or dark) and subscribe to changes so components adapt their styles.</td>
+      <td><code>const theme = services.theme.getCurrentTheme()</code></td>
+      <td><a href="https://github.com/DJJones66/ServiceExample_Theme">ServiceExample_Theme</a></td>
+    </tr>
+    <tr>
+      <td><strong>⚙️ Settings Bridge</strong></td>
+      <td>Read or update user preferences and plugin settings, with support for system and user-level scopes.</td>
+      <td><code>services.settings.getSetting('myKey')</code></td>
+      <td><a href="https://github.com/DJJones66/ServiceExample_Settings">ServiceExample_Settings</a></td>
+    </tr>
+    <tr>
+      <td><strong>📍 PageContext Bridge</strong></td>
+      <td>Retrieve the current page or route information—page IDs, paths, parameters—for context-aware plugins.</td>
+      <td><code>services.pageContext.getContext()</code></td>
+      <td><a href="https://github.com/DJJones66/ServiceExample_PageContext">ServiceExample_PageContext</a></td>
+    </tr>
+    <tr>
+      <td><strong>💾 PluginState Bridge</strong></td>
+      <td>Store and retrieve persistent key-value data scoped to your plugin, perfect for lightweight caching.</td>
+      <td><code>await services.pluginState.save(data)</code></td>
+      <td><a href="https://github.com/DJJones66/ServiceExample_PluginState">ServiceExample_PluginState</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Learn By Doing
 
