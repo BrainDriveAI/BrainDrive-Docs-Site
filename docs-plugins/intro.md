@@ -126,7 +126,7 @@ Ready to build something new? Whether you're solving your own problem or buildin
 **Get Started:**
 
 1. Review the Plugin Template and Service Bridge Examples above
-2. Follow the [Plugin Developer Quickstart](link) guide
+2. Follow the [Plugin Developer Quickstart](https://docs.braindrive.ai/core/PLUGIN_DEVELOPER_QUICKSTART) guide
 3. Build, test, and deploy your plugin
 4. Share with the community (optional)
 
