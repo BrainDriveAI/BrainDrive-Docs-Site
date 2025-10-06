@@ -21,7 +21,7 @@ By the end of this guide you will be able to:
 
 ## Step 1: Install BrainDrive
 
-Follow the [Installation Guide](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/INSTALL.md) to get BrainDrive running locally.
+Follow the [Installation Guide](https://docs.braindrive.ai/core/INSTALL) to get BrainDrive running locally.
 
 ## Step 2: Install the Plugin Template
 
