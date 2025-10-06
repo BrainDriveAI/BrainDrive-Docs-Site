@@ -42,37 +42,37 @@ In React components, bridges are available through `this.props.services`. Backen
       <td><strong>🔗 API Bridge</strong></td>
       <td>Call backend REST endpoints—including your own plugin's routes—without setting up an HTTP client manually.</td>
       <td><code>await services.api.get('/my_plugin/endpoint')</code></td>
-      <td><a href="https://github.com/DJJones66/ServiceExample_API">ServiceExample_API</a></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-API-Service-Bridge-Example-Plugin">ServiceExample_API</a></td>
     </tr>
     <tr>
       <td><strong>⚡ Event Bridge</strong></td>
       <td>Send and listen for cross-plugin events to coordinate state or actions.</td>
       <td><code>services.event.emit('eventName', data)</code></td>
-      <td><a href="https://github.com/DJJones66/ServiceExample_Events">ServiceExample_Events</a></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Events-Service-Bridge-Example-Plugin">ServiceExample_Events</a></td>
     </tr>
     <tr>
       <td><strong>🎨 Theme Bridge</strong></td>
       <td>Access the current theme (light or dark) and subscribe to changes so components adapt their styles.</td>
       <td><code>const theme = services.theme.getCurrentTheme()</code></td>
-      <td><a href="https://github.com/DJJones66/ServiceExample_Theme">ServiceExample_Theme</a></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Theme-Service-Bridge-Example-Plugin">ServiceExample_Theme</a></td>
     </tr>
     <tr>
       <td><strong>⚙️ Settings Bridge</strong></td>
       <td>Read or update user preferences and plugin settings, with support for system and user-level scopes.</td>
       <td><code>services.settings.getSetting('myKey')</code></td>
-      <td><a href="https://github.com/DJJones66/ServiceExample_Settings">ServiceExample_Settings</a></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Settings-Service-Bridge-Example-Plugin">ServiceExample_Settings</a></td>
     </tr>
     <tr>
       <td><strong>📍 PageContext Bridge</strong></td>
       <td>Retrieve the current page or route information—page IDs, paths, parameters—for context-aware plugins.</td>
       <td><code>services.pageContext.getContext()</code></td>
-      <td><a href="https://github.com/DJJones66/ServiceExample_PageContext">ServiceExample_PageContext</a></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Page-Context-Service-Bridge-Example-Plugin">ServiceExample_PageContext</a></td>
     </tr>
     <tr>
       <td><strong>💾 PluginState Bridge</strong></td>
       <td>Store and retrieve persistent key-value data scoped to your plugin, perfect for lightweight caching.</td>
       <td><code>await services.pluginState.save(data)</code></td>
-      <td><a href="https://github.com/DJJones66/ServiceExample_PluginState">ServiceExample_PluginState</a></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Plugin-State-Service-Bridge-Example-Plugin">ServiceExample_PluginState</a></td>
     </tr>
   </tbody>
 </table>
@@ -99,7 +99,7 @@ Each service bridge has a working example with visual demonstrations and full do
 - **PageContext Bridge** – Location-aware plugin behavior
 - **PluginState Bridge** – Persistent data storage
 
-Each example includes a comprehensive [developer guide](https://github.com/DJJones66/ServiceExample_API/blob/main/DEVELOPER_GUIDE.md) with production-ready patterns you can use immediately.
+Each example includes a comprehensive [developer guide](https://github.com/BrainDriveAI/BrainDrive-API-Service-Bridge-Example-Plugin/blob/main/DEVELOPER_GUIDE.md) with production-ready patterns you can use immediately.
 
 ## Best Practices
 
@@ -111,7 +111,7 @@ Each example includes a comprehensive [developer guide](https://github.com/DJJon
 
 ## Next Steps
 
-Start building by exploring the service bridge examples hands-on, or dive into the [Plugin Developer Quick Start](https://github.com/BrainDriveAI/BrainDrive/blob/main/PLUGIN_DEVELOPER_QUICKSTART.md) to scaffold your first plugin.
+Start building by exploring the service bridge examples hands-on, or dive into the [Plugin Developer Quick Start](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/PLUGIN_DEVELOPER_QUICKSTART.md) to scaffold your first plugin.
 
 By leaning on service bridges, you can ship powerful, forward-compatible plugins with minimal overhead.
 
