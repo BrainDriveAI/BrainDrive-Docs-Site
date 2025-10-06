@@ -12,9 +12,9 @@ An AI system built on the following 4 pillars:
 If this resonates, we’d love to build with you. Whether that be by working together on BrainDrive, or as part of the wider user-owned AI movement: 
 
 * Review our 5 Phase roadmap below.
-* View BrainDrive’s [developer documentation](https://braindriveai.github.io/BrainDrive-Docs/).  
+* View BrainDrive’s [developer documentation](https://docs.braindrive.ai/).  
 * See open tasks on BrainDrive’s [public github project](https://github.com/orgs/BrainDriveAI/projects/1).
-* [Contribute](https://braindriveai.github.io/BrainDrive-Docs/core/CONTRIBUTING) by working on open tasks and/or building plugins for yourself and others. 
+* [Contribute](https://docs.braindrive.ai/core/CONTRIBUTING) by working on open tasks and/or building plugins for yourself and others. 
 * Participate in BrainDrive [Dev updates and prioritization discussions](https://community.braindrive.ai/t/braindrive-development-progress-updates/92/33).   
 * Join [the BrainDrive community](https://community.braindrive.ai/) for more discussions and weekly email updates. 
 
@@ -88,7 +88,7 @@ Almost complete.
 
 **Community Calls to Action:**
 
-* **Test [the installation](https://braindriveai.github.io/BrainDrive-Docs/core/INSTALL)**   
+* **Test [the installation](https://docs.braindrive.ai/core/INSTALL)**   
 * **Chat with a local model** in your BrainDrive  
 * **Provide [Feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104)**  
 * **Join the [BrainDrive Community](http://community.braindrive.ai)** 
