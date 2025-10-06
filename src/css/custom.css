@@ -84,10 +84,45 @@
 .service-bridges-table td {
   padding: 0.75rem 1rem;
   vertical-align: top;
+  border: 1px solid rgba(148, 163, 184, 0.25);
 }
 
 .service-bridges-table thead th {
   text-align: left;
   font-weight: 600;
   border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+  background: rgba(148, 163, 184, 0.08);
+}
+
+.service-bridges-table tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.4);
+}
+
+.service-bridges-table tbody tr:nth-child(odd) {
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.service-bridges-table td:nth-child(1),
+.service-bridges-table th:nth-child(1) {
+  width: 18%;
+}
+
+.service-bridges-table td:nth-child(2),
+.service-bridges-table th:nth-child(2) {
+  width: 32%;
+}
+
+.service-bridges-table td:nth-child(3),
+.service-bridges-table th:nth-child(3) {
+  width: 26%;
+}
+
+.service-bridges-table td:nth-child(4),
+.service-bridges-table th:nth-child(4) {
+  width: 24%;
+}
+
+.service-bridges-table code {
+  white-space: pre-wrap;
+  word-break: break-word;
 }
