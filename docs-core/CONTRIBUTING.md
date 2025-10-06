@@ -13,7 +13,7 @@ This is why BrainDrive-Core is **MIT licensed** and built on four pillars:
 
 If this mission resonates, we want to build with you:
 
-* [**Roadmap**](https://braindriveai.github.io/BrainDrive-Docs/core/ROADMAP) — our 5-phase execution plan  
+* [**Roadmap**](https://docs.braindrive.ai/core/ROADMAP) — our 5-phase execution plan  
 * [**GitHub Project**](https://github.com/orgs/BrainDriveAI/projects/1) — day-to-day priorities  
 * [**Community Forum**](https://community.braindrive.ai/) — discuss ideas, get support, share plugins  
 * [**Weekly dev livestream**](https://community.braindrive.ai/t/braindrive-development-progress-updates/92/33) — working sessions with the core team every Monday at 10am EST
@@ -22,7 +22,7 @@ If this mission resonates, we want to build with you:
 
 ### 1. Build Plugins (recommended)
 
-BrainDrive-Core provides the foundation. [Plugins](https://braindriveai.github.io/BrainDrive-Docs/plugins/intro) provide the **freedom:**
+BrainDrive-Core provides the foundation. [Plugins](https://docs.braindrive.ai/plugins/intro) provide the **freedom:**
 
 Build whatever you want. Deploy it yourself. Share it if you choose.
 
@@ -37,7 +37,7 @@ Each plugin is a separate repository that loads dynamically via Webpack Module F
 
 You own the code, the repo, and the distribution. No Big Tech lockin.
 
-Ready to start building? **Start here:** [Plugin Developer QuickStart](https://braindriveai.github.io/BrainDrive-Docs/core/PLUGIN_DEVELOPER_QUICKSTART)
+Ready to start building? **Start here:** [Plugin Developer QuickStart](https://docs.braindrive.ai/core/PLUGIN_DEVELOPER_QUICKSTART)
 
 ### 2. Improve Core (experienced developers)
 
@@ -46,7 +46,7 @@ Most features belong in plugins. Core contributions are the exception, not the r
 **What Belongs in Core?**
 
 * **Security** or **auth** improvements  
-* New [**Service Bridges**](https://braindriveai.github.io/BrainDrive-Docs/services/intro)   
+* New [**Service Bridges**]()   
 * **Settings surfaces** that multiple plugins need
 
 **What Doesn't belong in Core?**
@@ -60,7 +60,7 @@ Most features belong in plugins. Core contributions are the exception, not the r
 Most core work is adding endpoints. Before you write custom docs:
 
 1. Check the auto-generated docs at `localhost:8005/api/v1/docs`  
-2. Look at existing [Service Bridges](https://braindriveai.github.io/BrainDrive-Docs/services/intro) as examples  
+2. Look at existing [Service Bridges](https://docs.braindrive.ai/services/intro) as examples  
 3. Follow the same patterns
 
 We use standard approaches wherever possible. For example, if Ollama has a de facto standard for model communication, we use it. Same for image providers, audio providers, etc.
@@ -96,7 +96,7 @@ If you're a new developer or need mentoring, bookmark us. We'll have infrastruct
 
 ## **Local Development**
 
-See [install guide here](https://braindriveai.github.io/BrainDrive-Docs/core/INSTALL). 
+See [install guide here](https://docs.braindrive.ai/core/INSTALL). 
 
 ### Quick Start
 
@@ -123,7 +123,7 @@ npm run dev
 
 ## Roadmap
 
-See the [full BrainDrive Roadmap here](https://braindriveai.github.io/BrainDrive-Docs/core/ROADMAP). 
+See the [full BrainDrive Roadmap here](https://docs.braindrive.ai/core/ROADMAP). 
 
 Here's a brief summary of the BrainDrive roadmap phases:
 
