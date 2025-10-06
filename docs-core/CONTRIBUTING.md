@@ -22,7 +22,7 @@ If this mission resonates, we want to build with you:
 
 ### 1. Build Plugins (recommended)
 
-BrainDrive-Core provides the foundation. Plugins provide the **freedom:**
+BrainDrive-Core provides the foundation. [Plugins](https://braindriveai.github.io/BrainDrive-Docs/plugins/intro) provide the **freedom:**
 
 Build whatever you want. Deploy it yourself. Share it if you choose.
 
@@ -95,6 +95,8 @@ We’re just now opening up to contributors. You'll be pioneering. Here's what t
 If you're a new developer or need mentoring, bookmark us. We'll have infrastructure to support everyone in Phase 3 of the BrainDrive Roadmap.
 
 ## **Local Development**
+
+See [install guide here](https://braindriveai.github.io/BrainDrive-Docs/core/INSTALL). 
 
 ### Quick Start
 
