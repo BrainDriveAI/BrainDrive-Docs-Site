@@ -12,9 +12,9 @@ Service bridges are standardized interfaces that allow plugins to communicate wi
 
 Service bridges provide a stable abstraction layer between your plugin and BrainDrive's core functionality. This architectural approach delivers three critical benefits:
 
-- **No plugin dependencies or conflicts** – Plugins remain decoupled from core code and each other
-- **No breaking changes when core updates** – As long as service contracts remain stable, internal changes won't break your plugin
-- **No intimate system knowledge needed** – Ready-made helpers for common tasks eliminate boilerplate code
+1. **No plugin dependencies or conflicts** – Plugins remain decoupled from core code and each other
+2. **No breaking changes when core updates** – As long as service contracts remain stable, internal changes won't break your plugin
+3. **No intimate system knowledge needed** – Ready-made helpers for common tasks eliminate boilerplate code
 
 The result? Service bridges are designed to **save you 90% of typical development time**.
 
