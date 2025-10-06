@@ -56,3 +56,38 @@
 .hero--primary .hero__subtitle {
   color: #ffffff;
 }
+
+.service-bridges-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+}
+
+.service-bridges-table__col--bridge {
+  width: 18%;
+}
+
+.service-bridges-table__col--purpose {
+  width: 32%;
+}
+
+.service-bridges-table__col--usage {
+  width: 26%;
+}
+
+.service-bridges-table__col--demo {
+  width: 24%;
+}
+
+.service-bridges-table th,
+.service-bridges-table td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
+}
+
+.service-bridges-table thead th {
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.3);
+}

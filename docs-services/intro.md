@@ -22,12 +22,12 @@ The result? Service bridges are designed to **save you 90% of typical developmen
 
 In React components, bridges are available through `this.props.services`. Backend lifecycle code can import the same service interfaces.
 
-<table class="service-bridges-table" style="width: 100%; table-layout: fixed; border-collapse: collapse;">
+<table className="service-bridges-table">
   <colgroup>
-    <col style="width: 18%" />
-    <col style="width: 32%" />
-    <col style="width: 26%" />
-    <col style="width: 24%" />
+    <col className="service-bridges-table__col--bridge" />
+    <col className="service-bridges-table__col--purpose" />
+    <col className="service-bridges-table__col--usage" />
+    <col className="service-bridges-table__col--demo" />
   </colgroup>
   <thead>
     <tr>
