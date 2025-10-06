@@ -13,8 +13,8 @@ const config: Config = {
   tagline: 'Your Self-Hosted, Modular AI System',
   favicon: 'img/favicon.ico',
 
-  url: 'https://braindriveai.github.io',
-  baseUrl: '/BrainDrive-Docs/',
+  url: 'https://docs.braindrive.ai',
+  baseUrl: '/',
 
   organizationName: 'BrainDriveAI',
   projectName: 'BrainDrive-Docs',
