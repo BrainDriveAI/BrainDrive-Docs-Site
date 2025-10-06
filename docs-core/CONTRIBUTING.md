@@ -153,7 +153,7 @@ Each phase builds toward the ultimate goal: a superior, user-owned alternative t
 
 ## What We Need Right Now
 
-We’re about to move into Phase 2 of our roadmap. The goal of Phase to is for Developers to be able to easily build chat-based, role-playing experiences on their BrainDrive. We are looking for devs to help us:
+We’re about to move into Phase 2 of our roadmap. The goal of Phase 2 is for Developers to be able to easily build chat-based, role-playing experiences on their BrainDrive. We are looking for devs to help us:
 
 * Identify and report bugs across BrainDrive-Core and Default plugins  
 * Build persona-based experiences and share them  
