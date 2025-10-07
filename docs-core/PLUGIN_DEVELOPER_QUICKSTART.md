@@ -96,14 +96,60 @@ npm install
 
 Each bridge has an example plugin and documentation you can explore.
 
-| **Bridge** | **Purpose** | **Example Use** | **Learn by Doing** |
-| --- | --- | --- | --- |
-| `API` | Backend communication | `await services.api.get('/data')` | [API Example](https://github.com/DJJones66/ServiceExample_API) |
-| `Event` | Plugin messaging | `services.event.emit('myEvent', data)` | [Events Example](https://github.com/DJJones66/ServiceExample_Events) |
-| `Theme` | Light/dark mode switching | `services.theme.getCurrentTheme()` | [Theme Example](https://github.com/DJJones66/ServiceExample_Theme) |
-| `Settings` | User preferences | `services.settings.getSetting('myKey')` | [Settings Example](https://github.com/DJJones66/ServiceExample_Settings) |
-| `Page Context` | Current page information | `services.pageContext.getContext()` | [Context Example](https://github.com/DJJones66/ServiceExample_PageContext) |
-| `Plugin State` | Data persistence | `services.pluginState.save(data)` | [State Example](https://github.com/DJJones66/ServiceExample_PluginState) |
+<table className="service-bridges-table">
+  <colgroup>
+    <col className="service-bridges-table__col--bridge" />
+    <col className="service-bridges-table__col--purpose" />
+    <col className="service-bridges-table__col--usage" />
+    <col className="service-bridges-table__col--demo" />
+  </colgroup>
+  <thead>
+    <tr>
+      <th>Service Bridge</th>
+      <th>Purpose</th>
+      <th>Example Usage</th>
+      <th>Working Demo</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>🔗 API Bridge</strong></td>
+      <td>Call backend REST endpoints—including your own plugin's routes—without setting up an HTTP client manually.</td>
+      <td><code>await services.api.get('/my_plugin/endpoint')</code></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-API-Service-Bridge-Example-Plugin">ServiceExample_API</a></td>
+    </tr>
+    <tr>
+      <td><strong>⚡ Event Bridge</strong></td>
+      <td>Send and listen for cross-plugin events to coordinate state or actions.</td>
+      <td><code>services.event.emit('eventName', data)</code></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Events-Service-Bridge-Example-Plugin">ServiceExample_Events</a></td>
+    </tr>
+    <tr>
+      <td><strong>🎨 Theme Bridge</strong></td>
+      <td>Access the current theme (light or dark) and subscribe to changes so components adapt their styles.</td>
+      <td><code>const theme = services.theme.getCurrentTheme()</code></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Theme-Service-Bridge-Example-Plugin">ServiceExample_Theme</a></td>
+    </tr>
+    <tr>
+      <td><strong>⚙️ Settings Bridge</strong></td>
+      <td>Read or update user preferences and plugin settings, with support for system and user-level scopes.</td>
+      <td><code>services.settings.getSetting('myKey')</code></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Settings-Service-Bridge-Example-Plugin">ServiceExample_Settings</a></td>
+    </tr>
+    <tr>
+      <td><strong>📍 PageContext Bridge</strong></td>
+      <td>Retrieve the current page or route information—page IDs, paths, parameters—for context-aware plugins.</td>
+      <td><code>services.pageContext.getContext()</code></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Page-Context-Service-Bridge-Example-Plugin">ServiceExample_PageContext</a></td>
+    </tr>
+    <tr>
+      <td><strong>💾 PluginState Bridge</strong></td>
+      <td>Store and retrieve persistent key-value data scoped to your plugin, perfect for lightweight caching.</td>
+      <td><code>await services.pluginState.save(data)</code></td>
+      <td><a href="https://github.com/BrainDriveAI/BrainDrive-Plugin-State-Service-Bridge-Example-Plugin">ServiceExample_PluginState</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Step 7: Build Something Simple
 
