@@ -39,7 +39,7 @@ Follow the [Installation Guide](https://docs.braindrive.ai/core/INSTALL) to get 
 4. Click **Publish**.
 5. Navigate to the new page—you should see the template plugin running.
 
-![BrainDrive Studio screenshot](https://raw.githubusercontent.com/BrainDriveAI/BrainDrive/main/images/Install%20Plugin%20Template.png)
+![BrainDrive Page Builder screenshot](../static/img/screenshots/adding-plugin-template-to-page.png)
 
 ## Step 4: Set Up a Fast Development Environment
 
