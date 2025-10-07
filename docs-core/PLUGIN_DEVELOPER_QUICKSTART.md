@@ -33,7 +33,7 @@ Follow the [Installation Guide](https://docs.braindrive.ai/core/INSTALL) to get 
 
 ## Step 3: Test the Template
 
-1. Open BrainDrive Studio.
+1. Open BrainDrive Plugin Manager.
 2. Create a new page.
 3. Drag **Plugin Template** from the left panel onto the canvas.
 4. Click **Publish**.
