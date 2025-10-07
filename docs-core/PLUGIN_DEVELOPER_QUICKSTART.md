@@ -29,7 +29,7 @@ Follow the [Installation Guide](https://docs.braindrive.ai/core/INSTALL) to get 
 2. Enter the URL `https://github.com/BrainDriveAI/BrainDrive-PluginTemplate`.
 3. Click **Install** and wait for the green success message.
 
-![BrainDrive Plugin Manager screenshot](https://raw.githubusercontent.com/BrainDriveAI/BrainDrive/main/images/Plugin%20Manager%20Install.png)
+![BrainDrive Plugin Manager screenshot](../static/img/screenshots/plugin-manager.png)
 
 ## Step 3: Test the Template
 
