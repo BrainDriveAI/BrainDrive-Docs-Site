@@ -13,6 +13,10 @@ const sources = [
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
 
+const shimTemplates = {
+  core: `---\ntitle: Install BrainDrive Core\nsidebar_label: Install\n---\n\nimport Redirect from '@theme/Redirect';\n\n<Redirect to="/core/getting-started/install" />\n`,
+};
+
 function sh(cmd){ execSync(cmd, {stdio:'inherit'}); }
 
 function copyTreeFiltered(src, dest){
@@ -142,6 +146,11 @@ for (const s of sources){
   }
   console.log(`Synced ${s.repo} -> ${s.dest} [${used}]`);
 
+  if (shimTemplates[s.key]) {
+    const shimPath = path.join(dest, 'docs', 'INSTALL.mdx');
+    fs.mkdirSync(path.dirname(shimPath), {recursive: true});
+    fs.writeFileSync(shimPath, shimTemplates[s.key]);
+  }
 }
 
 console.log('All sync done.');
