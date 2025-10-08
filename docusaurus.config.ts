@@ -1,6 +1,22 @@
 import type {Config} from '@docusaurus/types';
 import {themes as prismThemes} from 'prism-react-renderer';
 
+type EditUrlOverrides = Record<string, string>;
+
+function makeGitHubEditUrlResolver(
+  repo: string,
+  options: {branch?: string; pathPrefix?: string; overrides?: EditUrlOverrides} = {},
+) {
+  const branch = options.branch ?? 'main';
+  const prefix = options.pathPrefix ? options.pathPrefix.replace(/\/?$/, '/') : '';
+  const overrides = options.overrides ?? {};
+
+  return (docPath: string) => {
+    const mappedPath = overrides[docPath] ?? `${prefix}${docPath}`;
+    return `https://github.com/${repo}/edit/${branch}/${mappedPath}`;
+  };
+}
+
 const serviceRepoMap: Record<string, string> = {
   // "doc-service": "BrainDriveAI/DocService",
 };
@@ -17,7 +33,7 @@ const config: Config = {
   baseUrl: '/',
 
   organizationName: 'BrainDriveAI',
-  projectName: 'BrainDrive-Docs',
+  projectName: 'BrainDrive-Docs-Site',
 
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
@@ -48,8 +64,13 @@ const config: Config = {
         path: 'docs-core',
         routeBasePath: 'core',
         sidebarPath: require.resolve('./sidebars.core.ts'),
-        editUrl: ({docPath}) =>
-          `https://github.com/BrainDriveAI/BrainDrive-Docs/blob/main/docs-core/${docPath}`,
+        editUrl: makeGitHubEditUrlResolver('BrainDriveAI/BrainDrive-Core', {
+          pathPrefix: 'docs',
+          overrides: {
+            // Local shim proxies to the install guide inside the core repo.
+            'INSTALL.mdx': 'docs/getting-started/install.md',
+          },
+        }),
       },
     ],
     // Plugin Template
@@ -60,8 +81,9 @@ const config: Config = {
         path: 'docs-template',
         routeBasePath: 'template',
         sidebarPath: require.resolve('./sidebars.template.ts'),
-        editUrl: ({docPath}) =>
-          `https://github.com/BrainDriveAI/PluginTemplate/edit/main/${docPath}`,
+        editUrl: makeGitHubEditUrlResolver('BrainDriveAI/PluginTemplate', {
+          pathPrefix: 'docs',
+        }),
       },
     ],
     // Services
@@ -80,8 +102,8 @@ const config: Config = {
             return `https://github.com/${repo}/edit/main/${servicePath}`;
           }
 
-          // Fallback lets contributors edit docs that live inside BrainDrive-Docs.
-          return `https://github.com/BrainDriveAI/BrainDrive-Docs/edit/main/docs-services/${docPath}`;
+          // Fallback lets contributors edit docs that live inside BrainDrive-Docs-Site.
+          return `https://github.com/BrainDriveAI/BrainDrive-Docs-Site/edit/main/docs-services/${docPath}`;
         },
       },
     ],
@@ -101,9 +123,9 @@ const config: Config = {
             return `https://github.com/${repo}/edit/main/${pluginPath}`;
           }
 
-          // Fallback to editing the doc within the BrainDrive-Docs repository when
+          // Fallback to editing the doc within the BrainDrive-Docs-Site repository when
           // no dedicated plugin repository is registered.
-          return `https://github.com/BrainDriveAI/BrainDrive-Docs/edit/main/docs-plugins/${docPath}`;
+          return `https://github.com/BrainDriveAI/BrainDrive-Docs-Site/edit/main/docs-plugins/${docPath}`;
         },
       },
     ],

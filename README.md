@@ -1,6 +1,6 @@
 # BrainDrive Documentation Hub
 
-BrainDrive-Docs is the home for BrainDrive's public developer documentation. The site is powered by [Docusaurus 3](https://docusaurus.io/) and aggregates content from the main BrainDrive codebase, plugin templates, and dedicated documentation written in this repository.
+BrainDrive-Docs-Site powers BrainDrive's public developer documentation. The site is powered by [Docusaurus 3](https://docusaurus.io/) and aggregates content from the main BrainDrive codebase, plugin templates, and dedicated documentation written in this repository.
 
 ## Quick start
 
@@ -30,7 +30,7 @@ BrainDrive-Docs is the home for BrainDrive's public developer documentation. The
 ## Repository layout
 
 ```
-BrainDrive-Docs/
+BrainDrive-Docs-Site/
 ├── docs/              # Hand-written docs that live only in this repo (tutorials, intro, etc.)
 ├── docs-core/         # Synced docs from BrainDrive-Core (see `npm run sync`).
 ├── docs-services/     # Service-specific docs (hand-written).
