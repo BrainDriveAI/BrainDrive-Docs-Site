@@ -11,6 +11,15 @@ const sources = [
   { key: 'ai-chat',  repo: 'DJJones66/BrainDriveChat',     dest: 'docs-plugins/ai-chat', prefer: ['docs','root'], optional: true },
 ];
 
+// Additional files that should always exist in the destination even after syncing
+const shimTemplates = {
+  core: `---\n` +
+        `title: Install BrainDrive-Core\n` +
+        `---\n\n` +
+        `import InstallDoc from '@site/BrainDrive-Core/docs/getting-started/install.md';\n\n` +
+        `<InstallDoc />\n`,
+};
+
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
 
 function sh(cmd){ execSync(cmd, {stdio:'inherit'}); }
@@ -141,6 +150,12 @@ for (const s of sources){
     fs.writeFileSync(introPath, `---\ntitle: Overview\n---\n# Overview\n\nThis section is synced from ${s.repo}.\n`);
   }
   console.log(`Synced ${s.repo} -> ${s.dest} [${used}]`);
+
+  if (shimTemplates[s.key]) {
+    // Recreate local shim docs that proxy to files inside the synced repo.
+    const shimPath = path.join(dest, 'INSTALL.mdx');
+    fs.writeFileSync(shimPath, shimTemplates[s.key]);
+  }
 }
 
 console.log('All sync done.');
