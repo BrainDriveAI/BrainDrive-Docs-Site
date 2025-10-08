@@ -2,6 +2,9 @@ import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
+import OwnSvg from '@site/static/img/home-own.svg';
+import ModifySvg from '@site/static/img/home-modify.svg';
+import MonetizeSvg from '@site/static/img/home-monetize.svg';
 import styles from './styles.module.css';
 
 type FeatureItem = {
@@ -13,21 +16,21 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Own',
-    Svg: require('@site/static/img/home-own.svg').default,
+    Svg: OwnSvg,
     description: (
       <>MIT Licensed &amp; Self-Hosted</>
     ),
   },
   {
     title: 'Modify',
-    Svg: require('@site/static/img/home-modify.svg').default,
+    Svg: ModifySvg,
     description: (
       <>Modular &amp; Easy to Customize</>
     ),
   },
   {
     title: 'Monetize',
-    Svg: require('@site/static/img/home-monetize.svg').default,
+    Svg: MonetizeSvg,
     description: (
       <>On Your Terms, not Big Tech&apos;s</>
     ),

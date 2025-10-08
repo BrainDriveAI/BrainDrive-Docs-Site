@@ -2,6 +2,9 @@ import type {ReactNode} from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import Link from '@docusaurus/Link';
+import MountainSvg from '@site/static/img/undraw_docusaurus_mountain.svg';
+import TreeSvg from '@site/static/img/undraw_docusaurus_tree.svg';
+import ReactSvg from '@site/static/img/undraw_docusaurus_react.svg';
 import styles from './styles.module.css';
 
 type FeatureItem = {
@@ -13,7 +16,7 @@ type FeatureItem = {
 const FeatureList: FeatureItem[] = [
   {
     title: 'Own Your Data',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
+    Svg: MountainSvg,
     description: (
       <>
         Local‑first by design: your data stays with you while BrainDrive
@@ -23,7 +26,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Service Bridges',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    Svg: TreeSvg,
     description: (
       <>
         Plugins communicate through standardized bridges (Events, Theme,
@@ -34,7 +37,7 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Developer Velocity',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
+    Svg: ReactSvg,
     description: (
       <>
         Ship fast with the <Link to="/template/intro">Plugin Template</Link> and

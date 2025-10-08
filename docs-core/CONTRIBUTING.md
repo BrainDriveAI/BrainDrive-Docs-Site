@@ -46,7 +46,7 @@ Most features belong in plugins. Core contributions are the exception, not the r
 **What Belongs in Core?**
 
 * **Security** or **auth** improvements  
-* New [**Service Bridges**]()   
+* New [**Service Bridges**](https://docs.braindrive.ai/services/intro)  
 * **Settings surfaces** that multiple plugins need
 
 **What Doesn't belong in Core?**
