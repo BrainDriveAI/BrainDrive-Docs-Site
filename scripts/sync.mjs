@@ -147,7 +147,14 @@ for (const s of sources){
   console.log(`Synced ${s.repo} -> ${s.dest} [${used}]`);
 
   if (shimTemplates[s.key]) {
-    const shimPath = path.join(dest, 'docs', 'INSTALL.mdx');
+    // Core docs live inside a nested `docs/` folder (mounted directly by Docusaurus),
+    // but other repos may expect the shim at the root. Detect the structure and write
+    // the shim to the appropriate location so repeated syncs remain idempotent.
+    let shimPath = path.join(dest, 'docs', 'INSTALL.mdx');
+    if (!fs.existsSync(path.dirname(shimPath))) {
+      shimPath = path.join(dest, 'INSTALL.mdx');
+    }
+
     fs.mkdirSync(path.dirname(shimPath), {recursive: true});
     fs.writeFileSync(shimPath, shimTemplates[s.key]);
   }
