@@ -3,15 +3,38 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 type EditUrlOverrides = Record<string, string>;
 
+type EditUrlPayload =
+  | string
+  | {
+      docPath?: string;
+      versionDocsDirPath?: string;
+      source?: string;
+    };
+
+function normalizeDocPath(input: EditUrlPayload): string | null {
+  if (typeof input === 'string') return input;
+  if (!input) return null;
+  if (input.docPath) return input.docPath;
+  if (input.source) {
+    const match = input.source.match(/@site\/[^/]+\/(.*)$/);
+    if (match) return match[1];
+  }
+  return null;
+}
+
 function makeGitHubEditUrlResolver(
   repo: string,
   options: {branch?: string; pathPrefix?: string; overrides?: EditUrlOverrides} = {},
-) {
+): (payload: EditUrlPayload) => string {
   const branch = options.branch ?? 'main';
   const prefix = options.pathPrefix ? options.pathPrefix.replace(/\/?$/, '/') : '';
   const overrides = options.overrides ?? {};
 
-  return (docPath: string) => {
+  return (payload: EditUrlPayload) => {
+    const docPath = normalizeDocPath(payload);
+    if (!docPath) {
+      throw new Error(`Unable to determine docPath for edit URL payload: ${JSON.stringify(payload)}`);
+    }
     const mappedPath = overrides[docPath] ?? `${prefix}${docPath}`;
     return `https://github.com/${repo}/edit/${branch}/${mappedPath}`;
   };
