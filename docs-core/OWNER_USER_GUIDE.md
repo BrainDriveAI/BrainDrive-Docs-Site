@@ -52,7 +52,7 @@ Provides the primary UI (chat, page builder, etc.) and backend services (user ma
 
 ## Quick Start Installation
 
-**Note**: A one-click installer is planned for v1.0. For now, follow the developer-friendly [install guide here](https://docs.braindrive.ai/core/INSTALL/).
+**Note**: A one-click installer is planned for v1.0. For now, follow the developer-friendly [install guide here](https://docs.braindrive.ai/core/getting-started/install).
 
 ## Setting Up Your First AI Model
 

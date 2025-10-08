@@ -27,7 +27,7 @@ function GetStarted(): ReactNode {
     {
       title: 'Install BrainDrive-Core',
       desc: 'Set up the core locally in minutes.',
-      to: '/core/INSTALL',
+      to: '/core/getting-started/install',
       cta: 'Install',
     },
     {

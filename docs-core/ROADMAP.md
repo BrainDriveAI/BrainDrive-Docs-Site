@@ -88,7 +88,7 @@ Almost complete.
 
 **Community Calls to Action:**
 
-* **Test [the installation](https://docs.braindrive.ai/core/INSTALL)**   
+* **Test [the installation](https://docs.braindrive.ai/core/getting-started/install)**
 * **Chat with a local model** in your BrainDrive  
 * **Provide [Feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104)**  
 * **Join the [BrainDrive Community](http://community.braindrive.ai)** 

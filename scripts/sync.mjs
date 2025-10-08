@@ -6,7 +6,7 @@ const cwd = process.cwd();
 const tmp = path.join(cwd, '.cache', 'sources');
 
 const sources = [
-  { key: 'core',     repo: 'BrainDriveAI/BrainDrive-Core', dest: 'docs-core',            prefer: ['docs','root'] },
+  { key: 'core',     repo: 'BrainDriveAI/BrainDrive-Core', dest: 'docs-core/braindrive-core', prefer: ['docs','root'] },
   { key: 'template', repo: 'BrainDriveAI/PluginTemplate',  dest: 'docs-template',        prefer: ['docs','root'] },
   { key: 'ai-chat',  repo: 'DJJones66/BrainDriveChat',     dest: 'docs-plugins/ai-chat', prefer: ['docs','root'], optional: true },
 ];
@@ -141,6 +141,7 @@ for (const s of sources){
     fs.writeFileSync(introPath, `---\ntitle: Overview\n---\n# Overview\n\nThis section is synced from ${s.repo}.\n`);
   }
   console.log(`Synced ${s.repo} -> ${s.dest} [${used}]`);
+
 }
 
 console.log('All sync done.');

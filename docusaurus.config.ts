@@ -45,11 +45,11 @@ const config: Config = {
       '@docusaurus/plugin-content-docs',
       {
         id: 'core',
-        path: 'docs-core',
+        path: 'docs-core/braindrive-core/docs',
         routeBasePath: 'core',
-        sidebarPath: require.resolve('./sidebars.core.ts'),
+        sidebarPath: false,
         editUrl: ({docPath}) =>
-          `https://github.com/BrainDriveAI/BrainDrive-Docs/blob/main/docs-core/${docPath}`,
+          `https://github.com/BrainDriveAI/BrainDrive-Core/edit/main/docs/${docPath}`,
       },
     ],
     // Plugin Template
@@ -115,7 +115,7 @@ const config: Config = {
       title: 'BrainDrive',
       items: [
         { to: '/core/OWNER_USER_GUIDE', label: "Owner's Manual", position: 'left' },
-        { to: '/core/INSTALL', label: 'Install', position: 'left' },
+        { to: '/core/getting-started/install', label: 'Install', position: 'left' },
         { to: '/plugins/intro', label: 'Use Plugins', position: 'left' },
         { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Build Plugins', position: 'left' },
         {
