@@ -14,8 +14,8 @@ function CTAButtons() {
       <div className={styles.heroButtonWrap}>
         <Link
           className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
-          to="/core/OWNER_USER_GUIDE">
-          Owner's Manual
+          to="/core/intro">
+          Core Overview
         </Link>
       </div>
     </div>
@@ -39,7 +39,7 @@ function GetStarted(): ReactNode {
     {
       title: 'Build Your Own Plugins',
       desc: 'Start developing plugins with the quickstart.',
-      to: '/core/PLUGIN_DEVELOPER_QUICKSTART',
+      to: '/core/getting-started/plugin-developer-quickstart',
       cta: 'Start Building',
     },
   ];
@@ -76,7 +76,7 @@ function GetStarted(): ReactNode {
 
 function QuickLinks() {
   const links = [
-    {label: 'Core', desc: 'Front & back-end runtime', to: '/core/'},
+    {label: 'Core', desc: 'Front & back-end runtime', to: '/core/intro'},
     {label: 'Plugins', desc: 'Add functionality to Core', to: '/plugins/intro'},
     {label: 'Service Bridges', desc: 'Decoupled Core <-> Plugin communication', to: '/services/intro'},
     {label: 'PluginTemplate', desc: 'Boilerplate + lifecycle installer/updater', to: '/template/intro'},

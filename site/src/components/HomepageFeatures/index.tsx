@@ -20,7 +20,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Local‑first by design: your data stays with you while BrainDrive
-        orchestrates AI workflows securely. <Link to="/core/">Learn more</Link>.
+        orchestrates AI workflows securely. <Link to="/core/intro">Learn more</Link>.
       </>
     ),
   },
@@ -41,7 +41,7 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         Ship fast with the <Link to="/template/intro">Plugin Template</Link> and
-        <Link to="/core/PLUGIN_DEVELOPER_QUICKSTART"> Quickstart</Link>—React frontend,
+        <Link to="/core/getting-started/plugin-developer-quickstart"> Quickstart</Link>—React frontend,
         FastAPI backend, and clear docs.
       </>
     ),

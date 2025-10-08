@@ -16,7 +16,7 @@ const shimTemplates = {
   core: `---\n` +
         `title: Install BrainDrive-Core\n` +
         `---\n\n` +
-        `import InstallDoc from '@site/BrainDrive-Core/docs/getting-started/install.md';\n\n` +
+        `import InstallDoc from '@site/docs-core/getting-started/install.md';\n\n` +
         `<InstallDoc />\n`,
 };
 
@@ -71,6 +71,15 @@ function sanitizeLineOutsideBackticks(line, repoName){
     if (repoName === 'BrainDrive-Core') {
       // LICENSE and ../LICENSE -> link to GitHub blob
       s = s.replace(/\]\((?:\.{1,2}\/)?LICENSE\)/g, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE)');
+
+      // Update renamed docs to their new locations
+      s = s
+        .replace(/https?:\/\/docs\.braindrive\.ai\/core\/OWNER_USER_GUIDE/gi, 'https://docs.braindrive.ai/core/concepts/plugins')
+        .replace(/\/core\/OWNER_USER_GUIDE/gi, '/core/concepts/plugins')
+        .replace(/https?:\/\/docs\.braindrive\.ai\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, 'https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart')
+        .replace(/\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, '/core/getting-started/plugin-developer-quickstart')
+        .replace(/https?:\/\/docs\.braindrive\.ai\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
+        .replace(/\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92');
     }
     if (repoName === 'PluginTemplate') {
       s = s

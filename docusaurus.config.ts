@@ -136,16 +136,16 @@ const config: Config = {
     navbar: {
       title: 'BrainDrive',
       items: [
-        { to: '/core/OWNER_USER_GUIDE', label: "Owner's Manual", position: 'left' },
+        { to: '/core/concepts/plugins', label: 'Plugins Overview', position: 'left' },
         { to: '/core/INSTALL', label: 'Install', position: 'left' },
         { to: '/plugins/intro', label: 'Use Plugins', position: 'left' },
-        { to: '/core/PLUGIN_DEVELOPER_QUICKSTART', label: 'Build Plugins', position: 'left' },
+        { to: '/core/getting-started/plugin-developer-quickstart', label: 'Build Plugins', position: 'left' },
         {
           label: 'Resources',
           position: 'left',
           items: [
-            { to: '/core/ROADMAP', label: 'Roadmap' },
-            { to: '/core/CONTRIBUTING', label: 'Contribute' },
+            { to: '/core/how-to/use-service-bridges', label: 'Use Service Bridges' },
+            { to: '/core/reference/API', label: 'API Reference' },
             { href: 'https://community.braindrive.ai', label: 'Community' },
             { href: 'https://github.com/BrainDriveAI', label: 'GitHub' },
           ],
