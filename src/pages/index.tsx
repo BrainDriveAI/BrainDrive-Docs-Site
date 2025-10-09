@@ -14,8 +14,8 @@ function CTAButtons() {
       <div className={styles.heroButtonWrap}>
         <Link
           className={clsx('button button--secondary button--lg', styles.heroOutlineButton)}
-          to="/core/intro">
-          Core Overview
+          to="/core/how-to/use-braindrive">
+          Owner&apos;s Manual
         </Link>
       </div>
     </div>
