@@ -157,7 +157,11 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'BrainDrive',
+      title: '',
+      logo: {
+        alt: 'BrainDrive logo',
+        src: 'img/braindrive-logo.png',
+      },
       items: [
         { to: '/core/how-to/use-braindrive', label: 'Owner\'s Manual', position: 'left' },
         { to: '/core/INSTALL', label: 'Install', position: 'left' },
