@@ -159,7 +159,7 @@ const config: Config = {
     navbar: {
       title: 'BrainDrive',
       items: [
-        { to: '/core/concepts/plugins', label: 'Plugins Overview', position: 'left' },
+        { to: '/core/how-to/use-braindrive', label: 'Owner\'s Manual', position: 'left' },
         { to: '/core/INSTALL', label: 'Install', position: 'left' },
         { to: '/plugins/intro', label: 'Use Plugins', position: 'left' },
         { to: '/core/getting-started/plugin-developer-quickstart', label: 'Build Plugins', position: 'left' },
