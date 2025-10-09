@@ -2,7 +2,6 @@ import type {SidebarsConfig} from '@docusaurus/plugin-content-docs';
 
 const sidebars: SidebarsConfig = {
   defaultSidebar: [
-    {type: 'doc', id: 'intro', label: 'Overview'},
     {
       type: 'category',
       label: 'Getting Started',
@@ -19,7 +18,10 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'How-To Guides',
-      items: [{type: 'doc', id: 'how-to/use-service-bridges', label: 'Use Service Bridges'}],
+      items: [
+        {type: 'doc', id: 'how-to/use-braindrive', label: 'Use BrainDrive'},
+        {type: 'doc', id: 'how-to/use-service-bridges', label: 'Use Service Bridges'},
+      ],
     },
     {
       type: 'category',
