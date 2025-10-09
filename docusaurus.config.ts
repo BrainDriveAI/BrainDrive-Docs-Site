@@ -167,8 +167,8 @@ const config: Config = {
           label: 'Resources',
           position: 'left',
           items: [
-            { to: '/core/how-to/use-service-bridges', label: 'Use Service Bridges' },
-            { to: '/core/reference/API', label: 'API Reference' },
+            { to: '/core/ROADMAP', label: 'Roadmap' },
+            { to: '/core/CONTRIBUTING', label: 'Contributing' },
             { href: 'https://community.braindrive.ai', label: 'Community' },
             { href: 'https://github.com/BrainDriveAI', label: 'GitHub' },
           ],

@@ -28,6 +28,14 @@ const sidebars: SidebarsConfig = {
       label: 'Reference',
       items: [{type: 'doc', id: 'reference/API', label: 'API'}],
     },
+    {
+      type: 'category',
+      label: 'Resources',
+      items: [
+        {type: 'doc', id: 'ROADMAP', label: 'Roadmap'},
+        {type: 'doc', id: 'CONTRIBUTING', label: 'Contributing'},
+      ],
+    },
   ],
 };
 
