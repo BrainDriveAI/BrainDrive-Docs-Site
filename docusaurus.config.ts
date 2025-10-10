@@ -46,6 +46,26 @@ const serviceRepoMap: Record<string, string> = {
 const pluginRepoMap: Record<string, string> = {
   "ai-chat": "DJJones66/BrainDriveChat",
 };
+const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDrive-Core', {
+  pathPrefix: 'docs',
+  overrides: {
+    // Local shim proxies to the install guide inside the core repo.
+    'INSTALL.mdx': 'docs/getting-started/install.md',
+  },
+});
+
+const resolveCoreDocEditUrl = (payload: EditUrlPayload): string => {
+  const docPath = normalizeDocPath(payload);
+  if (!docPath) {
+    throw new Error(`Unable to determine docPath for edit URL payload: ${JSON.stringify(payload)}`);
+  }
+
+  if (docPath === 'ROADMAP.md' || docPath === 'CONTRIBUTING.md') {
+    return `https://github.com/BrainDriveAI/BrainDrive-Docs-Site/edit/main/docs-core/${docPath}`;
+  }
+
+  return coreDocEditUrlResolver(payload);
+};
 
 const config: Config = {
   title: 'BrainDrive',
@@ -87,13 +107,7 @@ const config: Config = {
         path: 'docs-core',
         routeBasePath: 'core',
         sidebarPath: require.resolve('./sidebars.core.ts'),
-        editUrl: makeGitHubEditUrlResolver('BrainDriveAI/BrainDrive-Core', {
-          pathPrefix: 'docs',
-          overrides: {
-            // Local shim proxies to the install guide inside the core repo.
-            'INSTALL.mdx': 'docs/getting-started/install.md',
-          },
-        }),
+        editUrl: resolveCoreDocEditUrl,
       },
     ],
     // Plugin Template
