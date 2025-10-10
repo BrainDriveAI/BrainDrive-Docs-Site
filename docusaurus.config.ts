@@ -70,7 +70,7 @@ const resolveCoreDocEditUrl = (payload: EditUrlPayload): string => {
 const config: Config = {
   title: 'BrainDrive',
   tagline: 'Your Self-Hosted, Modular AI System',
-  favicon: 'img/favicon.ico',
+  favicon: 'Icon-Logo-Dark-Mode.svg',
 
   url: 'https://docs.braindrive.ai',
   baseUrl: '/',
