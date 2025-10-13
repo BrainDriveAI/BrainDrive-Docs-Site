@@ -1,8 +1,9 @@
 ---
 title: Plugins Overview
-slug: /plugins/intro
 displayed_sidebar: null
 ---
+
+# Plugins Overview
 
 Freedom from Big Tech's extractive AI platforms no longer requires building your own system from scratch.
 
