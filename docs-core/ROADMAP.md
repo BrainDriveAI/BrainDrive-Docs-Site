@@ -45,7 +45,7 @@ Why build on a Big Tech owned foundation, when you can build on your own foundat
 
 **Why This Matters:**
 
-Phase 1 is about making it **easy** for anyone to own the foundational components of their AI systm.
+Phase 1 is about making it **easy** for anyone to own the foundational components of their AI system.
 
 Your first local, BrainDrive powered chat means you **own** the foundation of your AI system:
 
