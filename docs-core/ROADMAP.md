@@ -90,12 +90,12 @@ Phase 2 is about getting the word out & building on the foundation laid in phase
 **Key Deliverables:**
 
 * **BrainDrive Owner Goto Market** launch plan developed and executed.
+* **Documentation:** Non-technical guides and tutorials 
 * **Enhanced Persona System** – Create custom AI assistants with tailored system prompts to give BrainDrive Owners another reason to use their BrainDrive beyond ownership and privacy. 
 * **First Persona Driven Use Case** Start to finish chat experience to accomplish a goal (ie Find your why)
 * **Add page & persona** to BrainDrive w/ 1-click plugin install
 * **Share page & persona** w/ other BrainDrive Owners in 1 click
-* **Improved Page Builder** – Better UX, stability, and plugin layout controls (add/resize/arrange)
-* **User Documentation:** Non-technical guides and tutorials  
+* **Improved Page Builder** – Better UX, stability, and plugin layout controls (add/resize/arrange) 
 * **Community Showcases:** Gallery of user-created pages and use cases  
 * **OpenRouter API Default Plugin** – BrainDrive’s first community plugin. Empowers BrainDrive Owners to run API based models in their BrainDrive. Showcases the plugin architecture with:  
   * One-click install and removal  
@@ -112,7 +112,10 @@ Phase 2 is about getting the word out & building on the foundation laid in phase
 
 **Acceptance Criteria:**
 
-* BrainDrive Owners can create, deploy & share custom persona-based chat experiences across all supported platforms.   
+* Non-Technical BrainDrive Owners can follow our documentation to get up and running on their BrainDrive without 3rd party assistance 
+* BrainDrive Owners can create, deploy & share custom persona-based chat experiences across all supported platforms.
+* BrainDrive Owners can leverage custom knowledge bases with their persona's via Chat w/ Docs functionaltiy  
+* BrainDrive owners can easily switch between both local and API based AI models in their BrainDrive
 * All bugs Identified and resolved across BrainDrive-Core and Default Plugins.  
 * Feedback received from at least 25 BrainDrive Owners in the [BrainDrive Community](https://community.braindrive.ai)
 
@@ -128,37 +131,32 @@ Phase 2 is about getting the word out & building on the foundation laid in phase
 * **Contribute to BrainDrive’s first 3 community plugins**  
 * **Improve documentation** based on your learning journey
 
-**Use Cases We're Targeting:**
-
-We're focused on personal assistant experiences across diverse use cases. Think: research assistant, writing coach, domain expert consultants etc.
-
 ## **Phase 3: BrainDrive Builder Release**
 
 **Goal:** Make it easy to build on BrainDrive.
 
 **Why This Matters:**
 
-Owning your AI system is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. So that's what this phase is all about.   
+Owning your AI system is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to build on top of their BrainDrive is the second step. So that's what this phase is all about.   
 
 **Key Deliverables:**
 
 * **BrainDrive Builder** Goto Market launch plan developed and executed
 * **Developer Documentation & Examples** – Clear, accessible guides and examples for building on BrainDrive
+* **Training Resources:** Video tutorials, starter templates, example projects  
 * **Community Plugin listing** procedures and discoverability.
 * **Code Quality:** Refactored, well-commented, follows best practices  
 * **UX Polish:** Intuitive, consistent, accessible  
 * **Documentation:** Complete, clear, with examples and tutorials  
 * **Bug Remediation:** All known bugs resolved, edge cases handled  
-* **Training Resources:** Video tutorials, starter templates, example projects  
-* **JSON Marketplace Prototype:** Initial infrastructure for plugin discovery and sharing
+* **JSON Marketplace:** For plugin discovery, sharing, & 3rd party marketplace creation.
 * **BrainDrive Code Concierge:** A BrainDrive tuned coding assistant that makes building BrainDrive plugins easy.
 
 **Acceptance Criteria:**
-
-* Core system passes comprehensive testing suite  
-* Zero critical bugs in default plugins  
+ 
+* Zero critical bugs in core and default plugins  
 * Developer onboarding takes < 30 minutes from install to first plugin  
-* Community developers successfully build and deploy plugins without team assistance
+* BrainDrive Builders successfully build and deploy plugins without team assistance
 * Feedback from 10 developers who have built and launched plugins on their BrainDrive.
 
 **Where We’re At:**
@@ -178,18 +176,20 @@ Currently focused on Phases 1 & 2.
 
 ## **Phase 4: BrainDrive Entreprenuer Release** 
 
-**Goal:** Make it easy to monetize your BrainDrive. 
+**Goal:** Make it easy to monetize your BrainDrive.
 
 **Why This Matters:**
 
-Owning your BrainDrive is the first step to building a superior, user-owned alternative to Big Tech AI systems. The ability to build on your BrainDrive is the second step. Making money from your BrainDrive is the 3rd. 
+Owning your BrainDrive is the 1st step to building a superior, user-owned alternative to Big Tech AI systems. The ability to build on your BrainDrive is the 2nd step. Benefiting from the value you create with your BrainDrive is the 3rd. 
 
 And that's what this phase is all about. 
 
 **Key Deliverables:**
 
-* **Guidelines** for what can be monetized on the BrainDrive Marketplace (No lock-in or rules for off marketplace transactions. Deploy and sell wherever you please.)
-* **Enhanced Plugin Marketplace:** Browse, install, and manage plugins through GUI
+* **Guidelines** for what can be monetized on the BrainDrive Marketplace and how it can be monetized (No lock-in or rules for off marketplace transactions. Deploy and sell wherever you please.)
+* **Enhanced BrainDrive Default Plugin Marketplace:** Browse, install, and manage plugins through GUI.
+* **3rd Party Marketplace Support** Add your own marketplace to your BrainDrive. No fork required.
+* **Custom Branding** Custonize your BrainDrive to match your Brand. 
 * **Service Marketplace** Where BrainDrive Owners & Entreprenuers can hire BrainDrive builders to build out custom automations and use cases. 
 * **BrainDrive Managed Hosting** as the first revenue driver to fund open core development.
 
