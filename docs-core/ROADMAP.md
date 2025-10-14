@@ -70,7 +70,7 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 **Where we’re at:**
 
 - **Done:** We have completed the cross-platform installation guide, Ollama Integration, and Default AI chat plugins. Ollama and AI Chat plugin install with BrainDrive-Core by default, and can be easily removed with 1 click.
-- **In Progress** 1-click install for Windows, MacoOS, and Linux
+- **In Progress** 1-click install for Windows, macOS, and Linux
 
 **Community Calls to Action:**
 
