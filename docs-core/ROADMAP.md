@@ -9,7 +9,7 @@ An AI system built on the following 4 pillars:
 3. **Empowerment** - Your AI system should be easy to use, customize, & build on.  
 4. **Sustainability** - Value should flow to those that create it.
 
-If this resonates, we’d love to build with you. Whether that be by working together on BrainDrive, or as part of the wider user-owned AI movement: 
+If this resonates, we’d love to build with you.
 
 * Review our 5 Phase roadmap below.
 * View BrainDrive’s [developer documentation](/).  
