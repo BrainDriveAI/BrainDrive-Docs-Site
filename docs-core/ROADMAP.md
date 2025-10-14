@@ -85,7 +85,7 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 
 **Why This Matters:**
 
-Phase 2 is about getting the word out & building on the foundation we laid in phase 1 by empowering individuals to personalize their AI system. 
+Phase 2 is about getting the word out & building on the foundation laid in phase 1 by empowering individuals to personalize their BrainDrive. 
 
 **Key Deliverables:**
 
@@ -93,9 +93,9 @@ Phase 2 is about getting the word out & building on the foundation we laid in ph
 * **Enhanced Persona System** – Create custom AI assistants with tailored system prompts to give BrainDrive Owners another reason to use their BrainDrive beyond ownership and privacy. 
 * **First Persona Driven Use Case** Start to finish chat experience to accomplish a goal (ie Find your why)
 * **Add page & persona** to BrainDrive w/ 1-click plugin install
-* **Share page & persona** w/ other BrainDrive users in 1 click
+* **Share page & persona** w/ other BrainDrive Owners in 1 click
 * **Improved Page Builder** – Better UX, stability, and plugin layout controls (add/resize/arrange)  
-* **OpenRouter API Default Plugin** – BrainDrive’s first community plugin. Empowers BrainDrive owners to run API based models in their BrainDrive. Showcases the plugin architecture with:  
+* **OpenRouter API Default Plugin** – BrainDrive’s first community plugin. Empowers BrainDrive Owners to run API based models in their BrainDrive. Showcases the plugin architecture with:  
   * One-click install and removal  
   * Deploy from any GitHub repository (no platform lock-in)  
   * Fork and customize for different models and behaviors  
@@ -132,16 +132,13 @@ We're focused on personal assistant experiences across diverse use cases. Think:
 
 ## **Phase 3: BrainDrive Builder Release**
 
-
 **Goal:** Make it easy to build on BrainDrive.
 
 **Why This Matters:**
 
-Owning your AI system (Phase 1) is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. 
+Owning your AI system (Phase 1) is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. So empowering BrainDrive Builder's is what this phase is all about.  
 
 **Key Deliverables:**
-
-This phase is about quality, stability, and professional-grade developer experience.
 
 * **BrainDrive Builder** Goto Market launch plan developed and executed
 * **Developer Documentation & Examples** – Clear, accessible guides and examples for building on BrainDrive
@@ -152,6 +149,7 @@ This phase is about quality, stability, and professional-grade developer experie
 * **Bug Remediation:** All known bugs resolved, edge cases handled  
 * **Training Resources:** Video tutorials, starter templates, example projects  
 * **JSON Marketplace Prototype:** Initial infrastructure for plugin discovery and sharing
+* **BrainDrive Code Concierge:** A BrainDrive tuned coding assistant that makes building BrainDrive plugins easy.
 
 **Acceptance Criteria:**
 
@@ -178,7 +176,7 @@ Currently focused on Phases 1 & 2.
 
 ## **Phase 4: BrainDrive Entreprenuer Release** 
 
-**Goal:** Make BrainDrive accessible to non-developers.
+**Goal:** Make it easy to monetize your BrainDrive. 
 
 **Why This Matters:**
 
