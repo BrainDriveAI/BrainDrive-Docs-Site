@@ -1,6 +1,6 @@
 ---
 title: Plugins Overview
-displayed_sidebar: null
+sidebar_position: 1
 ---
 
 # Plugins Overview

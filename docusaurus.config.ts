@@ -44,7 +44,7 @@ const serviceRepoMap: Record<string, string> = {
   // "doc-service": "BrainDriveAI/DocService",
 };
 const pluginRepoMap: Record<string, string> = {
-  "ai-chat": "DJJones66/BrainDriveChat",
+  'brain-drive-chat-plugin': 'BrainDriveAI/BrainDrive-Chat-Plugin',
 };
 const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDrive-Core', {
   pathPrefix: 'docs',
