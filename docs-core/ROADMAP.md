@@ -188,22 +188,14 @@ And that's what this phase is all about.
 
 **Key Deliverables:**
 
-* **Guidelines** for what can be monetized on the BrainDrive Marketplace (no lock-in or rules for off market place transactions).
+* **Guidelines** for what can be monetized on the BrainDrive Marketplace (No lock-in or rules for off marketplace transactions. Deploy and sell wherever you please.)
 * **Enhanced Plugin Marketplace:** Browse, install, and manage plugins through GUI
 * **Service Marketplace** Where BrainDrive Owners & Entreprenuers can hire BrainDrive builders to build out custom automations and use cases. 
-* **BrainDrive Managed Hosting** How we plan to fund open source development 
-* **Premium plugin listings** 
+* **BrainDrive Managed Hosting** as the first revenue driver to fund open core development.
 
 **Where we’re at:**
 
 Currently focused on Phases 1 & 2
-
-**Future Community Calls to Action:**
-
-* **Create and share page templates** for common use cases  
-* **Build plugins** that connect BrainDrive to other systems and tools  
-* **Contribute to UX improvements** that reduce friction  
-* **Test with non-technical users** and report accessibility issues
 
 ## **Phase 5: Community Acceleration**
 
