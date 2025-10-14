@@ -188,7 +188,7 @@ And that's what this phase is all about.
 
 **Key Deliverables:**
 
-* **Guildelines** for what can be monetized on the BrainDrive Marketplace (no lock-in or rules for off market place transactions).
+* **Guidelines** for what can be monetized on the BrainDrive Marketplace (no lock-in or rules for off market place transactions).
 * **Enhanced Plugin Marketplace:** Browse, install, and manage plugins through GUI
 * **Service Marketplace** Where BrainDrive Owners & Entreprenuers can hire BrainDrive builders to build out custom automations and use cases. 
 * **BrainDrive Managed Hosting** How we plan to fund open source development 
