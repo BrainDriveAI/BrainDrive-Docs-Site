@@ -94,7 +94,9 @@ Phase 2 is about getting the word out & building on the foundation laid in phase
 * **First Persona Driven Use Case** Start to finish chat experience to accomplish a goal (ie Find your why)
 * **Add page & persona** to BrainDrive w/ 1-click plugin install
 * **Share page & persona** w/ other BrainDrive Owners in 1 click
-* **Improved Page Builder** – Better UX, stability, and plugin layout controls (add/resize/arrange)  
+* **Improved Page Builder** – Better UX, stability, and plugin layout controls (add/resize/arrange)
+* **User Documentation:** Non-technical guides and tutorials  
+* **Community Showcases:** Gallery of user-created pages and use cases  
 * **OpenRouter API Default Plugin** – BrainDrive’s first community plugin. Empowers BrainDrive Owners to run API based models in their BrainDrive. Showcases the plugin architecture with:  
   * One-click install and removal  
   * Deploy from any GitHub repository (no platform lock-in)  
@@ -136,7 +138,7 @@ We're focused on personal assistant experiences across diverse use cases. Think:
 
 **Why This Matters:**
 
-Owning your AI system (Phase 1) is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. So empowering BrainDrive Builder's is what this phase is all about.  
+Owning your AI system is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. So empowering BrainDrive Builder's is what this phase is all about.  
 
 **Key Deliverables:**
 
@@ -180,18 +182,16 @@ Currently focused on Phases 1 & 2.
 
 **Why This Matters:**
 
-Our vision is for BrainDrive to be a superior, user-owned alternative to Big Tech AI systems not just for developers, but for everyone.
+Owning your BrainDrive is the first step to building a superior, user-owned alternative to Big Tech AI systems. The ability to build on your BrainDrive is the second step. Making money from your BrainDrive is the 3rd. 
 
-That's why this phase is about **empowering** anyone to become a Braindrive Owner, regardless of technical ability. 
-
+And that's what this phase is all about. 
 
 **Key Deliverables:**
 
 * **Platform Installers:** One-click installation for all supported platforms  
 * **Enhanced Plugin Marketplace:** Browse, install, and manage plugins through GUI  
 * **Sharing:** Export and import plugins, personas, and page configurations  
-* **User Documentation:** Non-technical guides and tutorials  
-* **Community Showcases:** Gallery of user-created pages and use cases
+
 
 **Where we’re at:**
 
