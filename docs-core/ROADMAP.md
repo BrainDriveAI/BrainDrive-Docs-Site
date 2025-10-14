@@ -105,7 +105,7 @@ Phase 2 is about getting the word out & building on the foundation laid in phase
   * Open-source local RAG and document processing
   * Modular design for easy integration with AI chat  
   * Demonstrates the plugin development workflow with connections to external services.   
-* **MCP Plugin (Labs)** – Empowering BrainDrive ownerds to connect their BrainDrive to outside systems and tools. Experimental MCP server integration (active development, "labs" designation)  
+* **MCP Plugin (Labs)** – Empowering BrainDrive owners to connect their BrainDrive to outside systems and tools. Experimental MCP server integration (active development, "labs" designation)  
 * **Feedback recorded** and prioritized
 * **System Debug button** for 1 click error log reporting
 * **All Foundation Bugs Identified & Resolved** Ensuring smooth bug-free operation of all foundational elements across all supported operating systems. 
