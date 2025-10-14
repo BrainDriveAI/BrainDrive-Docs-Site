@@ -20,11 +20,11 @@ If this resonates, we’d love to build with you. Whether that be by working tog
 
 ## **Roadmap Phases**
 
-## Phase 0: License Selection - MIT
+## Phase 0: License Selection - MIT (DONE)
 
 **Goal**: Choose the best license for BrainDrive.
 
-**Spoiler Alert**
+**Decision**
 
 The 4 pillars of BrainDrive make the MIT license the obvious choice:
 
@@ -47,7 +47,6 @@ BrainDrive-Core and all default plugins released under MIT License with clear LI
 
 * MIT License file present in BrainDrive-Core and all official repositories
 * Clear licensing documentation for contributors
-* Contributor License Agreement (CLA) or Developer Certificate of Origin (DCO) process established to ensure all contributions can remain MIT-licensed
 
 **Where We're At**
 
@@ -59,7 +58,7 @@ Use and build with confidence. Your BrainDrive. Your Rules.
 
 ## **Phase 1: Foundation - *Current Focus***
 
-**Goal:** Developers can easily install BrainDrive-Core on Linux, Windows, and Mac and have a clean first “tell me a joke” chat with a local AI model. 
+**Goal:** BrainDrive owners can easily install BrainDrive-Core on Linux, Windows, and Mac and have a clean first “tell me a joke” chat with a local AI model. 
 
 **Why This Matters:**
 
@@ -78,13 +77,16 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 
 **Key Deliverables:**
 
-* **Cross-platform installation guide** that works seamlessly on Linux, Windows, and macOS  
+* **Installers** One click install for Windows, MacOS and Linux
+* **Cross-platform installation guide** for developers that works seamlessly on Linux, Windows, and macOS  
 * **Ollama integration** with GUI-based model management. Download Ollama and add/remove open source models in BrainDrive, no terminal required.  
 * **Default AI Chat plugin** included with BrainDrive-Core install as the first example of a plugin-driven experience
 
 **Where we’re at:**
 
-Almost complete. 
+- **Done:** We have completed the cross-platform installation guide, Ollama Integration, and Default AI chat plugins. Ollama and AI Chat plugin install with BrainDrive-Core by default, and can be easily removed with 1 click.
+- **In Progress** One click install for Windows, MacoOS, and Linux
+
 
 **Community Calls to Action:**
 
