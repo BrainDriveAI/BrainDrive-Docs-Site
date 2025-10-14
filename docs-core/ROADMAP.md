@@ -189,9 +189,7 @@ And that's what this phase is all about.
 * **Guidelines** for what can be monetized on the BrainDrive Marketplace and how it can be monetized (No lock-in or rules for off marketplace transactions. Deploy and sell wherever you please.)
 * **Enhanced BrainDrive Default Plugin Marketplace:** Browse, install, and manage plugins through GUI.
 * **3rd Party Marketplace Support** Add your own marketplace to your BrainDrive. No fork required.
-* **Custom Branding** Customize your BrainDrive to match your brand. 
-* **Service Marketplace** Where BrainDrive Owners & Entreprenuers can hire BrainDrive builders to build out custom automations and use cases. 
-* **BrainDrive Managed Hosting** as the first revenue driver to fund open core development.
+* **Custom Branding** Customize your BrainDrive to match your brand.  
 
 **Where we’re at:**
 
