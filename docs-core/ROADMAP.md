@@ -20,7 +20,7 @@ If this resonates, we’d love to build with you.
 
 ## **Roadmap Phases**
 
-## Phase 0: License Selection - (DONE)
+## Phase 0: License Selection - (DONE - MIT License Chosen)
 
 **Goal**: Choose the best license for BrainDrive.
 
