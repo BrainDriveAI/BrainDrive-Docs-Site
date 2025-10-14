@@ -20,13 +20,13 @@ If this resonates, we’d love to build with you. Whether that be by working tog
 
 ## **Roadmap Phases**
 
-## Phase 0: License Selection - MIT (DONE)
+## Phase 0: License Selection - (DONE)
 
 **Goal**: Choose the best license for BrainDrive.
 
 **Decision**
 
-The 4 pillars of BrainDrive make the MIT license the obvious choice:
+The 4 pillars of BrainDrive make the **MIT license** the obvious choice:
 
 1. **Ownership:** Once you install BrainDrive, it's yours forever.
 2. **Freedom:** MIT is the most permissive major open source license.
@@ -37,7 +37,7 @@ The 4 pillars of BrainDrive make the MIT license the obvious choice:
 
 The way to create a superior alternative to Big Tech AI systems, is to do something they never will. Create a completely open alternative to their closed systems.
 
-Why build on a Big Tech owned foundation, when you can build on your own instead?
+Why build on a Big Tech owned foundation, when you can build on your own foundation instead?
 
 **Key Deliverable**
 
@@ -56,11 +56,13 @@ BrainDrive-Core and all default plugins released under MIT License with clear LI
 
 Use and build with confidence. Your BrainDrive. Your Rules.
 
-## **Phase 1: Foundation - *Current Focus***
+## Phase 1: Foundation - (CURRENT FOCUS)
 
 **Goal:** BrainDrive owners can easily install BrainDrive-Core on Linux, Windows, and Mac and have a clean first “tell me a joke” chat with a local AI model. 
 
 **Why This Matters:**
+
+Phase 1 is about making it **easy** for anyone to own the foundational components of their AI systm.
 
 Your first local, BrainDrive powered chat means you **own** the foundation of your AI system:
 
@@ -87,50 +89,51 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 - **Done:** We have completed the cross-platform installation guide, Ollama Integration, and Default AI chat plugins. Ollama and AI Chat plugin install with BrainDrive-Core by default, and can be easily removed with 1 click.
 - **In Progress** One click install for Windows, MacoOS, and Linux
 
-
 **Community Calls to Action:**
 
-* **Test [the installation](/core/INSTALL)**   
-* **Chat with a local model** in your BrainDrive  
-* **Provide [Feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104)**  
-* **Join the [BrainDrive Community](http://community.braindrive.ai)** 
+* **Test** [the installation](/core/INSTALL)   
+* **Chat** with a local model in your BrainDrive  
+* **Help** by providing [Feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104)
+* **Join** the [BrainDrive Community](http://community.braindrive.ai) 
 
-## **Phase 2: Developer Beta Release**
+## Phase 2: BrainDrive Owner Release (V.1)
 
-**Goal:** Developers can easily build chat-based, role-playing experiences on their BrainDrive.
+**Goal:** Build on Phase 1 foundation with personalization features and functionality. Receive feedback from 25 individuals who have installed and tried out BrainDrive.
 
 **Why This Matters:**
 
-Phase 2 is about the **freedom** to build on a platform that you own and control, instead of Big Tech. Persona-based chat experiences are the most accessible way to start building on your BrainDrive. 
+Phase 2 is about building on the foundation we laid in phase 1 by empowering individuals to personalize their AI system. And to get the word out to individuals interested in owning their AI system, gathering feedback, and resolving any issues identified with the foundaiontal components of BrainDrive.
 
 **Key Deliverables:**
 
-* **Enhanced Persona System** – Create custom AI assistants with tailored system prompts  
+* **BrainDrive Owner Goto Market** Launch Plan Developed and executed.
+* **Enhanced Persona System** – Create custom AI assistants with tailored system prompts to give BrainDrive Owners another reason to use their BrainDrive beyond ownership and privacy. 
+* **First Persona Driven Use Case** Start to finish chat experience to accomplish a goal (ie Find your why)
+* **Add page & persona** to BrainDrive w/ 1-click plugin install
+* **Share page & persona** w/ other BrainDrive users in 1 click
 * **Improved Page Builder** – Better UX, stability, and plugin layout controls (add/resize/arrange)  
-* **Add page & persona** to BrainDrive w/ 1-click plugin install   
-* **Developer Documentation & Examples** – Clear, accessible guides and examples for building on BrainDrive  
-* **OpenRouter API Default Plugin** – BrainDrive’s first community plugin. Showcases the plugin architecture with:  
+* **OpenRouter API Default Plugin** – BrainDrive’s first community plugin. Empowers BrainDrive owners to run API based models in their BrainDrive. Showcases the plugin architecture with:  
   * One-click install and removal  
   * Deploy from any GitHub repository (no platform lock-in)  
   * Fork and customize for different models and behaviors  
-* **Chat with Documents (RAG System)** – Our second community plugin, featuring:  
+* **Chat with Documents (RAG System)** – Our second community plugin, empowering BrainDrive owners to ground their chats in their own context, privately and securely. Featuring:  
   * Open-source local RAG and document processing
   * Modular design for easy integration with AI chat  
   * Demonstrates the plugin development workflow with connections to external services.   
-* **Community Plugin listing** procedures and discoverability.  
-* **MCP Plugin (Labs)** – Experimental MCP server integration (active development, "labs" designation)  
-* **Light and Dark Mode** – UI theming options
+* **MCP Plugin (Labs)** – Empowering BrainDrive ownerds to connect their BrainDrive to outside systems and tools. Experimental MCP server integration (active development, "labs" designation)  
+* **Feedback recorded** and prioritized
+* **System Debug button** for 1 click error log reporting
+* **All Foundation Bugs Identified & Resolved** Ensuring smooth bug-free operation of all foundational elements across all supported operating systems. 
 
 **Acceptance Criteria:**
 
-* Developers can create and deploy custom persona-based chat experiences across all supported platforms.   
-* Documentation enables new contributors to build chat based plugins without direct support  
-* All bugs Identified and prioritized across BrainDrive-Core and Default Plugins.  
-* At least 5 community-contributed persona based experiences for valuable use cases. 
+* BrainDrive Owners can create, deploy & share custom persona-based chat experiences across all supported platforms.   
+* All bugs Identified and resolved across BrainDrive-Core and Default Plugins.  
+* Feedback received from at least 25 BrainDrive Owners
 
 Where We’re At:
 
-* First draft of Persona’s, Page Builder, Open Router, Chat w/ Documents, Light/Dark Mode, and Dev Documentation live. 
+* First draft of Persona’s, Page Builder, Open Router, Chat w/ Documents
 
 **Community Calls to Action:**
 
@@ -144,6 +147,11 @@ Where We’re At:
 We're focused on personal assistant experiences across diverse use cases. Think: research assistant, writing coach, domain expert consultants etc.
 
 ## **Phase 3: Developer Release**
+
+* **Developer Documentation & Examples** – Clear, accessible guides and examples for building on BrainDrive
+* * **Community Plugin listing** procedures and discoverability.
+* **BrainDrive Builder** Goto Market launch plan developed and executed
+
 
 **Goal:** Core system and all default plugins should have clean code, refined UX, comprehensive documentation, and be functionally bug-free.
 
