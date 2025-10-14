@@ -138,7 +138,7 @@ We're focused on personal assistant experiences across diverse use cases. Think:
 
 **Why This Matters:**
 
-Owning your AI system is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. So empowering BrainDrive Builder's is what this phase is all about.  
+Owning your AI system is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. So that's what this phase is all about.   
 
 **Key Deliverables:**
 
