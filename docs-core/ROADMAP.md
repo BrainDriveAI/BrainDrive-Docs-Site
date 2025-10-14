@@ -39,23 +39,6 @@ The way to create a superior alternative to Big Tech AI systems, is to do someth
 
 Why build on a Big Tech owned foundation, when you can build on your own foundation instead?
 
-**Key Deliverable**
-
-BrainDrive-Core and all default plugins released under MIT License with clear LICENSE files in every repository.
-
-**Acceptance Criteria**
-
-* MIT License file present in BrainDrive-Core and all official repositories
-* Clear licensing documentation for contributors
-
-**Where We're At**
-
-**Complete.** BrainDrive-Core and all Default Plugins are MIT-licensed.
-
-**Community Call to Action**
-
-Use and build with confidence. Your BrainDrive. Your Rules.
-
 ## Phase 1: Foundation - (CURRENT FOCUS)
 
 **Goal:** BrainDrive owners can easily install BrainDrive-Core on Linux, Windows, and Mac and have a clean first “tell me a joke” chat with a local AI model. 
@@ -79,7 +62,7 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 
 **Key Deliverables:**
 
-* **Installers** One click install for Windows, MacOS and Linux
+* **Installers** 1-click install for Windows, MacOS and Linux
 * **Cross-platform installation guide** for developers that works seamlessly on Linux, Windows, and macOS  
 * **Ollama integration** with GUI-based model management. Download Ollama and add/remove open source models in BrainDrive, no terminal required.  
 * **Default AI Chat plugin** included with BrainDrive-Core install as the first example of a plugin-driven experience
@@ -87,7 +70,7 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 **Where we’re at:**
 
 - **Done:** We have completed the cross-platform installation guide, Ollama Integration, and Default AI chat plugins. Ollama and AI Chat plugin install with BrainDrive-Core by default, and can be easily removed with 1 click.
-- **In Progress** One click install for Windows, MacoOS, and Linux
+- **In Progress** 1-click install for Windows, MacoOS, and Linux
 
 **Community Calls to Action:**
 
@@ -102,11 +85,11 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 
 **Why This Matters:**
 
-Phase 2 is about building on the foundation we laid in phase 1 by empowering individuals to personalize their AI system. And to get the word out to individuals interested in owning their AI system, gathering feedback, and resolving any issues identified with the foundaiontal components of BrainDrive.
+Phase 2 is about getting the word out & building on the foundation we laid in phase 1 by empowering individuals to personalize their AI system. 
 
 **Key Deliverables:**
 
-* **BrainDrive Owner Goto Market** Launch Plan Developed and executed.
+* **BrainDrive Owner Goto Market** launch plan developed and executed.
 * **Enhanced Persona System** – Create custom AI assistants with tailored system prompts to give BrainDrive Owners another reason to use their BrainDrive beyond ownership and privacy. 
 * **First Persona Driven Use Case** Start to finish chat experience to accomplish a goal (ie Find your why)
 * **Add page & persona** to BrainDrive w/ 1-click plugin install
@@ -129,14 +112,15 @@ Phase 2 is about building on the foundation we laid in phase 1 by empowering ind
 
 * BrainDrive Owners can create, deploy & share custom persona-based chat experiences across all supported platforms.   
 * All bugs Identified and resolved across BrainDrive-Core and Default Plugins.  
-* Feedback received from at least 25 BrainDrive Owners
+* Feedback received from at least 25 BrainDrive Owners in the [BrainDrive Community](https://community.braindrive.ai)
 
-Where We’re At:
+**Where We’re At:**
 
 * First draft of Persona’s, Page Builder, Open Router, Chat w/ Documents
 
 **Community Calls to Action:**
 
+* **Test BrainDrive** and [provide feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104).
 * **Identify and report bugs** across BrainDrive-Core and Default plugins   
 * **Build persona-based experiences** and share them  
 * **Contribute to BrainDrive’s first 3 community plugins**  
@@ -146,23 +130,22 @@ Where We’re At:
 
 We're focused on personal assistant experiences across diverse use cases. Think: research assistant, writing coach, domain expert consultants etc.
 
-## **Phase 3: Developer Release**
-
-* **Developer Documentation & Examples** – Clear, accessible guides and examples for building on BrainDrive
-* * **Community Plugin listing** procedures and discoverability.
-* **BrainDrive Builder** Goto Market launch plan developed and executed
+## **Phase 3: BrainDrive Builder Release**
 
 
-**Goal:** Core system and all default plugins should have clean code, refined UX, comprehensive documentation, and be functionally bug-free.
+**Goal:** Make it easy to build on BrainDrive.
 
 **Why This Matters:**
 
-Before we can invite a broader audience, we need a rock-solid foundation. 
+Owning your AI system (Phase 1) is the first step to building a superior, user-owned alternative to Big Tech AI systems. Empowering BrainDrive Owners to start building on top of their BrainDrive is the second step. 
 
 **Key Deliverables:**
 
 This phase is about quality, stability, and professional-grade developer experience.
 
+* **BrainDrive Builder** Goto Market launch plan developed and executed
+* **Developer Documentation & Examples** – Clear, accessible guides and examples for building on BrainDrive
+* **Community Plugin listing** procedures and discoverability.
 * **Code Quality:** Refactored, well-commented, follows best practices  
 * **UX Polish:** Intuitive, consistent, accessible  
 * **Documentation:** Complete, clear, with examples and tutorials  
@@ -176,6 +159,7 @@ This phase is about quality, stability, and professional-grade developer experie
 * Zero critical bugs in default plugins  
 * Developer onboarding takes < 30 minutes from install to first plugin  
 * Community developers successfully build and deploy plugins without team assistance
+* Feedback from 10 developers who have built and launched plugins on their BrainDrive.
 
 **Where We’re At:**
 
@@ -192,7 +176,7 @@ Currently focused on Phases 1 & 2.
 * **Create training content** (tutorials, videos, blog posts)  
 * **Design and build plugins** that push the boundaries, share your learnings
 
-## **Phase 4: V1.0 Release** 
+## **Phase 4: BrainDrive Entreprenuer Release** 
 
 **Goal:** Make BrainDrive accessible to non-developers.
 
