@@ -51,6 +51,8 @@ const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDriv
   overrides: {
     // Local shim proxies to the install guide inside the core repo.
     'INSTALL.mdx': 'docs/getting-started/install.md',
+    'ROADMAP.md': 'ROADMAP.md',
+    'CONTRIBUTING.md': 'CONTRIBUTING.md',
   },
 });
 
@@ -58,10 +60,6 @@ const resolveCoreDocEditUrl = (payload: EditUrlPayload): string => {
   const docPath = normalizeDocPath(payload);
   if (!docPath) {
     throw new Error(`Unable to determine docPath for edit URL payload: ${JSON.stringify(payload)}`);
-  }
-
-  if (docPath === 'ROADMAP.md' || docPath === 'CONTRIBUTING.md') {
-    return `https://github.com/BrainDriveAI/BrainDrive-Docs-Site/edit/main/docs-core/${docPath}`;
   }
 
   return coreDocEditUrlResolver(payload);
