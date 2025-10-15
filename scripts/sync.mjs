@@ -13,11 +13,40 @@ const sources = [
 
 // Additional files that should always exist in the destination even after syncing
 const shimTemplates = {
-  core: `---\n` +
+  core: [
+    {
+      path: 'INSTALL.mdx',
+      content:
+        `---\n` +
         `title: Install BrainDrive-Core\n` +
         `---\n\n` +
         `import InstallDoc from '@site/docs-core/getting-started/install.md';\n\n` +
         `<InstallDoc />\n`,
+    },
+    {
+      path: 'CONTRIBUTING.mdx',
+      content:
+        `---\n` +
+        `title: Contributing to BrainDrive\n` +
+        `---\n\n` +
+        `BrainDrive welcomes community contributions. Refer to the\n` +
+        `[BrainDrive-Core contribution guide](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/CONTRIBUTING.md)\n` +
+        `for setup, coding standards, and pull request expectations.\n`,
+    },
+    {
+      path: 'ROADMAP.mdx',
+      content:
+        `---\n` +
+        `title: BrainDrive Roadmap\n` +
+        `---\n\n` +
+        `Stay current on upcoming releases and long-term plans in the\n` +
+        `[BrainDrive community roadmap](https://community.braindrive.ai/t/braindrive-development-progress-updates/92).\n`,
+    },
+  ],
+};
+
+const extraCopies = {
+  core: [{src: 'images', dest: 'images'}],
 };
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
@@ -74,6 +103,7 @@ function sanitizeLineOutsideBackticks(line, repoName){
 
       // Update renamed docs to their new locations
       s = s
+        .replace(/\.\.\/\.\.\/images\//g, '../images/')
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/OWNER_USER_GUIDE/gi, 'https://docs.braindrive.ai/core/concepts/plugins')
         .replace(/\/core\/OWNER_USER_GUIDE/gi, '/core/concepts/plugins')
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, 'https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart')
@@ -153,6 +183,15 @@ for (const s of sources){
   // sanitize after copy
   sanitizeMDX(dest, s.repo);
 
+  const extras = extraCopies[s.key] ?? [];
+  for (const extra of extras) {
+    const extraSrc = path.join(target, extra.src);
+    const extraDest = path.join(dest, extra.dest);
+    if (fs.existsSync(extraSrc)) {
+      copyTreeFiltered(extraSrc, extraDest);
+    }
+  }
+
   // ensure a landing page exists
   const introPath = path.join(dest,'intro.md');
   if (!fs.existsSync(introPath)){
@@ -161,9 +200,11 @@ for (const s of sources){
   console.log(`Synced ${s.repo} -> ${s.dest} [${used}]`);
 
   if (shimTemplates[s.key]) {
-    // Recreate local shim docs that proxy to files inside the synced repo.
-    const shimPath = path.join(dest, 'INSTALL.mdx');
-    fs.writeFileSync(shimPath, shimTemplates[s.key]);
+    // Recreate local shim docs that proxy to files inside the synced repo or external resources.
+    for (const shim of shimTemplates[s.key]) {
+      const shimPath = path.join(dest, shim.path);
+      fs.writeFileSync(shimPath, shim.content);
+    }
   }
 }
 

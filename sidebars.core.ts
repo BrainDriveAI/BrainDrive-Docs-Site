@@ -20,6 +20,7 @@ const sidebars: SidebarsConfig = {
       label: 'How-To Guides',
       items: [
         {type: 'doc', id: 'how-to/use-braindrive', label: 'Use BrainDrive'},
+        {type: 'doc', id: 'how-to/use-plugins', label: 'Use Plugins'},
         {type: 'doc', id: 'how-to/use-service-bridges', label: 'Use Service Bridges'},
       ],
     },

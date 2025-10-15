@@ -25,7 +25,7 @@ Follow the [Installation Guide](https://docs.braindrive.ai/core/INSTALL)
 3. Click Install
 4. Wait for green success message
 
-![BrainDrive Plugin Manager](../../images/installing-plugin.png)
+![BrainDrive Plugin Manager](../images/installing-plugin.png)
 
 ## Step 3: Test the Template
 
@@ -35,7 +35,7 @@ Follow the [Installation Guide](https://docs.braindrive.ai/core/INSTALL)
 4. Click Publish
 5. Navigate to your page - you should see the working plugin
 
-![adding the plugin template to a page](../../images/adding-plugin-template-to-page.png)
+![adding the plugin template to a page](../images/adding-plugin-template-to-page.png)
 
 ## Step 4: Set Up Fast Development Environment
 
