@@ -29,9 +29,8 @@ const shimTemplates = {
         `---\n` +
         `title: Contributing to BrainDrive\n` +
         `---\n\n` +
-        `BrainDrive welcomes community contributions. Refer to the\n` +
-        `[BrainDrive-Core contribution guide](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/CONTRIBUTING.md)\n` +
-        `for setup, coding standards, and pull request expectations.\n`,
+        `import ContributingDoc from './_includes/CONTRIBUTING.mdx';\n\n` +
+        `<ContributingDoc />\n`,
     },
     {
       path: 'ROADMAP.mdx',
@@ -39,14 +38,27 @@ const shimTemplates = {
         `---\n` +
         `title: BrainDrive Roadmap\n` +
         `---\n\n` +
-        `Stay current on upcoming releases and long-term plans in the\n` +
-        `[BrainDrive community roadmap](https://community.braindrive.ai/t/braindrive-development-progress-updates/92).\n`,
+        `import RoadmapDoc from './_includes/ROADMAP.mdx';\n\n` +
+        `<RoadmapDoc />\n`,
     },
   ],
 };
 
 const extraCopies = {
   core: [{src: 'images', dest: 'images'}],
+};
+
+const rootDocImports = {
+  core: [
+    {
+      sources: ['CONTRIBUTING.mdx', 'CONTRIBUTING.md', 'docs/CONTRIBUTING.mdx', 'docs/CONTRIBUTING.md'],
+      target: '_includes/CONTRIBUTING.mdx',
+    },
+    {
+      sources: ['ROADMAP.mdx', 'ROADMAP.md', 'docs/ROADMAP.mdx', 'docs/ROADMAP.md'],
+      target: '_includes/ROADMAP.mdx',
+    },
+  ],
 };
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
@@ -109,7 +121,9 @@ function sanitizeLineOutsideBackticks(line, repoName){
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, 'https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart')
         .replace(/\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, '/core/getting-started/plugin-developer-quickstart')
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
-        .replace(/\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92');
+        .replace(/\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
+        .replace(/\[\*\*Service Bridges\*\*\]\(\)/g, '[**Service Bridges**](https://docs.braindrive.ai/services/intro)')
+        .replace(/\]\((?:\.{1,2}\/)?SECURITY\.md\)/g, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/SECURITY.md)');
     }
     if (repoName === 'PluginTemplate') {
       s = s
@@ -179,6 +193,21 @@ for (const s of sources){
   // mark source for future logic (if needed)
   fs.writeFileSync(path.join(dest,'.editbase'), used);
   fs.writeFileSync(path.join(dest,'.repo'), s.repo);
+
+  const imports = rootDocImports[s.key] ?? [];
+  for (const spec of imports) {
+    const candidate = spec.sources.find((rel) => fs.existsSync(path.join(target, rel)));
+    if (!candidate) {
+      if (!spec.optional) {
+        console.warn(`⚠️  No source found for ${s.repo}:${spec.target}`);
+      }
+      continue;
+    }
+    const from = path.join(target, candidate);
+    const to = path.join(dest, spec.target);
+    fs.mkdirSync(path.dirname(to), {recursive: true});
+    fs.copyFileSync(from, to);
+  }
 
   // sanitize after copy
   sanitizeMDX(dest, s.repo);

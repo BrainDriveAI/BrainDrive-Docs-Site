@@ -51,8 +51,8 @@ const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDriv
   overrides: {
     // Local shim proxies to the install guide inside the core repo.
     'INSTALL.mdx': 'docs/getting-started/install.md',
-    'ROADMAP.md': 'ROADMAP.md',
-    'CONTRIBUTING.md': 'CONTRIBUTING.md',
+    'ROADMAP.mdx': 'ROADMAP.md',
+    'CONTRIBUTING.mdx': 'CONTRIBUTING.md',
   },
 });
 
@@ -105,6 +105,7 @@ const config: Config = {
         path: 'docs-core',
         routeBasePath: 'core',
         sidebarPath: require.resolve('./sidebars.core.ts'),
+        exclude: ['**/_includes/**'],
         editUrl: resolveCoreDocEditUrl,
       },
     ],
