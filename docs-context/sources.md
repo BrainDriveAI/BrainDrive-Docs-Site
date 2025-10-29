@@ -67,7 +67,7 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
 
 ## C) Strategy, Audience & Brand — *in this folder* (authority 4)
 
-- **vision.md**
+- **Vision**
   - type: doc
   - path: /docs-context/vision.md
   - scope: what BrainDrive is, who it’s for
@@ -75,7 +75,7 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
   - owner: @davewaring
   - authority_order: 4
 
-- **adam-carter.md**
+- **Persona — Adam Carter**
   - type: doc
   - path: /docs-context/personas/adam-carter.md
   - scope: segments, reading level, **persona anchor**: `#persona-adam-carter`
@@ -83,7 +83,63 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
   - owner: @davewaring
   - authority_order: 4
 
-- **technical-docs-style-guide.md**
+- **BrainDrive Mission**
+  - type: doc
+  - path: /docs-context/project-overviews/braindrive-mission.md
+  - scope: mission narrative, why BrainDrive exists
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **BrainDrive Pillars**
+  - type: doc
+  - path: /docs-context/project-overviews/Pillars.md
+  - scope: 4 foundational pillars; messaging guardrails
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **Brand Guidelines**
+  - type: doc
+  - path: /docs-context/project-overviews/brand-guidelines.md
+  - scope: tagline, positioning, messaging framework
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **Visual Brand Guidelines**
+  - type: design
+  - path: /docs-context/project-overviews/Visual-Brand-Guidelines.md
+  - scope: logo usage, colors, typography, asset links
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **Marketing Content Style Guide**
+  - type: doc
+  - path: /docs-context/project-overviews/marketing-content-style-guide.md
+  - scope: marketing tone, examples, pillar-aligned messaging
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **Owners, Builders, Entrepreneurs Overview**
+  - type: doc
+  - path: /docs-context/project-overviews/owners-builders-entreprenuers.md
+  - scope: audience segmentation, value propositions
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **White Paper**
+  - type: doc
+  - path: /docs-context/project-overviews/white-paper.md
+  - scope: user-owned AI thesis, ecosystem model
+  - source_of_truth: docs
+  - owner: @davewaring
+  - authority_order: 4
+
+- **Technical Docs Style Guide**
   - type: doc
   - path: /docs-context/technical-docs-style-guide.md
   - scope: tone/voice, formatting, code style
@@ -91,7 +147,7 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
   - owner: @davewaring
   - authority_order: 4
 
-- **doc-types.md**
+- **Documentation Types**
   - type: doc
   - path: /docs-context/doc-types.md
   - scope: when to use Reference | Guide | How-to | Concept

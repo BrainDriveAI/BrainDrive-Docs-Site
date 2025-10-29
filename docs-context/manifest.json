@@ -91,7 +91,7 @@
       "authority_order": 4,
       "items": [
         {
-          "name": "vision.md",
+          "name": "Vision",
           "type": "doc",
           "path": "/docs-context/vision.md",
           "scope": "what BrainDrive is, who it's for",
@@ -100,26 +100,97 @@
           "authority_order": 4
         },
         {
-          "name": "audience.md",
+          "name": "Persona — Adam Carter",
           "type": "doc",
-          "path": "/docs-context/audience.md",
-          "scope": "segments, reading level, persona anchor",
+          "path": "/docs-context/personas/adam-carter.md",
+          "scope": "primary builder/owner persona, voice anchor",
           "source_of_truth": "docs",
           "owner": "@davewaring",
           "authority_order": 4,
-          "notes": "Persona anchor: #persona-adam-carter"
+          "tags": ["persona"]
         },
         {
-          "name": "style-guide.md",
+          "name": "BrainDrive Mission",
           "type": "doc",
-          "path": "/docs-context/style-guide.md",
-          "scope": "tone/voice, formatting, code style",
+          "path": "/docs-context/project-overviews/braindrive-mission.md",
+          "scope": "mission narrative, why BrainDrive exists",
           "source_of_truth": "docs",
           "owner": "@davewaring",
-          "authority_order": 4
+          "authority_order": 4,
+          "tags": ["mission", "strategy"]
         },
         {
-          "name": "doc-types.md",
+          "name": "BrainDrive Pillars",
+          "type": "doc",
+          "path": "/docs-context/project-overviews/Pillars.md",
+          "scope": "four foundational pillars; messaging guardrails",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["pillars", "strategy"]
+        },
+        {
+          "name": "Brand Guidelines",
+          "type": "doc",
+          "path": "/docs-context/project-overviews/brand-guidelines.md",
+          "scope": "tagline, positioning, messaging framework",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["brand"]
+        },
+        {
+          "name": "Visual Brand Guidelines",
+          "type": "design",
+          "path": "/docs-context/project-overviews/Visual-Brand-Guidelines.md",
+          "scope": "logo usage, colors, typography, assets",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["brand", "visual"]
+        },
+        {
+          "name": "Marketing Content Style Guide",
+          "type": "doc",
+          "path": "/docs-context/project-overviews/marketing-content-style-guide.md",
+          "scope": "marketing tone, examples, pillar-aligned messaging",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["brand", "marketing"]
+        },
+        {
+          "name": "Owners, Builders, Entrepreneurs Overview",
+          "type": "doc",
+          "path": "/docs-context/project-overviews/owners-builders-entreprenuers.md",
+          "scope": "audience segmentation, value propositions",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["audience"]
+        },
+        {
+          "name": "White Paper",
+          "type": "doc",
+          "path": "/docs-context/project-overviews/white-paper.md",
+          "scope": "user-owned AI thesis, ecosystem model",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["strategy", "ecosystem"]
+        },
+        {
+          "name": "Technical Docs Style Guide",
+          "type": "doc",
+          "path": "/docs-context/technical-docs-style-guide.md",
+          "scope": "tone/voice, formatting, code style for docs",
+          "source_of_truth": "docs",
+          "owner": "@davewaring",
+          "authority_order": 4,
+          "tags": ["docs", "style"]
+        },
+        {
+          "name": "Documentation Types",
           "type": "doc",
           "path": "/docs-context/doc-types.md",
           "scope": "when to use Reference | Guide | How-to | Concept",
@@ -146,7 +217,7 @@
         {
           "name": "System / Architecture Overview",
           "type": "doc",
-          "path": "/docs-context/BrainDrive-System.md",
+          "path": "/docs-context/project-overviews/BrainDrive-System.md",
           "scope": "high-level architecture, interfaces, flows",
           "source_of_truth": "spec",
           "owner": "@davewaring",
