@@ -61,8 +61,11 @@ Your BrainDrive-Core install includes several default plugins designed to give y
 ### AI Chat Plugin
 Your default chat interface for conversing with AI models. Even this is modular—replace it, customize it, or run multiple chat interfaces side by side.
 
-### Settings Plugin with Ollama
-Default settings interface plus integration with Ollama for running AI models locally. Gives you a working, privacy-first AI system immediately—no API keys, no external services, all conversations stay on your machine. Once you've downloaded models, you don't even need an internet connection.
+### Settings Plugin
+Default settings interface for managing themes, default pages, and general BrainDrive preferences. Keeps owners in control of their experience while staying lean and lightweight.
+
+### Ollama Plugin
+Install and manage local models with a dedicated Ollama integration. Stream installs, monitor the server, and chat with models privately—no API keys or cloud services required once models are downloaded.
 
 ### OpenRouter Plugin
 Connects to 100+ AI models from multiple providers through a single API. Instant access to cutting-edge models from Anthropic, OpenAI, Google, and more.
