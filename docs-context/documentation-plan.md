@@ -51,4 +51,4 @@ As Builders begin building, they need responsive support and a place to collabor
 
 ---
 
-*Reference alongside `audience.md`, `doc-types.md`, and `vision.md` to keep strategy, voice, and execution aligned.*
+*Reference alongside `adam-carter.md`, `doc-types.md`, and `vision.md` to keep strategy, voice, and execution aligned.*
