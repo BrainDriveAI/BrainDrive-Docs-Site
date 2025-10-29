@@ -1,10 +1,7 @@
----
-title: README
-sidebar_position: 1
-custom_edit_url: https://github.com/BrainDriveAI/BrainDrive-Chat-Plugin/edit/main/README.md
----
-
 # BrainDriveChat Plugin
+
+[![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](LICENSE)
+[![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive-Core)
 
 The BrainDrive Chat Plugin is the default, modular chat experience for [BrainDrive](https://github.com/BrainDriveAI/BrainDrive-Core). 
 
@@ -21,7 +18,7 @@ Think **WordPress for AI**—[install BrainDrive-Core](https://docs.braindrive.a
 - **Unified chat experience:** send prompts, stream responses, and browse conversation history in one place.  
 - **Model selection:** pick from local or API models exposed by installed provider plugins (e.g., [Ollama Plugin](https://github.com/BrainDriveAI/BrainDrive-Ollama-Plugin), [OpenRouter Plugin](https://github.com/BrainDriveAI/BrainDrive-Openrouter-Plugin)).
 - **Drop-in modularity:** add the chat module to any page via the **Page Builder** UI. No code required to compose experiences.  
-- **Decoupled services:** interacts with BrainDrive through [Service Bridges](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/docs/how-to/use-service-bridges.md) (API, Events, Theme, Settings, Page Context, Plugin State) for forward-compatibility.
+- **Decoupled services:** interacts with BrainDrive through [Service Bridges](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/docs/how-to/use-service-bridges.md) for forward-compatibility.
 - **1-minute dev cycle:** edit → build → refresh, powered by **Module Federation** and BrainDrive’s plugin system.
 
 ## Quick Start (2 paths)
@@ -47,31 +44,26 @@ Think **WordPress for AI**—[install BrainDrive-Core](https://docs.braindrive.a
 > Use this path if you want to modify or contribute. It gives you a rapid edit→build→refresh cycle.
 
 1. **Clone & install**
-
    ```bash
-   git clone https://github.com/YourOrg/BrainDrive-Chat-Plugin.git
+   git clone https://github.com/BrainDriveAI/BrainDrive-Chat-Plugin.git
    cd BrainDrive-Chat-Plugin
    npm install
    ```
-
 2. **Point build output to BrainDrive (optional but fastest)**  
    In `webpack.config.js`, set `output.path` to your local BrainDrive plugins dir, e.g.:
-
    ```
    /path/to/BrainDrive-Core/backend/plugins/shared/BrainDriveChat/<version>/dist
    ```
-
    This lets BrainDrive load your freshly built `remoteEntry.js` without re-installing.
 
 3. **Disable browser cache** in DevTools so the host app fetches the latest bundle on each refresh.
 
 4. **Build (watch)**
-
    ```bash
    npm run dev   # or: npm run build, then refresh the BrainDrive page
    ```
-
    Edit code → build completes → refresh the BrainDrive page → changes appear.
+
 
 ## Usage
 
@@ -79,28 +71,15 @@ Think **WordPress for AI**—[install BrainDrive-Core](https://docs.braindrive.a
 2. Choose a model (local or API) from the model selector (models come from installed provider plugins).  
 3. Chat normally; your conversation history persists with BrainDrive storage.  
 
-## Configuration
-
-The plugin supports the following configuration options:
-
-- `initial_greeting`: Initial greeting message from AI
-- `enable_streaming`: Enable streaming responses by default
-- `max_conversation_history`: Maximum number of conversations to show
-- `auto_save_conversations`: Automatically save conversations
-- `show_model_selection`: Show model selection dropdown
-- `show_conversation_history`: Show conversation history panel
-
 ## Development Guide
 
 ### Prerequisites
-
 - **Node.js 16+**  
 - **Python 3.9+ (3.11 recommended)**  
 - **Git**  
 - BrainDrive [Installed](https://docs.braindrive.ai/core/INSTALL) & running locally (frontend & backend)
 
 ### Setup
-
 ```bash
 git clone https://github.com/YourOrg/BrainDrive-Chat-Plugin.git
 cd BrainDrive-Chat-Plugin
@@ -108,21 +87,17 @@ npm install
 ```
 
 ### Run in dev mode
-
 ```bash
 npm run dev
 ```
-
 - Keep **BrainDrive** running.  
 - Refresh your BrainDrive page to load the new bundle. The host uses **Module Federation** to load the plugin at runtime.
 
 ### Build for production
-
 ```bash
 npm run build
 # outputs ./dist/remoteEntry.js for Module Federation
 ```
-
 - Commit `dist/` in releases if you want frictionless installs via the Plugin Manager.
 
 ---
@@ -130,7 +105,6 @@ npm run build
 ## Architecture Overview
 
 ### How it fits into BrainDrive
-
 - **Core Frontend:** React + TypeScript + MUI  
 - **Core Backend:** Python + FastAPI + SQLite  
 - **Plugins:** Separate repos loaded at runtime via **Webpack Module Federation**; managed by a Python **Lifecycle Manager** that handles install/uninstall/repair/status with a universal API.
@@ -138,7 +112,6 @@ npm run build
 This chat plugin is a federated frontend module that talks to BrainDrive via **[Service Bridges](https://docs.braindrive.ai/core/how-to/use-service-bridges)**. You don’t call core internals directly; you call stable bridge contracts so updates don’t break your plugin.
 
 ### Components, hooks, and state
-
 - **React components** render the header (model selector), history, and input areas.  
 - **Hooks** manage chat messages, streaming, and side effects.  
 - **State** (UI + conversation metadata) is persisted through BrainDrive services (e.g., Plugin State, Settings).
@@ -195,3 +168,7 @@ The plugin integrates with the BrainDrive API for:
 [Contributing](https://docs.braindrive.ai/core/CONTRIBUTING) - How to get involved. 
 
 Thank you for joining us on the journey away from Big Tech extraction, and towards individual freedom and empowerment. 
+
+
+
+

@@ -1,12 +1,9 @@
----
-title: README
-sidebar_position: 1
-custom_edit_url: https://github.com/BrainDriveAI/BrainDrive-OpenRouter-Plugin/edit/main/README.md
----
-
 # BrainDrive OpenRouter Plugin
 
-A BrainDrive plugin that allows users to configure their OpenRouter API key for accessing various AI models from multiple providers.
+[![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](LICENSE)
+[![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive-Core)
+
+A [BrainDrive](https://braindrive.ai) plugin that allows users to configure their OpenRouter API key for accessing various AI models from multiple providers.
 
 ## Overview
 

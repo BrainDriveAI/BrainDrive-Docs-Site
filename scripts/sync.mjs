@@ -6,9 +6,14 @@ const cwd = process.cwd();
 const tmp = path.join(cwd, '.cache', 'sources');
 
 const sources = [
-  { key: 'core',     repo: 'BrainDriveAI/BrainDrive-Core', dest: 'docs-core',            prefer: ['docs','root'] },
-  { key: 'template', repo: 'BrainDriveAI/PluginTemplate',  dest: 'docs-template',        prefer: ['docs','root'] },
-  { key: 'ai-chat',  repo: 'DJJones66/BrainDriveChat',     dest: 'docs-plugins/ai-chat', prefer: ['docs','root'], optional: true },
+  { key: 'core',                 repo: 'BrainDriveAI/BrainDrive-Core',                 dest: 'docs-core',                                      prefer: ['docs','root'] },
+  { key: 'template',             repo: 'BrainDriveAI/PluginTemplate',                  dest: 'docs-template',                                  prefer: ['docs','root'] },
+  { key: 'chat-plugin',          repo: 'BrainDriveAI/BrainDrive-Chat-Plugin',          dest: 'docs-plugins/brain-drive-chat-plugin',          prefer: ['docs','root'] },
+  { key: 'chat-with-docs-plugin',repo: 'BrainDriveAI/BrainDrive-Chat-With-Docs-Plugin',dest: 'docs-plugins/brain-drive-chat-with-docs-plugin',prefer: ['docs','root'] },
+  { key: 'settings-plugin',      repo: 'BrainDriveAI/BrainDrive-Settings-Plugin',      dest: 'docs-plugins/brain-drive-settings-plugin',      prefer: ['docs','root'] },
+  { key: 'ollama-plugin',        repo: 'BrainDriveAI/BrainDrive-Ollama-Plugin',        dest: 'docs-plugins/brain-drive-ollama-plugin',        prefer: ['docs','root'] },
+  { key: 'openrouter-plugin',    repo: 'BrainDriveAI/BrainDrive-Openrouter-Plugin',    dest: 'docs-plugins/brain-drive-openrouter-plugin',    prefer: ['docs','root'] },
+  { key: 'ai-chat',              repo: 'DJJones66/BrainDriveChat',                     dest: 'docs-plugins/ai-chat',                          prefer: ['docs','root'], optional: true },
 ];
 
 // Additional files that should always exist in the destination even after syncing
@@ -40,6 +45,81 @@ const shimTemplates = {
         `---\n\n` +
         `import RoadmapDoc from './_includes/ROADMAP.mdx';\n\n` +
         `<RoadmapDoc />\n`,
+    },
+  ],
+  'chat-plugin': [
+    {
+      path: '_category_.json',
+      content: JSON.stringify(
+        {
+          label: 'BrainDrive-Chat-Plugin',
+          position: 3,
+          collapsible: true,
+          collapsed: false,
+        },
+        null,
+        2,
+      ) + '\n',
+    },
+  ],
+  'chat-with-docs-plugin': [
+    {
+      path: '_category_.json',
+      content: JSON.stringify(
+        {
+          label: 'BrainDrive-Chat-With-Docs-Plugin',
+          position: 6,
+          collapsible: true,
+          collapsed: false,
+        },
+        null,
+        2,
+      ) + '\n',
+    },
+  ],
+  'settings-plugin': [
+    {
+      path: '_category_.json',
+      content: JSON.stringify(
+        {
+          label: 'BrainDrive-Settings-Plugin',
+          position: 2,
+          collapsible: true,
+          collapsed: false,
+        },
+        null,
+        2,
+      ) + '\n',
+    },
+  ],
+  'ollama-plugin': [
+    {
+      path: '_category_.json',
+      content: JSON.stringify(
+        {
+          label: 'BrainDrive-Ollama-Plugin',
+          position: 4,
+          collapsible: true,
+          collapsed: false,
+        },
+        null,
+        2,
+      ) + '\n',
+    },
+  ],
+  'openrouter-plugin': [
+    {
+      path: '_category_.json',
+      content: JSON.stringify(
+        {
+          label: 'BrainDrive-OpenRouter-Plugin',
+          position: 5,
+          collapsible: true,
+          collapsed: false,
+        },
+        null,
+        2,
+      ) + '\n',
     },
   ],
 };
