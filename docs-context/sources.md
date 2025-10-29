@@ -75,17 +75,17 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
   - owner: @davewaring
   - authority_order: 4
 
-- **audience.md**
+- **adam-carter.md**
   - type: doc
-  - path: /docs-context/audience.md
+  - path: /docs-context/personas/adam-carter.md
   - scope: segments, reading level, **persona anchor**: `#persona-adam-carter`
   - source_of_truth: docs
   - owner: @davewaring
   - authority_order: 4
 
-- **style-guide.md**
+- **technical-docs-style-guide.md**
   - type: doc
-  - path: /docs-context/style-guide.md
+  - path: /docs-context/technical-docs-style-guide.md
   - scope: tone/voice, formatting, code style
   - source_of_truth: docs
   - owner: @davewaring
@@ -113,7 +113,7 @@ Use `/docs-context/manifest.json` as the machine-readable mirror.
 
 - **System / Architecture Overview**
   - type: doc
-  - path: /docs-context/BrainDrive-System.md
+  - path: /docs-context/project-overviews/BrainDrive-System.md
   - scope: high-level architecture, interfaces, flows
   - source_of_truth: spec
   - owner: @davewaring
