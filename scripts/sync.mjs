@@ -13,7 +13,6 @@ const sources = [
   { key: 'settings-plugin',      repo: 'BrainDriveAI/BrainDrive-Settings-Plugin',      dest: 'docs-plugins/brain-drive-settings-plugin',      prefer: ['docs','root'] },
   { key: 'ollama-plugin',        repo: 'BrainDriveAI/BrainDrive-Ollama-Plugin',        dest: 'docs-plugins/brain-drive-ollama-plugin',        prefer: ['docs','root'] },
   { key: 'openrouter-plugin',    repo: 'BrainDriveAI/BrainDrive-Openrouter-Plugin',    dest: 'docs-plugins/brain-drive-openrouter-plugin',    prefer: ['docs','root'] },
-  { key: 'ai-chat',              repo: 'DJJones66/BrainDriveChat',                     dest: 'docs-plugins/ai-chat',                          prefer: ['docs','root'], optional: true },
 ];
 
 // Additional files that should always exist in the destination even after syncing
