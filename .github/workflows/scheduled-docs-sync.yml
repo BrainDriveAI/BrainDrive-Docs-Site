@@ -1,0 +1,47 @@
+name: Scheduled Docs Sync
+
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  NODE_ENV: production
+  GH_TOKEN: ${{ secrets.DOCS_SYNC_TOKEN }}
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout docs site
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run docs sync
+        run: npm run sync
+
+      - name: Build site
+        run: npm run build
+
+      - name: Create docs update PR
+        uses: peter-evans/create-pull-request@v7
+        with:
+          commit-message: 'chore: sync external docs'
+          branch: chore/docs-sync
+          title: 'chore: sync external docs'
+          body: |
+            Automated docs sync (`npm run sync`).
+            - Review diffs for accuracy before merging.
