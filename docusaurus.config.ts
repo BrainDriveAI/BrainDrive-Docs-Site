@@ -43,12 +43,50 @@ function makeGitHubEditUrlResolver(
   };
 }
 
+type SyncedDocRepoConfig = {
+  repo: string;
+  editBase: string;
+};
+
+function loadSyncedDocRepoConfigs(baseDir: string): Record<string, SyncedDocRepoConfig> {
+  const result: Record<string, SyncedDocRepoConfig> = {};
+  if (!fs.existsSync(baseDir)) return result;
+
+  for (const entry of fs.readdirSync(baseDir)) {
+    const entryPath = path.join(baseDir, entry);
+    let stat: fs.Stats;
+    try {
+      stat = fs.statSync(entryPath);
+    } catch {
+      continue;
+    }
+
+    if (!stat.isDirectory()) continue;
+
+    const repoFile = path.join(entryPath, '.repo');
+    if (!fs.existsSync(repoFile)) continue;
+    const repo = fs.readFileSync(repoFile, 'utf8').trim();
+    if (!repo) continue;
+
+    let editBase = 'root';
+    const editBaseFile = path.join(entryPath, '.editbase');
+    if (fs.existsSync(editBaseFile)) {
+      const value = fs.readFileSync(editBaseFile, 'utf8').trim();
+      if (value) {
+        editBase = value.replace(/^\/+|\/+$/g, '');
+      }
+    }
+
+    result[entry] = {repo, editBase};
+  }
+
+  return result;
+}
+
 const serviceRepoMap: Record<string, string> = {
   // "doc-service": "BrainDriveAI/DocService",
 };
-const pluginRepoMap: Record<string, string> = {
-  'brain-drive-chat-plugin': 'BrainDriveAI/BrainDrive-Chat-Plugin',
-};
+const pluginRepoMap = loadSyncedDocRepoConfigs(path.join(__dirname, 'docs-plugins'));
 
 const docsCoreDir = path.join(__dirname, 'docs-core');
 
@@ -176,12 +214,37 @@ const config: Config = {
         path: 'docs-plugins',
         routeBasePath: 'plugins',
         sidebarPath: require.resolve('./sidebars.plugins.ts'),
-        editUrl: ({docPath}) => {
+        editUrl: (payload) => {
+          const docPath = normalizeDocPath(payload);
+          if (!docPath) {
+            throw new Error(`Unable to determine docPath for plugin edit URL payload: ${JSON.stringify(payload)}`);
+          }
+
           const [plugin, ...rest] = docPath.split('/');
-          const repo = pluginRepoMap[plugin];
-          if (repo) {
+          const config = pluginRepoMap[plugin];
+
+          if (config) {
             const pluginPath = rest.join('/');
-            return `https://github.com/${repo}/edit/main/${pluginPath}`;
+            const prefix =
+              config.editBase && config.editBase !== 'root'
+                ? `${config.editBase.replace(/\/?$/, '/')}`
+                : '';
+            const repoRelativePath =
+              pluginPath && prefix && !pluginPath.startsWith(prefix)
+                ? `${prefix}${pluginPath}`
+                : pluginPath;
+
+            if (repoRelativePath) {
+              return `https://github.com/${config.repo}/edit/main/${repoRelativePath.replace(/^\/+/, '')}`;
+            }
+
+            const treePath =
+              config.editBase && config.editBase !== 'root'
+                ? config.editBase.replace(/^\/+|\/+$/g, '')
+                : '';
+            return treePath
+              ? `https://github.com/${config.repo}/tree/main/${treePath}`
+              : `https://github.com/${config.repo}/tree/main`;
           }
 
           // Fallback to editing the doc within the BrainDrive-Docs-Site repository when
