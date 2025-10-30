@@ -1,3 +1,6 @@
+import fs from 'node:fs';
+import path from 'node:path';
+
 import type {Config} from '@docusaurus/types';
 import {themes as prismThemes} from 'prism-react-renderer';
 
@@ -46,11 +49,33 @@ const serviceRepoMap: Record<string, string> = {
 const pluginRepoMap: Record<string, string> = {
   'brain-drive-chat-plugin': 'BrainDriveAI/BrainDrive-Chat-Plugin',
 };
+
+const docsCoreDir = path.join(__dirname, 'docs-core');
+
+function pickExistingCoreDocPath(candidates: string[], fallback: string): string {
+  for (const candidate of candidates) {
+    if (fs.existsSync(path.join(docsCoreDir, candidate))) {
+      return candidate;
+    }
+  }
+  return fallback;
+}
+
+const coreInstallDocPath = pickExistingCoreDocPath(
+  [
+    'getting-started/install.md',
+    'getting-started/install.mdx',
+    'docs/getting-started/install.md',
+    'docs/getting-started/install.mdx',
+  ],
+  'getting-started/install.md',
+);
+
 const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDrive-Core', {
   pathPrefix: 'docs',
   overrides: {
     // Local shim proxies to the install guide inside the core repo.
-    'INSTALL.mdx': 'docs/getting-started/install.md',
+    'INSTALL.mdx': coreInstallDocPath,
     'ROADMAP.mdx': 'ROADMAP.md',
     'CONTRIBUTING.mdx': 'CONTRIBUTING.md',
   },

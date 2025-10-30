@@ -21,11 +21,11 @@ const shimTemplates = {
   core: [
     {
       path: 'INSTALL.mdx',
-      content:
+      content: ({destRel, installDocImport}) =>
         `---\n` +
         `title: Install BrainDrive-Core\n` +
         `---\n\n` +
-        `import InstallDoc from '@site/docs-core/getting-started/install.md';\n\n` +
+        `import InstallDoc from '@site/${destRel}/${installDocImport}';\n\n` +
         `<InstallDoc />\n`,
     },
     {
@@ -142,6 +142,16 @@ const rootDocImports = {
 };
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
+
+function findExistingFile(baseDir, candidates) {
+  for (const candidate of candidates) {
+    const candidatePath = path.join(baseDir, candidate);
+    if (fs.existsSync(candidatePath)) {
+      return candidate.replace(/\\/g, '/');
+    }
+  }
+  return null;
+}
 
 function sh(cmd){ execSync(cmd, {stdio:'inherit'}); }
 
@@ -311,8 +321,27 @@ for (const s of sources){
   if (shimTemplates[s.key]) {
     // Recreate local shim docs that proxy to files inside the synced repo or external resources.
     for (const shim of shimTemplates[s.key]) {
+      const shimContext = {
+        destRel: s.dest,
+        destDir: dest,
+        repo: s.repo,
+        used,
+      };
+
+      if (s.key === 'core') {
+        const installDocImport =
+          findExistingFile(dest, [
+            path.join('getting-started', 'install.md'),
+            path.join('getting-started', 'install.mdx'),
+            path.join('docs', 'getting-started', 'install.md'),
+            path.join('docs', 'getting-started', 'install.mdx'),
+          ]) ?? 'getting-started/install.md';
+        shimContext.installDocImport = installDocImport;
+      }
+
       const shimPath = path.join(dest, shim.path);
-      fs.writeFileSync(shimPath, shim.content);
+      const shimContent = typeof shim.content === 'function' ? shim.content(shimContext) : shim.content;
+      fs.writeFileSync(shimPath, shimContent);
     }
   }
 }
