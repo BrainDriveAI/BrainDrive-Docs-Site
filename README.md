@@ -65,6 +65,8 @@ The script sanitizes Markdown for compatibility, removes unsupported Kramdown at
 
 > ⚠️ The sync script replaces the entire target directories. Commit any local edits before running it or they may be lost.
 
+A scheduled GitHub Action (`.github/workflows/scheduled-docs-sync.yml`) runs this sync daily at 06:00 UTC, builds the site, and pushes any doc updates straight to `main`. Set the `DOCS_SYNC_TOKEN` secret if private repositories need to be cloned. The action can also be triggered manually from the GitHub Actions tab when an immediate refresh is required.
+
 ## Contribution workflow
 
 1. Use the combined BrainDrive workspace at `BrainDrive-Core/.vscode/brain-drive.code-workspace` if you need to reference product code while editing docs.

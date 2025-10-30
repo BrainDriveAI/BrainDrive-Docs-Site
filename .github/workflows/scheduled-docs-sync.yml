@@ -36,12 +36,14 @@ jobs:
       - name: Build site
         run: npm run build
 
-      - name: Create docs update PR
-        uses: peter-evans/create-pull-request@v7
-        with:
-          commit-message: 'chore: sync external docs'
-          branch: chore/docs-sync
-          title: 'chore: sync external docs'
-          body: |
-            Automated docs sync (`npm run sync`).
-            - Review diffs for accuracy before merging.
+      - name: Commit & push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git add -A
+          git commit -m "chore: sync external docs"
+          git push origin HEAD:main
