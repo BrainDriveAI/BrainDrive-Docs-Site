@@ -4,7 +4,7 @@
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 [![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive)
 
-Core BrainDrive configuration plugin providing theme selection and general preference management. Ollama-specific functionality now lives in the dedicated [BrainDrive Ollama Plugin](https://github.com/BrainDriveAI/BrainDrive-Ollama-Plugin).
+Core [BrainDrive](https://braindrive.ai) configuration plugin providing theme selection and general preference management. 
 
 ![BrainDrive Settings Page](https://raw.githubusercontent.com/BrainDriveAI/BrainDrive-Core/refs/heads/main/images/braindrive-settings-page.png)
 
@@ -29,9 +29,6 @@ Artifacts are emitted to `dist/remoteEntry.js` for BrainDrive to consume.
 ## Lifecycle Manager
 `lifecycle_manager.py` registers the plugin with BrainDrive, exposes module metadata, and seeds default settings definitions for theme and general configuration.
 
-## Migration
-Existing deployments should install version `1.1.0` alongside the new BrainDrive Ollama plugin to retain all prior functionality.
-
 ## License
 
 [MIT License](./LICENSE) Your AI. Your Rules.
@@ -39,4 +36,7 @@ Existing deployments should install version `1.1.0` alongside the new BrainDrive
 ## Resources
 
 * [BrainDrive Docs Site](https://docs.braindrive.ai) - Learn how to use, modify,and build on your BrainDrive.
-* [BrainDrive Community](https://community.braindrive.ai) - Get support and collaborate with us in building the future of the user-owned AI movement. 
+* [BrainDrive Community](https://community.braindrive.ai) - Get support and collaborate with us in building the future of the user-owned AI movement.
+* [Contributing](https://docs.braindrive.ai/core/CONTRIBUTING) - We encourage and appreciate contributions, including improving this settings plugin and/or building your own.
+
+We're on a mission to build a superior, user-owned alternative to Big Tech AI systems. Thank you for joining us on this journey away from Big Tech extraction, and towards individual freedom and empowerment. 
