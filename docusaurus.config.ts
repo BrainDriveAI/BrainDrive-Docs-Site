@@ -90,6 +90,31 @@ const pluginRepoMap = loadSyncedDocRepoConfigs(path.join(__dirname, 'docs-plugin
 
 const docsCoreDir = path.join(__dirname, 'docs-core');
 
+function coreDocPathCandidates(docId: string): string[] {
+  const segments = docId.split('/');
+  const fileName = segments.pop();
+  if (!fileName) return [];
+  const baseDir = path.join(docsCoreDir, ...segments);
+  return [
+    path.join(baseDir, `${fileName}.md`),
+    path.join(baseDir, `${fileName}.mdx`),
+    path.join(baseDir, fileName, 'index.md'),
+    path.join(baseDir, fileName, 'index.mdx'),
+  ];
+}
+
+function coreDocExists(docId: string): boolean {
+  return coreDocPathCandidates(docId).some((candidate) => fs.existsSync(candidate));
+}
+
+function coreDocRoute(docId: string): string | null {
+  return coreDocExists(docId) ? `/core/${docId}` : null;
+}
+
+function compact<T>(items: Array<T | null | undefined>): T[] {
+  return items.filter((item): item is T => item != null);
+}
+
 function pickExistingCoreDocPath(candidates: string[], fallback: string): string {
   for (const candidate of candidates) {
     if (fs.existsSync(path.join(docsCoreDir, candidate))) {
@@ -127,6 +152,35 @@ const resolveCoreDocEditUrl = (payload: EditUrlPayload): string => {
 
   return coreDocEditUrlResolver(payload);
 };
+
+const ownerManualRoute = coreDocRoute('how-to/use-braindrive');
+const installRoute = coreDocRoute('INSTALL');
+const pluginQuickstartRoute = coreDocRoute('getting-started/plugin-developer-quickstart');
+const roadmapRoute = coreDocRoute('ROADMAP');
+const contributingRoute = coreDocRoute('CONTRIBUTING');
+
+const navbarPrimaryItems = compact([
+  ownerManualRoute ? {to: ownerManualRoute, label: "Owner's Manual", position: 'left' as const} : null,
+  installRoute ? {to: installRoute, label: 'Install', position: 'left' as const} : null,
+  {to: '/plugins/intro', label: 'Use Plugins', position: 'left' as const},
+  pluginQuickstartRoute
+    ? {to: pluginQuickstartRoute, label: 'Build Plugins', position: 'left' as const}
+    : null,
+]);
+
+const resourcesDropdownItems = compact([
+  roadmapRoute ? {to: roadmapRoute, label: 'Roadmap'} : null,
+  contributingRoute ? {to: contributingRoute, label: 'Contributing'} : null,
+  {href: 'https://community.braindrive.ai', label: 'Community'},
+  {href: 'https://github.com/BrainDriveAI', label: 'GitHub'},
+]);
+
+const navbarItems = [
+  ...navbarPrimaryItems,
+  ...(resourcesDropdownItems.length > 0
+    ? [{label: 'Resources', position: 'left' as const, items: resourcesDropdownItems}]
+    : []),
+];
 
 const config: Config = {
   title: 'BrainDrive',
@@ -263,22 +317,7 @@ const config: Config = {
         alt: 'BrainDrive logo',
         src: 'img/braindrive-logo.png',
       },
-      items: [
-        { to: '/core/how-to/use-braindrive', label: 'Owner\'s Manual', position: 'left' },
-        { to: '/core/INSTALL', label: 'Install', position: 'left' },
-        { to: '/plugins/intro', label: 'Use Plugins', position: 'left' },
-        { to: '/core/getting-started/plugin-developer-quickstart', label: 'Build Plugins', position: 'left' },
-        {
-          label: 'Resources',
-          position: 'left',
-          items: [
-            { to: '/core/ROADMAP', label: 'Roadmap' },
-            { to: '/core/CONTRIBUTING', label: 'Contributing' },
-            { href: 'https://community.braindrive.ai', label: 'Community' },
-            { href: 'https://github.com/BrainDriveAI', label: 'GitHub' },
-          ],
-        },
-      ],
+      items: navbarItems,
     },
     colorMode: {
       defaultMode: 'dark',
