@@ -1,7 +1,7 @@
 # BrainDrive Settings Plugin
 
 [![Version](https://img.shields.io/badge/version-1.1.0-blue.svg)](https://github.com/BrainDriveAI/BrainDrive-Settings-Plugin)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Settings-Plugin/blob/main/LICENSE)
 [![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive)
 
 Core [BrainDrive](https://braindrive.ai) configuration plugin providing theme selection and general preference management. 
@@ -31,7 +31,7 @@ Artifacts are emitted to `dist/remoteEntry.js` for BrainDrive to consume.
 
 ## License
 
-[MIT License](./LICENSE) Your AI. Your Rules.
+[MIT License](https://github.com/BrainDriveAI/BrainDrive-Settings-Plugin/blob/main/LICENSE) Your AI. Your Rules.
 
 ## Resources
 

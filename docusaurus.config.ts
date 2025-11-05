@@ -193,8 +193,8 @@ const config: Config = {
   organizationName: 'BrainDriveAI',
   projectName: 'BrainDrive-Docs-Site',
 
-  onBrokenLinks: 'warn',
-  onBrokenMarkdownLinks: 'warn',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'throw',
 
   i18n: { defaultLocale: 'en', locales: ['en'] },
 

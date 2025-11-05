@@ -1,6 +1,6 @@
 # BrainDrive OpenRouter Plugin
 
-[![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Openrouter-Plugin/blob/main/LICENSE)
 [![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive-Core)
 
 A [BrainDrive](https://braindrive.ai) plugin that allows users to configure their OpenRouter API key for accessing various AI models from multiple providers.

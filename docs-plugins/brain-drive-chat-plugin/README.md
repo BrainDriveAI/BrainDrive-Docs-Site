@@ -1,7 +1,7 @@
 # BrainDriveChat Plugin
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/BrainDriveAI/BrainDrive-Chat-Plugin)
-[![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Chat-Plugin/blob/main/LICENSE)
 [![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive-Core)
 
 The BrainDrive Chat Plugin is the default, modular chat experience for [BrainDrive](https://github.com/BrainDriveAI/BrainDrive-Core). 
@@ -155,7 +155,7 @@ The plugin integrates with the BrainDrive API for:
 
 ## License
 
-[MIT License](LICENSE) **Your AI. Your Rules**
+[MIT License](https://github.com/BrainDriveAI/BrainDrive-Chat-Plugin/blob/main/LICENSE) **Your AI. Your Rules**
 
 ## Author
 
@@ -172,7 +172,6 @@ The plugin integrates with the BrainDrive API for:
 We're on a mission to build a superior, user-owned alternative to Big Tech AI systems. 
 
 Thank you for joining us on this journey away from Big Tech extraction and towards individual freedom and empowerment. 
-
 
 
 

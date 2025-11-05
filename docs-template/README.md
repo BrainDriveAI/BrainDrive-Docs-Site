@@ -135,6 +135,5 @@ Post at [community.braindrive.ai](https://community.braindrive.ai). We're here t
 
 ## License
 
-[MIT Licensed](LICENSE) - BrainDrive is built for your ownership & freedom. Your AI. Your Rules. 
-
+[MIT Licensed](https://github.com/BrainDriveAI/PluginTemplate/blob/main/LICENSE) - BrainDrive is built for your ownership & freedom. Your AI. Your Rules. 
 

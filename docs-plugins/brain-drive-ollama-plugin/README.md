@@ -1,7 +1,7 @@
 # BrainDrive Ollama Plugin
 
 [![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/BrainDriveAI/BrainDrive-Ollama-Plugin)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Ollama-Plugin/blob/main/LICENSE)
 [![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive)
 
 The default [BrainDrive](https://github.com/BrainDriveAI/BrainDrive-Core) plugin that delivers Ollama-specific experiences including server lifecycle management, model installation, and a prompt chat interface.
@@ -33,7 +33,7 @@ Build artifacts are emitted to `dist/remoteEntry.js` for consumption by the Brai
 See `lifecycle_manager.py` for installation hooks, module metadata, and settings definitions registered with BrainDrive.
 
 ## License
-[MIT License](LICENSE) **Your AI. Your Rules.**
+[MIT License](https://github.com/BrainDriveAI/BrainDrive-Ollama-Plugin/blob/main/LICENSE) **Your AI. Your Rules.**
 
 ## Resources
 
@@ -43,5 +43,4 @@ See `lifecycle_manager.py` for installation hooks, module metadata, and settings
 [Contributing](https://docs.braindrive.ai/core/CONTRIBUTING) - How to get involved. 
 
 Thank you for joining us on the journey away from Big Tech extraction, and towards individual freedom and empowerment.
-
 

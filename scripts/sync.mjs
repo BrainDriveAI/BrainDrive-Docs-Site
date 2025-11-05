@@ -168,7 +168,7 @@ function copyTreeFiltered(src, dest){
   }
 }
 
-function sanitizeLineOutsideBackticks(line, repoName){
+function sanitizeLineOutsideBackticks(line, repoName, repoFull){
   const parts = line.split(/(`+[^`]*`+)/g);
   for (let i=0; i<parts.length; i++){
     const seg = parts[i];
@@ -192,6 +192,11 @@ function sanitizeLineOutsideBackticks(line, repoName){
     // Normalize bare community URL to https://
     s = s.replace(/\]\((?:https?:\/\/)?community\.braindrive\.ai/gi, '](https://community.braindrive.ai');
 
+    if (repoFull) {
+      const licenseUrl = `https://github.com/${repoFull}/blob/main/LICENSE`;
+      s = s.replace(/\]\((?:\.{0,2}\/)?LICENSE\)/gi, `](${licenseUrl})`);
+    }
+
     // Rewrite stale absolute doc prefixes: "docs/repos/<RepoName>/..."
     const reRepo = new RegExp(`docs\\/repos\\/${repoName.replace(/[.*+?^${}()|[\\]\\\\]/g, '\\$&')}\\/`, 'g');
     s = s.replace(reRepo, '');
@@ -207,6 +212,8 @@ function sanitizeLineOutsideBackticks(line, repoName){
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/OWNER_USER_GUIDE/gi, 'https://docs.braindrive.ai/core/concepts/plugins')
         .replace(/\/core\/OWNER_USER_GUIDE/gi, '/core/concepts/plugins')
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, 'https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart')
+        .replace(/\]\((?:\.\/)?DEVELOPER_QUICK_START\)/gi, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/docs/getting-started/plugin-developer-quickstart.md)')
+        .replace(/\]\((?:\.\/)?DOCUMENTATION_INDEX\)/gi, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/DOCUMENTATION_INDEX.md)')
         .replace(/\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, '/core/getting-started/plugin-developer-quickstart')
         .replace(/\.\.\/INSTALL\.md/gi, '../INSTALL.mdx')
         .replace(/\(\/docs\/getting-started\/install\.md\)/gi, '(/core/INSTALL)')
@@ -232,6 +239,7 @@ function sanitizeLineOutsideBackticks(line, repoName){
 
 function sanitizeMDX(destDir, repo){
   const repoName = repo.split('/').pop();
+  const repoFull = repo;
   const files = [];
   (function walk(d){
     for (const name of fs.readdirSync(d)){
@@ -249,7 +257,7 @@ function sanitizeMDX(destDir, repo){
     for (let i=0; i<lines.length; i++){
       const fence = lines[i].match(/^\s*(`{3,}|~{3,})/);
       if (fence){ inFence = !inFence; continue; }
-      if (!inFence) lines[i] = sanitizeLineOutsideBackticks(lines[i], repoName);
+      if (!inFence) lines[i] = sanitizeLineOutsideBackticks(lines[i], repoName, repoFull);
     }
     fs.writeFileSync(p, lines.join('\n'));
   }
