@@ -1,5 +1,6 @@
 # BrainDriveChat Plugin
 
+[![Version](https://img.shields.io/badge/version-1.0.0-blue.svg)](https://github.com/BrainDriveAI/BrainDrive-Chat-Plugin)
 [![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](LICENSE)
 [![BrainDrive](https://img.shields.io/badge/BrainDrive-Plugin-purple.svg)](https://github.com/BrainDriveAI/BrainDrive-Core)
 
@@ -162,12 +163,15 @@ The plugin integrates with the BrainDrive API for:
 
 ## Resources
 
-[Owner's Manual](https://docs.braindrive.ai/core/how-to/use-braindrive) - Full overview of how to install, setup, and use your BrainDrive.  
-[Community](https://community.braindrive.ai/) - For support, and to connect with other BrainDrive Owners.  
-[Roadmap](https://docs.braindrive.ai/core/ROADMAP) - BrainDrive's 5 Phase vision for building a superior, user-owned alternative to Big Tech AI systems.   
-[Contributing](https://docs.braindrive.ai/core/CONTRIBUTING) - How to get involved. 
+## Resources
 
-Thank you for joining us on the journey away from Big Tech extraction, and towards individual freedom and empowerment. 
+* [BrainDrive Docs Site](https://docs.braindrive.ai) - Learn how to use, modify,and build on your BrainDrive.
+* [BrainDrive Community](https://community.braindrive.ai) - Get support and collaborate with us in building the future of the user-owned AI movement.
+* [Contributing](https://docs.braindrive.ai/core/CONTRIBUTING) - We encourage and appreciate contributions, including improving this settings plugin and/or building your own.
+
+We're on a mission to build a superior, user-owned alternative to Big Tech AI systems. 
+
+Thank you for joining us on this journey away from Big Tech extraction and towards individual freedom and empowerment. 
 
 
 

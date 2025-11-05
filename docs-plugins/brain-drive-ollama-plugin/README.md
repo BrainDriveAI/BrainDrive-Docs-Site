@@ -6,6 +6,8 @@
 
 The default [BrainDrive](https://github.com/BrainDriveAI/BrainDrive-Core) plugin that delivers Ollama-specific experiences including server lifecycle management, model installation, and a prompt chat interface.
 
+![Ollama Settings Page](https://raw.githubusercontent.com/BrainDriveAI/BrainDrive-Core/refs/heads/main/images/braindrive-ollama-plugin.png)
+
 ## Features
 - Ollama server registration, health checks, and connection testing
 - Model discovery and install/remove flows with streaming progress
