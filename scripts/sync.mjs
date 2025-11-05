@@ -20,12 +20,26 @@ const shimTemplates = {
   core: [
     {
       path: 'INSTALL.mdx',
-      content:
-        `---\n` +
-        `title: Install BrainDrive-Core\n` +
-        `---\n\n` +
-        `import InstallDoc from './_includes/INSTALL.mdx';\n\n` +
-        `<InstallDoc />\n`,
+      content: ({destDir}) => {
+        const installSource =
+          findExistingFile(destDir, [
+            path.join('getting-started', 'install.mdx'),
+            path.join('getting-started', 'install.md'),
+            path.join('docs', 'getting-started', 'install.mdx'),
+            path.join('docs', 'getting-started', 'install.md'),
+          ]) ?? 'getting-started/install.md';
+
+        const normalized = installSource.replace(/\\/g, '/');
+        const importPath = normalized.startsWith('.') ? normalized : `./${normalized}`;
+
+        return (
+          `---\n` +
+          `title: Install BrainDrive-Core\n` +
+          `---\n\n` +
+          `import InstallDoc from '${importPath}';\n\n` +
+          `<InstallDoc />\n`
+        );
+      },
     },
   ],
   'chat-plugin': [
@@ -109,19 +123,7 @@ const extraCopies = {
   core: [{src: 'images', dest: 'images'}],
 };
 
-const rootDocImports = {
-  core: [
-    {
-      sources: [
-        'getting-started/install.md',
-        'getting-started/install.mdx',
-        'docs/getting-started/install.md',
-        'docs/getting-started/install.mdx',
-      ],
-      target: '_includes/INSTALL.mdx',
-    },
-  ],
-};
+const rootDocImports = {};
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
 
@@ -192,6 +194,10 @@ function sanitizeLineOutsideBackticks(line, repoName){
         .replace(/\/core\/OWNER_USER_GUIDE/gi, '/core/concepts/plugins')
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, 'https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart')
         .replace(/\/core\/PLUGIN_DEVELOPER_QUICKSTART/gi, '/core/getting-started/plugin-developer-quickstart')
+        .replace(/\.\.\/INSTALL\.md/gi, '../INSTALL.mdx')
+        .replace(/\(\/docs\/getting-started\/install\.md\)/gi, '(/core/INSTALL)')
+        .replace(/\(\/docs\/getting-started\/plugin-developer-quickstart\.md\)/gi, '(/core/getting-started/plugin-developer-quickstart)')
+        .replace(/\(\/docs\/how-to\/use-service-bridges\.md\)/gi, '(/core/how-to/use-service-bridges)')
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
         .replace(/\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
         .replace(/\[\*\*Service Bridges\*\*\]\(\)/g, '[**Service Bridges**](https://docs.braindrive.ai/services/intro)')
