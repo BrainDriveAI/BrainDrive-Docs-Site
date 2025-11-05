@@ -21,21 +21,35 @@ const shimTemplates = {
     {
       path: 'INSTALL.mdx',
       content: ({destDir}) => {
-        const installSource =
-          findExistingFile(destDir, [
-            path.join('getting-started', 'install.mdx'),
-            path.join('getting-started', 'install.md'),
-            path.join('docs', 'getting-started', 'install.mdx'),
-            path.join('docs', 'getting-started', 'install.md'),
-          ]) ?? 'getting-started/install.md';
+        const installCandidates = [
+          path.join('getting-started', 'install.mdx'),
+          path.join('getting-started', 'install.md'),
+          path.join('docs', 'getting-started', 'install.mdx'),
+          path.join('docs', 'getting-started', 'install.md'),
+        ];
 
-        const normalized = installSource.replace(/\\/g, '/');
-        const importPath = normalized.startsWith('.') ? normalized : `./${normalized}`;
-
-        return (
+        const installSource = findExistingFile(destDir, installCandidates);
+        const header =
           `---\n` +
           `title: Install BrainDrive-Core\n` +
-          `---\n\n` +
+          `---\n\n`;
+
+        if (!installSource) {
+          return (
+            header +
+            `We could not automatically locate the install guide inside BrainDrive-Core.\n\n` +
+            `Please refer to the latest instructions in the BrainDrive-Core repository:\n` +
+            `[https://github.com/BrainDriveAI/BrainDrive-Core](https://github.com/BrainDriveAI/BrainDrive-Core)\n`
+          );
+        }
+
+        const normalized = installSource.replace(/\\/g, '/');
+        const importPath = normalized.startsWith('.') || normalized.startsWith('/')
+          ? normalized
+          : `./${normalized}`;
+
+        return (
+          header +
           `import InstallDoc from '${importPath}';\n\n` +
           `<InstallDoc />\n`
         );
