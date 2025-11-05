@@ -20,30 +20,12 @@ const shimTemplates = {
   core: [
     {
       path: 'INSTALL.mdx',
-      content: ({destRel, installDocImport}) =>
+      content:
         `---\n` +
         `title: Install BrainDrive-Core\n` +
         `---\n\n` +
-        `import InstallDoc from '@site/${destRel}/${installDocImport}';\n\n` +
+        `import InstallDoc from './_includes/INSTALL.mdx';\n\n` +
         `<InstallDoc />\n`,
-    },
-    {
-      path: 'CONTRIBUTING.mdx',
-      content:
-        `---\n` +
-        `title: Contributing to BrainDrive\n` +
-        `---\n\n` +
-        `import ContributingDoc from './_includes/CONTRIBUTING.mdx';\n\n` +
-        `<ContributingDoc />\n`,
-    },
-    {
-      path: 'ROADMAP.mdx',
-      content:
-        `---\n` +
-        `title: BrainDrive Roadmap\n` +
-        `---\n\n` +
-        `import RoadmapDoc from './_includes/ROADMAP.mdx';\n\n` +
-        `<RoadmapDoc />\n`,
     },
   ],
   'chat-plugin': [
@@ -130,12 +112,13 @@ const extraCopies = {
 const rootDocImports = {
   core: [
     {
-      sources: ['CONTRIBUTING.mdx', 'CONTRIBUTING.md', 'docs/CONTRIBUTING.mdx', 'docs/CONTRIBUTING.md'],
-      target: '_includes/CONTRIBUTING.mdx',
-    },
-    {
-      sources: ['ROADMAP.mdx', 'ROADMAP.md', 'docs/ROADMAP.mdx', 'docs/ROADMAP.md'],
-      target: '_includes/ROADMAP.mdx',
+      sources: [
+        'getting-started/install.md',
+        'getting-started/install.mdx',
+        'docs/getting-started/install.md',
+        'docs/getting-started/install.mdx',
+      ],
+      target: '_includes/INSTALL.mdx',
     },
   ],
 };
@@ -326,17 +309,6 @@ for (const s of sources){
         repo: s.repo,
         used,
       };
-
-      if (s.key === 'core') {
-        const installDocImport =
-          findExistingFile(dest, [
-            path.join('getting-started', 'install.md'),
-            path.join('getting-started', 'install.mdx'),
-            path.join('docs', 'getting-started', 'install.md'),
-            path.join('docs', 'getting-started', 'install.mdx'),
-          ]) ?? 'getting-started/install.md';
-        shimContext.installDocImport = installDocImport;
-      }
 
       const shimPath = path.join(dest, shim.path);
       const shimContent = typeof shim.content === 'function' ? shim.content(shimContext) : shim.content;
