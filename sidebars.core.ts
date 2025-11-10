@@ -66,12 +66,6 @@ const defaultSidebar: SidebarItem[] = [
       label: 'Display Controller',
     },
   ]),
-  makeCategory('Resources', [
-    {id: 'ROADMAP', label: 'Roadmap'},
-    {id: 'CONTRIBUTING', label: 'Contributing'},
-    {id: 'SECURITY', label: 'Security'},
-    {id: 'TRADEMARK_POLICY', label: 'Trademark Policy'},
-  ]),
 ].filter((item): item is SidebarItem => item !== null);
 
 const sidebars: SidebarsConfig = {
