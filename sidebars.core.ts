@@ -33,11 +33,12 @@ function makeCategory(label: string, specs: DocSpec[]) {
   return items.length > 0 ? {type: 'category' as const, label, items} : null;
 }
 
-const defaultSidebar = [
-  makeCategory('Overview', [
-    {id: 'intro', label: 'Overview'},
-    {id: 'README', label: 'README'},
-  ]),
+type SidebarItem =
+  | NonNullable<ReturnType<typeof makeDoc>>
+  | NonNullable<ReturnType<typeof makeCategory>>;
+
+const defaultSidebar: SidebarItem[] = [
+  makeDoc({id: 'README', label: 'Overview'}),
   makeCategory('Getting Started', [
     {id: 'INSTALL', label: 'Install'},
     {id: 'getting-started/plugin-developer-quickstart', label: 'Plugin Dev Quick Start'},
@@ -71,9 +72,7 @@ const defaultSidebar = [
     {id: 'SECURITY', label: 'Security'},
     {id: 'TRADEMARK_POLICY', label: 'Trademark Policy'},
   ]),
-].filter(
-  (item): item is NonNullable<ReturnType<typeof makeCategory>> => item !== null,
-);
+].filter((item): item is SidebarItem => item !== null);
 
 const sidebars: SidebarsConfig = {
   defaultSidebar,

@@ -147,6 +147,10 @@ const rootDocImports = {
       target: 'CONTRIBUTING.md',
       sources: ['CONTRIBUTING.md'],
     },
+    {
+      target: 'README.md',
+      sources: ['README.md'],
+    },
   ],
 };
 

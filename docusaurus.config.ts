@@ -141,6 +141,7 @@ const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDriv
     'INSTALL.mdx': coreInstallDocPath,
     'ROADMAP.md': 'ROADMAP.md',
     'CONTRIBUTING.md': 'CONTRIBUTING.md',
+    'README.md': 'README.md',
   },
 });
 
