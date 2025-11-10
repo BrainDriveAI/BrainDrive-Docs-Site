@@ -237,7 +237,9 @@ function sanitizeLineOutsideBackticks(line, repoName, repoFull){
         .replace(/https?:\/\/docs\.braindrive\.ai\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
         .replace(/\/core\/ROADMAP/gi, 'https://community.braindrive.ai/t/braindrive-development-progress-updates/92')
         .replace(/\[\*\*Service Bridges\*\*\]\(\)/g, '[**Service Bridges**](https://docs.braindrive.ai/services/intro)')
-        .replace(/\]\((?:\.{1,2}\/)?SECURITY\.md\)/g, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/SECURITY.md)');
+        .replace(/\]\((?:\.{1,2}\/)?SECURITY\.md\)/g, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/SECURITY.md)')
+        .replace(/\]\((?:\.{1,2}\/)?frontend\/README\.md\)/gi, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/frontend/README.md)')
+        .replace(/\]\((?:\.{1,2}\/)?backend\/README\.md\)/gi, '](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/backend/README.md)');
     }
     if (repoName === 'PluginTemplate') {
       s = s
