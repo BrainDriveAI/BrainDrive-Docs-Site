@@ -139,8 +139,8 @@ const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDriv
   overrides: {
     // Local shim proxies to the install guide inside the core repo.
     'INSTALL.mdx': coreInstallDocPath,
-    'ROADMAP.mdx': 'ROADMAP.md',
-    'CONTRIBUTING.mdx': 'CONTRIBUTING.md',
+    'ROADMAP.md': 'ROADMAP.md',
+    'CONTRIBUTING.md': 'CONTRIBUTING.md',
   },
 });
 

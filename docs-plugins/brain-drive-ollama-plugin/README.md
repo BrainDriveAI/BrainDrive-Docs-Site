@@ -44,3 +44,4 @@ See `lifecycle_manager.py` for installation hooks, module metadata, and settings
 
 Thank you for joining us on the journey away from Big Tech extraction, and towards individual freedom and empowerment.
 
+

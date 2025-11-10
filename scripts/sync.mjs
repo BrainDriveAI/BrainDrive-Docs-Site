@@ -137,7 +137,18 @@ const extraCopies = {
   core: [{src: 'images', dest: 'images'}],
 };
 
-const rootDocImports = {};
+const rootDocImports = {
+  core: [
+    {
+      target: 'ROADMAP.md',
+      sources: ['ROADMAP.md'],
+    },
+    {
+      target: 'CONTRIBUTING.md',
+      sources: ['CONTRIBUTING.md'],
+    },
+  ],
+};
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
 
