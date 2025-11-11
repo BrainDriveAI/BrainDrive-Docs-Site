@@ -11,5 +11,6 @@
     "geo:",
     "http://localhost",
     "https://community.braindrive.ai"
-  ]
+  ],
+  "verbosity": "error"
 }
