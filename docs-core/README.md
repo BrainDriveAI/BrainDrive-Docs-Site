@@ -1,7 +1,6 @@
-<p align="center">
-  <img src="./images/logo-light-mode.png#gh-light-mode-only" alt="BrainDrive Logo" />
-  <img src="./images/logo-dark-mode.png#gh-dark-mode-only"  alt="BrainDrive Logo" />
-</p>
+
+![BrainDrive Logo](./images/logo-light-mode.png#gh-light-mode-only)
+![BrainDrive Logo](./images/logo-dark-mode.png#gh-dark-mode-only)
 
 [![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE)
 
@@ -119,7 +118,7 @@ We welcome & appreciate contributions. See [Contributing Guidelines](CONTRIBUTIN
   * [Service Bridge Examples](/core/how-to/use-service-bridges) - working examples and up to date documentation
   * [Frontend Documentation](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/frontend/README.md) - React application details
   * [Backend Documentation](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/backend/README.md) - Python API details
-  * [Full Documentation Index](https://github.com/BrainDriveAI/BrainDrive/blob/main/DOCUMENTATION_INDEX.md) - Links to all repos and corresponding documentation. 
+  * [Docs Site](https://docs.braindrive.ai) - Links to all repos and corresponding documentation. 
 
 ## License
 

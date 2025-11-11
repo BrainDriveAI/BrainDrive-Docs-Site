@@ -372,8 +372,6 @@ self.plugin_data = {
 ## Related Documentation
 
 - [Plugin Template Development Guide](https://github.com/BrainDriveAI/PluginTemplate/blob/main/DEVELOPMENT.md)
-- [BrainDrive Plugin Architecture](https://github.com/BrainDriveAI/PluginTemplate/blob/main/Plugin-Template-Plan.md)
-- [Module Data Field Reference](./Module-Data-Field-Reference.md) *(coming soon)*
 
 ---
 
