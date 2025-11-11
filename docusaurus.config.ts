@@ -138,7 +138,7 @@ const coreDocEditUrlResolver = makeGitHubEditUrlResolver('BrainDriveAI/BrainDriv
   pathPrefix: 'docs',
   overrides: {
     // Local shim proxies to the install guide inside the core repo.
-    'INSTALL.mdx': coreInstallDocPath,
+    'INSTALL.mdx': `docs/${coreInstallDocPath.replace(/^\/+/, '')}`,
     'ROADMAP.md': 'ROADMAP.md',
     'CONTRIBUTING.md': 'CONTRIBUTING.md',
     'README.md': 'README.md',
