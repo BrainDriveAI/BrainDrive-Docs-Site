@@ -1,14 +1,6 @@
-import ThemedImage from '@theme/ThemedImage';
 
-<p align="center">
-  <ThemedImage
-    alt="BrainDrive logo"
-    sources={{
-      light: require('./images/logo-light-mode.png').default,
-      dark: require('./images/logo-dark-mode.png').default,
-    }}
-  />
-</p>
+![BrainDrive Logo](./images/logo-light-mode.png#gh-light-mode-only)
+![BrainDrive Logo](./images/logo-dark-mode.png#gh-dark-mode-only)
 
 [![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE)
 
