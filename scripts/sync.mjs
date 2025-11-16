@@ -8,11 +8,11 @@ const tmp = path.join(cwd, '.cache', 'sources');
 const sources = [
   { key: 'core',                 repo: 'BrainDriveAI/BrainDrive-Core',                 dest: 'docs-core',                                      prefer: ['docs','root'] },
   { key: 'template',             repo: 'BrainDriveAI/PluginTemplate',                  dest: 'docs-template',                                  prefer: ['docs','root'] },
-  { key: 'chat-plugin',          repo: 'BrainDriveAI/BrainDrive-Chat-Plugin',          dest: 'docs-plugins/brain-drive-chat-plugin',          prefer: ['docs','root'] },
-  { key: 'chat-with-docs-plugin',repo: 'BrainDriveAI/BrainDrive-Chat-With-Docs-Plugin',dest: 'docs-plugins/brain-drive-chat-with-docs-plugin',prefer: ['docs','root'] },
-  { key: 'settings-plugin',      repo: 'BrainDriveAI/BrainDrive-Settings-Plugin',      dest: 'docs-plugins/brain-drive-settings-plugin',      prefer: ['docs','root'] },
-  { key: 'ollama-plugin',        repo: 'BrainDriveAI/BrainDrive-Ollama-Plugin',        dest: 'docs-plugins/brain-drive-ollama-plugin',        prefer: ['docs','root'] },
-  { key: 'openrouter-plugin',    repo: 'BrainDriveAI/BrainDrive-Openrouter-Plugin',    dest: 'docs-plugins/brain-drive-openrouter-plugin',    prefer: ['docs','root'] },
+  { key: 'chat-plugin',          repo: 'BrainDriveAI/BrainDrive-Chat-Plugin',          dest: 'docs-plugins/brain-drive-chat-plugin',          prefer: ['docs','root'], ensureIntro: false },
+  { key: 'chat-with-docs-plugin',repo: 'BrainDriveAI/BrainDrive-Chat-With-Docs-Plugin',dest: 'docs-plugins/brain-drive-chat-with-docs-plugin',prefer: ['docs','root'], ensureIntro: false },
+  { key: 'settings-plugin',      repo: 'BrainDriveAI/BrainDrive-Settings-Plugin',      dest: 'docs-plugins/brain-drive-settings-plugin',      prefer: ['docs','root'], ensureIntro: false },
+  { key: 'ollama-plugin',        repo: 'BrainDriveAI/BrainDrive-Ollama-Plugin',        dest: 'docs-plugins/brain-drive-ollama-plugin',        prefer: ['docs','root'], ensureIntro: false },
+  { key: 'openrouter-plugin',    repo: 'BrainDriveAI/BrainDrive-Openrouter-Plugin',    dest: 'docs-plugins/brain-drive-openrouter-plugin',    prefer: ['docs','root'], ensureIntro: false },
 ];
 
 // Additional files that should always exist in the destination even after syncing
@@ -339,9 +339,12 @@ for (const s of sources){
   }
 
   // ensure a landing page exists
-  const introPath = path.join(dest,'intro.md');
-  if (!fs.existsSync(introPath)){
-    fs.writeFileSync(introPath, `---\ntitle: Overview\n---\n# Overview\n\nThis section is synced from ${s.repo}.\n`);
+  const shouldEnsureIntro = s.ensureIntro ?? true;
+  if (shouldEnsureIntro) {
+    const introPath = path.join(dest,'intro.md');
+    if (!fs.existsSync(introPath)){
+      fs.writeFileSync(introPath, `---\ntitle: Overview\n---\n# Overview\n\nThis section is synced from ${s.repo}.\n`);
+    }
   }
   console.log(`Synced ${s.repo} -> ${s.dest} [${used}]`);
 
