@@ -810,7 +810,7 @@ self.required_services_runtime = [
 
 **Additional Resources:**
 - [Plugin Naming Conventions](host-system/plugin-requirements.md)
-- [FOR-AI-CODING-AGENTS.md](../FOR-AI-CODING-AGENTS.md)
+- [AI-AGENT-GUIDE.md](./AI-AGENT-GUIDE.md)
 
 ---
 
@@ -874,7 +874,7 @@ docker logs -f CONTAINER_NAME
 ---
 
 **Need Help?**
-- 📖 Full developer docs: [FOR-AI-CODING-AGENTS.md](../FOR-AI-CODING-AGENTS.md)
+- 📖 Full developer docs: [AI-AGENT-GUIDE.md](./AI-AGENT-GUIDE.md)
 - 🔧 Technical architecture: [Service Runtime Requirements](host-system/service-runtime-requirements.md)
 - 📋 Plugin naming conventions: [Plugin Requirements](host-system/plugin-requirements.md)
 - 📚 Documentation index: [docs/README.md](README.md)
