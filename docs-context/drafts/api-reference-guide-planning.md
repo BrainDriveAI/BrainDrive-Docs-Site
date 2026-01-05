@@ -1,6 +1,6 @@
 # API Reference Guide Planning Draft
 
-**Last Updated:** January 2025 (after review call with David Jones)
+**Last Updated:** January 5, 2025 (draft complete, ready for review)
 
 ## Scope: What Should This Cover?
 
@@ -160,21 +160,63 @@ API reference docs will live in BrainDrive-Core and sync to this docs site.
 - Retry strategies
 ```
 
+## Work Completed
+
+### Drafts Created (January 5, 2025)
+
+Location: `docs-context/drafts/api-reference/`
+
+| File | Lines | Contents |
+|------|-------|----------|
+| `API.md` | 101 | Overview, architecture diagram, JWT auth, response formats, status codes |
+| `backend-api.md` | 1306 | ~100 REST endpoints across 15 groups with request/response examples |
+| `service-bridges-api.md` | 359 | All 6 bridges with TypeScript interfaces and usage examples |
+| `plugin-api-contracts.md` | 501 | Lifecycle manager interface, manifest schema, module metadata |
+
+**Total:** ~2,300 lines of documentation
+
+### Data Sources Used
+
+- **OpenAPI spec:** Exported from `localhost:8005/openapi.json` (saved to `docs-context/openapi.json`)
+- **Existing docs:** Referenced `docs-core/concepts/plugins.md` and `docs-core/getting-started/plugin-developer-quickstart.md`
+
+### Endpoints Excluded (Internal/Test)
+
+- `/api/v1/demo/*` — Demo endpoints
+- `/api/v1/auth/nuclear-clear-cookies` — Debug endpoint
+- `/api/v1/auth/force-logout-clear` — Debug endpoint
+- `/api/v1/auth/test-cookie-setting` — Test endpoint
+- `/api/v1/ai/providers/test/*` — Test endpoints
+- `/api/v1/plugins/test` — Test endpoint
+
 ## Next Steps
 
 1. ✅ **Structure decided:** Multiple files (Option A)
-2. ✅ **Data source confirmed:** Everything comes from Swagger at `localhost:8005/docs`
+2. ✅ **Data source obtained:** OpenAPI JSON exported from Swagger
 3. ✅ **Location decided:** BrainDrive-Core repo (synced to docs site)
 4. ✅ **Auth model clarified:** JWT tokens, user-level scope only for now
-5. **You provide:** Run BrainDrive locally in VS Code and either:
-   - Export the OpenAPI JSON from Swagger, OR
-   - Give Claude access to make curl requests to the local endpoint
-6. **I draft:** The API Reference based on the Swagger data (in BrainDrive-Core repo)
-7. **You review:** We iterate until it's accurate
+5. ✅ **Drafts created:** All 4 files complete
+6. ⏳ **Review with David Jones:** Verify accuracy, especially:
+   - Are excluded endpoints correct? Any that should be included?
+   - Service Bridge interfaces — verify against actual TypeScript source
+   - Lifecycle manager methods — verify against actual plugin implementations
+7. ⏳ **Move to BrainDrive-Core:** Once approved, move files to `docs-core/reference/`
 
-## Open Questions
+## Open Questions for Review
 
-1. ✅ **Authentication Model:** JWT tokens, user-level scope only for now
-2. ✅ **Location:** BrainDrive-Core repo (synced)
-3. ⏳ **OpenAPI Export Method:** TBD — need to find exact URL to get raw OpenAPI JSON from Swagger
-4. ⏳ **Plugin API Contracts:** TBD — need to confirm if this is in Swagger or comes from lifecycle_manager docs
+1. **Excluded endpoints:** Should any of the test/demo endpoints be documented for developers?
+
+2. **Service Bridges accuracy:** The TypeScript interfaces in `service-bridges-api.md` are inferred from:
+   - The REST API structure
+   - Existing plugin documentation
+   - Should be verified against `BrainDrive-Core/frontend/src/services/` (or equivalent)
+
+3. **Lifecycle manager methods:** The Python interface in `plugin-api-contracts.md` is based on:
+   - Existing plugin docs
+   - Example plugins in `.cache/sources/`
+   - Should be verified against the actual `lifecycle_manager_template.py`
+
+4. **Missing sections:** Are there any API areas not covered that developers commonly need?
+   - WebSocket endpoints?
+   - Rate limiting info?
+   - Pagination patterns?
