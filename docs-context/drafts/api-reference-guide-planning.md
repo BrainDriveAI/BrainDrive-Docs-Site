@@ -1,5 +1,7 @@
 # API Reference Guide Planning Draft
 
+**Last Updated:** January 2025 (after review call with David Jones)
+
 ## Scope: What Should This Cover?
 
 Based on the codebase, there are three distinct API surfaces a developer might need:
@@ -10,9 +12,12 @@ Based on the codebase, there are three distinct API surfaces a developer might n
 | 2. Service Bridges | Frontend TypeScript interfaces plugins use in React | Documented but scattered across files |
 | 3. Plugin API Contracts | How plugins register endpoints, expose modules, define metadata | Covered in lifecycle_manager docs |
 
-## Proposed Structure
+## Structure Decision
 
-### Option A: Multiple files
+✅ **Decided: Option A (Multiple files)**
+
+Rationale from David Jones: Grouping by what developers are trying to accomplish helps avoid overwhelming them. The full Swagger documentation gives you everything at once, which is "a daunting list." Breaking it down by purpose is more approachable.
+
 ```
 docs-core/reference/
 ├── API.md                    # Overview + links to subsections
@@ -21,23 +26,20 @@ docs-core/reference/
 └── plugin-api-contracts.md   # Plugin registration, metadata format
 ```
 
-### Option B: Single comprehensive file
-```
-docs-core/reference/
-└── API.md                    # Everything in one place (~500-800 lines)
-```
-
-## Information I Need From You
+## Information Sources
 
 ### 1. Backend API Endpoints
 
-The FastAPI backend auto-generates OpenAPI docs at localhost:8005/docs when running.
+✅ **Confirmed: All information is in Swagger**
 
-**Questions:**
-- Can you run BrainDrive locally and share the OpenAPI JSON or a screenshot/export of the Swagger docs?
-- Alternatively, can you point me to the FastAPI route files in the BrainDrive-Core repo? (e.g., `backend/api/routes/`)
+The FastAPI backend auto-generates OpenAPI docs at `localhost:8005/docs` when running.
 
-**What I need to document:**
+**How to get the data:**
+- Run BrainDrive locally in VS Code (not Codespace) to access `localhost:8005/docs`
+- The OpenAPI JSON can be exported directly from Swagger (David Jones to look up exact method, or Claude can help)
+- Claude can make curl requests to fetch the OpenAPI spec directly when running locally
+
+**What to document:**
 - Authentication endpoints (login, token refresh, etc.)
 - Plugin management endpoints (install, uninstall, list)
 - Settings endpoints (get/set user and system settings)
@@ -46,39 +48,38 @@ The FastAPI backend auto-generates OpenAPI docs at localhost:8005/docs when runn
 
 ### 2. Service Bridge Method Signatures
 
-The Service Bridges doc shows high-level examples but not full method signatures.
+✅ **Confirmed: All information is in Swagger**
 
-**Questions:**
-- Are there TypeScript interface definitions in BrainDrive-Core I can reference? (e.g., `frontend/src/services/` or similar)
-- Should I pull these from the example plugin repos?
+David Jones clarified that the Swagger docs contain all the interface definitions, including:
+- Full method signatures (like `get<T>(endpoint: string, options?: RequestOptions)`)
+- Nested types like `RequestOptions` are documented at the bottom of Swagger docs
+- No need to pull from example plugin repos — Swagger has everything
 
-**What I need to document for each bridge:**
+**Example of what Swagger provides:**
 ```typescript
-// Example format for API Bridge
+// API Bridge interface with generics
 interface APIBridge {
   get<T>(endpoint: string, options?: RequestOptions): Promise<T>;
   post<T>(endpoint: string, data: any, options?: RequestOptions): Promise<T>;
-  postStreaming(endpoint: string, data: any, onChunk: (chunk: string) => void): Promise<void>;
-  // etc.
+  // The <T> generic contains endpoint (string), options (RequestOptions)
+  // RequestOptions is another JSON with its own signature shown in Swagger
 }
 ```
 
 ### 3. Authentication Model
 
-**Questions:**
-- How does authentication work? (JWT tokens, sessions, API keys?)
-- How do plugins access the current user context?
-- Are there different auth scopes (user vs. system)?
+✅ **Confirmed:**
+- **Method:** JWT tokens
+- **Plugin access:** Plugins access user context via the JWT token in the request packet
+- **Scopes:** Auth scopes exist in the system but aren't actively used yet
+- **Current model:** Everything is owned by the user — security funnels all access back to the user level
+- **Future:** Administrators and permissions will be added later (tenants, etc.), but for now focus documentation on user-level auth only
 
 ### 4. Location Decision
 
-**Question:**
-Should this live in BrainDrive-Core repo (synced to docs site) or be authored directly in this docs repo?
+✅ **Decided: BrainDrive-Core repo**
 
-| Location | Pros | Cons |
-|----------|------|------|
-| BrainDrive-Core | Stays close to source code, can auto-generate | Another repo to update |
-| This docs repo | Easier to iterate, no sync needed | May drift from actual API |
+API reference docs will live in BrainDrive-Core and sync to this docs site.
 
 ## Proposed Outline (Once I Have the Info)
 
@@ -161,10 +162,19 @@ Should this live in BrainDrive-Core repo (synced to docs site) or be authored di
 
 ## Next Steps
 
-1. **You provide:** Backend API source (OpenAPI export, route files, or screenshots)
-2. **You provide:** Service Bridge TypeScript interfaces (or confirm I should pull from example repos)
-3. **You decide:** Single file vs. multiple files? Live in this repo or BrainDrive-Core?
-4. **I draft:** The API Reference based on actual endpoints and signatures
-5. **You review:** We iterate until it's accurate
+1. ✅ **Structure decided:** Multiple files (Option A)
+2. ✅ **Data source confirmed:** Everything comes from Swagger at `localhost:8005/docs`
+3. ✅ **Location decided:** BrainDrive-Core repo (synced to docs site)
+4. ✅ **Auth model clarified:** JWT tokens, user-level scope only for now
+5. **You provide:** Run BrainDrive locally in VS Code and either:
+   - Export the OpenAPI JSON from Swagger, OR
+   - Give Claude access to make curl requests to the local endpoint
+6. **I draft:** The API Reference based on the Swagger data (in BrainDrive-Core repo)
+7. **You review:** We iterate until it's accurate
 
-Does this plan make sense? What information can you provide first?
+## Open Questions
+
+1. ✅ **Authentication Model:** JWT tokens, user-level scope only for now
+2. ✅ **Location:** BrainDrive-Core repo (synced)
+3. ⏳ **OpenAPI Export Method:** TBD — need to find exact URL to get raw OpenAPI JSON from Swagger
+4. ⏳ **Plugin API Contracts:** TBD — need to confirm if this is in Swagger or comes from lifecycle_manager docs
