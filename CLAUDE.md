@@ -13,7 +13,7 @@ Documentation site for BrainDrive (Docusaurus). Docs are synced from external re
   - `docs-core/` ← BrainDrive-Core
   - `docs-template/` ← PluginTemplate
   - `docs-plugins/<plugin>/` ← Individual plugin repos
-- **Editable here**: `docs/`, `docs-services/`, `docs-plugins/intro.md`
+- **Editable here**: `docs-services/`, `docs-plugins/intro.md`
 
 ## Style Guide Highlights
 - Use "Owner" or "Builder" instead of "user"
@@ -24,6 +24,9 @@ Documentation site for BrainDrive (Docusaurus). Docs are synced from external re
 ## Current State (as of Jan 2025)
 - Audited docs-core, docs-plugins, docs-template
 - Fixed typos and broken links
+- Removed Docusaurus template content (blog/, docs/, site/ folders)
+- Removed duplicate INSTALL.mdx route (was creating /core/INSTALL, now only /core/getting-started/install exists)
+- Fixed all broken /core/INSTALL links across docs and sync script
 - Pending: API Reference guide (planned, needs backend API info)
 - Pending: Delete intro.md placeholders in source repos (BrainDrive-Core, PluginTemplate)
 - Pending: 7 minor fixes in plugin repos (Chat, Ollama, Settings) — see below
