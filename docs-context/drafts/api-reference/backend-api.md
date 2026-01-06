@@ -136,7 +136,10 @@ PUT /api/v1/auth/profile/password
 
 ## Settings
 
-BrainDrive uses a two-tier settings system: **definitions** (schema) and **instances** (values).
+BrainDrive uses a two-tier settings system. First, a **Definition** is created to establish the schema for a setting (e.g., its name, type, default value). This is typically done by a plugin's `lifecycle_manager.py`. Then, an **Instance** is created when a user saves a value for that setting.
+
+-   **Setting Definitions API**: Use this to manage the available settings in the system.
+-   **Setting Instances API**: Use this to get or set the actual values for a user.
 
 Scopes (`system`, `user`, `page`) are accepted but currently treated as user scope. Planned behavior: page scope overrides user scope, with user values as fallback.
 
@@ -255,6 +258,14 @@ DELETE /api/v1/settings/instances/{instance_id}
 ---
 
 ## Plugins
+
+These endpoints are used to manage the plugin lifecycle. They are the backend counterpart to the actions a user takes in the Plugin Manager UI.
+
+-   **Manifest Endpoints** (`/manifest`, `/manager`): Provide lists of plugins for different UI contexts.
+-   **Lifecycle Endpoints** (`/register`, `/install`, `/uninstall`): Manage the installation and removal of plugins.
+    -   Use the global `POST /api/v1/plugins/install` when you need to support multiple installation methods (upload, URL, marketplace).
+    -   Use `POST /api/v1/plugins/install-from-url` for a direct installation from a Git repository.
+-   **Information Endpoints** (`/info`, `/status`): Get details about specific plugins.
 
 ### Get Plugin Manifest
 
@@ -453,7 +464,9 @@ GET /api/v1/pages
 POST /api/v1/pages
 ```
 
-**Request Body:**
+<details>
+<summary>Request Body</summary>
+
 ```json
 {
   "name": "My Page",
@@ -470,8 +483,11 @@ POST /api/v1/pages
   }
 }
 ```
+</details>
 
-**Response:** `PageResponse`
+<details>
+<summary>Response: <code>PageResponse</code></summary>
+
 ```json
 {
   "id": "uuid",
@@ -484,6 +500,7 @@ POST /api/v1/pages
   "updated_at": "2025-01-05T..."
 }
 ```
+</details>
 
 ### Get Page
 
@@ -513,7 +530,9 @@ PUT /api/v1/pages/{page_id}/hierarchy
 
 Move a page to a different parent or change its position.
 
-**Request Body:**
+<details>
+<summary>Request Body</summary>
+
 ```json
 {
   "parent_route": "/new-parent",
@@ -522,6 +541,7 @@ Move a page to a different parent or change its position.
   "is_parent_page": false
 }
 ```
+</details>
 
 ### Delete Page
 
@@ -567,7 +587,9 @@ Plugins can persist state data using this API. States can be scoped to a plugin,
 POST /api/v1/plugin-state/
 ```
 
-**Request Body:**
+<details>
+<summary>Request Body</summary>
+
 ```json
 {
   "plugin_id": "my-plugin",
@@ -580,6 +602,7 @@ POST /api/v1/plugin-state/
   "state_schema_version": "1.0 (optional)"
 }
 ```
+</details>
 
 **Response:** `PluginStateResponse`
 
@@ -612,7 +635,9 @@ GET /api/v1/plugin-state/{state_id}
 PUT /api/v1/plugin-state/{state_id}
 ```
 
-**Request Body:**
+<details>
+<summary>Request Body</summary>
+
 ```json
 {
   "state_data": { "updated": "data" },
@@ -620,6 +645,7 @@ PUT /api/v1/plugin-state/{state_id}
   "ttl_expires_at": "datetime (optional)"
 }
 ```
+</details>
 
 ### Delete Plugin State
 
@@ -633,7 +659,9 @@ DELETE /api/v1/plugin-state/{state_id}
 POST /api/v1/plugin-state/bulk
 ```
 
-**Request Body:**
+<details>
+<summary>Request Body</summary>
+
 ```json
 {
   "states": [
@@ -642,6 +670,7 @@ POST /api/v1/plugin-state/bulk
   ]
 }
 ```
+</details>
 
 ### Get Plugin State Stats
 

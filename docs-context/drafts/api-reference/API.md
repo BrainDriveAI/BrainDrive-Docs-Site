@@ -11,6 +11,7 @@ BrainDrive exposes three API surfaces:
 | [Backend REST API](./backend-api.md) | FastAPI endpoints at `localhost:8005` | Direct HTTP calls, backend integrations |
 | [Service Bridges](./service-bridges-api.md) | Frontend TypeScript interfaces | Plugin frontend code (React components) |
 | [Plugin API Contracts](./plugin-api-contracts.md) | Plugin registration and lifecycle | Plugin manifest, module definitions |
+| [Common Workflows](./workflows.md) | Practical examples and recipes | Tying the APIs together to build features |
 
 ## Architecture
 
@@ -99,12 +100,38 @@ All endpoints are rate-limited. Expect `429 Too Many Requests` if clients exceed
 | 429 | Too Many Requests (rate limited) |
 | 500 | Internal Server Error |
 
+## Rate Limiting
+
+The API employs rate limiting to ensure stability and fair use. If you send too many requests in a short period, you will receive a `429 Too Many Requests` HTTP status code.
+
+When this occurs, the response will include a `Retry-After` header indicating how many seconds you should wait before sending another request.
+
+> **Note:** The specific rate limits are not yet published. This documentation will be updated once the limits are finalized.
+
 ## Pagination
 
-Pagination is not yet consistent across all list endpoints. When supported, responses include `page`, `page_size`, `total_items`, and `total_pages`. More endpoints will adopt pagination over time.
+For endpoints that return a list of items (e.g., `GET /api/v1/pages`), the results are paginated. Pagination is controlled via query parameters:
+
+-   `limit`: The number of items to return per page.
+-   `offset`: The starting index from which to return items.
+
+A paginated response body will have the following structure:
+
+```json
+{
+  "items": [ ... ],
+  "total_items": 100,
+  "page": 1,
+  "page_size": 20,
+  "total_pages": 5
+}
+```
+
+> **Note:** Pagination is not yet implemented on all list endpoints. Please check the documentation for each specific endpoint in the [Backend REST API Reference](./backend-api.md) to confirm if it supports pagination.
 
 ## Quick Links
 
 - **Getting started with plugins?** See [Plugin API Contracts](./plugin-api-contracts.md)
 - **Making API calls from a plugin?** See [Service Bridges](./service-bridges-api.md)
 - **Building a backend integration?** See [Backend REST API](./backend-api.md)
+- **Looking for examples?** See [Common API Workflows](./workflows.md)

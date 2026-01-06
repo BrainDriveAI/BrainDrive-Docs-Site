@@ -334,81 +334,9 @@ The `config_schema` follows [JSON Schema](https://json-schema.org/) with BrainDr
 
 ## REST API Endpoints
 
-These endpoints manage plugin lifecycle. All require authentication.
+The installation, removal, and management of plugins are handled by the core backend API. These endpoints are what the BrainDrive UI calls when you interact with the Plugin Manager.
 
-### Plugin Discovery
-
-```http
-GET /api/v1/plugins/manifest
-```
-
-Returns all installed plugins and their modules for the current user.
-
-```http
-GET /api/v1/plugins/available
-```
-
-Returns plugins available for installation from the marketplace.
-
-### Plugin Management
-
-```http
-POST /api/v1/plugins/install
-```
-
-Global install endpoint for uploads, URLs, or marketplace installs.
-
-```http
-POST /api/v1/plugins/install-from-url
-```
-
-Install by repository URL (equivalent to `method: "url"` on `/install`).
-
-```http
-POST /api/v1/plugins/{plugin_slug}/install
-```
-
-Direct install for a specific plugin slug.
-
-```http
-DELETE /api/v1/plugins/{plugin_slug}/uninstall
-```
-
-Uninstall a plugin for the current user.
-
-```http
-GET /api/v1/plugins/{plugin_slug}/status
-```
-
-Check if a plugin is installed and get its status.
-
-```http
-POST /api/v1/plugins/{plugin_slug}/update
-```
-
-Update a plugin to the latest version.
-
-### Module Management
-
-```http
-GET /api/v1/plugins/{plugin_id}/modules
-```
-
-List all modules exposed by a plugin.
-
-```http
-GET /api/v1/plugins/{plugin_id}/modules/{module_id}
-```
-
-Get detailed information about a specific module.
-
-```http
-PATCH /api/v1/plugins/{plugin_id}/modules/{module_id}
-```
-
-Enable/disable a specific module.
-
-See [Backend REST API Reference](./backend-api.md#plugins) for complete endpoint documentation.
+For complete details on all plugin-related endpoints, see the [**Backend REST API Reference (&raquo; Plugins)**](./backend-api.md#plugins).
 
 ---
 
