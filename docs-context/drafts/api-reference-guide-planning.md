@@ -1,6 +1,6 @@
 # API Reference Guide Planning Draft
 
-**Last Updated:** January 5, 2025 (draft complete, ready for review)
+**Last Updated:** January 6, 2025 (COMPLETE - published to both repos)
 
 ## Scope: What Should This Cover?
 
@@ -8,9 +8,9 @@ Based on the codebase, there are three distinct API surfaces a developer might n
 
 | API Surface | Description | Current State |
 |-------------|-------------|---------------|
-| 1. BrainDrive Core Backend | FastAPI REST endpoints (port 8005) — auth, plugins, settings, pages, etc. | Placeholder only ("see localhost:8005/docs") |
-| 2. Service Bridges | Frontend TypeScript interfaces plugins use in React | Documented but scattered across files |
-| 3. Plugin API Contracts | How plugins register endpoints, expose modules, define metadata | Covered in lifecycle_manager docs |
+| 1. BrainDrive Core Backend | FastAPI REST endpoints (port 8005) — auth, plugins, settings, pages, etc. | ✅ Complete (`backend-api.md`) |
+| 2. Service Bridges | Frontend TypeScript interfaces plugins use in React | ✅ Complete (`service-bridges-api.md`) |
+| 3. Plugin API Contracts | How plugins register endpoints, expose modules, define metadata | ✅ Complete (`plugin-api-contracts.md`) |
 
 ## Structure Decision
 
@@ -195,14 +195,17 @@ Location: `docs-context/drafts/api-reference/`
 2. ✅ **Data source obtained:** OpenAPI JSON exported from Swagger
 3. ✅ **Location decided:** BrainDrive-Core repo (synced to docs site)
 4. ✅ **Auth model clarified:** JWT tokens, user-level scope only for now
-5. ✅ **Drafts created:** All 4 files complete
-6. ⏳ **Review with David Jones:** Verify accuracy, especially:
-   - Are excluded endpoints correct? Any that should be included?
-   - Service Bridge interfaces — verify against actual TypeScript source
-   - Lifecycle manager methods — verify against actual plugin implementations
-7. ⏳ **Move to BrainDrive-Core:** Once approved, move files to `docs-core/reference/`
+5. ✅ **Drafts created:** All 4 files complete + workflows.md
+6. ✅ **Review completed:** Reviewed by AI, accepted with fixes (January 6, 2025)
+   - Fixed table formatting in API.md
+   - Fixed TypeScript import pattern in workflows.md
+   - Added collapsible sections for lengthy request bodies
+   - Removed duplicate endpoints section from plugin-api-contracts.md (DRY)
+7. ✅ **Published to BrainDrive-Core:** `docs/reference/` (commit `e0cc4d8`)
+8. ✅ **Synced to Docs Site:** `docs-core/reference/` (commit `509303f`)
+9. ✅ **Build verified:** No broken links or errors
 
-## Open Questions for Review
+## Open Questions (For Future Updates)
 
 1. **Excluded endpoints:** Should any of the test/demo endpoints be documented for developers?
 
@@ -218,5 +221,26 @@ Location: `docs-context/drafts/api-reference/`
 
 4. **Missing sections:** Are there any API areas not covered that developers commonly need?
    - WebSocket endpoints?
-   - Rate limiting info?
-   - Pagination patterns?
+   - ~~Rate limiting info?~~ Added basic section
+   - ~~Pagination patterns?~~ Added basic section
+
+---
+
+## Summary
+
+**Status: COMPLETE**
+
+The API Reference documentation is now published and available:
+
+- **Source:** `BrainDrive-Core/docs/reference/`
+- **Docs Site:** `docs-core/reference/` (auto-synced)
+- **URL:** `/core/reference/` on docs.braindrive.ai
+
+Files published:
+| File | Description |
+|------|-------------|
+| `API.md` | Overview, architecture, auth, response formats |
+| `backend-api.md` | ~100 REST endpoints across 15 groups |
+| `service-bridges-api.md` | All 6 frontend TypeScript bridges |
+| `plugin-api-contracts.md` | Lifecycle manager, manifest schemas |
+| `workflows.md` | Practical examples tying APIs together |
