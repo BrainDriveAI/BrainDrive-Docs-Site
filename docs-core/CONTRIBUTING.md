@@ -92,7 +92,7 @@ If you're a new developer or need mentoring, bookmark us. We'll have infrastruct
 
 ## **Local Development**
 
-See [install guide here](https://docs.braindrive.ai/core/getting-started/install). 
+See [install guide here](https://docs.braindrive.ai/core/INSTALL). 
 
 ### Quick Start
 
