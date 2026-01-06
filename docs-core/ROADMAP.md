@@ -68,7 +68,7 @@ Phase 1 is complete when you can install BrainDrive, reach the chat window, type
 
 **Community Calls to Action:**
 
-* **Test** [the installation](/core/INSTALL)   
+* **Test** [the installation](/core/getting-started/install)   
 * **Chat** with a local model in your BrainDrive  
 * **Help** by providing [Feedback](https://community.braindrive.ai/t/have-braindrive-feedback-for-us-post-it-here/104)
 * **Join** the [BrainDrive Community](https://community.braindrive.ai) 

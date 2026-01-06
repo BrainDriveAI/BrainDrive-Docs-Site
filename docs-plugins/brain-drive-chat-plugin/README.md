@@ -10,7 +10,7 @@ It combines chat, model selection, personas and conversation history into a sing
 
 ![BrainDrive chat interface](https://raw.githubusercontent.com/BrainDriveAI/BrainDrive-Core/94401c8adfed9df554b955adaee709adcd943a55/images/chat-interface.png)
 
-Think **WordPress for AI**—[install BrainDrive-Core](https://docs.braindrive.ai/core/INSTALL), add this plugin, and you’re chatting with local or API models in minutes. 
+Think **WordPress for AI**—[install BrainDrive-Core](https://docs.braindrive.ai/core/getting-started/install), add this plugin, and you’re chatting with local or API models in minutes. 
 
 **Your AI. Your Rules.**
 
@@ -78,7 +78,7 @@ Think **WordPress for AI**—[install BrainDrive-Core](https://docs.braindrive.a
 - **Node.js 16+**  
 - **Python 3.9+ (3.11 recommended)**  
 - **Git**  
-- BrainDrive [Installed](https://docs.braindrive.ai/core/INSTALL) & running locally (frontend & backend)
+- BrainDrive [Installed](https://docs.braindrive.ai/core/getting-started/install) & running locally (frontend & backend)
 
 ### Setup
 ```bash
