@@ -1,6 +1,6 @@
 # Backend REST API Reference
 
-The BrainDrive backend is a FastAPI application running on port 8005. All endpoints are prefixed with `/api/v1/`.
+The BrainDrive backend is a FastAPI application running on port 8005. All endpoints are prefixed with `/api/v1/`. All endpoints are rate-limited.
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ The BrainDrive backend is a FastAPI application running on port 8005. All endpoi
 
 ## Authentication
 
-All authenticated endpoints require a JWT token in the `Authorization` header:
+Authenticated endpoints accept JWT access tokens via the `Authorization` header. Browser clients typically use HTTP-only cookies set by the auth endpoints.
 
 ```
 Authorization: Bearer <your_jwt_token>
@@ -67,7 +67,7 @@ Creates a new user account.
 POST /api/v1/auth/login
 ```
 
-Authenticates a user and returns JWT tokens (set via HTTP-only cookies).
+Authenticates a user and sets access/refresh JWTs as HTTP-only cookies.
 
 **Request Body:**
 ```json
@@ -77,7 +77,7 @@ Authenticates a user and returns JWT tokens (set via HTTP-only cookies).
 }
 ```
 
-**Response:** Access and refresh tokens are set as HTTP-only cookies.
+**Response:** Response body is empty; access and refresh tokens are set as HTTP-only cookies.
 
 ### Refresh Token
 
@@ -85,7 +85,7 @@ Authenticates a user and returns JWT tokens (set via HTTP-only cookies).
 POST /api/v1/auth/refresh
 ```
 
-Refreshes the access token using the refresh token cookie.
+Refreshes the access token using the refresh token cookie. Response body is empty.
 
 ### Logout
 
@@ -138,6 +138,8 @@ PUT /api/v1/auth/profile/password
 
 BrainDrive uses a two-tier settings system: **definitions** (schema) and **instances** (values).
 
+Scopes (`system`, `user`, `page`) are accepted but currently treated as user scope. Planned behavior: page scope overrides user scope, with user values as fallback.
+
 ### Setting Definitions
 
 Definitions describe what settings exist and their structure.
@@ -150,6 +152,7 @@ GET /api/v1/settings/definitions
 
 **Query Parameters:**
 - `category` (optional): Filter by category
+- `scope` (optional): Filter by scope (`system`, `user`, `page`)
 
 **Response:** Array of `SettingDefinitionResponse`
 
@@ -166,9 +169,9 @@ POST /api/v1/settings/definitions
   "name": "Display Name",
   "description": "What this setting does",
   "category": "general",
-  "type": "string | number | boolean | object",
+  "type": "string | number | boolean | object | array",
   "default_value": "any",
-  "allowed_scopes": ["user", "page"],
+  "allowed_scopes": ["system", "user", "page"],
   "is_multiple": false,
   "validation": { "min": 0, "max": 100 },
   "tags": ["optional", "tags"]
@@ -200,7 +203,8 @@ GET /api/v1/settings/instances
 
 **Query Parameters:**
 - `definition_id` (optional): Filter by definition
-- `scope` (optional): Filter by scope (user, page)
+- `scope` (optional): Filter by scope (system, user, page)
+- `user_id` (optional): Filter by user
 - `page_id` (optional): Filter by page
 
 #### Get Setting Instance
@@ -221,7 +225,8 @@ POST /api/v1/settings/instances
   "definition_id": "setting_definition_id",
   "name": "instance_name",
   "value": "any_value",
-  "scope": "user | page",
+  "scope": "system | user | page",
+  "user_id": "uuid (optional)",
   "page_id": "uuid (optional, required if scope is page)"
 }
 ```
@@ -343,7 +348,7 @@ POST /api/v1/plugins/install
 - `file`: Plugin zip file (if method is "upload")
 - `version`: Specific version to install
 
-Or install from URL directly:
+Or install from URL directly (equivalent to `method: "url"`):
 
 ```http
 POST /api/v1/plugins/install-from-url
@@ -356,6 +361,14 @@ POST /api/v1/plugins/install-from-url
   "version": "v1.0.0 (optional)"
 }
 ```
+
+### Install Plugin by Slug
+
+```http
+POST /api/v1/plugins/{plugin_slug}/install
+```
+
+Direct install for a specific plugin. Use the global `/install` endpoints when you need upload/URL/marketplace selection.
 
 ### Update Plugin
 
@@ -560,7 +573,7 @@ POST /api/v1/plugin-state/
   "plugin_id": "my-plugin",
   "page_id": "uuid (optional)",
   "state_key": "my_state_key (optional)",
-  "state_strategy": "persistent | session | ephemeral",
+  "state_strategy": "persistent | session | none | custom",
   "state_data": { "any": "json data" },
   "ttl_expires_at": "2025-12-31T... (optional)",
   "device_id": "string (optional)",
@@ -580,6 +593,12 @@ GET /api/v1/plugin-state/
 - `plugin_id` (optional)
 - `page_id` (optional)
 - `state_key` (optional)
+- `state_strategy` (optional)
+- `sync_status` (optional)
+- `is_active` (optional)
+- `device_id` (optional)
+- `limit` (optional)
+- `offset` (optional)
 
 ### Get Plugin State
 
@@ -597,7 +616,7 @@ PUT /api/v1/plugin-state/{state_id}
 ```json
 {
   "state_data": { "updated": "data" },
-  "state_strategy": "persistent (optional)",
+  "state_strategy": "persistent | session | none | custom (optional)",
   "ttl_expires_at": "datetime (optional)"
 }
 ```
@@ -638,7 +657,7 @@ Returns storage statistics for plugin states.
 DELETE /api/v1/plugin-state/cleanup
 ```
 
-Removes expired session/ephemeral states.
+Removes expired non-persistent states.
 
 ---
 

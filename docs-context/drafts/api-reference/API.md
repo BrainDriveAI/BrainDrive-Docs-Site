@@ -42,9 +42,9 @@ BrainDrive exposes three API surfaces:
 
 BrainDrive uses **JWT tokens** for authentication.
 
-- Tokens are obtained via `POST /api/v1/auth/login`
-- Include the token in the `Authorization` header: `Bearer <token>`
-- Refresh tokens via `POST /api/v1/auth/refresh`
+- Login sets access and refresh JWTs as HTTP-only cookies (response body is empty)
+- For non-browser clients, send `Authorization: Bearer <access_token>`
+- Refresh tokens via `POST /api/v1/auth/refresh` (sets a new access cookie; response body is empty)
 - Plugins access user context automatically through the Service Bridges
 
 **Current scope:** All resources are user-owned. There is no multi-tenant or admin scope at this time.
@@ -55,6 +55,8 @@ BrainDrive uses **JWT tokens** for authentication.
 |-------------|-----|
 | Local Development | `http://localhost:8005` |
 | API Docs (Swagger) | `http://localhost:8005/docs` |
+
+BrainDrive is self-hosted; there is no shared staging host. Use the base URL of your deployed instance in production. The `/api/v1` prefix is stable until v2.
 
 ## Response Format
 
@@ -82,6 +84,8 @@ Validation errors include field-level details:
 
 ## Common HTTP Status Codes
 
+All endpoints are rate-limited. Expect `429 Too Many Requests` if clients exceed limits.
+
 | Code | Meaning |
 |------|---------|
 | 200 | Success |
@@ -92,7 +96,12 @@ Validation errors include field-level details:
 | 403 | Forbidden (valid token, insufficient permissions) |
 | 404 | Not Found |
 | 422 | Validation Error |
+| 429 | Too Many Requests (rate limited) |
 | 500 | Internal Server Error |
+
+## Pagination
+
+Pagination is not yet consistent across all list endpoints. When supported, responses include `page`, `page_size`, `total_items`, and `total_pages`. More endpoints will adopt pagination over time.
 
 ## Quick Links
 

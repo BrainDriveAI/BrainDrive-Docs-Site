@@ -66,7 +66,7 @@ interface StreamingOptions extends RequestOptions {
 
 ```typescript
 // GET request
-const users = await api.get<User[]>('/api/v1/users');
+const pages = await api.get<PageResponse[]>('/api/v1/pages');
 
 // POST request
 const newPage = await api.post<PageResponse>('/api/v1/pages', {
@@ -271,7 +271,7 @@ interface PluginStateBridge {
 interface StateOptions {
   pageId?: string;           // Scope to specific page
   stateKey?: string;         // Custom state key
-  strategy?: 'persistent' | 'session' | 'ephemeral';
+  strategy?: 'persistent' | 'session' | 'none' | 'custom';
   ttl?: number;              // Time-to-live in seconds
 }
 
@@ -325,15 +325,16 @@ const allStates = await pluginState.list({ limit: 10 });
 
 | Strategy | Description | Use Case |
 |----------|-------------|----------|
-| `persistent` | Stored indefinitely | User preferences, saved data |
+| `persistent` | Stored until cleared | User preferences, saved data |
 | `session` | Cleared on logout | Temporary workspace state |
-| `ephemeral` | Cleared on page leave | Form drafts, UI state |
+| `none` | Not persisted | Fire-and-forget state |
+| `custom` | Reserved for custom strategies | Advanced storage workflows |
 
 ---
 
 ## Notes for Developers
 
-> **TODO:** The exact TypeScript interface definitions should be pulled from the BrainDrive-Core frontend source code. The interfaces documented here are based on the backend API structure and may need refinement.
+Service Bridge interfaces are governed by the BrainDrive backend and frontend. If you see a mismatch, check the BrainDrive Core frontend definitions and the OpenAPI spec and update this reference to match.
 
 ### Accessing Bridges in Your Plugin
 

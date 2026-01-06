@@ -353,10 +353,22 @@ Returns plugins available for installation from the marketplace.
 ### Plugin Management
 
 ```http
+POST /api/v1/plugins/install
+```
+
+Global install endpoint for uploads, URLs, or marketplace installs.
+
+```http
+POST /api/v1/plugins/install-from-url
+```
+
+Install by repository URL (equivalent to `method: "url"` on `/install`).
+
+```http
 POST /api/v1/plugins/{plugin_slug}/install
 ```
 
-Install a plugin for the current user.
+Direct install for a specific plugin slug.
 
 ```http
 DELETE /api/v1/plugins/{plugin_slug}/uninstall
@@ -409,16 +421,18 @@ Plugins use Webpack Module Federation to expose React components to BrainDrive a
 ```javascript
 const { ModuleFederationPlugin } = require('webpack').container;
 
+const PLUGIN_SCOPE = 'MyPlugin';
+const MODULE_NAME = 'MyPluginModule';
+
 module.exports = {
   // ... other config
   plugins: [
     new ModuleFederationPlugin({
-      name: 'myPlugin',  // Must match plugin slug (camelCase)
+      name: PLUGIN_SCOPE,  // Must match plugin_data.scope from lifecycle_manager.py
       filename: 'remoteEntry.js',
       exposes: {
-        // Expose components by their module ID
-        './MyComponent': './src/components/MyComponent',
-        './AnotherWidget': './src/components/AnotherWidget',
+        // Expose modules by their module name from lifecycle_manager.py
+        [`./${MODULE_NAME}`]: './src/index',
       },
       shared: {
         react: { singleton: true, requiredVersion: '^18.0.0' },
@@ -439,9 +453,9 @@ import React from 'react';
 
 interface MyComponentProps {
   // Service Bridges (injected by BrainDrive)
-  services: {
+  bridges: {
     api: APIBridge;
-    event: EventBridge;
+    events: EventBridge;
     theme: ThemeBridge;
     settings: SettingsBridge;
     pageContext: PageContextBridge;
@@ -458,12 +472,12 @@ interface MyComponentProps {
   componentId: string;
 }
 
-const MyComponent: React.FC<MyComponentProps> = ({ services, config, pageId }) => {
+const MyComponent: React.FC<MyComponentProps> = ({ bridges, config, pageId }) => {
   const [data, setData] = React.useState(null);
 
   React.useEffect(() => {
     // Load saved state
-    services.pluginState.load().then(setData);
+    bridges.pluginState.load().then(setData);
   }, []);
 
   return (
