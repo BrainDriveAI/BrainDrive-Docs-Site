@@ -27,9 +27,11 @@ Documentation site for BrainDrive (Docusaurus). Docs are synced from external re
 - Removed Docusaurus template content (blog/, docs/, site/ folders)
 - Removed duplicate INSTALL.mdx route (was creating /core/INSTALL, now only /core/getting-started/install exists)
 - Fixed all broken /core/INSTALL links across docs and sync script
-- Pending: API Reference guide (planned, needs backend API info)
+- ✅ API Reference guide complete (5 files in `docs-core/reference/`)
 - Pending: Delete intro.md placeholders in source repos (BrainDrive-Core, PluginTemplate)
 - Pending: 7 minor fixes in plugin repos (Chat, Ollama, Settings) — see below
+- Pending: "Start Here" landing page for new developers
+- Pending: Troubleshooting guide
 
 ## Pending Plugin Repo Fixes
 
@@ -52,22 +54,22 @@ Documentation site for BrainDrive (Docusaurus). Docs are synced from external re
 - `docs-context/personas/adam-carter.md` — Target audience
 - `docs-context/doc-types.md` — How-to, Concept, Reference, Troubleshooting templates
 
-## API Reference Planning
-Next major task. Needs from user:
-1. Backend API endpoints (from FastAPI at localhost:8005/docs or route files)
-2. Service Bridge TypeScript interfaces (from BrainDrive-Core frontend)
-3. Authentication model details
+## API Reference (COMPLETE)
+Published January 6, 2025 to `BrainDrive-Core/docs/reference/` (syncs to `docs-core/reference/`).
 
-Proposed structure:
-- Overview + architecture
-- Backend REST API (auth, plugins, settings, pages)
-- Service Bridges (all 6 with full method signatures)
-- Plugin API Contracts (lifecycle manager, metadata formats)
-- Error handling
+| File | Contents |
+|------|----------|
+| `API.md` | Overview, architecture, auth, response formats |
+| `backend-api.md` | ~100 REST endpoints across 15 groups |
+| `service-bridges-api.md` | All 6 frontend TypeScript bridges |
+| `plugin-api-contracts.md` | Lifecycle manager, manifest schemas |
+| `workflows.md` | Practical examples tying APIs together |
+
+Planning doc: `docs-context/drafts/api-reference-guide-planning.md`
 
 ## Developer Experience Evaluation (Jan 2025)
-Overall score: 7/10. Strengths: plugin development docs are excellent. Gaps:
+Overall score: 7/10 → improved with API Reference. Remaining gaps:
 - No clear "Start Here" landing page
-- API Reference is placeholder only
+- ~~API Reference is placeholder only~~ ✅ Complete
 - No troubleshooting guide
-- Service Bridges docs scattered (need unified reference)
+- ~~Service Bridges docs scattered~~ ✅ Unified in `service-bridges-api.md`
