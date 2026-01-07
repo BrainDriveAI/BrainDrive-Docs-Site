@@ -54,7 +54,7 @@ Already cloned: `BrainDrive-Core`, `BrainDrive-Chat-Plugin`, `BrainDrive-Ollama-
 - Removed Chat-With-Docs plugin docs (plugin removed from BrainDrive; new version coming later)
 - ✅ Removed intro.md placeholder generation (sync script updated)
 - ✅ Plugin repo fixes verified complete (Chat, Ollama, Settings READMEs)
-- Pending: "Start Here" landing page for new developers
+- ✅ "Start Here" not needed - README serves this purpose
 - Pending: Troubleshooting guide
 
 ## Key Context Files
@@ -77,8 +77,8 @@ Published January 6, 2025 to `BrainDrive-Core/docs/reference/` (syncs to `docs-c
 Planning doc: `docs-context/drafts/api-reference-guide-planning.md`
 
 ## Developer Experience Evaluation (Jan 2025)
-Overall score: 7/10 → improved with API Reference. Remaining gaps:
-- No clear "Start Here" landing page
+Overall score: 8/10. Remaining gap:
+- ~~No clear "Start Here" landing page~~ README serves this purpose
 - ~~API Reference is placeholder only~~ ✅ Complete
 - No troubleshooting guide
 - ~~Service Bridges docs scattered~~ ✅ Unified in `service-bridges-api.md`
