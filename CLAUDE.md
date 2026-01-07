@@ -53,24 +53,9 @@ Already cloned: `BrainDrive-Core`, `BrainDrive-Chat-Plugin`, `BrainDrive-Ollama-
 - ✅ API Reference guide complete (5 files in `docs-core/reference/`)
 - Removed Chat-With-Docs plugin docs (plugin removed from BrainDrive; new version coming later)
 - Pending: Delete intro.md placeholders in source repos (BrainDrive-Core, PluginTemplate)
-- Pending: 7 minor fixes in plugin repos (Chat, Ollama, Settings) — see below
+- ✅ Plugin repo fixes verified complete (Chat, Ollama, Settings READMEs)
 - Pending: "Start Here" landing page for new developers
 - Pending: Troubleshooting guide
-
-## Pending Plugin Repo Fixes
-
-### BrainDrive-Chat-Plugin
-- Line ~85: Fix clone URL (YourOrg → BrainDriveAI)
-- Line ~129: Clarify CSS description (Tailwind-like → Custom)
-- Lines ~166-167: Remove duplicate "## Resources" heading
-- Line ~168: Add missing space ("modify,and" → "modify, and")
-
-### BrainDrive-Ollama-Plugin
-- Lines ~18-19: Fix path ("PluginBuild/BrainDrive-Ollama-Plugin" → "BrainDrive-Ollama-Plugin")
-
-### BrainDrive-Settings-Plugin
-- Lines ~18-19: Fix path ("PluginBuild/BrainDrive-Settings-Plugin" → "BrainDrive-Settings-Plugin")
-- Line ~38: Add missing space ("modify,and" → "modify, and")
 
 ## Key Context Files
 - `docs-context/documentation-plan.md` — Overall docs strategy
