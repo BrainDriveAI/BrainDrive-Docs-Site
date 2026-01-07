@@ -199,6 +199,11 @@ const config: Config = {
 
   i18n: { defaultLocale: 'en', locales: ['en'] },
 
+  markdown: {
+    mermaid: true,
+  },
+  themes: ['@docusaurus/theme-mermaid'],
+
   presets: [
     [
       'classic',

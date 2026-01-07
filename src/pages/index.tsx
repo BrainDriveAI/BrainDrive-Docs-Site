@@ -76,10 +76,10 @@ function GetStarted(): ReactNode {
 
 function QuickLinks() {
   const links = [
-    {label: 'Core', desc: 'Front & back-end runtime', to: '/core/intro'},
+    {label: 'Core', desc: 'Front & back-end runtime', to: '/core/how-to/use-braindrive'},
     {label: 'Plugins', desc: 'Add functionality to Core', to: '/plugins/intro'},
     {label: 'Service Bridges', desc: 'Decoupled Core <-> Plugin communication', to: '/services/intro'},
-    {label: 'PluginTemplate', desc: 'Boilerplate + lifecycle installer/updater', to: '/template/intro'},
+    {label: 'PluginTemplate', desc: 'Boilerplate + lifecycle installer/updater', to: '/template/DEVELOPER_GUIDE'},
     {label: 'GitHub', desc: 'Source & issues', href: 'https://github.com/BrainDriveAI'},
     {label: 'Community', desc: 'Discussions & Support', href: 'https://community.braindrive.ai'},
   ];
