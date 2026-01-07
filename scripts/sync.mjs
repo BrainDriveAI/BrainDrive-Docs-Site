@@ -9,7 +9,6 @@ const sources = [
   { key: 'core',                 repo: 'BrainDriveAI/BrainDrive-Core',                 dest: 'docs-core',                                      prefer: ['docs','root'] },
   { key: 'template',             repo: 'BrainDriveAI/PluginTemplate',                  dest: 'docs-template',                                  prefer: ['docs','root'] },
   { key: 'chat-plugin',          repo: 'BrainDriveAI/BrainDrive-Chat-Plugin',          dest: 'docs-plugins/brain-drive-chat-plugin',          prefer: ['docs','root'], ensureIntro: false },
-  { key: 'chat-with-docs-plugin',repo: 'BrainDriveAI/BrainDrive-Chat-With-Docs-Plugin',dest: 'docs-plugins/brain-drive-chat-with-docs-plugin',prefer: ['docs','root'], ensureIntro: false },
   { key: 'settings-plugin',      repo: 'BrainDriveAI/BrainDrive-Settings-Plugin',      dest: 'docs-plugins/brain-drive-settings-plugin',      prefer: ['docs','root'], ensureIntro: false },
   { key: 'ollama-plugin',        repo: 'BrainDriveAI/BrainDrive-Ollama-Plugin',        dest: 'docs-plugins/brain-drive-ollama-plugin',        prefer: ['docs','root'], ensureIntro: false },
   { key: 'openrouter-plugin',    repo: 'BrainDriveAI/BrainDrive-Openrouter-Plugin',    dest: 'docs-plugins/brain-drive-openrouter-plugin',    prefer: ['docs','root'], ensureIntro: false },
@@ -63,21 +62,6 @@ const shimTemplates = {
         {
           label: 'BrainDrive-Chat-Plugin',
           position: 3,
-          collapsible: true,
-          collapsed: true,
-        },
-        null,
-        2,
-      ) + '\n',
-    },
-  ],
-  'chat-with-docs-plugin': [
-    {
-      path: '_category_.json',
-      content: JSON.stringify(
-        {
-          label: 'BrainDrive-Chat-With-Docs-Plugin',
-          position: 6,
           collapsible: true,
           collapsed: true,
         },

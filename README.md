@@ -66,7 +66,6 @@ Running `npm run sync` clones remote repositories into a temporary cache and cop
 | `BrainDriveAI/BrainDrive-Core` | `docs-core/` |
 | `BrainDriveAI/PluginTemplate` | `docs-template/` |
 | `BrainDriveAI/BrainDrive-Chat-Plugin` | `docs-plugins/brain-drive-chat-plugin/` |
-| `BrainDriveAI/BrainDrive-Chat-With-Docs-Plugin` | `docs-plugins/brain-drive-chat-with-docs-plugin/` |
 | `BrainDriveAI/BrainDrive-Settings-Plugin` | `docs-plugins/brain-drive-settings-plugin/` |
 | `BrainDriveAI/BrainDrive-Ollama-Plugin` | `docs-plugins/brain-drive-ollama-plugin/` |
 | `BrainDriveAI/BrainDrive-Openrouter-Plugin` | `docs-plugins/brain-drive-openrouter-plugin/` |
