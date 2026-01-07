@@ -53,7 +53,13 @@ const defaultSidebar: SidebarItem[] = [
     {id: 'how-to/use-plugins', label: 'Use Plugins'},
     {id: 'how-to/use-service-bridges', label: 'Use Service Bridges'},
   ]),
-  makeCategory('Reference', [{id: 'reference/API', label: 'API'}]),
+  makeCategory('Reference', [
+    {id: 'reference/API', label: 'API Overview'},
+    {id: 'reference/backend-api', label: 'Backend API'},
+    {id: 'reference/service-bridges-api', label: 'Service Bridges API'},
+    {id: 'reference/plugin-api-contracts', label: 'Plugin API Contracts'},
+    {id: 'reference/workflows', label: 'Workflows'},
+  ]),
   makeCategory('Backend', [
     {id: 'backend/README', label: 'Overview'},
     {id: 'backend/app/ai_providers/README', label: 'AI Providers'},
