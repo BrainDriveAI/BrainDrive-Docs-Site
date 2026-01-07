@@ -86,20 +86,6 @@ Create issues here for:
 - "Add settings search functionality"
 - "Implement settings profiles"
 
-### BrainDrive-Chat-With-Docs-Plugin
-**Owner**: DJJones66
-**Scope**: Document Q&A (RAG)
-
-Create issues here for:
-- Document upload UI
-- Document library management
-- RAG chat interface
-- Document source citations
-
-**Examples**:
-- "Add PDF preview in document library"
-- "Show source chunks for answers"
-
 ### BrainDrive-Openrouter-Plugin
 **Owner**: DJJones66
 **Scope**: OpenRouter integration
@@ -108,30 +94,6 @@ Create issues here for:
 - OpenRouter API key management
 - OpenRouter model selection
 - OpenRouter-specific settings
-
----
-
-## Services
-
-### Document-Chat-Service
-**Owner**: DJJones66
-**Scope**: RAG backend
-
-Create issues here for:
-- RAG query orchestration
-- Vector store management
-- Embedding generation
-- Context retrieval logic
-
-### Document-Processing-Service
-**Owner**: DJJones66
-**Scope**: Document processing
-
-Create issues here for:
-- PDF/DOCX parsing
-- Text chunking strategies
-- Embedding pipeline
-- Document ingestion
 
 ---
 
