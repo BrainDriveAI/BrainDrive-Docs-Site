@@ -1,6 +1,5 @@
 
-![BrainDrive Logo](./images/logo-light-mode.png#gh-light-mode-only)
-![BrainDrive Logo](./images/logo-dark-mode.png#gh-dark-mode-only)
+![BrainDrive Logo](./images/logo-dark-mode.png)
 
 [![License](https://img.shields.io/badge/License-MIT%20License-green.svg)](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/LICENSE)
 

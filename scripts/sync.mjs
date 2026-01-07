@@ -260,12 +260,20 @@ function sanitizeMDX(destDir, repo){
     let txt = fs.readFileSync(p,'utf8');
     const lines = txt.split('\n');
     let inFence = false;
+    const outputLines = [];
     for (let i=0; i<lines.length; i++){
       const fence = lines[i].match(/^\s*(`{3,}|~{3,})/);
-      if (fence){ inFence = !inFence; continue; }
-      if (!inFence) lines[i] = sanitizeLineOutsideBackticks(lines[i], repoName, repoFull);
+      if (fence){ inFence = !inFence; outputLines.push(lines[i]); continue; }
+      if (!inFence) {
+        // Skip GitHub light-mode-only images (docs site is always dark mode)
+        if (lines[i].includes('#gh-light-mode-only')) continue;
+        // Strip dark-mode-only suffix (keep the image, just remove the fragment)
+        lines[i] = lines[i].replace(/#gh-dark-mode-only/g, '');
+        lines[i] = sanitizeLineOutsideBackticks(lines[i], repoName, repoFull);
+      }
+      outputLines.push(lines[i]);
     }
-    fs.writeFileSync(p, lines.join('\n'));
+    fs.writeFileSync(p, outputLines.join('\n'));
   }
 }
 
