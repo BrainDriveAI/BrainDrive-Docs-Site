@@ -77,6 +77,44 @@ Build for yourself, build for the user-owned AI community, build for customers. 
 
 ## Architecture
 
+```mermaid
+flowchart LR
+    subgraph Core ["BrainDrive Core"]
+        direction TB
+        UI[Page Builder / Chat UI]
+        SB[Service Bridges]
+        API[REST API]
+        LM[Lifecycle Manager]
+        DB[(SQLite)]
+
+        UI --> SB
+        UI --> API
+        SB --> API
+        API --> LM
+        API --> DB
+    end
+
+    subgraph Plugins ["Plugins"]
+        direction TB
+        P1[Chat]
+        P2[Ollama]
+        P3[Settings]
+        P4[Your Plugin]
+    end
+
+    subgraph Ext ["External"]
+        AI[AI Providers]
+    end
+
+    UI -.->|Loads via Module Federation| Plugins
+    P1 --> API
+    P2 --> AI
+
+    style Core fill:#1a1a2e,stroke:#4a4a6a,color:#fff
+    style Plugins fill:#16213e,stroke:#4a4a6a,color:#fff
+    style Ext fill:#0f3460,stroke:#4a4a6a,color:#fff
+```
+
 **Core System** (this repo):
 
 | Component | Tech Stack | Details |
