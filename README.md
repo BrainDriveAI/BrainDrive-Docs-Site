@@ -31,19 +31,23 @@ BrainDrive-Docs-Site powers [BrainDrive](https://BrainDrive.ai)'s public develop
 
 ```
 BrainDrive-Docs-Site/
-├── docs/              # Hand-written docs that live only in this repo (tutorials, intro, etc.)
 ├── docs-core/         # Synced docs from BrainDrive-Core (see `npm run sync`).
 ├── docs-services/     # Service-specific docs (hand-written).
-├── docs-plugins/      # Plugin docs; includes synced sections such as ai-chat.
+├── docs-plugins/      # Plugin docs; synced from individual plugin repos.
 ├── docs-template/     # Synced docs from the BrainDrive Plugin Template repo.
-├── blog/              # Blog posts (MDX) displayed in the Docs site blog.
-├── site/              # Additional MDX/Markdown content used for the marketing landing pages.
+├── docs-context/      # Style guides, templates, and personas for doc authors.
 ├── src/               # Custom React theme/components and client-side behavior.
 ├── static/            # Static assets copied verbatim into the build output.
 ├── sidebars*.ts       # Sidebar definitions grouping documents by product area.
 ├── docusaurus.config.ts  # Docusaurus site configuration.
 └── scripts/sync.mjs   # Sync utility for importing docs from other repos.
 ```
+
+### Key documentation
+
+- **API Reference** (`docs-core/reference/`): Comprehensive REST API docs, service bridges, and plugin contracts.
+- **Style Guide** (`docs-context/technical-docs-style-guide.md`): Writing conventions for contributors.
+- **Doc Templates** (`docs-context/templates/`): Starter templates for how-to guides, concepts, and troubleshooting pages.
 
 ## Writing and organizing content
 
@@ -57,11 +61,17 @@ BrainDrive-Docs-Site/
 
 Running `npm run sync` clones remote repositories into a temporary cache and copies curated documentation into this project:
 
-- `BrainDriveAI/BrainDrive-Core` → `docs-core/`
-- `BrainDriveAI/PluginTemplate` → `docs-template/`
-- `DJJones66/BrainDriveChat` → `docs-plugins/ai-chat/` (optional; skips if cloning fails)
+| Repository | Destination |
+| ---------- | ----------- |
+| `BrainDriveAI/BrainDrive-Core` | `docs-core/` |
+| `BrainDriveAI/PluginTemplate` | `docs-template/` |
+| `BrainDriveAI/BrainDrive-Chat-Plugin` | `docs-plugins/brain-drive-chat-plugin/` |
+| `BrainDriveAI/BrainDrive-Chat-With-Docs-Plugin` | `docs-plugins/brain-drive-chat-with-docs-plugin/` |
+| `BrainDriveAI/BrainDrive-Settings-Plugin` | `docs-plugins/brain-drive-settings-plugin/` |
+| `BrainDriveAI/BrainDrive-Ollama-Plugin` | `docs-plugins/brain-drive-ollama-plugin/` |
+| `BrainDriveAI/BrainDrive-Openrouter-Plugin` | `docs-plugins/brain-drive-openrouter-plugin/` |
 
-The script sanitizes Markdown for compatibility, removes unsupported Kramdown attributes, and ensures each synced section has an `intro.md`. Use a `GH_TOKEN` environment variable with appropriate GitHub access to avoid rate limits for private repositories.
+The script sanitizes Markdown for compatibility, removes unsupported Kramdown attributes, and rewrites certain links for the docs site. Use a `GH_TOKEN` environment variable with appropriate GitHub access to avoid rate limits for private repositories.
 
 > ⚠️ The sync script replaces the entire target directories. Commit any local edits before running it or they may be lost.
 
