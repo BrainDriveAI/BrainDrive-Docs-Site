@@ -52,7 +52,7 @@ Already cloned: `BrainDrive-Core`, `BrainDrive-Chat-Plugin`, `BrainDrive-Ollama-
 - Fixed all broken /core/INSTALL links across docs and sync script
 - ✅ API Reference guide complete (5 files in `docs-core/reference/`)
 - Removed Chat-With-Docs plugin docs (plugin removed from BrainDrive; new version coming later)
-- Pending: Delete intro.md placeholders in source repos (BrainDrive-Core, PluginTemplate)
+- ✅ Removed intro.md placeholder generation (sync script updated)
 - ✅ Plugin repo fixes verified complete (Chat, Ollama, Settings READMEs)
 - Pending: "Start Here" landing page for new developers
 - Pending: Troubleshooting guide

@@ -6,8 +6,8 @@ const cwd = process.cwd();
 const tmp = path.join(cwd, '.cache', 'sources');
 
 const sources = [
-  { key: 'core',                 repo: 'BrainDriveAI/BrainDrive-Core',                 dest: 'docs-core',                                      prefer: ['docs','root'] },
-  { key: 'template',             repo: 'BrainDriveAI/PluginTemplate',                  dest: 'docs-template',                                  prefer: ['docs','root'] },
+  { key: 'core',                 repo: 'BrainDriveAI/BrainDrive-Core',                 dest: 'docs-core',                                      prefer: ['docs','root'], ensureIntro: false },
+  { key: 'template',             repo: 'BrainDriveAI/PluginTemplate',                  dest: 'docs-template',                                  prefer: ['docs','root'], ensureIntro: false },
   { key: 'chat-plugin',          repo: 'BrainDriveAI/BrainDrive-Chat-Plugin',          dest: 'docs-plugins/brain-drive-chat-plugin',          prefer: ['docs','root'], ensureIntro: false },
   { key: 'settings-plugin',      repo: 'BrainDriveAI/BrainDrive-Settings-Plugin',      dest: 'docs-plugins/brain-drive-settings-plugin',      prefer: ['docs','root'], ensureIntro: false },
   { key: 'ollama-plugin',        repo: 'BrainDriveAI/BrainDrive-Ollama-Plugin',        dest: 'docs-plugins/brain-drive-ollama-plugin',        prefer: ['docs','root'], ensureIntro: false },
