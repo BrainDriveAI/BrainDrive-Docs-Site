@@ -140,6 +140,9 @@ const rootDocImports = {
 
 const allow = new Set(['.md','.mdx','.png','.jpg','.jpeg','.gif','.svg','.webp','.bmp','.pdf']);
 
+// Files to exclude from syncing (keep in source repos but don't publish to docs site)
+const excludeFiles = new Set(['PLUGIN_SUMMARY.md']);
+
 function findExistingFile(baseDir, candidates) {
   for (const candidate of candidates) {
     const candidatePath = path.join(baseDir, candidate);
@@ -159,6 +162,8 @@ function copyTreeFiltered(src, dest){
     fs.mkdirSync(dest, {recursive:true});
     for (const name of fs.readdirSync(src)) copyTreeFiltered(path.join(src,name), path.join(dest,name));
   } else {
+    const filename = path.basename(src);
+    if (excludeFiles.has(filename)) return;
     const ext = path.extname(src).toLowerCase();
     if (allow.has(ext)){
       fs.mkdirSync(path.dirname(dest), {recursive:true});
