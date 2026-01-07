@@ -166,7 +166,7 @@ Full documentation is available at [docs.braindrive.ai](https://docs.braindrive.
 | Resource | Description |
 |----------|-------------|
 | [Installation Guide](https://docs.braindrive.ai/core/getting-started/install) | Complete setup instructions |
-| [Plugin Developer Quickstart](https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart) | Start building plugins |
+| [Plugin Developer Quickstart](https://docs.braindrive.ai/core/plugin-development/quickstart) | Start building plugins |
 | [Plugin Template](https://github.com/BrainDriveAI/PluginTemplate) | Boilerplate for new plugins |
 | [Service Bridge Guide](https://docs.braindrive.ai/services/intro) | Working examples and documentation |
 | [Frontend README](https://github.com/BrainDriveAI/BrainDrive-Core/blob/main/frontend/README.md) | React application details |

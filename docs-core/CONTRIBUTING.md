@@ -33,7 +33,7 @@ Each plugin is a separate repository that loads dynamically via Webpack Module F
 
 You own the code, the repo, and the distribution. No Big Tech lockin.
 
-Ready to start building? **Start here:** [Plugin Developer QuickStart](https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart)
+Ready to start building? **Start here:** [Plugin Developer QuickStart](https://docs.braindrive.ai/core/plugin-development/quickstart)
 
 ### 2. Improve Core (experienced developers)
 

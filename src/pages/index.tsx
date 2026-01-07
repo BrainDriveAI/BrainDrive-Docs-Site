@@ -39,7 +39,7 @@ function GetStarted(): ReactNode {
     {
       title: 'Build Your Own Plugins',
       desc: 'Start developing plugins with the quickstart.',
-      to: '/core/getting-started/plugin-developer-quickstart',
+      to: '/core/plugin-development/quickstart',
       cta: 'Start Building',
     },
   ];

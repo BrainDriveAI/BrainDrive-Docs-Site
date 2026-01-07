@@ -41,7 +41,11 @@ const defaultSidebar: SidebarItem[] = [
   makeDoc({id: 'README', label: 'Overview'}),
   makeCategory('Getting Started', [
     {id: 'INSTALL', label: 'Install'},
-    {id: 'getting-started/plugin-developer-quickstart', label: 'Plugin Dev Quick Start'},
+  ]),
+  makeCategory('Plugin Development', [
+    {id: 'plugin-development/quickstart', label: 'Quick Start'},
+    {id: 'plugin-development/naming-conventions', label: 'Naming Conventions'},
+    {id: 'plugin-development/theming-guide', label: 'Theming Guide'},
   ]),
   makeCategory('Concepts', [{id: 'concepts/plugins', label: 'Plugins'}]),
   makeCategory('How-To Guides', [

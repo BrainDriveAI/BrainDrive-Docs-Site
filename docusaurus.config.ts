@@ -156,7 +156,7 @@ const resolveCoreDocEditUrl = (payload: EditUrlPayload): string => {
 
 const ownerManualRoute = coreDocRoute('how-to/use-braindrive');
 const installRoute = coreDocRoute('INSTALL');
-const pluginQuickstartRoute = coreDocRoute('getting-started/plugin-developer-quickstart');
+const pluginQuickstartRoute = coreDocRoute('plugin-development/quickstart');
 const roadmapRoute = coreDocRoute('ROADMAP');
 const contributingRoute = coreDocRoute('CONTRIBUTING');
 

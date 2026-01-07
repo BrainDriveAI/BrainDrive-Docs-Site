@@ -133,7 +133,7 @@ If the frontend cannot reach the backend, confirm both servers are running and t
 ## 7. Next Steps
 
 * **Review** your BrainDrive's [Owner's Manual](https://docs.braindrive.ai/core/how-to/use-braindrive)
-* **Use** the [plugin developer quickstart guide](https://docs.braindrive.ai/core/getting-started/plugin-developer-quickstart) to build your first plugin.
+* **Use** the [plugin developer quickstart guide](https://docs.braindrive.ai/core/plugin-development/quickstart) to build your first plugin.
 * **View** the [BrainDrive Roadmap](https://community.braindrive.ai/t/braindrive-development-progress-updates/92)
 * **Join** the [BrainDrive Community](https://community.braindrive.ai/)
 
