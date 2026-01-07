@@ -55,7 +55,7 @@ Already cloned: `BrainDrive-Core`, `BrainDrive-Chat-Plugin`, `BrainDrive-Ollama-
 - ✅ Removed intro.md placeholder generation (sync script updated)
 - ✅ Plugin repo fixes verified complete (Chat, Ollama, Settings READMEs)
 - ✅ "Start Here" not needed - README serves this purpose
-- Pending: Troubleshooting guide
+- ✅ Troubleshooting guide added (`docs/troubleshooting/common-issues.md`)
 
 ## Key Context Files
 - `docs-context/documentation-plan.md` — Overall docs strategy
@@ -77,8 +77,8 @@ Published January 6, 2025 to `BrainDrive-Core/docs/reference/` (syncs to `docs-c
 Planning doc: `docs-context/drafts/api-reference-guide-planning.md`
 
 ## Developer Experience Evaluation (Jan 2025)
-Overall score: 8/10. Remaining gap:
+Overall score: 9/10. All identified gaps addressed:
 - ~~No clear "Start Here" landing page~~ README serves this purpose
 - ~~API Reference is placeholder only~~ ✅ Complete
-- No troubleshooting guide
+- ~~No troubleshooting guide~~ ✅ Added `docs/troubleshooting/common-issues.md`
 - ~~Service Bridges docs scattered~~ ✅ Unified in `service-bridges-api.md`
