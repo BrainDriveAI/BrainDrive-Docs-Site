@@ -77,8 +77,9 @@ Published January 6, 2025 to `BrainDrive-Core/docs/reference/` (syncs to `docs-c
 Planning doc: `docs-context/drafts/api-reference-guide-planning.md`
 
 ## Developer Experience Evaluation (Jan 2025)
-Overall score: 9/10. All identified gaps addressed:
+Overall score: 10/10. All identified gaps addressed + architecture diagram:
 - ~~No clear "Start Here" landing page~~ README serves this purpose
 - ~~API Reference is placeholder only~~ ✅ Complete
 - ~~No troubleshooting guide~~ ✅ Added `docs/troubleshooting/common-issues.md`
 - ~~Service Bridges docs scattered~~ ✅ Unified in `service-bridges-api.md`
+- ✅ Architecture diagram added to README (Mermaid)
