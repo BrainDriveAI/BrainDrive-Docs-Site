@@ -28,6 +28,7 @@ Documentation site for BrainDrive (Docusaurus). Docs are synced from external re
 - Removed duplicate INSTALL.mdx route (was creating /core/INSTALL, now only /core/getting-started/install exists)
 - Fixed all broken /core/INSTALL links across docs and sync script
 - ✅ API Reference guide complete (5 files in `docs-core/reference/`)
+- Removed Chat-With-Docs plugin docs (plugin removed from BrainDrive; new version coming later)
 - Pending: Delete intro.md placeholders in source repos (BrainDrive-Core, PluginTemplate)
 - Pending: 7 minor fixes in plugin repos (Chat, Ollama, Settings) — see below
 - Pending: "Start Here" landing page for new developers
