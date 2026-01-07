@@ -15,6 +15,29 @@ Documentation site for BrainDrive (Docusaurus). Docs are synced from external re
   - `docs-plugins/<plugin>/` ← Individual plugin repos
 - **Editable here**: `docs-services/`, `docs-plugins/intro.md`
 
+## Working with Source Repos in Codespaces
+Codespaces tokens are scoped only to this repo by default. To push to other BrainDrive repos:
+
+1. **One-time setup** — Re-authenticate gh with broader scope:
+   ```bash
+   GITHUB_TOKEN= gh auth login -w -p https
+   GITHUB_TOKEN= gh auth setup-git
+   ```
+   Complete the browser auth flow, then git will use your full permissions.
+
+2. **Clone source repos** to `/workspaces/`:
+   ```bash
+   cd /workspaces
+   gh repo clone BrainDriveAI/BrainDrive-Chat-Plugin
+   ```
+
+3. **Push changes** (prefix with `GITHUB_TOKEN=` to bypass Codespaces token):
+   ```bash
+   GITHUB_TOKEN= git -C /workspaces/BrainDrive-Chat-Plugin push
+   ```
+
+Already cloned: `BrainDrive-Core`, `BrainDrive-Chat-Plugin`, `BrainDrive-Ollama-Plugin`, `BrainDrive-Openrouter-Plugin`, `BrainDrive-Settings-Plugin`, `BrainDrive-PluginTemplate`
+
 ## Style Guide Highlights
 - Use "Owner" or "Builder" instead of "user"
 - Voice: Direct, empowering, technical but accessible
