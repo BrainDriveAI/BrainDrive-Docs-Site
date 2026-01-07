@@ -232,6 +232,7 @@ function sanitizeLineOutsideBackticks(line, repoName, repoFull){
     }
     if (repoName === 'PluginTemplate') {
       s = s
+        .replace(/https?:\/\/docs\.braindrive\.ai\/core\/getting-started\/plugin-developer-quickstart/gi, 'https://docs.braindrive.ai/core/plugin-development/quickstart')
         .replace(/\]\(\.\/DEVELOPMENT\.md\)/g, '](https://github.com/BrainDriveAI/PluginTemplate/blob/main/DEVELOPMENT.md)')
         .replace(/\]\(\.\/Plugin-Template-Plan\.md\)/g, '](https://github.com/BrainDriveAI/PluginTemplate/blob/main/Plugin-Template-Plan.md)')
         .replace(/\]\(\.\.\/PluginBuild\/PluginTemplate\/DEVELOPMENT\.md\)/g, '](https://github.com/BrainDriveAI/PluginTemplate/blob/main/PluginBuild/PluginTemplate/DEVELOPMENT.md)')
