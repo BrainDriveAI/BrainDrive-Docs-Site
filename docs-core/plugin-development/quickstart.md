@@ -78,6 +78,7 @@ After cloning, you must rename several files and values to make the plugin your 
 | **lifecycle_manager.py** | Component IDs in manifest | `"id": "MyAwesomeModule"` |
 | **src/ folder** | Rename `.tsx` file | `MyAwesomePlugin.tsx` |
 | **src/ file** | Rename class inside the file | `class MyAwesomePlugin extends Component` |
+| **src/index.tsx** | Import, export, metadata, and JSX usage (4 places) | Update all references to new component name |
 | **webpack.config.js** | Module federation `name` | `name: 'my_awesome_plugin'` |
 | **webpack.config.js** | Exposed component name | `'./MyAwesomePlugin': './src/MyAwesomePlugin.tsx'` |
 | **Output folder** | Version folder in build path | `MyAwesomePlugin/v1.0.0/dist` |
