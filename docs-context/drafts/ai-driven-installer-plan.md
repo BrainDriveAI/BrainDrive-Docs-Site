@@ -446,7 +446,51 @@ Downloading Qwen 2.5 7B... [████████░░] 80%
 
 **Key insight:** Nobody has built a fully autonomous chat-based installer before, but all the pieces exist and are battle-tested. This would be genuinely novel while using proven components.
 
-**Recommendation:** Build a prototype with Tauri + Qwen 2.5 1.5B targeting macOS first (easiest GPU path), then expand to Windows/Linux.
+### Recommended Approach: Start with Web + Bootstrapper
+
+**The Web + Bootstrapper approach is significantly easier to build.**
+
+#### Complexity Comparison
+
+| Component | Standalone | Web + Bootstrapper |
+|-----------|-----------|-------------------|
+| LLM integration | llama.cpp Rust bindings (hard) | API call to Claude (trivial) |
+| GPU acceleration | Metal/CUDA/Vulkan detection (hard) | Not needed |
+| Model management | Download, load, quantization (medium) | Not needed |
+| Chat UI | Tauri webview (medium) | React/Next.js (easy) |
+| System detection | Same | Same |
+| Install tools | Same | Same |
+
+#### Why Standalone is Harder
+
+The llama.cpp integration is the tricky part:
+- Rust FFI bindings to C++
+- GPU backend selection at compile time
+- Memory management for model loading
+- Streaming token generation
+- Testing across GPU vendors (NVIDIA, AMD, Intel, Apple)
+
+#### Why Web + Bootstrapper is Easier
+
+- **Web frontend**: Standard React/Next.js (familiar)
+- **AI backend**: Single API call to Claude/OpenAI
+- **Bootstrapper**: Tiny Tauri app with no ML complexity
+- **WebSocket**: Well-documented, mature libraries
+
+#### Estimated Timeline
+
+| Approach | Time to MVP |
+|----------|-------------|
+| Web + Bootstrapper | 2-3 weeks |
+| Standalone with local LLM | 4-6 weeks |
+
+#### Recommendation
+
+1. **Build Web + Bootstrapper first** (BrainDrive.ai/install)
+2. Ship faster, iterate on chat UX via web deploys
+3. Use Claude API for best AI quality
+4. The bootstrapper code (system detection, install tools) is **reusable**
+5. Add standalone/offline version later if user demand requires it
 
 ---
 
