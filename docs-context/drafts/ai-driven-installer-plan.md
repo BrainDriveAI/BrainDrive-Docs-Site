@@ -2,7 +2,7 @@
 
 **Status:** Feasibility Research Complete
 **Created:** January 8, 2025
-**Updated:** January 8, 2025 (added research findings from Dave J discussion)
+**Updated:** January 8, 2025 (added web + bootstrapper alternative architecture)
 
 ## Concept
 
@@ -165,6 +165,128 @@ This implements Dave's concept from the January 8 discussion:
 
 ---
 
+## Alternative Architecture: Web Chat + Bootstrapper
+
+An alternative approach: users visit BrainDrive.ai, click "Install," and chat directly on the website. A tiny bootstrapper bridges the web chat to local execution.
+
+### Why This Works
+
+Browsers can't execute commands on a user's computer (security sandbox). But a small local agent can bridge this gap—similar to how VS Code Remote, Cursor, and GitHub Codespaces work.
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  BrainDrive.ai/install                       │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│   ┌─────────────────────────────────────────────────────┐   │
+│   │  Web Chat UI (React/Next.js)                        │   │
+│   │  ├── Beautiful web design                           │   │
+│   │  ├── Real-time streaming responses                  │   │
+│   │  └── Progress indicators                            │   │
+│   └─────────────────────────────────────────────────────┘   │
+│                          │                                   │
+│                          │ WebSocket                         │
+│                          ▼                                   │
+│   ┌─────────────────────────────────────────────────────┐   │
+│   │  Cloud AI Backend                                   │   │
+│   │  ├── Claude API / OpenAI API / Self-hosted         │   │
+│   │  ├── Smarter than local 1.5B model                 │   │
+│   │  └── Easy to update prompts/behavior               │   │
+│   └─────────────────────────────────────────────────────┘   │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+                           │
+                           │ WebSocket (authenticated)
+                           ▼
+┌─────────────────────────────────────────────────────────────┐
+│            Local Bootstrapper (5-10 MB download)            │
+├─────────────────────────────────────────────────────────────┤
+│  Tiny Tauri/Rust App                                        │
+│  ├── WebSocket client (connects to web session)            │
+│  ├── System detection (OS, GPU, RAM)                       │
+│  ├── Specialized tools (same as standalone)                │
+│  │   ├── install_conda_env()                               │
+│  │   ├── install_ollama()                                  │
+│  │   ├── pull_ollama_model()                              │
+│  │   └── etc.                                              │
+│  └── Reports results back to web chat                      │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### User Flow
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│                  BrainDrive.ai/install                       │
+├─────────────────────────────────────────────────────────────┤
+│                                                              │
+│  Chat: "Hi! Ready to install BrainDrive?"                   │
+│                                                              │
+│  User: "Yes"                                                 │
+│                                                              │
+│  Chat: "I'll need a small helper app to install on          │
+│         your machine. Click below to download:"              │
+│                                                              │
+│         [Download for Mac] [Windows] [Linux]                │
+│                                                              │
+│  Chat: "Once it's running, I'll detect it and we            │
+│         can continue right here!"                            │
+│                                                              │
+│  [Waiting for bootstrapper...]                              │
+│                                                              │
+│  [Bootstrapper detected ✓]                                  │
+│                                                              │
+│  Chat: "Perfect! I see you're on macOS with an M2 chip     │
+│         and 16GB RAM. Let's get started..."                 │
+│                                                              │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Comparison: Standalone vs Web + Bootstrapper
+
+| Aspect | Standalone (1.2GB) | Web + Bootstrapper |
+|--------|-------------------|-------------------|
+| Initial download | 1.2 GB | 5-10 MB |
+| Works offline | ✓ Yes | ✗ No |
+| AI quality | Good (local 1.5B) | Better (cloud model) |
+| API cost per install | $0 | ~$0.05-0.10 |
+| Chat UI updates | Requires new release | Instant (web deploy) |
+| Security model | No API exposure | Requires secure WebSocket |
+| User trust barrier | Higher (big download) | Lower (tiny download) |
+
+### Security Considerations for Web + Bootstrapper
+
+| Threat | Mitigation |
+|--------|------------|
+| Unauthorized command execution | Bootstrapper only accepts commands from authenticated web session |
+| Session hijacking | Short-lived tokens, session binding to bootstrapper instance |
+| Man-in-the-middle | WSS (WebSocket Secure) + certificate pinning |
+| Malicious bootstrapper download | Code signing, checksum verification, HTTPS only |
+
+### When to Use Which
+
+**Use Standalone (1.2GB) when:**
+- Offline installation is required
+- Users are privacy-conscious about cloud AI
+- API costs need to be zero
+- Target audience is technical (comfortable with larger downloads)
+
+**Use Web + Bootstrapper when:**
+- Minimizing friction is priority (tiny download)
+- You want the smartest AI possible (cloud models)
+- Rapid iteration on chat UX is needed
+- BrainDrive.ai is the primary distribution channel
+
+### Hybrid Approach
+
+Could offer both:
+1. **BrainDrive.ai/install** → Web chat + tiny bootstrapper (default)
+2. **BrainDrive.ai/install/offline** → Download standalone 1.2GB installer
+
+---
+
 ## Safety Architecture
 
 ### Threat Model & Mitigations
@@ -254,21 +376,26 @@ Downloading Qwen 2.5 7B... [████████░░] 80%
 
 ## Open Questions for Team
 
-1. **Bundled vs download model?**
+1. **Standalone vs Web + Bootstrapper?**
+   - Standalone: 1.2GB download, works offline, no API costs
+   - Web + Bootstrapper: 5-10MB download, smarter cloud AI, ~$0.05-0.10/install
+   - Hybrid: Offer both options
+
+2. **Bundled vs download model?** (if standalone)
    - Bundled: 1.2GB installer, works immediately
    - Download: 150MB installer, needs internet on first run
 
-2. **Which platforms first?**
+3. **Which platforms first?**
    - macOS (Apple Silicon) is easiest (Metal just works)
    - Windows (CUDA) is most users
    - Linux is smallest audience
 
-3. **Ollama integration approach?**
+4. **Ollama integration approach?**
    - Option A: Detect existing Ollama, use it
    - Option B: Bundle Ollama-compatible runtime in installer
    - Option C: Both (prefer existing, fall back to bundled)
 
-4. **Post-install support?**
+5. **Post-install support?**
    - Does the AI assistant stay available after install?
    - Could integrate into BrainDrive itself for ongoing help
 
