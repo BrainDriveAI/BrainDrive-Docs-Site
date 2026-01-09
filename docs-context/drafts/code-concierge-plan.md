@@ -621,4 +621,178 @@ This mirrors successful models:
 
 ---
 
+## Appendix A: Claude Code Architecture
+
+This appendix explains how Claude Code's components work together. Understanding this architecture is essential for building the Code Concierge plugin.
+
+### Core Components
+
+| Component | Purpose | Analogy |
+|-----------|---------|---------|
+| **Skills** | Teach Claude *how* to do things | Instruction manuals |
+| **MCP Servers** | Give Claude *tools* to do things | API connections |
+| **Plugins** | Bundle components for distribution | App packages |
+| **Subagents** | Isolated contexts for specialized tasks | Dedicated assistants |
+
+### How They Fit Together
+
+```
+┌─────────────────────────────────┐
+│      Main Claude Instance       │
+└───────────────┬─────────────────┘
+                │
+       ┌────────┴────────┐
+       ▼                 ▼
+   ┌────────┐       ┌───────────┐
+   │ Skills │       │ Subagents │
+   │ (how)  │       │ (isolated)│
+   └────────┘       └─────┬─────┘
+                          │
+                          ▼
+                   ┌────────────┐
+                   │MCP Servers │
+                   │  (tools)   │
+                   └─────┬──────┘
+                         ▼
+                  External APIs
+```
+
+### Skills: Knowledge and Guidance
+
+**What they are**: Markdown files (`.claude/skills/`) that teach Claude specialized knowledge or techniques.
+
+**How they work**:
+- Stored as `SKILL.md` files in `~/.claude/skills/` or `.claude/skills/`
+- Claude loads skill descriptions at startup
+- When a request matches a skill's description, Claude asks permission then loads the full content
+- Can restrict which tools Claude uses while the skill is active
+- Can run in a forked sub-agent context with isolated history
+
+**Example**: A "code-review" skill teaches Claude your team's standards. When you say "Review this code," Claude automatically applies it.
+
+**For Code Concierge**: Skills will encode BrainDrive plugin patterns, service bridge usage, hook guidelines, and conventions.
+
+### MCP Servers: External Tools and Data Sources
+
+**What they are**: Connections to external tools, APIs, and data sources via the Model Context Protocol.
+
+**How they work**:
+- Configured with `claude mcp add` or in `.mcp.json` files
+- Three transport options:
+  - **HTTP**: Remote cloud services
+  - **SSE**: Server-Sent Events (streaming)
+  - **stdio**: Local processes
+- Claude calls tools exposed by MCP servers just like built-in tools
+- Can also expose resources (for @ mentions) and prompts (for / commands)
+
+**Example**: A GitHub MCP server lets Claude read issues, review PRs, create repositories without manual copying.
+
+**For Code Concierge**: MCP server will connect to running BrainDrive instance, plugin manager, backend logs, and docs.
+
+### Plugins: Packaged Extensions
+
+**What they are**: Directories containing a manifest plus organized subdirectories for all components.
+
+**Structure**:
+```
+my-plugin/
+├── .claude-plugin/
+│   └── plugin.json          # Manifest with metadata
+├── commands/                # Slash commands
+├── agents/                  # Subagents
+├── skills/                  # Agent skills
+├── hooks/                   # Event handlers
+└── .mcp.json               # MCP server configs
+```
+
+**How they work**:
+- Can contain any combination of commands, agents, skills, hooks, MCP servers
+- Distributed through marketplaces, installed with `/plugin install`
+- Slash commands get namespaced (e.g., `/my-plugin:hello`)
+- When enabled, all plugin components become available
+
+**Example**: A "security-plugin" bundles a security review skill, security-focused subagent, GitHub MCP server, and `/security-review` command.
+
+**For Code Concierge**: The plugin bundles all BrainDrive skills, the `/bd:*` commands, debugging subagents, and MCP connections.
+
+### Subagents: Specialized Contexts
+
+**What they are**: Specialized AI assistants with their own context windows, tool restrictions, and system prompts.
+
+**How they work**:
+- Defined as markdown files in `.claude/agents/` or `~/.claude/agents/`
+- Claude automatically delegates matching tasks to them
+- Each operates independently with fresh context
+- Can have their own tool permissions, models, and skills
+
+**Built-in subagents**:
+- **Explore**: Fast, read-only searches using Haiku model
+- **General-purpose**: Complex multi-step operations with full tool access
+- **Plan**: Research assistant for planning mode
+
+**Example**: A "code-reviewer" subagent has read-only file access. Claude delegates code review to it, keeping the main context clean.
+
+**For Code Concierge**: Subagents for plugin creation, debugging, and code review — each with appropriate tool restrictions.
+
+### When to Use Each Component
+
+| Component | Use When | Code Concierge Example |
+|-----------|----------|------------------------|
+| **Skills** | Teach Claude *how* to do something | Plugin conventions, service bridge patterns |
+| **MCP Servers** | Connect to external tools/data | BrainDrive instance, plugin manager |
+| **Plugins** | Package multiple components | The entire Code Concierge distribution |
+| **Subagents** | Need isolated contexts | Plugin creator, debugger agents |
+
+### Example Flow: `/bd:new-plugin`
+
+When a user runs `/bd:new-plugin`:
+
+```
+1. User: /bd:new-plugin
+
+2. Claude Code recognizes the slash command
+   └── Defined in braindrive-concierge/commands/new-plugin.md
+
+3. Command invokes plugin-creator subagent
+   └── Defined in braindrive-concierge/agents/plugin-creator.md
+   └── Has file write permissions, git access
+
+4. Subagent loads plugin-development skill
+   └── Defined in braindrive-concierge/skills/plugin-development/SKILL.md
+   └── Contains naming rules, file structure, conventions
+
+5. Subagent asks for plugin name, then:
+   └── Clones BrainDrive-PluginTemplate
+   └── Renames all 8+ locations correctly
+   └── Updates webpack.config.js
+   └── Follows skill guidelines throughout
+
+6. Results returned to main conversation
+   └── User sees clean summary
+   └── Main context stays focused
+```
+
+### Configuration Scopes
+
+Both skills and MCP servers follow a scope hierarchy:
+
+| Scope | Location | Who Has Access |
+|-------|----------|----------------|
+| **Local** | `.claude.json` | Your machine, current project |
+| **Project** | `.claude/` or `.mcp.json` | Team via git |
+| **User** | `~/.claude/` | Your machine, all projects |
+| **Enterprise** | System directories | Organization-wide via IT |
+
+Higher scopes can be overridden by lower ones when needed.
+
+### Key Takeaways
+
+1. **Skills teach, MCP servers enable** — Skills provide knowledge, MCP servers provide tool access
+2. **Plugins package everything** — For distribution and team sharing
+3. **Subagents isolate** — Each handles tasks in their own context
+4. **Claude coordinates** — The AI decides what to use based on your request
+5. **Build once, use everywhere** — Skills and MCP configs work in both CLI and (future) web interfaces
+
+---
+
 *When this draft is ready to become actionable, create GitHub Issues for the work items and move or delete this file.*
