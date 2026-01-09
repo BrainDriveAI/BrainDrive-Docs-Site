@@ -2,7 +2,7 @@
 
 **Status:** Initial Planning
 **Created:** January 9, 2025
-**Updated:** January 9, 2025 (added Claude Code plugin option + monetization strategy)
+**Updated:** January 9, 2025 (added plugin UX analysis, Claude Code plugin option, monetization)
 **Owner:** Navaneeth Krishnan
 **Priority:** Post-launch (not required for initial release)
 
@@ -213,6 +213,184 @@ braindrive-concierge/
 1. **Phase 1:** Claude Code plugin (quick win for developers)
 2. **Phase 2:** Web-based version for broader audience
 3. **Phase 3:** Shared knowledge base between both
+
+---
+
+## Plugin Development UX Analysis
+
+Based on the [Plugin Developer Quick Start Guide](https://docs.braindrive.ai/core/plugin-development/quickstart), here's how Code Concierge eliminates friction.
+
+### Current Pain Points
+
+| Pain Point | What It Involves |
+|------------|------------------|
+| **8+ rename locations** | Folder, package.json, lifecycle_manager.py, src files, webpack.config.js, output folder |
+| **Path configuration** | Finding BrainDrive backend path, updating webpack output |
+| **Naming conflicts** | Must keep plugin and module names distinct (critical rule) |
+| **Service Bridges learning** | 6 different bridges, each with specific use cases |
+| **Common gotchas** | 10+ documented ways things break |
+| **Publishing workflow** | Git setup, releases, marketplace posting |
+
+### Slash Commands That Eliminate Pain
+
+#### `/bd:new-plugin` — One Command Setup
+
+Instead of manual cloning + 8 renames:
+
+```
+User: /bd:new-plugin
+
+Claude: What would you like to name your plugin?
+
+User: Weather Dashboard
+
+Claude: Creating "Weather Dashboard" plugin...
+        ✓ Cloned BrainDrive-PluginTemplate
+        ✓ Renamed folder to WeatherDashboard
+        ✓ Updated package.json (name: "weather-dashboard")
+        ✓ Updated lifecycle_manager.py (slug, name, component IDs)
+        ✓ Renamed src/PluginTemplate.tsx → WeatherDashboardModule.tsx
+        ✓ Updated class name and exports
+        ✓ Updated webpack.config.js (federation name, exposed component)
+        ✓ Set output path to [detected BrainDrive path]/backend/plugins/shared/
+
+        Your plugin is ready at ./WeatherDashboard
+        Run `npm install` then describe what you want to build.
+```
+
+Automatically handles the "Critical Naming Rule" — plugin = "Weather Dashboard", module = "WeatherDashboardModule"
+
+#### `/bd:add-feature` — Describe What You Want
+
+```
+User: /bd:add-feature I want to show weather for a city the user types in
+
+Claude: [Loads service-bridges skill]
+
+        I'll add a city weather lookup. This needs:
+        1. Input field for city name
+        2. API call via services.api
+        3. Theme-aware display for weather data
+
+        [Generates component using correct BrainDrive patterns]
+        [Uses services.api.post() properly]
+        [Handles loading and error states]
+        [Applies current theme via services.theme]
+
+        Added to src/WeatherDashboardModule.tsx. Run `npm run build` to test.
+```
+
+#### `/bd:check` — Catch Problems Before They Bite
+
+```
+User: /bd:check
+
+Claude: Checking WeatherDashboard plugin...
+
+        ✓ package.json name matches folder
+        ✓ lifecycle_manager.py slug matches
+        ✓ Plugin and module names are distinct
+        ✓ webpack.config.js federation name correct
+        ⚠ dist/remoteEntry.js not found — run `npm run build`
+        ✓ Component exports match webpack exposed modules
+        ✓ No CSS import path issues detected
+
+        1 issue to fix before testing.
+```
+
+#### `/bd:publish` — Streamlined Publishing
+
+```
+User: /bd:publish
+
+Claude: Preparing WeatherDashboard v1.0.0 for publication...
+
+        ✓ Repository: github.com/yourname/WeatherDashboard
+        ✓ Pushed to main branch
+        ✓ Created release v1.0.0
+
+        Install URL: https://github.com/yourname/WeatherDashboard
+
+        Marketplace post ready to copy:
+        ─────────────────────────────────
+        ## Weather Dashboard
+        A BrainDrive plugin that displays weather for any city.
+        **Install:** https://github.com/yourname/WeatherDashboard
+        ─────────────────────────────────
+
+        Post at community.braindrive.ai/c/the-marketplace
+```
+
+### Skills for Service Bridges
+
+The `service-bridges` skill knows all 6 bridges and recommends the right one:
+
+```
+User: I want to save user preferences in my plugin
+
+Claude: [Loads service-bridges skill]
+
+        For persisting user preferences, use the Settings bridge:
+
+        // Save a setting
+        await this.props.services.settings.setSetting('preferredUnit', 'celsius');
+
+        // Retrieve it later
+        const unit = await this.props.services.settings.getSetting('preferredUnit');
+
+        This persists across sessions. For temporary state that resets
+        on page refresh, use pluginState instead.
+```
+
+| Bridge | When Skill Recommends It |
+|--------|-------------------------|
+| API | "call the backend", "fetch data", "send request" |
+| Event | "communicate between plugins", "notify", "broadcast" |
+| Theme | "dark mode", "light mode", "colors", "styling" |
+| Settings | "save preferences", "remember", "persist" |
+| Page Context | "current page", "where am I", "page info" |
+| Plugin State | "temporary data", "component state", "session" |
+
+### MCP Server Connections
+
+| Connection | Capability |
+|------------|------------|
+| Running BrainDrive instance | Live testing, see plugin in Page Builder |
+| Plugin Manager API | Install/uninstall during development |
+| Backend logs | Surface errors directly in Claude's context |
+| Docs server | Real-time RAG over latest documentation |
+
+### Before/After Comparison
+
+**Before (current quickstart):**
+1. Read guide (~10 min)
+2. Clone template
+3. Manually rename 8+ locations (error-prone)
+4. Configure webpack path
+5. Learn Service Bridges API
+6. Build, hit gotchas, debug
+7. Manually set up GitHub, releases, marketplace
+
+**After (with Code Concierge):**
+1. `/bd:new-plugin` → ready in seconds
+2. "I want it to do X" → working code
+3. `/bd:check` → catch issues before they happen
+4. `/bd:publish` → live in marketplace
+
+**Time to first working plugin:** 30+ minutes → 5-10 minutes
+
+### Quickstart Guide → Skill Mapping
+
+The existing documentation becomes skill content:
+
+| Guide Section | Plugin Component |
+|---------------|------------------|
+| Phase 1-2: Setup | `/bd:new-plugin` command |
+| Phase 3: Build cycle | Skills know webpack, paths, dev workflow |
+| Phase 4: Service Bridges | `service-bridges` skill |
+| Phase 5: Code Examples | Few-shot examples embedded in skills |
+| Phase 6: Publish | `/bd:publish` command |
+| Common Gotchas table | `/bd:check` validation rules |
 
 ---
 
