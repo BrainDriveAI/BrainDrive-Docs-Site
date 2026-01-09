@@ -2,7 +2,7 @@
 
 **Status:** Initial Planning
 **Created:** January 9, 2025
-**Updated:** January 9, 2025 (added plugin UX analysis, Claude Code plugin option, monetization)
+**Updated:** January 9, 2025 (added multi-interface strategy, plugin UX analysis, monetization)
 **Owner:** Navaneeth Krishnan
 **Priority:** Post-launch (not required for initial release)
 
@@ -213,6 +213,80 @@ braindrive-concierge/
 1. **Phase 1:** Claude Code plugin (quick win for developers)
 2. **Phase 2:** Web-based version for broader audience
 3. **Phase 3:** Shared knowledge base between both
+
+---
+
+## Multi-Interface Strategy: Build Once, Deploy Twice
+
+The Claude Code plugin is the **fastest path to MVP** because it eliminates infrastructure work. More importantly, the components you build are **directly reusable** for a web interface later.
+
+### Component Reusability
+
+| Component Built for Plugin | Reusable in Web App? | How |
+|---------------------------|---------------------|-----|
+| Skills (markdown knowledge) | ✓ | Become system prompts |
+| Few-shot examples | ✓ | Same examples in prompts |
+| RAG content (docs, code) | ✓ | Same vector store |
+| MCP server backend | ✓ | Same API endpoints |
+| Validation logic (`/bd:check`) | ✓ | Same rules, different UI |
+| Command logic | ✓ | Become buttons/actions |
+
+**Result:** 80%+ of the work transfers directly to the web app.
+
+### What You DON'T Build Twice
+
+- BrainDrive knowledge encoding
+- Plugin conventions and patterns
+- Service bridge documentation
+- Error handling and gotchas
+- Code generation prompts
+
+The Claude Code plugin forces you to **get the knowledge right first** — which is the hard part. The web UI is then just a different way to access that same knowledge.
+
+### Architecture
+
+```
+┌─────────────────────────────────────────────────┐
+│           Shared Knowledge Base                 │
+│  (Skills, docs, prompts, few-shot examples)     │
+└──────────────┬──────────────────┬───────────────┘
+               │                  │
+               ▼                  ▼
+    ┌──────────────────┐  ┌──────────────────┐
+    │  Claude Code     │  │   Web Interface  │
+    │  Plugin (CLI)    │  │   (Browser)      │
+    │                  │  │                  │
+    │  For developers  │  │  For everyone    │
+    └──────────────────┘  └──────────────────┘
+```
+
+### Recommended Timeline
+
+| Phase | Deliverable | Timeline | Users |
+|-------|-------------|----------|-------|
+| **Phase 1** | Claude Code plugin | Week 1-2 | Developers with CLI |
+| **Phase 2** | Ship + gather feedback | Week 2-3 | Early adopters |
+| **Phase 3** | Web app (reuses 80%+) | Week 3+ | Everyone |
+
+### Web App Options (Phase 3)
+
+Once the plugin knowledge base is built, several web interface options become easy:
+
+**Option A: Claude.ai Project (Zero infrastructure)**
+- Upload skills as project knowledge
+- Share project link with users
+- Quick win, but limited features
+
+**Option B: Custom Web App (Full control)**
+- Build React frontend at `braindrive.ai/code-concierge`
+- Your API server calls Claude API with same prompts
+- Returns generated code as downloadable zip or GitHub repo
+- Full-featured experience with buttons for common actions
+
+**Option C: Embedded in BrainDrive (Native integration)**
+- Build Code Concierge directly into BrainDrive UI
+- "Build a plugin" wizard powered by same knowledge base
+- Tightest integration, most seamless UX
 
 ---
 
