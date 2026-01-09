@@ -2,7 +2,7 @@
 
 **Approach:** Web Chat + Local Bootstrapper
 **Target:** BrainDrive.ai/install → chat guides user through installation
-**Estimated MVP:** 2-3 weeks
+**Updated:** January 9, 2025 (incorporated Dave W / Dave J discussion feedback)
 
 ---
 
@@ -53,12 +53,26 @@ packages/bootstrapper/
 │   │   ├── main.rs          # Entry point
 │   │   ├── system_info.rs   # OS, GPU, RAM detection
 │   │   ├── tools.rs         # Install command implementations
+│   │   ├── ports.rs         # Port availability and fallback logic
+│   │   ├── lifecycle.rs     # Start/stop/restart BrainDrive
+│   │   ├── logging.rs       # Error log generation
 │   │   └── websocket.rs     # Connect to backend
 │   └── Cargo.toml
 ├── src/
-│   └── App.tsx              # Minimal UI (status display)
+│   ├── App.tsx              # Main UI with status and controls
+│   └── components/
+│       ├── StatusDisplay.tsx    # Connection & install status
+│       └── ControlPanel.tsx     # Start/Stop/Restart buttons
 └── package.json
 ```
+
+**Bootstrapper UI must include:**
+- Connection status indicator
+- BrainDrive running status
+- **Start / Stop / Restart buttons** (always visible after install)
+- Port info display (which ports BrainDrive is using)
+- "Open BrainDrive" button (opens browser to frontend)
+- Note: Window must stay open to control BrainDrive (future: system tray)
 
 **System detection to implement:**
 - OS type and version
@@ -69,14 +83,42 @@ packages/bootstrapper/
 
 **Install tools to implement:**
 ```rust
+// System checks
 fn check_python() -> Result<Version>
 fn check_node() -> Result<Version>
 fn check_git() -> Result<bool>
-fn check_ollama() -> Result<bool>
+fn check_conda() -> Result<bool>
+fn check_ollama_running() -> Result<bool>  // Check port 11434
+fn check_ollama_installed() -> Result<bool> // Check binary exists
+
+// Port management
+fn check_port_available(port: u16) -> bool
+fn find_available_port(preferred: u16, fallbacks: &[u16]) -> Result<u16>
+
+// Installation
+fn install_conda() -> Result<()>
 fn install_ollama() -> Result<()>
 fn pull_ollama_model(model: &str) -> Result<()>
 fn clone_repo(url: &str, path: &str) -> Result<()>
-fn run_command(cmd: &str) -> Result<Output>
+fn setup_braindrive_env() -> Result<()>
+fn create_default_user() -> Result<()>  // Single-user Tier 1 mode
+
+// BrainDrive lifecycle
+fn start_braindrive(frontend_port: u16, backend_port: u16) -> Result<()>
+fn stop_braindrive() -> Result<()>
+fn restart_braindrive() -> Result<()>
+fn get_braindrive_status() -> Result<Status>
+
+// Error handling
+fn generate_error_log() -> Result<PathBuf>
+fn submit_log_to_forum(log_path: &Path) -> Result<()>
+```
+
+**Port fallback configuration:**
+```rust
+const FRONTEND_PORTS: [u16; 3] = [5173, 5174, 5175];
+const BACKEND_PORTS: [u16; 3] = [8005, 8006, 8007];
+const OLLAMA_PORT: u16 = 11434;
 ```
 
 ### 2. Backend API - `packages/backend/`
@@ -131,6 +173,9 @@ packages/web/
 - Bootstrapper download buttons (Mac/Windows/Linux)
 - Connection status indicator
 - Install progress visualization
+- Educational tidbits display during long operations
+- Celebration animation on successful install
+- Error state with "Send log to support" option
 
 ---
 
@@ -249,27 +294,61 @@ packages/web/
 ## Claude System Prompt (Draft)
 
 ```
-You are the BrainDrive installation assistant. You help users install BrainDrive on their computer through a friendly chat conversation.
+You are the BrainDrive installation assistant. You help users install BrainDrive on their computer through a friendly, conversational chat.
 
-You have access to a local bootstrapper running on the user's machine that can:
-- Detect system information (OS, CPU, GPU, RAM)
-- Check for installed tools (Python, Node.js, Git, Ollama)
-- Install Ollama
-- Pull Ollama models
-- Clone repositories
-- Run shell commands
+## Your Style
+- Be conversational and warm, like a helpful friend on a video call
+- ALWAYS explain what you're about to do BEFORE doing it
+- Ask for confirmation before each major step
+- Keep users engaged during waits with educational tidbits about BrainDrive
+- Never use technical jargon without explaining it
 
-Installation steps:
-1. Greet the user and detect their system
-2. Check for prerequisites (Python 3.11+, Node.js 18+, Git)
-3. Clone the BrainDrive repository
-4. Set up the Python environment
-5. Install dependencies
-6. Configure environment files
-7. Optionally install Ollama and recommended models
-8. Start BrainDrive and verify it works
+## Conversation Pattern
+For each step, follow this pattern:
+1. Explain what you need to do and why
+2. Ask "Ready?" or "Would you like me to...?"
+3. Execute the action
+4. Report the result
+5. Transition to the next step
 
-Be conversational and helpful. Explain what you're doing at each step. If something fails, diagnose the issue and suggest fixes.
+## Available Tools (via local bootstrapper)
+- System detection: OS, CPU, GPU, RAM, installed tools
+- Port management: check availability, auto-fallback to alternates
+- Installation: Conda, Ollama, clone repos, setup environment
+- BrainDrive lifecycle: start, stop, restart, status
+- Error handling: generate logs, submit to support
+
+## Installation Flow
+1. Greet and explain what you'll do
+2. Check system (explain you're checking while you do it)
+3. For each missing prerequisite:
+   - Explain what it is and why BrainDrive needs it
+   - Ask permission to install
+   - Install with progress updates
+   - Confirm success
+4. Clone BrainDrive, set up environment
+5. Create default user (single-user mode - no registration needed)
+6. Auto-select ports (use fallbacks if needed - don't ask user about ports)
+7. Start BrainDrive
+8. Offer to set up Ollama and recommend model based on hardware
+9. Celebrate success and explain the control window
+
+## Educational Tidbits (use during waits)
+- "Did you know? BrainDrive lets you build your own plugins!"
+- "While we wait... BrainDrive runs entirely on your machine for privacy."
+- "Fun fact: You can connect BrainDrive to multiple AI providers."
+- "BrainDrive uses a plugin architecture - you can customize everything."
+
+## Error Handling
+- If something fails, explain what went wrong in simple terms
+- Offer to generate a log file and send it to support
+- Suggest alternative approaches if available
+
+## Important Notes
+- NEVER ask users about port numbers - handle this automatically
+- NEVER ask about install location - use default
+- DO explain that the control window needs to stay open
+- DO celebrate when installation completes!
 ```
 
 ---
@@ -314,9 +393,24 @@ MVP is complete when:
 - [ ] User can visit BrainDrive.ai/install
 - [ ] Chat greets them and prompts to download bootstrapper
 - [ ] Bootstrapper connects to web chat
-- [ ] AI detects system and guides through install
+- [ ] AI detects system and guides through install conversationally
+- [ ] Ports auto-fallback if defaults are busy (no user prompt)
+- [ ] Single-user mode: skips registration, creates default user
 - [ ] BrainDrive successfully installs and runs
+- [ ] Bootstrapper shows Start/Stop/Restart controls
+- [ ] Ollama setup offered with hardware-based model recommendation
+- [ ] Error logging works and can submit to support
 - [ ] Works on macOS (primary), Windows, Linux
+
+---
+
+## Out of Scope (CLI Territory)
+
+These features are intentionally NOT included in the chat installer:
+- **Port configuration** — Auto-fallback handles it; power users use CLI
+- **Custom install location** — Default is fine; power users use CLI
+- **Multi-user setup** — Chat installer is single-user (Tier 1) only
+- **Advanced Ollama configuration** — Chat recommends one model; CLI for custom setups
 
 ---
 
@@ -326,3 +420,5 @@ MVP is complete when:
 - [ ] Set up BrainDrive.ai domain routing for /install
 - [ ] Code signing for bootstrapper (macOS notarization, Windows signing)
 - [ ] Error tracking/logging (Sentry?)
+- [ ] Define educational tidbits content (marketing team input?)
+- [ ] Support forum integration for error log submission

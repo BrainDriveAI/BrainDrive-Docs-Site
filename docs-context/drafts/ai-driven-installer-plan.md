@@ -2,7 +2,7 @@
 
 **Status:** Feasibility Research Complete
 **Created:** January 8, 2025
-**Updated:** January 8, 2025 (added web + bootstrapper alternative architecture)
+**Updated:** January 9, 2025 (incorporated Dave W / Dave J discussion feedback)
 
 ## Concept
 
@@ -25,6 +25,65 @@ The existing install process involves:
 **Reference docs:**
 - Install guide: `docs-core/getting-started/install.md`
 - Troubleshooting: `docs-core/troubleshooting/common-issues.md`
+
+---
+
+## Key Requirements (from Dave W / Dave J Discussion - January 9, 2025)
+
+### Must-Have Features
+
+1. **Start/Stop/Restart Controls**
+   - Bootstrapper window must stay open to provide BrainDrive controls
+   - Users need a way to stop and restart BrainDrive
+   - Future enhancement: migrate to system tray (Windows) / launch agent (Mac)
+   - Start simple with visible window, graduate to background services later
+
+2. **Single-User Mode (Tier 1)**
+   - Skip registration/login entirely for solo installations
+   - Auto-create default user (e.g., "default user", "default@gmail.com")
+   - User goes straight to BrainDrive chat interface with zero friction
+   - User ID still exists internally for plugins and logs
+
+3. **Automatic Port Fallback**
+   - Default ports: 5173 (frontend), 8005 (backend)
+   - If port is busy, automatically try backup ports (no user prompt)
+   - Maintain 3 fallback options per service
+   - Only if all 3 fail → direct user to CLI for advanced configuration
+   - Normal users don't know what ports are—don't ask them
+
+4. **Ollama Detection & Model Setup**
+   - Check port 11434 to detect Ollama status
+   - If port responds → Ollama running, query available models
+   - If port down → Either not installed OR installed but not running
+   - Prompt: "If you have Ollama, please start it. If you need to install it, here's the link"
+   - Recommend models based on hardware (e.g., "You have 12GB VRAM, 8B model will fly")
+   - First experience must be fast—recommend sweet spot model
+
+5. **Error Logging & Support**
+   - If installation hangs or fails, generate detailed log file
+   - Offer to send log to support forum automatically
+   - Include system info, steps completed, error details
+
+### UX Enhancements
+
+6. **Keep User Engaged During Waits**
+   - Display educational tidbits while operations run
+   - Examples: "Did you know BrainDrive lets you make your own plugins?"
+   - "While we wait... BrainDrive uses local AI models for privacy"
+   - Prevents user from staring at a loading spinner
+
+7. **Conversational Step Confirmations**
+   - Pattern: Explain → Confirm → Execute → Report
+   - "First, I need to check your system for the required software. Ready?"
+   - "You don't have Conda installed. Would you like me to install it?"
+   - "Installing Conda now... Here's what it does: [brief explanation]"
+   - "Done! Now we're ready to bring BrainDrive onto your computer."
+
+### Explicitly NOT Needed (for chat installer)
+
+- **Port configuration UI** — Auto-fallback handles this; CLI for advanced users
+- **Install location selection** — Default location is fine; CLI for custom paths
+- **Model size selection UI** — AI recommends based on hardware; user just confirms
 
 ---
 
@@ -309,43 +368,105 @@ Could offer both:
 ## Conversation Flow Example
 
 ```
-Installer: Hi! I'm the BrainDrive installer. Let me check your system...
-
-[Detects: macOS, Apple M2, 16GB RAM, no Ollama installed]
-
-Installer: I see you're on a Mac with an M2 chip - great hardware for
-running AI locally! Here's what we'll set up:
-
-1. BrainDrive (Python backend + React frontend)
-2. Ollama (to run local AI models)
-3. A recommended model for your hardware
-
-Ready to start? (Yes / Tell me more)
+Installer: Hi! I'm here to help you install BrainDrive. Ready to get started?
 
 User: Yes
 
-Installer: First, I'll set up the Python environment...
-[Runs install_conda_env() tool]
+Installer: Great! The first thing I need to do is check your system to see
+if it has the required software. BrainDrive uses Python and Node.js to run
+its backend and frontend. I'm going to check your system now.
 
-Installer: ✓ Python environment ready! Now let's install Ollama...
-[Runs install_ollama() tool - shows confirmation dialog first]
+[Detects: macOS, Apple M2, 16GB RAM, Python ✓, Node.js ✓, Git ✓, no Conda, no Ollama]
 
-Installer: ✓ Ollama installed! With 16GB RAM, I recommend Llama 3.2 3B
-or Qwen 2.5 7B. Want me to install the recommended model?
+Installer: I see you're on a Mac with an M2 chip and 16GB RAM — great
+hardware for running AI locally!
 
-User: What's the difference?
+Here's what I found:
+✓ Python installed
+✓ Node.js installed
+✓ Git installed
+✗ Conda not found
+✗ Ollama not found
 
-Installer: [Feeds ollama-model-recommendations.json to model]
-- Llama 3.2 3B: Faster responses, good for chat
-- Qwen 2.5 7B: Better reasoning, great for complex tasks
+BrainDrive uses Conda to manage its Python environment. Would you like
+me to install Conda for you?
 
-Both run well on your M2. I'd suggest Qwen 2.5 7B for the full
-BrainDrive experience.
+User: Yes
 
-User: Go with Qwen
+Installer: Installing Conda now. Conda is a package manager that keeps
+BrainDrive's dependencies separate from the rest of your system.
 
-Installer: [Runs pull_ollama_model("qwen2.5:7b") tool]
-Downloading Qwen 2.5 7B... [████████░░] 80%
+💡 Did you know? BrainDrive lets you build your own plugins to extend
+its capabilities!
+
+[Installing Conda... progress indicator]
+
+Installer: ✓ Conda installed! Now we're ready to bring BrainDrive onto
+your computer. I'll clone it from GitHub. Ready?
+
+User: Yes
+
+Installer: Cloning BrainDrive repository...
+
+💡 While we wait: BrainDrive runs entirely on your machine — your data
+never leaves your computer unless you want it to.
+
+[Cloning... progress indicator]
+
+Installer: ✓ BrainDrive downloaded! Setting up the environment and
+installing dependencies...
+
+[Setup progress...]
+
+Installer: ✓ BrainDrive is installed and running!
+
+Now, to get the most out of BrainDrive, you'll want a local AI model.
+I'll check if you have Ollama installed...
+
+[Checks port 11434]
+
+Installer: I don't see Ollama running. Ollama is what lets you run AI
+models locally. Would you like me to install it?
+
+User: Sure
+
+Installer: Installing Ollama...
+
+[Installing...]
+
+Installer: ✓ Ollama installed! Now let's get you a model. Looking at your
+hardware — M2 chip with 16GB RAM — I recommend the Qwen 2.5 8B model.
+It's the sweet spot for your system: fast responses and great quality.
+
+Would you like me to download Qwen 2.5 8B?
+
+User: What other options are there?
+
+Installer: Good question! Here are your options:
+
+• Qwen 2.5 8B (Recommended) — Best balance of speed and intelligence
+• Llama 3.2 3B — Faster, lighter, good for quick tasks
+• Qwen 2.5 14B — Smarter but slower, needs more RAM
+
+With 16GB RAM, the 8B model will fly. Want to go with that?
+
+User: Yes, let's do 8B
+
+Installer: Downloading Qwen 2.5 8B... [████████░░] 80%
+
+💡 Fun fact: This model has 8 billion parameters and runs entirely
+on your Mac's GPU!
+
+[Download complete]
+
+Installer: ✓ All done! BrainDrive is installed and ready to use.
+
+🎉 Opening BrainDrive now...
+
+Note: Keep this window open to stop or restart BrainDrive. You can
+minimize it to your dock.
+
+[Start BrainDrive] [Stop] [Restart]
 ```
 
 ---
@@ -494,7 +615,7 @@ The llama.cpp integration is the tricky part:
 
 ---
 
-## Appendix: Dave J Discussion Notes (January 8, 2025)
+## Appendix A: Dave J Discussion Notes (January 8, 2025)
 
 Key points from the discussion:
 - Local model eliminates API hijacking concerns
@@ -503,3 +624,46 @@ Key points from the discussion:
 - Rust/Tauri recommended for cross-platform performance
 - Could detect graphics card and recommend appropriate Ollama models based on VRAM
 - Installer could also set up Ollama and pull recommended models
+
+---
+
+## Appendix B: Dave W / Dave J Discussion Notes (January 9, 2025)
+
+Dave W built a working prototype using Claude Code that installs BrainDrive via chat. Key insights:
+
+### Architecture Decision: Cloud API is Better
+- Normal users don't have API keys (BrainDrive covers the cost)
+- Local model requires PyTorch (~1GB+) download
+- State-of-the-art models (Opus 4.5) are better for guardrailing
+- Small download → open → click button → opens browser chat
+
+### User Experience Flow
+- Conversational: "Ready to install? First I'll check your system..."
+- Explain each step before doing it
+- Ask for confirmation: "Would you like me to install Conda?"
+- Keep user engaged during waits with educational tidbits
+
+### Post-Install Requirements
+- Must be able to start/stop/restart BrainDrive
+- Window stays open for now (future: system tray / launch agent)
+- Skip registration for single-user installs (Tier 1 mode)
+
+### Port Handling Philosophy
+- Users don't know what ports are — don't ask them
+- Auto-fallback to backup ports silently
+- 3 options per service; if all fail, direct to CLI
+- Same approach as current Mac/Windows installer
+
+### Ollama Detection Nuance
+- Port 11434 up → Ollama running, can query models
+- Port 11434 down → Not installed OR installed but not running
+- Prompt appropriately: "If you have Ollama, start it. If not, here's the link"
+
+### Error Handling
+- Generate log on failure
+- Offer to send to support forum
+
+### Development Approach
+- CEO builds "hacked version" prototype
+- Developer polishes for production
+- Prototype serves as product demo and requirements doc
