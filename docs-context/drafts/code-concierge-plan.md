@@ -2,6 +2,7 @@
 
 **Status:** Initial Planning
 **Created:** January 9, 2025
+**Updated:** January 9, 2025 (added Claude Code plugin option + monetization strategy)
 **Owner:** Navaneeth Krishnan
 **Priority:** Post-launch (not required for initial release)
 
@@ -150,7 +151,7 @@ Enable people like David (technically inclined non-developers) to build simple B
 - Significant training investment
 - May underperform vs. RAG + frontier model
 
-### Option C: Hybrid (Recommended for Exploration)
+### Option C: Hybrid
 
 | Aspect | Details |
 |--------|---------|
@@ -163,6 +164,55 @@ Enable people like David (technically inclined non-developers) to build simple B
 - Best quality for code generation
 - RAG keeps it BrainDrive-aware
 - Can evolve toward local models over time
+
+### Option D: Claude Code Plugin (Recommended Fast-Track)
+
+Instead of building from scratch, package BrainDrive expertise as a Claude Code plugin. This leverages the tool David found most effective.
+
+| Aspect | Details |
+|--------|---------|
+| Base | Claude Code (uses Opus 4.5) |
+| Enhancement | Skills + MCP server + subagents |
+| Interface | CLI (Claude Code) |
+| Complexity | Low |
+
+**Plugin Structure:**
+```
+braindrive-concierge/
+├── .claude-plugin/
+│   └── plugin.json
+├── skills/
+│   ├── plugin-development/SKILL.md
+│   ├── service-bridges/SKILL.md
+│   ├── hooks-guide/SKILL.md
+│   └── braindrive-conventions/SKILL.md
+├── agents/
+│   ├── plugin-creator.md
+│   ├── debugger.md
+│   └── code-reviewer.md
+├── commands/
+│   ├── new-plugin.md          # /bd:new-plugin
+│   ├── add-hook.md            # /bd:add-hook
+│   └── check.md               # /bd:check
+└── .mcp.json                  # Connect to BrainDrive services
+```
+
+**Pros:**
+- Dramatically reduced scope (days to MVP, not weeks)
+- Leverages Opus 4.5 — the model that "actually works"
+- No infrastructure to build (Claude Code handles AI, context, file ops)
+- Skills = knowledge, MCP = tools, already proven pattern
+- Users install plugin, immediately productive
+
+**Cons:**
+- Requires users to have Claude Code
+- Less control over UX
+- Not accessible to non-CLI users
+
+**Hybrid Path:**
+1. **Phase 1:** Claude Code plugin (quick win for developers)
+2. **Phase 2:** Web-based version for broader audience
+3. **Phase 3:** Shared knowledge base between both
 
 ---
 
@@ -225,11 +275,69 @@ Enable people like David (technically inclined non-developers) to build simple B
 
 ## Open Questions
 
-1. **Hosting model** — Web app vs. desktop app vs. both?
+1. **Hosting model** — Web app vs. desktop app vs. Claude Code plugin vs. all three?
 2. **Model selection** — Claude vs. GPT-4 vs. open models for MVP?
 3. **Authentication** — Tie to BrainDrive account or standalone?
-4. **Pricing** — Free tier? Usage-based? Part of managed hosting?
-5. **Integration depth** — Just generate code or also apply changes?
+4. **Integration depth** — Just generate code or also apply changes?
+
+---
+
+## Monetization Strategy
+
+### Recommended Approach: Freemium Funnel to Managed Hosting
+
+The plugin/tool itself drives adoption; connected services generate revenue.
+
+```
+Free Plugin → Builds on BrainDrive → Needs hosting → Managed Hosting $$$
+```
+
+This mirrors successful models:
+- **Vercel** — Free framework (Next.js), paid hosting
+- **Supabase** — Free client, paid infrastructure
+- **GitHub** — Free tool, paid enterprise/actions
+
+### Tiered Access Model
+
+| Tier | Price | Includes |
+|------|-------|----------|
+| **Free** | $0 | Plugin/skills, code generation, local development |
+| **Pro** | $X/month | Deploy to BrainDrive Cloud, plugin analytics, priority support |
+| **Enterprise** | Custom | Team features, private plugin registry, SLA |
+
+### What's Gated Behind Payment
+
+| Feature | Free | Paid | Rationale |
+|---------|------|------|-----------|
+| Skills (knowledge) | ✓ | ✓ | Hard to enforce, drives adoption |
+| Code generation | ✓ | ✓ | Core value, drives adoption |
+| Local development | ✓ | ✓ | No cost to us |
+| MCP server (basic) | ✓ | ✓ | Connects to BrainDrive docs |
+| MCP server (premium) | | ✓ | Live testing, deployment, analytics |
+| One-click deploy | | ✓ | Requires managed hosting |
+| Plugin marketplace listing | | ✓ | Visibility/distribution value |
+| Advanced debugging | | ✓ | Connects to running instance |
+
+### Why This Works
+
+1. **Skills are hard to gate** — They're markdown files on disk. Trying to lock them down creates friction and bad UX.
+
+2. **Services are easy to gate** — MCP server requires authentication. Deployment requires infrastructure. These naturally require accounts.
+
+3. **Managed hosting is the real product** — Code Concierge is an acquisition funnel. Users build something → need to deploy it → pay for hosting.
+
+4. **Network effects** — Free tier creates more plugins → more BrainDrive value → more users → more paid conversions.
+
+### Revenue Projections (Placeholder)
+
+| Metric | Conservative | Optimistic |
+|--------|-------------|------------|
+| Free users | 1,000 | 10,000 |
+| Pro conversion | 5% | 10% |
+| Pro revenue/month | $500 | $10,000 |
+| Managed hosting upsell | 20% of Pro | 30% of Pro |
+
+*Actual pricing and projections TBD based on managed hosting costs and market research.*
 
 ---
 
