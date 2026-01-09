@@ -395,6 +395,108 @@ Claude: Preparing WeatherDashboard v1.0.0 for publication...
         Post at community.braindrive.ai/c/the-marketplace
 ```
 
+#### `/bd:preview` — Visual Debugging with Browser Integration
+
+```
+User: /bd:preview
+
+Claude: [Opens Chrome via Claude Code's --chrome integration]
+        [Navigates to your local BrainDrive instance]
+        [Opens Page Builder, adds your plugin to test page]
+        [Takes screenshot]
+
+        I can see your Weather Dashboard plugin is rendering, but there's
+        a problem: the text is white on a white background in light mode.
+
+        Console shows: No errors
+
+        The issue is you're not using the theme bridge. Let me fix that...
+
+        [Updates code to use services.theme.getCurrentTheme()]
+
+        Run `npm run build` and I'll check again.
+```
+
+This eliminates the back-and-forth of "what do you see?" — Claude sees it directly.
+
+### Browser Integration: Claude Gets Eyes
+
+Claude Code has built-in Chrome integration that gives Claude visual access to your browser. This is transformative for the "technical tinkerer" target user.
+
+**How it works:**
+```bash
+# Start Claude Code with browser visibility
+claude --chrome
+
+# Or enable during a session
+/chrome
+```
+
+**What Claude can do:**
+| Capability | How It Helps Code Concierge |
+|------------|----------------------------|
+| Take screenshots | See if plugin renders correctly |
+| Read console errors | Catch runtime errors automatically |
+| Inspect DOM | Verify component structure |
+| Click and type | Test plugin interactions |
+| Use login state | Access authenticated BrainDrive instance |
+
+**Requirements:**
+- Google Chrome browser
+- "Claude in Chrome" extension (v1.0.36+)
+- Claude Code CLI (v2.0.73+)
+- Paid Claude plan (Pro/Team/Enterprise)
+
+**Why this matters for target users:**
+
+The biggest pain point for non-developers is the feedback loop:
+1. Make a change
+2. Build
+3. Refresh browser
+4. See something wrong
+5. Try to describe it to the AI
+6. AI guesses at the problem
+7. Repeat
+
+With browser integration:
+1. Make a change
+2. Build
+3. "Check if it looks right"
+4. Claude sees the problem and fixes it
+
+**Example: Debugging a visual issue**
+
+```
+User: My plugin looks weird, can you check it?
+
+Claude: [Takes screenshot of BrainDrive with plugin]
+        [Reads console output]
+
+        I see two issues:
+
+        1. Your plugin is overflowing its container because you're
+           using fixed width (500px) instead of responsive units
+
+        2. Console error: "Cannot read property 'emit' of undefined"
+           on line 47 — you're calling services.event before mount
+
+        Let me fix both...
+
+        [Edits WeatherDashboardModule.tsx]
+
+        Done. Run `npm run build` and I'll verify the fix.
+
+User: ok done
+
+Claude: [Takes new screenshot]
+
+        ✓ Plugin now fits container properly
+        ✓ No console errors
+        ✓ Theme colors look correct in light mode
+
+        Want me to test dark mode too?
+```
+
 ### Skills for Service Bridges
 
 The `service-bridges` skill knows all 6 bridges and recommends the right one:
