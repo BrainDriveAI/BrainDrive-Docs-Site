@@ -1,3 +1,7 @@
+> ⚠️ **This repository has been archived.** BrainDrive has evolved into the [Personal AI Architecture](https://personalaiarchitecture.org) — an MIT-licensed, open architecture for building personal AI systems with zero lock-in. See the [new repo](https://github.com/Personal-AI-Architecture/the-architecture) for the latest work.
+
+---
+
 # BrainDrive Documentation Hub
 
 BrainDrive-Docs-Site powers [BrainDrive](https://BrainDrive.ai)'s public developer documentation. The site is powered by [Docusaurus 3](https://docusaurus.io/) and aggregates content from the main BrainDrive codebase, plugin templates, and dedicated documentation written in this repository.
